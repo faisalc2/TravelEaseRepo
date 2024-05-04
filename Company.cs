@@ -8,5 +8,6 @@ namespace TravelEase
 {
     internal class Company
     {
+        
     }
 }
