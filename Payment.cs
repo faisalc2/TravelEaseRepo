@@ -8,5 +8,9 @@ namespace TravelEase
 {
     internal class Payment
     {
+        private string _transitionID;
+        private string _amount;
+        private string _cardNumber;
+        private string _bank;
     }
 }
