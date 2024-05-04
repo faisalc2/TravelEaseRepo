@@ -8,5 +8,13 @@ namespace TravelEase
 {
     internal class Ticket
     {
+        private string _serialNumber;
+        private string _passengerInfo;
+        private int _seatNumber;
+        private int _fair;
+        
+
+
+
     }
 }
