@@ -16,5 +16,12 @@ namespace TravelEase
         {
             InitializeComponent();
         }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            textBoxUserName.Text = string.Empty;
+            textBoxPassword.Text = string.Empty;
+            textBoxUserName.Focus();
+        }
     }
 }
