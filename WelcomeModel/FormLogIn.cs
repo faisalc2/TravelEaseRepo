@@ -23,5 +23,15 @@ namespace TravelEase
             textBoxPassword.Text = string.Empty;
             textBoxUserName.Focus();
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
