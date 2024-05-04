@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace TravelEase
 {
-    internal class Fair
+    internal class Fair : Ticket
     {
+        private double _perKmCost = 1.5;
+        public double calculateFair(double km)
+        {
+            return _perKmCost * km;
+        }
+
     }
 }
