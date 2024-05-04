@@ -1,3 +1,5 @@
+using TravelEase.WelcomeModel;
+
 namespace TravelEase
 {
     internal static class Program
