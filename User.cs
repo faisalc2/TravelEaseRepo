@@ -17,5 +17,10 @@ namespace TravelEase
         private int _age;
         private string _phone;
         private string _email;
+
+        public void CalculateAge()
+        {
+            _age = 0;
+        }
     }
 }

@@ -8,6 +8,7 @@ namespace TravelEase
 {
     internal class Company
     {
-        
+        private string _companyID;
+        private string _companyName;
     }
 }
