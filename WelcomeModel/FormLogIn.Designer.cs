@@ -31,14 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogIn));
             pictureBox1 = new PictureBox();
             label1 = new Label();
-            textBoxUserName = new TextBox();
-            label2 = new Label();
+            labelUsername = new Label();
             label3 = new Label();
-            textBoxPassword = new TextBox();
             buttonClear = new Button();
             buttonLogin = new Button();
-            checkBox1 = new CheckBox();
+            checkBoxShowPassword = new CheckBox();
             buttonClose = new Button();
+            textBoxUsername = new TextBox();
+            textBoxPassword = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -48,7 +48,7 @@
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(376, 450);
+            pictureBox1.Size = new Size(381, 485);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -56,60 +56,37 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe Print", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(525, 82);
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(488, 64);
             label1.Name = "label1";
-            label1.Size = new Size(153, 61);
+            label1.Size = new Size(118, 41);
             label1.TabIndex = 1;
             label1.Text = "LOG IN";
             // 
-            // textBoxUserName
+            // labelUsername
             // 
-            textBoxUserName.BorderStyle = BorderStyle.None;
-            textBoxUserName.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBoxUserName.Location = new Point(582, 191);
-            textBoxUserName.Multiline = true;
-            textBoxUserName.Name = "textBoxUserName";
-            textBoxUserName.Size = new Size(206, 46);
-            textBoxUserName.TabIndex = 2;
-            textBoxUserName.Text = "asd";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe Print", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(400, 185);
-            label2.Name = "label2";
-            label2.Size = new Size(189, 61);
-            label2.TabIndex = 3;
-            label2.Text = "Usename:";
+            labelUsername.AutoSize = true;
+            labelUsername.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelUsername.Location = new Point(400, 185);
+            labelUsername.Name = "labelUsername";
+            labelUsername.Size = new Size(118, 31);
+            labelUsername.TabIndex = 3;
+            labelUsername.Text = "Usename:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe Print", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(392, 272);
+            label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(398, 257);
             label3.Name = "label3";
-            label3.Size = new Size(197, 61);
+            label3.Size = new Size(120, 31);
             label3.TabIndex = 4;
             label3.Text = "Password:";
             // 
-            // textBoxPassword
-            // 
-            textBoxPassword.BorderStyle = BorderStyle.None;
-            textBoxPassword.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBoxPassword.Location = new Point(582, 278);
-            textBoxPassword.Multiline = true;
-            textBoxPassword.Name = "textBoxPassword";
-            textBoxPassword.PasswordChar = '*';
-            textBoxPassword.Size = new Size(206, 39);
-            textBoxPassword.TabIndex = 5;
-            textBoxPassword.Text = "asd";
-            // 
             // buttonClear
             // 
-            buttonClear.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonClear.Location = new Point(475, 372);
+            buttonClear.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonClear.Location = new Point(488, 372);
             buttonClear.Name = "buttonClear";
             buttonClear.Size = new Size(99, 44);
             buttonClear.TabIndex = 6;
@@ -119,56 +96,76 @@
             // 
             // buttonLogin
             // 
-            buttonLogin.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonLogin.Location = new Point(605, 372);
+            buttonLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonLogin.Location = new Point(640, 372);
             buttonLogin.Name = "buttonLogin";
             buttonLogin.Size = new Size(103, 44);
             buttonLogin.TabIndex = 7;
-            buttonLogin.Text = "Log in";
+            buttonLogin.Text = "Login";
             buttonLogin.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // checkBoxShowPassword
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(667, 335);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(130, 24);
-            checkBox1.TabIndex = 8;
-            checkBox1.Text = "Showpassword";
-            checkBox1.UseVisualStyleBackColor = true;
-            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
-            checkBox1.Click += checkBox1_Click;
+            checkBoxShowPassword.AutoSize = true;
+            checkBoxShowPassword.Location = new Point(685, 307);
+            checkBoxShowPassword.Name = "checkBoxShowPassword";
+            checkBoxShowPassword.Size = new Size(132, 24);
+            checkBoxShowPassword.TabIndex = 8;
+            checkBoxShowPassword.Text = "Show Password";
+            checkBoxShowPassword.UseVisualStyleBackColor = true;
+            checkBoxShowPassword.CheckedChanged += checkBox1_CheckedChanged;
+            //checkBoxShowPassword.Click += checkBox1_Click;
             // 
             // buttonClose
             // 
+            buttonClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonClose.FlatAppearance.BorderSize = 0;
             buttonClose.Image = (Image)resources.GetObject("buttonClose.Image");
-            buttonClose.Location = new Point(756, 0);
+            buttonClose.Location = new Point(802, -2);
             buttonClose.Name = "buttonClose";
             buttonClose.Size = new Size(47, 41);
             buttonClose.TabIndex = 9;
             buttonClose.UseVisualStyleBackColor = true;
             buttonClose.Click += buttonClose_Click;
             // 
+            // textBoxUsername
+            // 
+            textBoxUsername.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBoxUsername.Location = new Point(562, 185);
+            textBoxUsername.Name = "textBoxUsername";
+            textBoxUsername.Size = new Size(255, 38);
+            textBoxUsername.TabIndex = 10;
+            //textBoxUsername.TextChanged += textBoxPassword_TextChanged;
+            // 
+            // textBoxPassword
+            // 
+            textBoxPassword.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBoxPassword.Location = new Point(562, 254);
+            textBoxPassword.Name = "textBoxPassword";
+            textBoxPassword.Size = new Size(255, 38);
+            textBoxPassword.TabIndex = 11;
+            textBoxPassword.UseSystemPasswordChar = true;
+            // 
             // FormLogIn
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(849, 485);
+            Controls.Add(textBoxPassword);
+            Controls.Add(textBoxUsername);
             Controls.Add(buttonClose);
-            Controls.Add(checkBox1);
+            Controls.Add(checkBoxShowPassword);
             Controls.Add(buttonLogin);
             Controls.Add(buttonClear);
-            Controls.Add(textBoxPassword);
             Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(textBoxUserName);
+            Controls.Add(labelUsername);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormLogIn";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LogIn";
+            //Load += FormLogIn_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -178,13 +175,13 @@
 
         private PictureBox pictureBox1;
         private Label label1;
-        private TextBox textBoxUserName;
-        private Label label2;
+        private Label labelUsername;
         private Label label3;
-        private TextBox textBoxPassword;
         private Button buttonClear;
         private Button buttonLogin;
-        private CheckBox checkBox1;
+        private CheckBox checkBoxShowPassword;
         private Button buttonClose;
+        private TextBox textBoxUsername;
+        private TextBox textBoxPassword;
     }
 }
