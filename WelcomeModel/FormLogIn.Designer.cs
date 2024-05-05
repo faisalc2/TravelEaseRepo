@@ -38,6 +38,7 @@
             buttonClear = new Button();
             buttonLogin = new Button();
             checkBox1 = new CheckBox();
+            buttonClose = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -64,11 +65,14 @@
             // 
             // textBoxUserName
             // 
-            textBoxUserName.Location = new Point(582, 198);
+            textBoxUserName.BorderStyle = BorderStyle.None;
+            textBoxUserName.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBoxUserName.Location = new Point(582, 191);
             textBoxUserName.Multiline = true;
             textBoxUserName.Name = "textBoxUserName";
             textBoxUserName.Size = new Size(206, 48);
             textBoxUserName.TabIndex = 2;
+            textBoxUserName.Text = "asd";
             // 
             // label2
             // 
@@ -92,18 +96,22 @@
             // 
             // textBoxPassword
             // 
+            textBoxPassword.BorderStyle = BorderStyle.None;
+            textBoxPassword.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBoxPassword.Location = new Point(582, 272);
             textBoxPassword.Multiline = true;
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.PasswordChar = '#';
             textBoxPassword.Size = new Size(206, 48);
             textBoxPassword.TabIndex = 5;
+            textBoxPassword.Text = "asd";
             // 
             // buttonClear
             // 
-            buttonClear.Location = new Point(480, 380);
+            buttonClear.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            buttonClear.Location = new Point(475, 372);
             buttonClear.Name = "buttonClear";
-            buttonClear.Size = new Size(94, 29);
+            buttonClear.Size = new Size(99, 44);
             buttonClear.TabIndex = 6;
             buttonClear.Text = "Clear";
             buttonClear.UseVisualStyleBackColor = true;
@@ -111,9 +119,10 @@
             // 
             // buttonLogin
             // 
-            buttonLogin.Location = new Point(611, 380);
+            buttonLogin.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            buttonLogin.Location = new Point(605, 372);
             buttonLogin.Name = "buttonLogin";
-            buttonLogin.Size = new Size(94, 29);
+            buttonLogin.Size = new Size(103, 44);
             buttonLogin.TabIndex = 7;
             buttonLogin.Text = "Log in";
             buttonLogin.UseVisualStyleBackColor = true;
@@ -127,12 +136,25 @@
             checkBox1.TabIndex = 8;
             checkBox1.Text = "Showpassword";
             checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            // 
+            // buttonClose
+            // 
+            buttonClose.FlatAppearance.BorderSize = 0;
+            buttonClose.Image = (Image)resources.GetObject("buttonClose.Image");
+            buttonClose.Location = new Point(756, 0);
+            buttonClose.Name = "buttonClose";
+            buttonClose.Size = new Size(47, 41);
+            buttonClose.TabIndex = 9;
+            buttonClose.UseVisualStyleBackColor = true;
+            buttonClose.Click += buttonClose_Click;
             // 
             // FormLogIn
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(buttonClose);
             Controls.Add(checkBox1);
             Controls.Add(buttonLogin);
             Controls.Add(buttonClear);
@@ -142,7 +164,9 @@
             Controls.Add(textBoxUserName);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FormLogIn";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "LogIn";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -160,5 +184,6 @@
         private Button buttonClear;
         private Button buttonLogin;
         private CheckBox checkBox1;
+        private Button buttonClose;
     }
 }
