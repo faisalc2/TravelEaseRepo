@@ -57,7 +57,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(488, 64);
+            label1.Location = new Point(544, 50);
             label1.Name = "label1";
             label1.Size = new Size(118, 41);
             label1.TabIndex = 1;
@@ -114,7 +114,6 @@
             checkBoxShowPassword.Text = "Show Password";
             checkBoxShowPassword.UseVisualStyleBackColor = true;
             checkBoxShowPassword.CheckedChanged += checkBox1_CheckedChanged;
-            //checkBoxShowPassword.Click += checkBox1_Click;
             // 
             // buttonClose
             // 
@@ -135,7 +134,6 @@
             textBoxUsername.Name = "textBoxUsername";
             textBoxUsername.Size = new Size(255, 38);
             textBoxUsername.TabIndex = 10;
-            //textBoxUsername.TextChanged += textBoxPassword_TextChanged;
             // 
             // textBoxPassword
             // 
@@ -165,7 +163,6 @@
             Name = "FormLogIn";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LogIn";
-            //Load += FormLogIn_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
