@@ -70,7 +70,7 @@
             textBoxUserName.Location = new Point(582, 191);
             textBoxUserName.Multiline = true;
             textBoxUserName.Name = "textBoxUserName";
-            textBoxUserName.Size = new Size(206, 48);
+            textBoxUserName.Size = new Size(206, 46);
             textBoxUserName.TabIndex = 2;
             textBoxUserName.Text = "asd";
             // 
@@ -98,11 +98,11 @@
             // 
             textBoxPassword.BorderStyle = BorderStyle.None;
             textBoxPassword.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBoxPassword.Location = new Point(582, 272);
+            textBoxPassword.Location = new Point(582, 278);
             textBoxPassword.Multiline = true;
             textBoxPassword.Name = "textBoxPassword";
-            textBoxPassword.PasswordChar = '#';
-            textBoxPassword.Size = new Size(206, 48);
+            textBoxPassword.PasswordChar = '*';
+            textBoxPassword.Size = new Size(206, 39);
             textBoxPassword.TabIndex = 5;
             textBoxPassword.Text = "asd";
             // 
@@ -130,13 +130,14 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(647, 335);
+            checkBox1.Location = new Point(667, 335);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(130, 24);
             checkBox1.TabIndex = 8;
             checkBox1.Text = "Showpassword";
             checkBox1.UseVisualStyleBackColor = true;
             checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            checkBox1.Click += checkBox1_Click;
             // 
             // buttonClose
             // 
