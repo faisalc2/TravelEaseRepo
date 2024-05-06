@@ -103,6 +103,7 @@
             buttonLogin.TabIndex = 7;
             buttonLogin.Text = "Login";
             buttonLogin.UseVisualStyleBackColor = true;
+            buttonLogin.Click += buttonLogin_Click;
             // 
             // checkBoxShowPassword
             // 
@@ -119,6 +120,7 @@
             // 
             buttonClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonClose.FlatAppearance.BorderSize = 0;
+            buttonClose.ForeColor = SystemColors.ControlText;
             buttonClose.Image = (Image)resources.GetObject("buttonClose.Image");
             buttonClose.Location = new Point(802, -2);
             buttonClose.Name = "buttonClose";
@@ -148,6 +150,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(96, 184, 196);
             ClientSize = new Size(849, 485);
             Controls.Add(textBoxPassword);
             Controls.Add(textBoxUsername);

@@ -1,3 +1,4 @@
+using TravelEase.PassengerDashboards;
 using TravelEase.WelcomeModel;
 
 namespace TravelEase
@@ -13,7 +14,8 @@ namespace TravelEase
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new FormLogIn());
+            //Application.Run(new FormLogIn());
+            Application.Run(new PassengerDashboard());
         }
     }
 }
