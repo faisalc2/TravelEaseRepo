@@ -42,6 +42,7 @@
             label3 = new Label();
             label4 = new Label();
             comboBox1 = new ComboBox();
+            buttonBack = new Button();
             SuspendLayout();
             // 
             // buttonBus
@@ -160,24 +161,35 @@
             label4.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.Location = new Point(38, 408);
             label4.Name = "label4";
-            label4.Size = new Size(185, 38);
+            label4.Size = new Size(303, 38);
             label4.TabIndex = 12;
-            label4.Text = "Choose Class:";
+            label4.Text = "Choose Available Class:";
             // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Dhaka", "Sylhet" });
-            comboBox1.Location = new Point(240, 418);
+            comboBox1.Location = new Point(351, 418);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(151, 28);
             comboBox1.TabIndex = 13;
+            // 
+            // buttonBack
+            // 
+            buttonBack.Location = new Point(436, 477);
+            buttonBack.Name = "buttonBack";
+            buttonBack.Size = new Size(123, 54);
+            buttonBack.TabIndex = 14;
+            buttonBack.Text = "Back";
+            buttonBack.UseVisualStyleBackColor = true;
+            buttonBack.Click += buttonBack_Click;
             // 
             // SearchTicket
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(978, 574);
+            Controls.Add(buttonBack);
             Controls.Add(comboBox1);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -193,7 +205,8 @@
             Controls.Add(buttonTrain);
             Controls.Add(buttonBus);
             Name = "SearchTicket";
-            Text = "PassengerDashboards";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Search Ticket";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -214,5 +227,6 @@
         private Label label3;
         private Label label4;
         private ComboBox comboBox1;
+        private Button buttonBack;
     }
 }

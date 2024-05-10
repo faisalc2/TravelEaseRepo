@@ -24,5 +24,12 @@ namespace TravelEase.Dashboards
             availableVehicle.Show();
             this.Hide();
         }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            PassengerDashboard pd = new PassengerDashboard();
+            this.Hide();
+            pd.Show();
+        }
     }
 }

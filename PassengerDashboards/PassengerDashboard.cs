@@ -22,7 +22,7 @@ namespace TravelEase.PassengerDashboards
         {
             SearchTicket Sticket = new SearchTicket();
             Sticket.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void buttonEditProfile_Click(object sender, EventArgs e)
