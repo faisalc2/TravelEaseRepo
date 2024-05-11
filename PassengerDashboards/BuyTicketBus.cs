@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TravelEase.PassengerDashboards
 {
-    public partial class BuyTicket : Form
+    public partial class BuyTicketBus : Form
     {
-        public BuyTicket()
+        public BuyTicketBus()
         {
             InitializeComponent();
         }

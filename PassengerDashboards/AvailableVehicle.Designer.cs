@@ -30,8 +30,8 @@
         {
             label1 = new Label();
             panel1 = new Panel();
-            comboBox1 = new ComboBox();
             comboBox2 = new ComboBox();
+            comboBox1 = new ComboBox();
             button1 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -55,15 +55,6 @@
             panel1.Size = new Size(935, 409);
             panel1.TabIndex = 1;
             // 
-            // comboBox1
-            // 
-            comboBox1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(15, 22);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(906, 45);
-            comboBox1.TabIndex = 0;
-            // 
             // comboBox2
             // 
             comboBox2.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -72,6 +63,15 @@
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(906, 45);
             comboBox2.TabIndex = 1;
+            // 
+            // comboBox1
+            // 
+            comboBox1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(15, 22);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(906, 45);
+            comboBox1.TabIndex = 0;
             // 
             // button1
             // 
@@ -91,6 +91,7 @@
             Controls.Add(panel1);
             Controls.Add(label1);
             Name = "AvailableVehicle";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AvailableVehicle";
             panel1.ResumeLayout(false);
             ResumeLayout(false);
