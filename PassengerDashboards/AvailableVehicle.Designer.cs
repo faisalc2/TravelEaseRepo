@@ -32,7 +32,8 @@
             panel1 = new Panel();
             comboBox2 = new ComboBox();
             comboBox1 = new ComboBox();
-            button1 = new Button();
+            buttonBookNow = new Button();
+            button2 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -73,21 +74,32 @@
             comboBox1.Size = new Size(906, 45);
             comboBox1.TabIndex = 0;
             // 
-            // button1
+            // buttonBookNow
             // 
-            button1.Location = new Point(397, 519);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 2;
-            button1.Text = "Book Now";
-            button1.UseVisualStyleBackColor = true;
+            buttonBookNow.Location = new Point(397, 519);
+            buttonBookNow.Name = "buttonBookNow";
+            buttonBookNow.Size = new Size(94, 29);
+            buttonBookNow.TabIndex = 2;
+            buttonBookNow.Text = "Book Now";
+            buttonBookNow.UseVisualStyleBackColor = true;
+            buttonBookNow.Click += buttonBookNow_Click;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(512, 519);
+            button2.Name = "button2";
+            button2.Size = new Size(94, 29);
+            button2.TabIndex = 3;
+            button2.Text = "Cancel";
+            button2.UseVisualStyleBackColor = true;
             // 
             // AvailableVehicle
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(978, 574);
-            Controls.Add(button1);
+            Controls.Add(button2);
+            Controls.Add(buttonBookNow);
             Controls.Add(panel1);
             Controls.Add(label1);
             Name = "AvailableVehicle";
@@ -104,6 +116,7 @@
         private Panel panel1;
         private ComboBox comboBox2;
         private ComboBox comboBox1;
-        private Button button1;
+        private Button buttonBookNow;
+        private Button button2;
     }
 }

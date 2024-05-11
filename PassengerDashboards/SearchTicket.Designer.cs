@@ -53,6 +53,7 @@
             buttonBus.TabIndex = 0;
             buttonBus.Text = "Bus";
             buttonBus.UseVisualStyleBackColor = true;
+            buttonBus.Click += buttonBus_Click;
             // 
             // buttonTrain
             // 
@@ -62,6 +63,7 @@
             buttonTrain.TabIndex = 1;
             buttonTrain.Text = "Train";
             buttonTrain.UseVisualStyleBackColor = true;
+            buttonTrain.Click += buttonTrain_Click;
             // 
             // buttonAir
             // 
@@ -71,6 +73,7 @@
             buttonAir.TabIndex = 2;
             buttonAir.Text = "Air Flight";
             buttonAir.UseVisualStyleBackColor = true;
+            buttonAir.Click += buttonAir_Click;
             // 
             // buttonLaunch
             // 
@@ -80,6 +83,7 @@
             buttonLaunch.TabIndex = 3;
             buttonLaunch.Text = "Launch";
             buttonLaunch.UseVisualStyleBackColor = true;
+            buttonLaunch.Click += buttonLaunch_Click;
             // 
             // label1
             // 

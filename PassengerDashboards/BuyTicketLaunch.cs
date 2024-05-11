@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace TravelEase.PassengerDashboards
 {
-    public partial class BuyTicketBus : Form
+    public partial class BuyTicketLaunch : Form
     {
-        public BuyTicketBus()
+        public BuyTicketLaunch()
         {
             InitializeComponent();
-        }
-
-        private void buttonBack_Click(object sender, EventArgs e)
-        {
-            AvailableVehicle availableVehicle = new AvailableVehicle();
-            availableVehicle.Show();
-            this.Hide();
         }
     }
 }
