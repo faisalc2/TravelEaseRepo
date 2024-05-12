@@ -36,9 +36,7 @@ namespace TravelEase.Dashboards
 
         private void buttonBus_Click(object sender, EventArgs e)
         {
-            
             AvailableVehicle.SetSelectedVehicle("Bus");
-            
         }
 
         private void buttonTrain_Click(object sender, EventArgs e)

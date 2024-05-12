@@ -43,9 +43,9 @@
             label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(31, 25);
             label1.Name = "label1";
-            label1.Size = new Size(168, 31);
+            label1.Size = new Size(187, 31);
             label1.TabIndex = 0;
-            label1.Text = "Available Bus//";
+            label1.Text = "Available Vehicle";
             // 
             // panel1
             // 

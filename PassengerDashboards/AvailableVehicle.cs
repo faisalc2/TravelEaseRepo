@@ -13,12 +13,10 @@ namespace TravelEase.PassengerDashboards
 {
     public partial class AvailableVehicle : Form
     {
-        //public static AvailableVehicle tktinstance;
-        private static string selectedVehicle="something ";
+        private static string ? selectedVehicle;
         public AvailableVehicle()
         {
             InitializeComponent();
-            //tktinstance = this;
         }
 
         public static void SetSelectedVehicle(string vehicle)
