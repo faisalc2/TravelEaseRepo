@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegistration));
             MainPanel1 = new Panel();
             buttonNext1 = new Button();
@@ -179,7 +178,7 @@
             buttonBack0 = new PictureBox();
             pictureBox20 = new PictureBox();
             ModularPanel5 = new Panel();
-            buttonCopy_M = new PictureBox();
+            buttonCopyM = new PictureBox();
             label6 = new Label();
             textBox_UIDM = new TextBox();
             label7 = new Label();
@@ -201,10 +200,8 @@
             label_VehicleType = new Label();
             checkedListBox_VehicleType = new CheckedListBox();
             buttonNextM1 = new Button();
-            textBox_Origin = new TextBox();
             textBox_GovtReg = new TextBox();
             textBox_CompanyName = new TextBox();
-            label_Contry = new Label();
             label_GovtReg = new Label();
             label_CompanyName = new Label();
             ModularTopPanel1 = new Panel();
@@ -223,17 +220,24 @@
             pictureBox37 = new PictureBox();
             pictureBox38 = new PictureBox();
             ModularPanel2 = new Panel();
+            textBox_AddressM = new TextBox();
+            textBox_EmailM = new TextBox();
+            textBox_PhoneM = new TextBox();
+            label_AddressM = new Label();
+            label_EmailM = new Label();
+            label_PhoneM = new Label();
+            buttonPreviousM2 = new Button();
             buttonNextM2 = new Button();
-            comboBox1 = new ComboBox();
-            dateTimePicker1 = new DateTimePicker();
-            textBox4 = new TextBox();
-            textBox17 = new TextBox();
-            textBox18 = new TextBox();
-            label24 = new Label();
-            label25 = new Label();
-            label26 = new Label();
-            label27 = new Label();
-            label28 = new Label();
+            comboBox_GenderM = new ComboBox();
+            dateTimePicker_DOBM = new DateTimePicker();
+            textBox_LnameM = new TextBox();
+            textBox_FnameM = new TextBox();
+            textBox_NIDM = new TextBox();
+            label_GenderM = new Label();
+            label_DOBM = new Label();
+            label_LnameM = new Label();
+            label_FnameM = new Label();
+            label_NIDM = new Label();
             ModularTopPanel = new Panel();
             buttonExitM2 = new PictureBox();
             buttonBackM2 = new PictureBox();
@@ -249,7 +253,81 @@
             pictureBox41 = new PictureBox();
             pictureBox42 = new PictureBox();
             pictureBox43 = new PictureBox();
-            buttonPreviousM2 = new Button();
+            ModularPanel3 = new Panel();
+            checkBox_ShowPasswordM = new CheckBox();
+            textBox_Password2M = new TextBox();
+            textBox_Password1M = new TextBox();
+            textBox_UsernameM = new TextBox();
+            label_Password2M = new Label();
+            label_Password1M = new Label();
+            label_UsernameM = new Label();
+            buttonPrevious3_M = new Button();
+            buttonNext3_M = new Button();
+            TopModularPanel3 = new Panel();
+            buttonExit3_M = new PictureBox();
+            buttonBack3_M = new PictureBox();
+            label44 = new Label();
+            label45 = new Label();
+            label46 = new Label();
+            label47 = new Label();
+            textBox31 = new TextBox();
+            textBox32 = new TextBox();
+            pictureBox44 = new PictureBox();
+            textBox33 = new TextBox();
+            pictureBox45 = new PictureBox();
+            pictureBox46 = new PictureBox();
+            pictureBox47 = new PictureBox();
+            pictureBox48 = new PictureBox();
+            ModularPanel4 = new Panel();
+            label_vtype = new Label();
+            label_grid = new Label();
+            label_cname = new Label();
+            textBox_cname = new TextBox();
+            textBox_vtype = new TextBox();
+            textBox_grid = new TextBox();
+            label_gendermm = new Label();
+            label_dobmm = new Label();
+            label_lnamemm = new Label();
+            label_fnamemm = new Label();
+            label_nidmm = new Label();
+            textBox_nidmm = new TextBox();
+            textBox_passwordmm = new TextBox();
+            textBox_usernamemm = new TextBox();
+            label_passwordmm = new Label();
+            label_usernamemm = new Label();
+            textBox_addressmm = new TextBox();
+            textBox_emailmm = new TextBox();
+            textBox_phonemm = new TextBox();
+            label_addressmm = new Label();
+            label_emailmm = new Label();
+            label_phonemm = new Label();
+            textBox_gendermm = new TextBox();
+            textBox_dobmm = new TextBox();
+            textBox_lnamemm = new TextBox();
+            textBox_fnamemm = new TextBox();
+            buttonPreviousM4 = new Button();
+            buttonRegisterM = new Button();
+            button_ACMM = new Button();
+            buttonEditMAI = new Button();
+            button_EditCD = new Button();
+            label50 = new Label();
+            label51 = new Label();
+            label52 = new Label();
+            panel2 = new Panel();
+            buttonExitM4 = new PictureBox();
+            label53 = new Label();
+            label54 = new Label();
+            label55 = new Label();
+            label56 = new Label();
+            textBox38 = new TextBox();
+            textBox39 = new TextBox();
+            textBox40 = new TextBox();
+            pictureBox28 = new PictureBox();
+            pictureBox49 = new PictureBox();
+            pictureBox50 = new PictureBox();
+            pictureBox51 = new PictureBox();
+            buttonBackM4 = new PictureBox();
+            pictureBox53 = new PictureBox();
             MainPanel1.SuspendLayout();
             TopPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)buttonExit1).BeginInit();
@@ -301,7 +379,7 @@
             ((System.ComponentModel.ISupportInitialize)buttonBack0).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox20).BeginInit();
             ModularPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)buttonCopy_M).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)buttonCopyM).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)buttonExitM5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox32).BeginInit();
@@ -327,6 +405,24 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox41).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox42).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox43).BeginInit();
+            ModularPanel3.SuspendLayout();
+            TopModularPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)buttonExit3_M).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)buttonBack3_M).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox44).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox45).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox46).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox47).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox48).BeginInit();
+            ModularPanel4.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)buttonExitM4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox28).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox49).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox50).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox51).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)buttonBackM4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox53).BeginInit();
             SuspendLayout();
             // 
             // MainPanel1
@@ -1770,6 +1866,7 @@
             // 
             // buttonCopy
             // 
+            buttonCopy.Cursor = Cursors.Hand;
             buttonCopy.Image = (Image)resources.GetObject("buttonCopy.Image");
             buttonCopy.Location = new Point(830, 406);
             buttonCopy.Name = "buttonCopy";
@@ -2073,7 +2170,7 @@
             // ModularPanel5
             // 
             ModularPanel5.BackColor = Color.FromArgb(48, 56, 79);
-            ModularPanel5.Controls.Add(buttonCopy_M);
+            ModularPanel5.Controls.Add(buttonCopyM);
             ModularPanel5.Controls.Add(label6);
             ModularPanel5.Controls.Add(textBox_UIDM);
             ModularPanel5.Controls.Add(label7);
@@ -2083,16 +2180,17 @@
             ModularPanel5.Size = new Size(1105, 646);
             ModularPanel5.TabIndex = 83;
             // 
-            // buttonCopy_M
+            // buttonCopyM
             // 
-            buttonCopy_M.Image = (Image)resources.GetObject("buttonCopy_M.Image");
-            buttonCopy_M.Location = new Point(830, 406);
-            buttonCopy_M.Name = "buttonCopy_M";
-            buttonCopy_M.Size = new Size(66, 40);
-            buttonCopy_M.SizeMode = PictureBoxSizeMode.Zoom;
-            buttonCopy_M.TabIndex = 5;
-            buttonCopy_M.TabStop = false;
-            buttonCopy_M.Click += buttonCopy_M_Click;
+            buttonCopyM.Cursor = Cursors.Hand;
+            buttonCopyM.Image = (Image)resources.GetObject("buttonCopyM.Image");
+            buttonCopyM.Location = new Point(830, 406);
+            buttonCopyM.Name = "buttonCopyM";
+            buttonCopyM.Size = new Size(66, 40);
+            buttonCopyM.SizeMode = PictureBoxSizeMode.Zoom;
+            buttonCopyM.TabIndex = 5;
+            buttonCopyM.TabStop = false;
+            buttonCopyM.Click += buttonCopyM_Click;
             // 
             // label6
             // 
@@ -2286,10 +2384,8 @@
             ModularPanel1.Controls.Add(label_VehicleType);
             ModularPanel1.Controls.Add(checkedListBox_VehicleType);
             ModularPanel1.Controls.Add(buttonNextM1);
-            ModularPanel1.Controls.Add(textBox_Origin);
             ModularPanel1.Controls.Add(textBox_GovtReg);
             ModularPanel1.Controls.Add(textBox_CompanyName);
-            ModularPanel1.Controls.Add(label_Contry);
             ModularPanel1.Controls.Add(label_GovtReg);
             ModularPanel1.Controls.Add(label_CompanyName);
             ModularPanel1.Controls.Add(ModularTopPanel1);
@@ -2303,7 +2399,7 @@
             label_VehicleType.AutoSize = true;
             label_VehicleType.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label_VehicleType.ForeColor = Color.White;
-            label_VehicleType.Location = new Point(234, 415);
+            label_VehicleType.Location = new Point(243, 355);
             label_VehicleType.Name = "label_VehicleType";
             label_VehicleType.Size = new Size(153, 31);
             label_VehicleType.TabIndex = 57;
@@ -2312,13 +2408,15 @@
             // checkedListBox_VehicleType
             // 
             checkedListBox_VehicleType.BackColor = Color.FromArgb(48, 56, 79);
+            checkedListBox_VehicleType.BorderStyle = BorderStyle.None;
+            checkedListBox_VehicleType.Cursor = Cursors.Hand;
             checkedListBox_VehicleType.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             checkedListBox_VehicleType.ForeColor = Color.White;
             checkedListBox_VehicleType.FormattingEnabled = true;
             checkedListBox_VehicleType.Items.AddRange(new object[] { "Bus", "Launch", "Train", "Airplane" });
-            checkedListBox_VehicleType.Location = new Point(533, 421);
+            checkedListBox_VehicleType.Location = new Point(527, 366);
             checkedListBox_VehicleType.Name = "checkedListBox_VehicleType";
-            checkedListBox_VehicleType.Size = new Size(150, 136);
+            checkedListBox_VehicleType.Size = new Size(150, 132);
             checkedListBox_VehicleType.TabIndex = 56;
             // 
             // buttonNextM1
@@ -2337,14 +2435,6 @@
             buttonNextM1.UseVisualStyleBackColor = false;
             buttonNextM1.Click += buttonNextM1_Click;
             // 
-            // textBox_Origin
-            // 
-            textBox_Origin.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox_Origin.Location = new Point(527, 358);
-            textBox_Origin.Name = "textBox_Origin";
-            textBox_Origin.Size = new Size(370, 34);
-            textBox_Origin.TabIndex = 51;
-            // 
             // textBox_GovtReg
             // 
             textBox_GovtReg.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -2361,23 +2451,12 @@
             textBox_CompanyName.Size = new Size(370, 34);
             textBox_CompanyName.TabIndex = 49;
             // 
-            // label_Contry
-            // 
-            label_Contry.AutoSize = true;
-            label_Contry.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label_Contry.ForeColor = Color.White;
-            label_Contry.Location = new Point(234, 358);
-            label_Contry.Name = "label_Contry";
-            label_Contry.Size = new Size(210, 31);
-            label_Contry.TabIndex = 46;
-            label_Contry.Text = "Country of Origin:";
-            // 
             // label_GovtReg
             // 
             label_GovtReg.AutoSize = true;
             label_GovtReg.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label_GovtReg.ForeColor = Color.White;
-            label_GovtReg.Location = new Point(234, 293);
+            label_GovtReg.Location = new Point(243, 289);
             label_GovtReg.Name = "label_GovtReg";
             label_GovtReg.Size = new Size(276, 31);
             label_GovtReg.TabIndex = 45;
@@ -2388,7 +2467,7 @@
             label_CompanyName.AutoSize = true;
             label_CompanyName.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label_CompanyName.ForeColor = Color.White;
-            label_CompanyName.Location = new Point(225, 228);
+            label_CompanyName.Location = new Point(244, 229);
             label_CompanyName.Name = "label_CompanyName";
             label_CompanyName.Size = new Size(190, 31);
             label_CompanyName.TabIndex = 44;
@@ -2464,11 +2543,11 @@
             // 
             label35.AutoSize = true;
             label35.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label35.Location = new Point(406, 76);
+            label35.Location = new Point(386, 76);
             label35.Name = "label35";
-            label35.Size = new Size(101, 46);
+            label35.Size = new Size(130, 46);
             label35.TabIndex = 46;
-            label35.Text = "  Contract\r\nInformation";
+            label35.Text = "Modular Admin\r\n   Information";
             // 
             // label36
             // 
@@ -2563,23 +2642,103 @@
             // ModularPanel2
             // 
             ModularPanel2.BackColor = Color.FromArgb(48, 56, 79);
+            ModularPanel2.Controls.Add(textBox_AddressM);
+            ModularPanel2.Controls.Add(textBox_EmailM);
+            ModularPanel2.Controls.Add(textBox_PhoneM);
+            ModularPanel2.Controls.Add(label_AddressM);
+            ModularPanel2.Controls.Add(label_EmailM);
+            ModularPanel2.Controls.Add(label_PhoneM);
             ModularPanel2.Controls.Add(buttonPreviousM2);
             ModularPanel2.Controls.Add(buttonNextM2);
-            ModularPanel2.Controls.Add(comboBox1);
-            ModularPanel2.Controls.Add(dateTimePicker1);
-            ModularPanel2.Controls.Add(textBox4);
-            ModularPanel2.Controls.Add(textBox17);
-            ModularPanel2.Controls.Add(textBox18);
-            ModularPanel2.Controls.Add(label24);
-            ModularPanel2.Controls.Add(label25);
-            ModularPanel2.Controls.Add(label26);
-            ModularPanel2.Controls.Add(label27);
-            ModularPanel2.Controls.Add(label28);
+            ModularPanel2.Controls.Add(comboBox_GenderM);
+            ModularPanel2.Controls.Add(dateTimePicker_DOBM);
+            ModularPanel2.Controls.Add(textBox_LnameM);
+            ModularPanel2.Controls.Add(textBox_FnameM);
+            ModularPanel2.Controls.Add(textBox_NIDM);
+            ModularPanel2.Controls.Add(label_GenderM);
+            ModularPanel2.Controls.Add(label_DOBM);
+            ModularPanel2.Controls.Add(label_LnameM);
+            ModularPanel2.Controls.Add(label_FnameM);
+            ModularPanel2.Controls.Add(label_NIDM);
             ModularPanel2.Controls.Add(ModularTopPanel);
             ModularPanel2.Location = new Point(0, 0);
             ModularPanel2.Name = "ModularPanel2";
             ModularPanel2.Size = new Size(1105, 649);
             ModularPanel2.TabIndex = 55;
+            // 
+            // textBox_AddressM
+            // 
+            textBox_AddressM.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox_AddressM.Location = new Point(815, 324);
+            textBox_AddressM.Multiline = true;
+            textBox_AddressM.Name = "textBox_AddressM";
+            textBox_AddressM.Size = new Size(266, 147);
+            textBox_AddressM.TabIndex = 61;
+            // 
+            // textBox_EmailM
+            // 
+            textBox_EmailM.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox_EmailM.Location = new Point(815, 257);
+            textBox_EmailM.Name = "textBox_EmailM";
+            textBox_EmailM.Size = new Size(266, 34);
+            textBox_EmailM.TabIndex = 60;
+            // 
+            // textBox_PhoneM
+            // 
+            textBox_PhoneM.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox_PhoneM.Location = new Point(815, 194);
+            textBox_PhoneM.Name = "textBox_PhoneM";
+            textBox_PhoneM.Size = new Size(266, 34);
+            textBox_PhoneM.TabIndex = 59;
+            // 
+            // label_AddressM
+            // 
+            label_AddressM.AutoSize = true;
+            label_AddressM.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_AddressM.ForeColor = Color.White;
+            label_AddressM.Location = new Point(630, 316);
+            label_AddressM.Name = "label_AddressM";
+            label_AddressM.Size = new Size(105, 31);
+            label_AddressM.TabIndex = 58;
+            label_AddressM.Text = "Address:";
+            // 
+            // label_EmailM
+            // 
+            label_EmailM.AutoSize = true;
+            label_EmailM.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_EmailM.ForeColor = Color.White;
+            label_EmailM.Location = new Point(627, 258);
+            label_EmailM.Name = "label_EmailM";
+            label_EmailM.Size = new Size(79, 31);
+            label_EmailM.TabIndex = 57;
+            label_EmailM.Text = "Email:";
+            // 
+            // label_PhoneM
+            // 
+            label_PhoneM.AutoSize = true;
+            label_PhoneM.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_PhoneM.ForeColor = Color.White;
+            label_PhoneM.Location = new Point(627, 194);
+            label_PhoneM.Name = "label_PhoneM";
+            label_PhoneM.Size = new Size(88, 31);
+            label_PhoneM.TabIndex = 56;
+            label_PhoneM.Text = "Phone:";
+            // 
+            // buttonPreviousM2
+            // 
+            buttonPreviousM2.BackColor = Color.FromArgb(187, 233, 237);
+            buttonPreviousM2.Cursor = Cursors.Hand;
+            buttonPreviousM2.FlatStyle = FlatStyle.Popup;
+            buttonPreviousM2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonPreviousM2.ForeColor = Color.Black;
+            buttonPreviousM2.Location = new Point(590, 553);
+            buttonPreviousM2.Margin = new Padding(0);
+            buttonPreviousM2.Name = "buttonPreviousM2";
+            buttonPreviousM2.Size = new Size(114, 38);
+            buttonPreviousM2.TabIndex = 55;
+            buttonPreviousM2.Text = "Previous";
+            buttonPreviousM2.UseVisualStyleBackColor = false;
+            buttonPreviousM2.Click += buttonPreviousM2_Click;
             // 
             // buttonNextM2
             // 
@@ -2595,106 +2754,107 @@
             buttonNextM2.TabIndex = 54;
             buttonNextM2.Text = "Next";
             buttonNextM2.UseVisualStyleBackColor = false;
+            buttonNextM2.Click += buttonNextM2_Click;
             // 
-            // comboBox1
+            // comboBox_GenderM
             // 
-            comboBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
-            comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
-            comboBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Male", "Female" });
-            comboBox1.Location = new Point(499, 476);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(370, 36);
-            comboBox1.TabIndex = 53;
+            comboBox_GenderM.AutoCompleteMode = AutoCompleteMode.Suggest;
+            comboBox_GenderM.AutoCompleteSource = AutoCompleteSource.ListItems;
+            comboBox_GenderM.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            comboBox_GenderM.FormattingEnabled = true;
+            comboBox_GenderM.Items.AddRange(new object[] { "Male", "Female" });
+            comboBox_GenderM.Location = new Point(266, 460);
+            comboBox_GenderM.Name = "comboBox_GenderM";
+            comboBox_GenderM.Size = new Size(266, 36);
+            comboBox_GenderM.TabIndex = 53;
             // 
-            // dateTimePicker1
+            // dateTimePicker_DOBM
             // 
-            dateTimePicker1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dateTimePicker1.Location = new Point(499, 405);
-            dateTimePicker1.Margin = new Padding(0);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(370, 34);
-            dateTimePicker1.TabIndex = 52;
+            dateTimePicker_DOBM.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dateTimePicker_DOBM.Location = new Point(266, 389);
+            dateTimePicker_DOBM.Margin = new Padding(0);
+            dateTimePicker_DOBM.Name = "dateTimePicker_DOBM";
+            dateTimePicker_DOBM.Size = new Size(266, 34);
+            dateTimePicker_DOBM.TabIndex = 52;
             // 
-            // textBox4
+            // textBox_LnameM
             // 
-            textBox4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox4.Location = new Point(499, 334);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(370, 34);
-            textBox4.TabIndex = 51;
+            textBox_LnameM.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox_LnameM.Location = new Point(266, 318);
+            textBox_LnameM.Name = "textBox_LnameM";
+            textBox_LnameM.Size = new Size(266, 34);
+            textBox_LnameM.TabIndex = 51;
             // 
-            // textBox17
+            // textBox_FnameM
             // 
-            textBox17.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox17.Location = new Point(499, 267);
-            textBox17.Name = "textBox17";
-            textBox17.Size = new Size(370, 34);
-            textBox17.TabIndex = 50;
+            textBox_FnameM.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox_FnameM.Location = new Point(266, 251);
+            textBox_FnameM.Name = "textBox_FnameM";
+            textBox_FnameM.Size = new Size(266, 34);
+            textBox_FnameM.TabIndex = 50;
             // 
-            // textBox18
+            // textBox_NIDM
             // 
-            textBox18.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox18.Location = new Point(499, 204);
-            textBox18.Name = "textBox18";
-            textBox18.Size = new Size(370, 34);
-            textBox18.TabIndex = 49;
+            textBox_NIDM.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox_NIDM.Location = new Point(266, 188);
+            textBox_NIDM.Name = "textBox_NIDM";
+            textBox_NIDM.Size = new Size(266, 34);
+            textBox_NIDM.TabIndex = 49;
             // 
-            // label24
+            // label_GenderM
             // 
-            label24.AutoSize = true;
-            label24.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label24.ForeColor = Color.White;
-            label24.Location = new Point(250, 477);
-            label24.Name = "label24";
-            label24.Size = new Size(98, 31);
-            label24.TabIndex = 48;
-            label24.Text = "Gender:";
+            label_GenderM.AutoSize = true;
+            label_GenderM.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_GenderM.ForeColor = Color.White;
+            label_GenderM.Location = new Point(19, 459);
+            label_GenderM.Name = "label_GenderM";
+            label_GenderM.Size = new Size(98, 31);
+            label_GenderM.TabIndex = 48;
+            label_GenderM.Text = "Gender:";
             // 
-            // label25
+            // label_DOBM
             // 
-            label25.AutoSize = true;
-            label25.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label25.ForeColor = Color.White;
-            label25.Location = new Point(250, 405);
-            label25.Name = "label25";
-            label25.Size = new Size(160, 31);
-            label25.TabIndex = 47;
-            label25.Text = "Date of Birth:";
+            label_DOBM.AutoSize = true;
+            label_DOBM.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_DOBM.ForeColor = Color.White;
+            label_DOBM.Location = new Point(17, 389);
+            label_DOBM.Name = "label_DOBM";
+            label_DOBM.Size = new Size(160, 31);
+            label_DOBM.TabIndex = 47;
+            label_DOBM.Text = "Date of Birth:";
             // 
-            // label26
+            // label_LnameM
             // 
-            label26.AutoSize = true;
-            label26.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label26.ForeColor = Color.White;
-            label26.Location = new Point(250, 337);
-            label26.Name = "label26";
-            label26.Size = new Size(132, 31);
-            label26.TabIndex = 46;
-            label26.Text = "Last Name:";
+            label_LnameM.AutoSize = true;
+            label_LnameM.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_LnameM.ForeColor = Color.White;
+            label_LnameM.Location = new Point(17, 321);
+            label_LnameM.Name = "label_LnameM";
+            label_LnameM.Size = new Size(132, 31);
+            label_LnameM.TabIndex = 46;
+            label_LnameM.Text = "Last Name:";
             // 
-            // label27
+            // label_FnameM
             // 
-            label27.AutoSize = true;
-            label27.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label27.ForeColor = Color.White;
-            label27.Location = new Point(250, 270);
-            label27.Name = "label27";
-            label27.Size = new Size(136, 31);
-            label27.TabIndex = 45;
-            label27.Text = "First Name:";
+            label_FnameM.AutoSize = true;
+            label_FnameM.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_FnameM.ForeColor = Color.White;
+            label_FnameM.Location = new Point(17, 254);
+            label_FnameM.Name = "label_FnameM";
+            label_FnameM.Size = new Size(136, 31);
+            label_FnameM.TabIndex = 45;
+            label_FnameM.Text = "First Name:";
             // 
-            // label28
+            // label_NIDM
             // 
-            label28.AutoSize = true;
-            label28.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label28.ForeColor = Color.White;
-            label28.Location = new Point(250, 198);
-            label28.Name = "label28";
-            label28.Size = new Size(157, 31);
-            label28.TabIndex = 44;
-            label28.Text = "NID Number:";
+            label_NIDM.AutoSize = true;
+            label_NIDM.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_NIDM.ForeColor = Color.White;
+            label_NIDM.Location = new Point(17, 182);
+            label_NIDM.Name = "label_NIDM";
+            label_NIDM.Size = new Size(157, 31);
+            label_NIDM.TabIndex = 44;
+            label_NIDM.Text = "NID Number:";
             // 
             // ModularTopPanel
             // 
@@ -2728,6 +2888,7 @@
             buttonExitM2.SizeMode = PictureBoxSizeMode.Zoom;
             buttonExitM2.TabIndex = 51;
             buttonExitM2.TabStop = false;
+            buttonExitM2.Click += buttonExitM2_Click;
             // 
             // buttonBackM2
             // 
@@ -2739,6 +2900,7 @@
             buttonBackM2.SizeMode = PictureBoxSizeMode.Zoom;
             buttonBackM2.TabIndex = 50;
             buttonBackM2.TabStop = false;
+            buttonBackM2.Click += buttonBackM2_Click;
             // 
             // label37
             // 
@@ -2764,21 +2926,21 @@
             // 
             label39.AutoSize = true;
             label39.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label39.Location = new Point(406, 76);
+            label39.Location = new Point(386, 76);
             label39.Name = "label39";
-            label39.Size = new Size(101, 46);
+            label39.Size = new Size(130, 46);
             label39.TabIndex = 46;
-            label39.Text = "  Contract\r\nInformation";
+            label39.Text = "Modular Admin\r\n   Information";
             // 
             // label40
             // 
             label40.AutoSize = true;
             label40.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label40.Location = new Point(157, 76);
+            label40.Location = new Point(169, 76);
             label40.Name = "label40";
-            label40.Size = new Size(101, 46);
+            label40.Size = new Size(84, 46);
             label40.TabIndex = 45;
-            label40.Text = "   Personal\r\nInformation";
+            label40.Text = "Company\r\n  Details";
             // 
             // textBox22
             // 
@@ -2861,37 +3023,939 @@
             pictureBox43.TabIndex = 37;
             pictureBox43.TabStop = false;
             // 
-            // buttonPreviousM2
+            // ModularPanel3
             // 
-            buttonPreviousM2.BackColor = Color.FromArgb(187, 233, 237);
-            buttonPreviousM2.Cursor = Cursors.Hand;
-            buttonPreviousM2.FlatStyle = FlatStyle.Popup;
-            buttonPreviousM2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonPreviousM2.ForeColor = Color.Black;
-            buttonPreviousM2.Location = new Point(590, 553);
-            buttonPreviousM2.Margin = new Padding(0);
-            buttonPreviousM2.Name = "buttonPreviousM2";
-            buttonPreviousM2.Size = new Size(114, 38);
-            buttonPreviousM2.TabIndex = 55;
-            buttonPreviousM2.Text = "Previous";
-            buttonPreviousM2.UseVisualStyleBackColor = false;
+            ModularPanel3.BackColor = Color.FromArgb(48, 56, 79);
+            ModularPanel3.Controls.Add(checkBox_ShowPasswordM);
+            ModularPanel3.Controls.Add(textBox_Password2M);
+            ModularPanel3.Controls.Add(textBox_Password1M);
+            ModularPanel3.Controls.Add(textBox_UsernameM);
+            ModularPanel3.Controls.Add(label_Password2M);
+            ModularPanel3.Controls.Add(label_Password1M);
+            ModularPanel3.Controls.Add(label_UsernameM);
+            ModularPanel3.Controls.Add(buttonPrevious3_M);
+            ModularPanel3.Controls.Add(buttonNext3_M);
+            ModularPanel3.Controls.Add(TopModularPanel3);
+            ModularPanel3.Location = new Point(0, 0);
+            ModularPanel3.Name = "ModularPanel3";
+            ModularPanel3.Size = new Size(1105, 649);
+            ModularPanel3.TabIndex = 62;
+            // 
+            // checkBox_ShowPasswordM
+            // 
+            checkBox_ShowPasswordM.AutoSize = true;
+            checkBox_ShowPasswordM.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            checkBox_ShowPasswordM.ForeColor = Color.White;
+            checkBox_ShowPasswordM.Location = new Point(718, 448);
+            checkBox_ShowPasswordM.Name = "checkBox_ShowPasswordM";
+            checkBox_ShowPasswordM.Size = new Size(151, 27);
+            checkBox_ShowPasswordM.TabIndex = 77;
+            checkBox_ShowPasswordM.Text = "Show Password";
+            checkBox_ShowPasswordM.UseVisualStyleBackColor = true;
+            checkBox_ShowPasswordM.CheckedChanged += checkBox_ShowPasswordM_CheckedChanged;
+            // 
+            // textBox_Password2M
+            // 
+            textBox_Password2M.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox_Password2M.Location = new Point(499, 387);
+            textBox_Password2M.Name = "textBox_Password2M";
+            textBox_Password2M.Size = new Size(370, 34);
+            textBox_Password2M.TabIndex = 76;
+            textBox_Password2M.UseSystemPasswordChar = true;
+            // 
+            // textBox_Password1M
+            // 
+            textBox_Password1M.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox_Password1M.Location = new Point(499, 318);
+            textBox_Password1M.Name = "textBox_Password1M";
+            textBox_Password1M.Size = new Size(370, 34);
+            textBox_Password1M.TabIndex = 75;
+            textBox_Password1M.UseSystemPasswordChar = true;
+            // 
+            // textBox_UsernameM
+            // 
+            textBox_UsernameM.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox_UsernameM.Location = new Point(499, 250);
+            textBox_UsernameM.Name = "textBox_UsernameM";
+            textBox_UsernameM.Size = new Size(370, 34);
+            textBox_UsernameM.TabIndex = 74;
+            // 
+            // label_Password2M
+            // 
+            label_Password2M.AutoSize = true;
+            label_Password2M.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_Password2M.ForeColor = Color.White;
+            label_Password2M.Location = new Point(250, 383);
+            label_Password2M.Name = "label_Password2M";
+            label_Password2M.Size = new Size(200, 31);
+            label_Password2M.TabIndex = 73;
+            label_Password2M.Text = "Retype password:";
+            // 
+            // label_Password1M
+            // 
+            label_Password1M.AutoSize = true;
+            label_Password1M.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_Password1M.ForeColor = Color.White;
+            label_Password1M.Location = new Point(250, 316);
+            label_Password1M.Name = "label_Password1M";
+            label_Password1M.Size = new Size(120, 31);
+            label_Password1M.TabIndex = 72;
+            label_Password1M.Text = "Password:";
+            // 
+            // label_UsernameM
+            // 
+            label_UsernameM.AutoSize = true;
+            label_UsernameM.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_UsernameM.ForeColor = Color.White;
+            label_UsernameM.Location = new Point(250, 244);
+            label_UsernameM.Name = "label_UsernameM";
+            label_UsernameM.Size = new Size(127, 31);
+            label_UsernameM.TabIndex = 71;
+            label_UsernameM.Text = "Username:";
+            // 
+            // buttonPrevious3_M
+            // 
+            buttonPrevious3_M.BackColor = Color.FromArgb(187, 233, 237);
+            buttonPrevious3_M.Cursor = Cursors.Hand;
+            buttonPrevious3_M.FlatStyle = FlatStyle.Popup;
+            buttonPrevious3_M.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonPrevious3_M.ForeColor = Color.Black;
+            buttonPrevious3_M.Location = new Point(590, 553);
+            buttonPrevious3_M.Margin = new Padding(0);
+            buttonPrevious3_M.Name = "buttonPrevious3_M";
+            buttonPrevious3_M.Size = new Size(114, 38);
+            buttonPrevious3_M.TabIndex = 55;
+            buttonPrevious3_M.Text = "Previous";
+            buttonPrevious3_M.UseVisualStyleBackColor = false;
+            buttonPrevious3_M.Click += buttonPrevious3_M_Click;
+            // 
+            // buttonNext3_M
+            // 
+            buttonNext3_M.BackColor = Color.FromArgb(187, 233, 237);
+            buttonNext3_M.Cursor = Cursors.Hand;
+            buttonNext3_M.FlatStyle = FlatStyle.Popup;
+            buttonNext3_M.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonNext3_M.ForeColor = Color.Black;
+            buttonNext3_M.Location = new Point(762, 553);
+            buttonNext3_M.Margin = new Padding(0);
+            buttonNext3_M.Name = "buttonNext3_M";
+            buttonNext3_M.Size = new Size(107, 38);
+            buttonNext3_M.TabIndex = 54;
+            buttonNext3_M.Text = "Next";
+            buttonNext3_M.UseVisualStyleBackColor = false;
+            buttonNext3_M.Click += buttonNext3_M_Click;
+            // 
+            // TopModularPanel3
+            // 
+            TopModularPanel3.BackColor = Color.White;
+            TopModularPanel3.Controls.Add(buttonExit3_M);
+            TopModularPanel3.Controls.Add(buttonBack3_M);
+            TopModularPanel3.Controls.Add(label44);
+            TopModularPanel3.Controls.Add(label45);
+            TopModularPanel3.Controls.Add(label46);
+            TopModularPanel3.Controls.Add(label47);
+            TopModularPanel3.Controls.Add(textBox31);
+            TopModularPanel3.Controls.Add(textBox32);
+            TopModularPanel3.Controls.Add(pictureBox44);
+            TopModularPanel3.Controls.Add(textBox33);
+            TopModularPanel3.Controls.Add(pictureBox45);
+            TopModularPanel3.Controls.Add(pictureBox46);
+            TopModularPanel3.Controls.Add(pictureBox47);
+            TopModularPanel3.Controls.Add(pictureBox48);
+            TopModularPanel3.Location = new Point(3, 3);
+            TopModularPanel3.Name = "TopModularPanel3";
+            TopModularPanel3.Size = new Size(1105, 125);
+            TopModularPanel3.TabIndex = 0;
+            // 
+            // buttonExit3_M
+            // 
+            buttonExit3_M.Cursor = Cursors.Hand;
+            buttonExit3_M.Image = (Image)resources.GetObject("buttonExit3_M.Image");
+            buttonExit3_M.Location = new Point(1054, 3);
+            buttonExit3_M.Name = "buttonExit3_M";
+            buttonExit3_M.Size = new Size(46, 30);
+            buttonExit3_M.SizeMode = PictureBoxSizeMode.Zoom;
+            buttonExit3_M.TabIndex = 51;
+            buttonExit3_M.TabStop = false;
+            buttonExit3_M.Click += buttonExit3_M_Click;
+            // 
+            // buttonBack3_M
+            // 
+            buttonBack3_M.Cursor = Cursors.Hand;
+            buttonBack3_M.Image = (Image)resources.GetObject("buttonBack3_M.Image");
+            buttonBack3_M.Location = new Point(1006, 3);
+            buttonBack3_M.Name = "buttonBack3_M";
+            buttonBack3_M.Size = new Size(46, 30);
+            buttonBack3_M.SizeMode = PictureBoxSizeMode.Zoom;
+            buttonBack3_M.TabIndex = 50;
+            buttonBack3_M.TabStop = false;
+            buttonBack3_M.Click += buttonBack3_M_Click;
+            // 
+            // label44
+            // 
+            label44.AutoSize = true;
+            label44.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label44.Location = new Point(893, 87);
+            label44.Name = "label44";
+            label44.Size = new Size(64, 23);
+            label44.TabIndex = 48;
+            label44.Text = "Submit";
+            // 
+            // label45
+            // 
+            label45.AutoSize = true;
+            label45.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label45.Location = new Point(638, 76);
+            label45.Name = "label45";
+            label45.Size = new Size(95, 46);
+            label45.TabIndex = 47;
+            label45.Text = "  Account \r\nCredentials";
+            // 
+            // label46
+            // 
+            label46.AutoSize = true;
+            label46.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label46.Location = new Point(386, 76);
+            label46.Name = "label46";
+            label46.Size = new Size(130, 46);
+            label46.TabIndex = 46;
+            label46.Text = "Modular Admin\r\n   Information";
+            // 
+            // label47
+            // 
+            label47.AutoSize = true;
+            label47.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label47.Location = new Point(169, 76);
+            label47.Name = "label47";
+            label47.Size = new Size(84, 46);
+            label47.TabIndex = 45;
+            label47.Text = "Company\r\n  Details";
+            // 
+            // textBox31
+            // 
+            textBox31.BackColor = Color.Silver;
+            textBox31.Location = new Point(726, 41);
+            textBox31.Multiline = true;
+            textBox31.Name = "textBox31";
+            textBox31.Size = new Size(150, 5);
+            textBox31.TabIndex = 42;
+            textBox31.Text = "                    ";
+            // 
+            // textBox32
+            // 
+            textBox32.BackColor = Color.Navy;
+            textBox32.BorderStyle = BorderStyle.None;
+            textBox32.Location = new Point(488, 41);
+            textBox32.Multiline = true;
+            textBox32.Name = "textBox32";
+            textBox32.Size = new Size(150, 5);
+            textBox32.TabIndex = 44;
+            textBox32.Text = "                    ";
+            // 
+            // pictureBox44
+            // 
+            pictureBox44.Image = (Image)resources.GetObject("pictureBox44.Image");
+            pictureBox44.Location = new Point(-3, -14);
+            pictureBox44.Name = "pictureBox44";
+            pictureBox44.Size = new Size(125, 66);
+            pictureBox44.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox44.TabIndex = 38;
+            pictureBox44.TabStop = false;
+            // 
+            // textBox33
+            // 
+            textBox33.BackColor = Color.Navy;
+            textBox33.BorderStyle = BorderStyle.None;
+            textBox33.Location = new Point(246, 41);
+            textBox33.Multiline = true;
+            textBox33.Name = "textBox33";
+            textBox33.Size = new Size(150, 5);
+            textBox33.TabIndex = 39;
+            textBox33.Text = "                    ";
+            // 
+            // pictureBox45
+            // 
+            pictureBox45.Image = (Image)resources.GetObject("pictureBox45.Image");
+            pictureBox45.Location = new Point(859, 11);
+            pictureBox45.Name = "pictureBox45";
+            pictureBox45.Size = new Size(125, 62);
+            pictureBox45.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox45.TabIndex = 43;
+            pictureBox45.TabStop = false;
+            // 
+            // pictureBox46
+            // 
+            pictureBox46.Image = (Image)resources.GetObject("pictureBox46.Image");
+            pictureBox46.Location = new Point(618, 11);
+            pictureBox46.Name = "pictureBox46";
+            pictureBox46.Size = new Size(125, 62);
+            pictureBox46.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox46.TabIndex = 40;
+            pictureBox46.TabStop = false;
+            // 
+            // pictureBox47
+            // 
+            pictureBox47.Image = (Image)resources.GetObject("pictureBox47.Image");
+            pictureBox47.Location = new Point(383, 11);
+            pictureBox47.Name = "pictureBox47";
+            pictureBox47.Size = new Size(125, 62);
+            pictureBox47.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox47.TabIndex = 41;
+            pictureBox47.TabStop = false;
+            // 
+            // pictureBox48
+            // 
+            pictureBox48.Image = (Image)resources.GetObject("pictureBox48.Image");
+            pictureBox48.Location = new Point(142, 11);
+            pictureBox48.Name = "pictureBox48";
+            pictureBox48.Size = new Size(125, 62);
+            pictureBox48.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox48.TabIndex = 37;
+            pictureBox48.TabStop = false;
+            // 
+            // ModularPanel4
+            // 
+            ModularPanel4.BackColor = Color.FromArgb(48, 56, 79);
+            ModularPanel4.Controls.Add(label_vtype);
+            ModularPanel4.Controls.Add(label_grid);
+            ModularPanel4.Controls.Add(label_cname);
+            ModularPanel4.Controls.Add(textBox_cname);
+            ModularPanel4.Controls.Add(textBox_vtype);
+            ModularPanel4.Controls.Add(textBox_grid);
+            ModularPanel4.Controls.Add(label_gendermm);
+            ModularPanel4.Controls.Add(label_dobmm);
+            ModularPanel4.Controls.Add(label_lnamemm);
+            ModularPanel4.Controls.Add(label_fnamemm);
+            ModularPanel4.Controls.Add(label_nidmm);
+            ModularPanel4.Controls.Add(textBox_nidmm);
+            ModularPanel4.Controls.Add(textBox_passwordmm);
+            ModularPanel4.Controls.Add(textBox_usernamemm);
+            ModularPanel4.Controls.Add(label_passwordmm);
+            ModularPanel4.Controls.Add(label_usernamemm);
+            ModularPanel4.Controls.Add(textBox_addressmm);
+            ModularPanel4.Controls.Add(textBox_emailmm);
+            ModularPanel4.Controls.Add(textBox_phonemm);
+            ModularPanel4.Controls.Add(label_addressmm);
+            ModularPanel4.Controls.Add(label_emailmm);
+            ModularPanel4.Controls.Add(label_phonemm);
+            ModularPanel4.Controls.Add(textBox_gendermm);
+            ModularPanel4.Controls.Add(textBox_dobmm);
+            ModularPanel4.Controls.Add(textBox_lnamemm);
+            ModularPanel4.Controls.Add(textBox_fnamemm);
+            ModularPanel4.Controls.Add(buttonPreviousM4);
+            ModularPanel4.Controls.Add(buttonRegisterM);
+            ModularPanel4.Controls.Add(button_ACMM);
+            ModularPanel4.Controls.Add(buttonEditMAI);
+            ModularPanel4.Controls.Add(button_EditCD);
+            ModularPanel4.Controls.Add(label50);
+            ModularPanel4.Controls.Add(label51);
+            ModularPanel4.Controls.Add(label52);
+            ModularPanel4.Controls.Add(panel2);
+            ModularPanel4.Location = new Point(0, 0);
+            ModularPanel4.Name = "ModularPanel4";
+            ModularPanel4.Size = new Size(1105, 675);
+            ModularPanel4.TabIndex = 72;
+            // 
+            // label_vtype
+            // 
+            label_vtype.AutoSize = true;
+            label_vtype.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_vtype.ForeColor = Color.White;
+            label_vtype.Location = new Point(12, 372);
+            label_vtype.Name = "label_vtype";
+            label_vtype.Size = new Size(136, 28);
+            label_vtype.TabIndex = 56;
+            label_vtype.Text = "Vehicle Type:";
+            // 
+            // label_grid
+            // 
+            label_grid.AutoSize = true;
+            label_grid.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_grid.ForeColor = Color.White;
+            label_grid.Location = new Point(12, 320);
+            label_grid.Name = "label_grid";
+            label_grid.Size = new Size(131, 28);
+            label_grid.TabIndex = 55;
+            label_grid.Text = "Govt Reg ID:";
+            // 
+            // label_cname
+            // 
+            label_cname.AutoSize = true;
+            label_cname.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_cname.ForeColor = Color.White;
+            label_cname.Location = new Point(11, 273);
+            label_cname.Name = "label_cname";
+            label_cname.Size = new Size(73, 28);
+            label_cname.TabIndex = 54;
+            label_cname.Text = "Name:";
+            // 
+            // textBox_cname
+            // 
+            textBox_cname.BackColor = Color.FromArgb(48, 56, 79);
+            textBox_cname.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox_cname.ForeColor = Color.White;
+            textBox_cname.Location = new Point(168, 270);
+            textBox_cname.Margin = new Padding(0);
+            textBox_cname.Name = "textBox_cname";
+            textBox_cname.ReadOnly = true;
+            textBox_cname.Size = new Size(180, 34);
+            textBox_cname.TabIndex = 53;
+            // 
+            // textBox_vtype
+            // 
+            textBox_vtype.BackColor = Color.FromArgb(48, 56, 79);
+            textBox_vtype.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox_vtype.ForeColor = Color.White;
+            textBox_vtype.Location = new Point(168, 372);
+            textBox_vtype.Margin = new Padding(0);
+            textBox_vtype.Multiline = true;
+            textBox_vtype.Name = "textBox_vtype";
+            textBox_vtype.ReadOnly = true;
+            textBox_vtype.Size = new Size(180, 116);
+            textBox_vtype.TabIndex = 52;
+            // 
+            // textBox_grid
+            // 
+            textBox_grid.BackColor = Color.FromArgb(48, 56, 79);
+            textBox_grid.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox_grid.ForeColor = Color.White;
+            textBox_grid.Location = new Point(168, 320);
+            textBox_grid.Margin = new Padding(0);
+            textBox_grid.Name = "textBox_grid";
+            textBox_grid.ReadOnly = true;
+            textBox_grid.Size = new Size(180, 34);
+            textBox_grid.TabIndex = 51;
+            // 
+            // label_gendermm
+            // 
+            label_gendermm.AutoSize = true;
+            label_gendermm.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_gendermm.ForeColor = Color.White;
+            label_gendermm.Location = new Point(371, 449);
+            label_gendermm.Name = "label_gendermm";
+            label_gendermm.Size = new Size(86, 28);
+            label_gendermm.TabIndex = 50;
+            label_gendermm.Text = "Gender:";
+            // 
+            // label_dobmm
+            // 
+            label_dobmm.AutoSize = true;
+            label_dobmm.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_dobmm.ForeColor = Color.White;
+            label_dobmm.Location = new Point(371, 394);
+            label_dobmm.Name = "label_dobmm";
+            label_dobmm.Size = new Size(142, 28);
+            label_dobmm.TabIndex = 49;
+            label_dobmm.Text = "Date of Birth:";
+            // 
+            // label_lnamemm
+            // 
+            label_lnamemm.AutoSize = true;
+            label_lnamemm.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_lnamemm.ForeColor = Color.White;
+            label_lnamemm.Location = new Point(371, 346);
+            label_lnamemm.Name = "label_lnamemm";
+            label_lnamemm.Size = new Size(117, 28);
+            label_lnamemm.TabIndex = 48;
+            label_lnamemm.Text = "Last Name:";
+            // 
+            // label_fnamemm
+            // 
+            label_fnamemm.AutoSize = true;
+            label_fnamemm.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_fnamemm.ForeColor = Color.White;
+            label_fnamemm.Location = new Point(371, 294);
+            label_fnamemm.Name = "label_fnamemm";
+            label_fnamemm.Size = new Size(120, 28);
+            label_fnamemm.TabIndex = 47;
+            label_fnamemm.Text = "First Name:";
+            // 
+            // label_nidmm
+            // 
+            label_nidmm.AutoSize = true;
+            label_nidmm.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_nidmm.ForeColor = Color.White;
+            label_nidmm.Location = new Point(371, 247);
+            label_nidmm.Name = "label_nidmm";
+            label_nidmm.Size = new Size(138, 28);
+            label_nidmm.TabIndex = 46;
+            label_nidmm.Text = "NID Number:";
+            // 
+            // textBox_nidmm
+            // 
+            textBox_nidmm.BackColor = Color.FromArgb(48, 56, 79);
+            textBox_nidmm.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox_nidmm.ForeColor = Color.White;
+            textBox_nidmm.Location = new Point(527, 244);
+            textBox_nidmm.Margin = new Padding(0);
+            textBox_nidmm.Name = "textBox_nidmm";
+            textBox_nidmm.ReadOnly = true;
+            textBox_nidmm.Size = new Size(218, 34);
+            textBox_nidmm.TabIndex = 45;
+            // 
+            // textBox_passwordmm
+            // 
+            textBox_passwordmm.BackColor = Color.FromArgb(48, 56, 79);
+            textBox_passwordmm.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox_passwordmm.ForeColor = Color.White;
+            textBox_passwordmm.Location = new Point(879, 355);
+            textBox_passwordmm.Margin = new Padding(0);
+            textBox_passwordmm.Name = "textBox_passwordmm";
+            textBox_passwordmm.ReadOnly = true;
+            textBox_passwordmm.Size = new Size(218, 34);
+            textBox_passwordmm.TabIndex = 44;
+            // 
+            // textBox_usernamemm
+            // 
+            textBox_usernamemm.BackColor = Color.FromArgb(48, 56, 79);
+            textBox_usernamemm.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox_usernamemm.ForeColor = Color.White;
+            textBox_usernamemm.Location = new Point(879, 302);
+            textBox_usernamemm.Margin = new Padding(0);
+            textBox_usernamemm.Name = "textBox_usernamemm";
+            textBox_usernamemm.ReadOnly = true;
+            textBox_usernamemm.Size = new Size(218, 34);
+            textBox_usernamemm.TabIndex = 43;
+            // 
+            // label_passwordmm
+            // 
+            label_passwordmm.AutoSize = true;
+            label_passwordmm.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_passwordmm.ForeColor = Color.White;
+            label_passwordmm.Location = new Point(764, 358);
+            label_passwordmm.Name = "label_passwordmm";
+            label_passwordmm.Size = new Size(106, 28);
+            label_passwordmm.TabIndex = 42;
+            label_passwordmm.Text = "Password:";
+            // 
+            // label_usernamemm
+            // 
+            label_usernamemm.AutoSize = true;
+            label_usernamemm.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_usernamemm.ForeColor = Color.White;
+            label_usernamemm.Location = new Point(764, 302);
+            label_usernamemm.Name = "label_usernamemm";
+            label_usernamemm.Size = new Size(111, 28);
+            label_usernamemm.TabIndex = 41;
+            label_usernamemm.Text = "Username:";
+            // 
+            // textBox_addressmm
+            // 
+            textBox_addressmm.BackColor = Color.FromArgb(48, 56, 79);
+            textBox_addressmm.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox_addressmm.ForeColor = Color.White;
+            textBox_addressmm.Location = new Point(527, 607);
+            textBox_addressmm.Margin = new Padding(0);
+            textBox_addressmm.Multiline = true;
+            textBox_addressmm.Name = "textBox_addressmm";
+            textBox_addressmm.ReadOnly = true;
+            textBox_addressmm.Size = new Size(218, 61);
+            textBox_addressmm.TabIndex = 40;
+            // 
+            // textBox_emailmm
+            // 
+            textBox_emailmm.BackColor = Color.FromArgb(48, 56, 79);
+            textBox_emailmm.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox_emailmm.ForeColor = Color.White;
+            textBox_emailmm.Location = new Point(527, 551);
+            textBox_emailmm.Margin = new Padding(0);
+            textBox_emailmm.Name = "textBox_emailmm";
+            textBox_emailmm.ReadOnly = true;
+            textBox_emailmm.Size = new Size(218, 34);
+            textBox_emailmm.TabIndex = 39;
+            // 
+            // textBox_phonemm
+            // 
+            textBox_phonemm.BackColor = Color.FromArgb(48, 56, 79);
+            textBox_phonemm.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox_phonemm.ForeColor = Color.White;
+            textBox_phonemm.Location = new Point(527, 501);
+            textBox_phonemm.Margin = new Padding(0);
+            textBox_phonemm.Name = "textBox_phonemm";
+            textBox_phonemm.ReadOnly = true;
+            textBox_phonemm.Size = new Size(218, 34);
+            textBox_phonemm.TabIndex = 38;
+            // 
+            // label_addressmm
+            // 
+            label_addressmm.AutoSize = true;
+            label_addressmm.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_addressmm.ForeColor = Color.White;
+            label_addressmm.Location = new Point(374, 607);
+            label_addressmm.Name = "label_addressmm";
+            label_addressmm.Size = new Size(92, 28);
+            label_addressmm.TabIndex = 37;
+            label_addressmm.Text = "Address:";
+            // 
+            // label_emailmm
+            // 
+            label_emailmm.AutoSize = true;
+            label_emailmm.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_emailmm.ForeColor = Color.White;
+            label_emailmm.Location = new Point(371, 554);
+            label_emailmm.Name = "label_emailmm";
+            label_emailmm.Size = new Size(69, 28);
+            label_emailmm.TabIndex = 36;
+            label_emailmm.Text = "Email:";
+            // 
+            // label_phonemm
+            // 
+            label_phonemm.AutoSize = true;
+            label_phonemm.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_phonemm.ForeColor = Color.White;
+            label_phonemm.Location = new Point(371, 501);
+            label_phonemm.Name = "label_phonemm";
+            label_phonemm.Size = new Size(76, 28);
+            label_phonemm.TabIndex = 35;
+            label_phonemm.Text = "Phone:";
+            // 
+            // textBox_gendermm
+            // 
+            textBox_gendermm.BackColor = Color.FromArgb(48, 56, 79);
+            textBox_gendermm.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox_gendermm.ForeColor = Color.White;
+            textBox_gendermm.Location = new Point(527, 449);
+            textBox_gendermm.Margin = new Padding(0);
+            textBox_gendermm.Name = "textBox_gendermm";
+            textBox_gendermm.ReadOnly = true;
+            textBox_gendermm.Size = new Size(218, 34);
+            textBox_gendermm.TabIndex = 34;
+            // 
+            // textBox_dobmm
+            // 
+            textBox_dobmm.BackColor = Color.FromArgb(48, 56, 79);
+            textBox_dobmm.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox_dobmm.ForeColor = Color.White;
+            textBox_dobmm.Location = new Point(527, 396);
+            textBox_dobmm.Margin = new Padding(0);
+            textBox_dobmm.Name = "textBox_dobmm";
+            textBox_dobmm.ReadOnly = true;
+            textBox_dobmm.Size = new Size(220, 34);
+            textBox_dobmm.TabIndex = 33;
+            // 
+            // textBox_lnamemm
+            // 
+            textBox_lnamemm.BackColor = Color.FromArgb(48, 56, 79);
+            textBox_lnamemm.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox_lnamemm.ForeColor = Color.White;
+            textBox_lnamemm.Location = new Point(527, 346);
+            textBox_lnamemm.Margin = new Padding(0);
+            textBox_lnamemm.Name = "textBox_lnamemm";
+            textBox_lnamemm.ReadOnly = true;
+            textBox_lnamemm.Size = new Size(218, 34);
+            textBox_lnamemm.TabIndex = 32;
+            // 
+            // textBox_fnamemm
+            // 
+            textBox_fnamemm.BackColor = Color.FromArgb(48, 56, 79);
+            textBox_fnamemm.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox_fnamemm.ForeColor = Color.White;
+            textBox_fnamemm.Location = new Point(527, 294);
+            textBox_fnamemm.Margin = new Padding(0);
+            textBox_fnamemm.Name = "textBox_fnamemm";
+            textBox_fnamemm.ReadOnly = true;
+            textBox_fnamemm.Size = new Size(218, 34);
+            textBox_fnamemm.TabIndex = 31;
+            // 
+            // buttonPreviousM4
+            // 
+            buttonPreviousM4.BackColor = Color.FromArgb(187, 233, 237);
+            buttonPreviousM4.Cursor = Cursors.Hand;
+            buttonPreviousM4.FlatStyle = FlatStyle.Popup;
+            buttonPreviousM4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonPreviousM4.ForeColor = Color.Black;
+            buttonPreviousM4.Location = new Point(774, 607);
+            buttonPreviousM4.Margin = new Padding(0);
+            buttonPreviousM4.Name = "buttonPreviousM4";
+            buttonPreviousM4.Size = new Size(122, 39);
+            buttonPreviousM4.TabIndex = 24;
+            buttonPreviousM4.Text = "Previous";
+            buttonPreviousM4.UseVisualStyleBackColor = false;
+            buttonPreviousM4.Click += buttonPreviousM4_Click;
+            // 
+            // buttonRegisterM
+            // 
+            buttonRegisterM.BackColor = Color.FromArgb(187, 233, 237);
+            buttonRegisterM.Cursor = Cursors.Hand;
+            buttonRegisterM.FlatStyle = FlatStyle.Popup;
+            buttonRegisterM.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonRegisterM.ForeColor = Color.Black;
+            buttonRegisterM.Location = new Point(959, 607);
+            buttonRegisterM.Margin = new Padding(0);
+            buttonRegisterM.Name = "buttonRegisterM";
+            buttonRegisterM.Size = new Size(122, 39);
+            buttonRegisterM.TabIndex = 23;
+            buttonRegisterM.Text = "Register";
+            buttonRegisterM.UseVisualStyleBackColor = false;
+            buttonRegisterM.Click += buttonRegisterM_Click;
+            // 
+            // button_ACMM
+            // 
+            button_ACMM.BackColor = Color.FromArgb(187, 233, 237);
+            button_ACMM.Cursor = Cursors.Hand;
+            button_ACMM.FlatStyle = FlatStyle.Popup;
+            button_ACMM.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button_ACMM.ForeColor = Color.Black;
+            button_ACMM.Location = new Point(896, 196);
+            button_ACMM.Margin = new Padding(0);
+            button_ACMM.Name = "button_ACMM";
+            button_ACMM.Size = new Size(71, 30);
+            button_ACMM.TabIndex = 22;
+            button_ACMM.Text = "Edit";
+            button_ACMM.UseVisualStyleBackColor = false;
+            button_ACMM.Click += button_ACMM_Click;
+            // 
+            // buttonEditMAI
+            // 
+            buttonEditMAI.BackColor = Color.FromArgb(187, 233, 237);
+            buttonEditMAI.Cursor = Cursors.Hand;
+            buttonEditMAI.FlatStyle = FlatStyle.Popup;
+            buttonEditMAI.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonEditMAI.ForeColor = Color.Black;
+            buttonEditMAI.Location = new Point(533, 192);
+            buttonEditMAI.Margin = new Padding(0);
+            buttonEditMAI.Name = "buttonEditMAI";
+            buttonEditMAI.Size = new Size(71, 30);
+            buttonEditMAI.TabIndex = 21;
+            buttonEditMAI.Text = "Edit";
+            buttonEditMAI.UseVisualStyleBackColor = false;
+            buttonEditMAI.Click += buttonEditMAI_Click;
+            // 
+            // button_EditCD
+            // 
+            button_EditCD.BackColor = Color.FromArgb(187, 233, 237);
+            button_EditCD.Cursor = Cursors.Hand;
+            button_EditCD.FlatStyle = FlatStyle.Popup;
+            button_EditCD.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button_EditCD.ForeColor = Color.Black;
+            button_EditCD.Location = new Point(168, 188);
+            button_EditCD.Margin = new Padding(0);
+            button_EditCD.Name = "button_EditCD";
+            button_EditCD.Size = new Size(71, 30);
+            button_EditCD.TabIndex = 20;
+            button_EditCD.Text = "Edit";
+            button_EditCD.UseVisualStyleBackColor = false;
+            button_EditCD.Click += button_EditCD_Click;
+            // 
+            // label50
+            // 
+            label50.AutoSize = true;
+            label50.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label50.ForeColor = Color.White;
+            label50.Location = new Point(815, 143);
+            label50.Name = "label50";
+            label50.Size = new Size(229, 31);
+            label50.TabIndex = 19;
+            label50.Text = "Account Credentials";
+            // 
+            // label51
+            // 
+            label51.AutoSize = true;
+            label51.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label51.ForeColor = Color.White;
+            label51.Location = new Point(416, 143);
+            label51.Name = "label51";
+            label51.Size = new Size(320, 31);
+            label51.TabIndex = 18;
+            label51.Text = "Modular Admin Information";
+            // 
+            // label52
+            // 
+            label52.AutoSize = true;
+            label52.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label52.ForeColor = Color.White;
+            label52.Location = new Point(107, 143);
+            label52.Name = "label52";
+            label52.Size = new Size(195, 31);
+            label52.TabIndex = 17;
+            label52.Text = "Company Details";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.White;
+            panel2.Controls.Add(buttonExitM4);
+            panel2.Controls.Add(label53);
+            panel2.Controls.Add(label54);
+            panel2.Controls.Add(label55);
+            panel2.Controls.Add(label56);
+            panel2.Controls.Add(textBox38);
+            panel2.Controls.Add(textBox39);
+            panel2.Controls.Add(textBox40);
+            panel2.Controls.Add(pictureBox28);
+            panel2.Controls.Add(pictureBox49);
+            panel2.Controls.Add(pictureBox50);
+            panel2.Controls.Add(pictureBox51);
+            panel2.Controls.Add(buttonBackM4);
+            panel2.Controls.Add(pictureBox53);
+            panel2.Location = new Point(3, 3);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1105, 125);
+            panel2.TabIndex = 0;
+            // 
+            // buttonExitM4
+            // 
+            buttonExitM4.Cursor = Cursors.Hand;
+            buttonExitM4.Image = (Image)resources.GetObject("buttonExitM4.Image");
+            buttonExitM4.Location = new Point(1054, 3);
+            buttonExitM4.Name = "buttonExitM4";
+            buttonExitM4.Size = new Size(46, 30);
+            buttonExitM4.SizeMode = PictureBoxSizeMode.Zoom;
+            buttonExitM4.TabIndex = 77;
+            buttonExitM4.TabStop = false;
+            buttonExitM4.Click += buttonExitM4_Click;
+            // 
+            // label53
+            // 
+            label53.AutoSize = true;
+            label53.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label53.Location = new Point(882, 83);
+            label53.Name = "label53";
+            label53.Size = new Size(64, 23);
+            label53.TabIndex = 75;
+            label53.Text = "Submit";
+            // 
+            // label54
+            // 
+            label54.AutoSize = true;
+            label54.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label54.Location = new Point(627, 72);
+            label54.Name = "label54";
+            label54.Size = new Size(95, 46);
+            label54.TabIndex = 74;
+            label54.Text = "  Account \r\nCredentials";
+            // 
+            // label55
+            // 
+            label55.AutoSize = true;
+            label55.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label55.Location = new Point(367, 72);
+            label55.Name = "label55";
+            label55.Size = new Size(130, 46);
+            label55.TabIndex = 73;
+            label55.Text = "Modular Admin\r\n   Information";
+            // 
+            // label56
+            // 
+            label56.AutoSize = true;
+            label56.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label56.Location = new Point(163, 72);
+            label56.Name = "label56";
+            label56.Size = new Size(84, 46);
+            label56.TabIndex = 72;
+            label56.Text = "Company\r\n  Details";
+            // 
+            // textBox38
+            // 
+            textBox38.BackColor = Color.Navy;
+            textBox38.BorderStyle = BorderStyle.None;
+            textBox38.Location = new Point(715, 37);
+            textBox38.Multiline = true;
+            textBox38.Name = "textBox38";
+            textBox38.Size = new Size(150, 5);
+            textBox38.TabIndex = 69;
+            textBox38.Text = "                    ";
+            // 
+            // textBox39
+            // 
+            textBox39.BackColor = Color.Navy;
+            textBox39.BorderStyle = BorderStyle.None;
+            textBox39.Location = new Point(477, 37);
+            textBox39.Multiline = true;
+            textBox39.Name = "textBox39";
+            textBox39.Size = new Size(150, 5);
+            textBox39.TabIndex = 71;
+            textBox39.Text = "                    ";
+            // 
+            // textBox40
+            // 
+            textBox40.BackColor = Color.Navy;
+            textBox40.BorderStyle = BorderStyle.None;
+            textBox40.Location = new Point(235, 37);
+            textBox40.Multiline = true;
+            textBox40.Name = "textBox40";
+            textBox40.Size = new Size(150, 5);
+            textBox40.TabIndex = 66;
+            textBox40.Text = "                    ";
+            // 
+            // pictureBox28
+            // 
+            pictureBox28.Image = (Image)resources.GetObject("pictureBox28.Image");
+            pictureBox28.Location = new Point(848, 7);
+            pictureBox28.Name = "pictureBox28";
+            pictureBox28.Size = new Size(125, 62);
+            pictureBox28.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox28.TabIndex = 70;
+            pictureBox28.TabStop = false;
+            // 
+            // pictureBox49
+            // 
+            pictureBox49.Image = (Image)resources.GetObject("pictureBox49.Image");
+            pictureBox49.Location = new Point(607, 7);
+            pictureBox49.Name = "pictureBox49";
+            pictureBox49.Size = new Size(125, 62);
+            pictureBox49.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox49.TabIndex = 67;
+            pictureBox49.TabStop = false;
+            // 
+            // pictureBox50
+            // 
+            pictureBox50.Image = (Image)resources.GetObject("pictureBox50.Image");
+            pictureBox50.Location = new Point(372, 7);
+            pictureBox50.Name = "pictureBox50";
+            pictureBox50.Size = new Size(125, 62);
+            pictureBox50.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox50.TabIndex = 68;
+            pictureBox50.TabStop = false;
+            // 
+            // pictureBox51
+            // 
+            pictureBox51.Image = (Image)resources.GetObject("pictureBox51.Image");
+            pictureBox51.Location = new Point(131, 7);
+            pictureBox51.Name = "pictureBox51";
+            pictureBox51.Size = new Size(125, 62);
+            pictureBox51.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox51.TabIndex = 65;
+            pictureBox51.TabStop = false;
+            // 
+            // buttonBackM4
+            // 
+            buttonBackM4.Cursor = Cursors.Hand;
+            buttonBackM4.Image = (Image)resources.GetObject("buttonBackM4.Image");
+            buttonBackM4.Location = new Point(1006, 3);
+            buttonBackM4.Name = "buttonBackM4";
+            buttonBackM4.Size = new Size(46, 30);
+            buttonBackM4.SizeMode = PictureBoxSizeMode.Zoom;
+            buttonBackM4.TabIndex = 50;
+            buttonBackM4.TabStop = false;
+            buttonBackM4.Click += buttonBackM4_Click;
+            // 
+            // pictureBox53
+            // 
+            pictureBox53.Image = (Image)resources.GetObject("pictureBox53.Image");
+            pictureBox53.Location = new Point(-3, -14);
+            pictureBox53.Name = "pictureBox53";
+            pictureBox53.Size = new Size(125, 66);
+            pictureBox53.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox53.TabIndex = 38;
+            pictureBox53.TabStop = false;
             // 
             // FormRegistration
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-
             BackColor = Color.FromArgb(48, 56, 79);
             ClientSize = new Size(1107, 725);
-            Controls.Add(ModularPanel2);
-            Controls.Add(MainPanel1);
-            Controls.Add(ModularPanel5);
-            Controls.Add(MainPanel0);
             Controls.Add(MainPanel5);
+            Controls.Add(ModularPanel4);
             Controls.Add(MainPanel4);
             Controls.Add(MainPanel3);
             Controls.Add(MainPanel2);
             Controls.Add(ModularPanel1);
+            Controls.Add(ModularPanel3);
+            Controls.Add(ModularPanel2);
+            Controls.Add(MainPanel1);
+            Controls.Add(ModularPanel5);
+            Controls.Add(MainPanel0);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormRegistration";
             StartPosition = FormStartPosition.CenterScreen;
@@ -2960,7 +4024,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox20).EndInit();
             ModularPanel5.ResumeLayout(false);
             ModularPanel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)buttonCopy_M).EndInit();
+            ((System.ComponentModel.ISupportInitialize)buttonCopyM).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)buttonExitM5).EndInit();
@@ -2991,6 +4055,28 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox41).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox42).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox43).EndInit();
+            ModularPanel3.ResumeLayout(false);
+            ModularPanel3.PerformLayout();
+            TopModularPanel3.ResumeLayout(false);
+            TopModularPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)buttonExit3_M).EndInit();
+            ((System.ComponentModel.ISupportInitialize)buttonBack3_M).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox44).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox45).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox46).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox47).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox48).EndInit();
+            ModularPanel4.ResumeLayout(false);
+            ModularPanel4.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)buttonExitM4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox28).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox49).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox50).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox51).EndInit();
+            ((System.ComponentModel.ISupportInitialize)buttonBackM4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox53).EndInit();
             ResumeLayout(false);
         }
 
@@ -3073,7 +4159,7 @@
         private Label label_Password1;
         private Label label_Username;
         private Panel MainPanel4;
-        private CheckBox checkBox1;
+        private CheckBox checkBox_ShowPasswordM;
         private TextBox tb_lname;
         private Button buttonNextM1;
         private Button button2;
@@ -3148,7 +4234,7 @@
         private GroupBox groupBox_Registration;
         private Button buttonNext0;
         private Panel ModularPanel5;
-        private PictureBox buttonCopy_M;
+        private PictureBox buttonCopyM;
         private Label label6;
         private TextBox textBox_UIDM;
         private Label label7;
@@ -3184,24 +4270,22 @@
         private PictureBox pictureBox38;
         private Label label_VehicleType;
         private CheckedListBox checkedListBox_VehicleType;
-        private TextBox textBox_Origin;
         private TextBox textBox_GovtReg;
         private TextBox textBox_CompanyName;
-        private Label label_Contry;
         private Label label_GovtReg;
         private Label label_CompanyName;
         private Panel ModularPanel2;
         private Button buttonNextM2;
-        private ComboBox comboBox1;
-        private DateTimePicker dateTimePicker1;
-        private TextBox textBox4;
-        private TextBox textBox17;
-        private TextBox textBox18;
-        private Label label24;
-        private Label label25;
-        private Label label26;
-        private Label label27;
-        private Label label28;
+        private ComboBox comboBox_GenderM;
+        private DateTimePicker dateTimePicker_DOBM;
+        private TextBox textBox_LnameM;
+        private TextBox textBox_FnameM;
+        private TextBox textBox_NIDM;
+        private Label label_GenderM;
+        private Label label_DOBM;
+        private Label label_LnameM;
+        private Label label_FnameM;
+        private Label label_NIDM;
         private Panel ModularTopPanel;
         private PictureBox buttonExitM2;
         private PictureBox buttonBackM2;
@@ -3218,5 +4302,85 @@
         private PictureBox pictureBox42;
         private PictureBox pictureBox43;
         private Button buttonPreviousM2;
+        private TextBox textBox_AddressM;
+        private TextBox textBox_EmailM;
+        private TextBox textBox_PhoneM;
+        private Label label_AddressM;
+        private Label label_EmailM;
+        private Label label_PhoneM;
+        private Panel ModularPanel3;
+        private Button buttonPrevious3_M;
+        private Button buttonNext3_M;
+        private Panel TopModularPanel3;
+        private PictureBox buttonExit3_M;
+        private PictureBox buttonBack3_M;
+        private Label label44;
+        private Label label45;
+        private Label label46;
+        private Label label47;
+        private TextBox textBox31;
+        private TextBox textBox32;
+        private PictureBox pictureBox44;
+        private TextBox textBox33;
+        private PictureBox pictureBox45;
+        private PictureBox pictureBox46;
+        private PictureBox pictureBox47;
+        private PictureBox pictureBox48;
+        private TextBox textBox_Password2M;
+        private TextBox textBox_Password1M;
+        private TextBox textBox_UsernameM;
+        private Label label_Password2M;
+        private Label label_Password1M;
+        private Label label_UsernameM;
+        private Panel ModularPanel4;
+        private Label label_gendermm;
+        private Label label_dobmm;
+        private Label label_lnamemm;
+        private Label label_fnamemm;
+        private Label label_nidmm;
+        private TextBox textBox_nidmm;
+        private TextBox textBox_passwordmm;
+        private TextBox textBox_usernamemm;
+        private Label label_passwordmm;
+        private Label label_usernamemm;
+        private TextBox textBox_addressmm;
+        private TextBox textBox_emailmm;
+        private TextBox textBox_phonemm;
+        private Label label_addressmm;
+        private Label label_emailmm;
+        private Label label_phonemm;
+        private TextBox textBox_gendermm;
+        private TextBox textBox_dobmm;
+        private TextBox textBox_lnamemm;
+        private TextBox textBox_fnamemm;
+        private Button buttonPreviousM4;
+        private Button buttonRegisterM;
+        private Button button_ACMM;
+        private Button buttonEditMAI;
+        private Button button_EditCD;
+        private Label label50;
+        private Label label51;
+        private Label label52;
+        private Panel panel2;
+        private PictureBox buttonExitM4;
+        private Label label53;
+        private Label label54;
+        private Label label55;
+        private Label label56;
+        private TextBox textBox38;
+        private TextBox textBox39;
+        private TextBox textBox40;
+        private PictureBox pictureBox28;
+        private PictureBox pictureBox49;
+        private PictureBox pictureBox50;
+        private PictureBox pictureBox51;
+        private PictureBox buttonBackM4;
+        private PictureBox pictureBox53;
+        private Label label_vtype;
+        private Label label_grid;
+        private Label label_cname;
+        private TextBox textBox_cname;
+        private TextBox textBox_vtype;
+        private TextBox textBox_grid;
     }
 }

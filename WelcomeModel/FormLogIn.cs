@@ -32,6 +32,7 @@
             FormHomePage formHomePage = new FormHomePage();
             formHomePage.Show();
             this.Hide();
+        }
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
