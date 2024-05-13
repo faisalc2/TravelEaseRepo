@@ -173,10 +173,82 @@
             buttonNext0 = new Button();
             groupBox_Registration = new GroupBox();
             radioButton_Consumer = new RadioButton();
-            radioButton_ModulerAdmin = new RadioButton();
+            radioButton_ModularAdmin = new RadioButton();
             buttonExit0 = new PictureBox();
             buttonBack0 = new PictureBox();
             pictureBox20 = new PictureBox();
+            ModularPanel5 = new Panel();
+            buttonCopy_M = new PictureBox();
+            label6 = new Label();
+            textBox_UIDM = new TextBox();
+            label7 = new Label();
+            panel3 = new Panel();
+            buttonExitM5 = new PictureBox();
+            label20 = new Label();
+            label21 = new Label();
+            label22 = new Label();
+            label23 = new Label();
+            textBox5 = new TextBox();
+            textBox6 = new TextBox();
+            textBox16 = new TextBox();
+            pictureBox32 = new PictureBox();
+            pictureBox33 = new PictureBox();
+            pictureBox34 = new PictureBox();
+            pictureBox35 = new PictureBox();
+            pictureBox36 = new PictureBox();
+            ModularPanel1 = new Panel();
+            label_VehicleType = new Label();
+            checkedListBox_VehicleType = new CheckedListBox();
+            buttonNextM1 = new Button();
+            textBox_Origin = new TextBox();
+            textBox_GovtReg = new TextBox();
+            textBox_CompanyName = new TextBox();
+            label_Contry = new Label();
+            label_GovtReg = new Label();
+            label_CompanyName = new Label();
+            ModularTopPanel1 = new Panel();
+            buttonExitM1 = new PictureBox();
+            buttonBackM1 = new PictureBox();
+            label29 = new Label();
+            label34 = new Label();
+            label35 = new Label();
+            label36 = new Label();
+            textBox19 = new TextBox();
+            textBox20 = new TextBox();
+            pictureBox29 = new PictureBox();
+            textBox21 = new TextBox();
+            pictureBox30 = new PictureBox();
+            pictureBox31 = new PictureBox();
+            pictureBox37 = new PictureBox();
+            pictureBox38 = new PictureBox();
+            ModularPanel2 = new Panel();
+            buttonNextM2 = new Button();
+            comboBox1 = new ComboBox();
+            dateTimePicker1 = new DateTimePicker();
+            textBox4 = new TextBox();
+            textBox17 = new TextBox();
+            textBox18 = new TextBox();
+            label24 = new Label();
+            label25 = new Label();
+            label26 = new Label();
+            label27 = new Label();
+            label28 = new Label();
+            ModularTopPanel = new Panel();
+            buttonExitM2 = new PictureBox();
+            buttonBackM2 = new PictureBox();
+            label37 = new Label();
+            label38 = new Label();
+            label39 = new Label();
+            label40 = new Label();
+            textBox22 = new TextBox();
+            textBox26 = new TextBox();
+            pictureBox39 = new PictureBox();
+            textBox27 = new TextBox();
+            pictureBox40 = new PictureBox();
+            pictureBox41 = new PictureBox();
+            pictureBox42 = new PictureBox();
+            pictureBox43 = new PictureBox();
+            buttonPreviousM2 = new Button();
             MainPanel1.SuspendLayout();
             TopPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)buttonExit1).BeginInit();
@@ -227,6 +299,33 @@
             ((System.ComponentModel.ISupportInitialize)buttonExit0).BeginInit();
             ((System.ComponentModel.ISupportInitialize)buttonBack0).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox20).BeginInit();
+            ModularPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)buttonCopy_M).BeginInit();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)buttonExitM5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox32).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox33).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox34).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox35).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox36).BeginInit();
+            ModularPanel1.SuspendLayout();
+            ModularTopPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)buttonExitM1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)buttonBackM1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox29).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox30).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox31).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox37).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox38).BeginInit();
+            ModularPanel2.SuspendLayout();
+            ModularTopPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)buttonExitM2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)buttonBackM2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox39).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox40).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox41).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox42).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox43).BeginInit();
             SuspendLayout();
             // 
             // MainPanel1
@@ -1897,7 +1996,7 @@
             // groupBox_Registration
             // 
             groupBox_Registration.Controls.Add(radioButton_Consumer);
-            groupBox_Registration.Controls.Add(radioButton_ModulerAdmin);
+            groupBox_Registration.Controls.Add(radioButton_ModularAdmin);
             groupBox_Registration.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox_Registration.ForeColor = Color.White;
             groupBox_Registration.Location = new Point(723, 231);
@@ -1922,19 +2021,19 @@
             radioButton_Consumer.Text = "Consumer";
             radioButton_Consumer.UseVisualStyleBackColor = true;
             // 
-            // radioButton_ModulerAdmin
+            // radioButton_ModularAdmin
             // 
-            radioButton_ModulerAdmin.AutoSize = true;
-            radioButton_ModulerAdmin.Cursor = Cursors.Hand;
-            radioButton_ModulerAdmin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            radioButton_ModulerAdmin.ForeColor = Color.White;
-            radioButton_ModulerAdmin.Location = new Point(42, 124);
-            radioButton_ModulerAdmin.Name = "radioButton_ModulerAdmin";
-            radioButton_ModulerAdmin.Size = new Size(181, 32);
-            radioButton_ModulerAdmin.TabIndex = 80;
-            radioButton_ModulerAdmin.TabStop = true;
-            radioButton_ModulerAdmin.Text = "Moduler Admin";
-            radioButton_ModulerAdmin.UseVisualStyleBackColor = true;
+            radioButton_ModularAdmin.AutoSize = true;
+            radioButton_ModularAdmin.Cursor = Cursors.Hand;
+            radioButton_ModularAdmin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            radioButton_ModularAdmin.ForeColor = Color.White;
+            radioButton_ModularAdmin.Location = new Point(42, 124);
+            radioButton_ModularAdmin.Name = "radioButton_ModularAdmin";
+            radioButton_ModularAdmin.Size = new Size(181, 32);
+            radioButton_ModularAdmin.TabIndex = 80;
+            radioButton_ModularAdmin.TabStop = true;
+            radioButton_ModularAdmin.Text = "Modular Admin";
+            radioButton_ModularAdmin.UseVisualStyleBackColor = true;
             // 
             // buttonExit0
             // 
@@ -1963,12 +2062,818 @@
             // pictureBox20
             // 
             pictureBox20.Image = (Image)resources.GetObject("pictureBox20.Image");
-            pictureBox20.Location = new Point(-29, 39);
+            pictureBox20.Location = new Point(-29, 4);
             pictureBox20.Name = "pictureBox20";
-            pictureBox20.Size = new Size(650, 604);
+            pictureBox20.Size = new Size(650, 639);
             pictureBox20.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox20.TabIndex = 73;
             pictureBox20.TabStop = false;
+            // 
+            // ModularPanel5
+            // 
+            ModularPanel5.BackColor = Color.FromArgb(48, 56, 79);
+            ModularPanel5.Controls.Add(buttonCopy_M);
+            ModularPanel5.Controls.Add(label6);
+            ModularPanel5.Controls.Add(textBox_UIDM);
+            ModularPanel5.Controls.Add(label7);
+            ModularPanel5.Controls.Add(panel3);
+            ModularPanel5.Location = new Point(0, 0);
+            ModularPanel5.Name = "ModularPanel5";
+            ModularPanel5.Size = new Size(1105, 646);
+            ModularPanel5.TabIndex = 83;
+            // 
+            // buttonCopy_M
+            // 
+            buttonCopy_M.Image = (Image)resources.GetObject("buttonCopy_M.Image");
+            buttonCopy_M.Location = new Point(830, 406);
+            buttonCopy_M.Name = "buttonCopy_M";
+            buttonCopy_M.Size = new Size(66, 40);
+            buttonCopy_M.SizeMode = PictureBoxSizeMode.Zoom;
+            buttonCopy_M.TabIndex = 5;
+            buttonCopy_M.TabStop = false;
+            buttonCopy_M.Click += buttonCopy_M_Click;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(292, 248);
+            label6.Name = "label6";
+            label6.Size = new Size(491, 54);
+            label6.TabIndex = 4;
+            label6.Text = "Registration successful!!!";
+            // 
+            // textBox_UIDM
+            // 
+            textBox_UIDM.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox_UIDM.Location = new Point(545, 412);
+            textBox_UIDM.Name = "textBox_UIDM";
+            textBox_UIDM.Size = new Size(255, 34);
+            textBox_UIDM.TabIndex = 3;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(218, 408);
+            label7.Name = "label7";
+            label7.Size = new Size(301, 31);
+            label7.TabIndex = 2;
+            label7.Text = "Your unique TravelEase ID: ";
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.White;
+            panel3.Controls.Add(buttonExitM5);
+            panel3.Controls.Add(label20);
+            panel3.Controls.Add(label21);
+            panel3.Controls.Add(label22);
+            panel3.Controls.Add(label23);
+            panel3.Controls.Add(textBox5);
+            panel3.Controls.Add(textBox6);
+            panel3.Controls.Add(textBox16);
+            panel3.Controls.Add(pictureBox32);
+            panel3.Controls.Add(pictureBox33);
+            panel3.Controls.Add(pictureBox34);
+            panel3.Controls.Add(pictureBox35);
+            panel3.Controls.Add(pictureBox36);
+            panel3.Location = new Point(3, 3);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1105, 125);
+            panel3.TabIndex = 0;
+            // 
+            // buttonExitM5
+            // 
+            buttonExitM5.Cursor = Cursors.Hand;
+            buttonExitM5.Image = (Image)resources.GetObject("buttonExitM5.Image");
+            buttonExitM5.Location = new Point(1054, 3);
+            buttonExitM5.Name = "buttonExitM5";
+            buttonExitM5.Size = new Size(46, 30);
+            buttonExitM5.SizeMode = PictureBoxSizeMode.Zoom;
+            buttonExitM5.TabIndex = 77;
+            buttonExitM5.TabStop = false;
+            buttonExitM5.Click += buttonExitM5_Click;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label20.Location = new Point(882, 83);
+            label20.Name = "label20";
+            label20.Size = new Size(64, 23);
+            label20.TabIndex = 75;
+            label20.Text = "Submit";
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label21.Location = new Point(627, 72);
+            label21.Name = "label21";
+            label21.Size = new Size(95, 46);
+            label21.TabIndex = 74;
+            label21.Text = "  Account \r\nCredentials";
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label22.Location = new Point(395, 72);
+            label22.Name = "label22";
+            label22.Size = new Size(101, 46);
+            label22.TabIndex = 73;
+            label22.Text = "  Contract\r\nInformation";
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label23.Location = new Point(146, 72);
+            label23.Name = "label23";
+            label23.Size = new Size(101, 46);
+            label23.TabIndex = 72;
+            label23.Text = "   Personal\r\nInformation";
+            // 
+            // textBox5
+            // 
+            textBox5.BackColor = Color.Navy;
+            textBox5.BorderStyle = BorderStyle.None;
+            textBox5.Location = new Point(715, 37);
+            textBox5.Multiline = true;
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(150, 5);
+            textBox5.TabIndex = 69;
+            textBox5.Text = "                    ";
+            // 
+            // textBox6
+            // 
+            textBox6.BackColor = Color.Navy;
+            textBox6.BorderStyle = BorderStyle.None;
+            textBox6.Location = new Point(477, 37);
+            textBox6.Multiline = true;
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(150, 5);
+            textBox6.TabIndex = 71;
+            textBox6.Text = "                    ";
+            // 
+            // textBox16
+            // 
+            textBox16.BackColor = Color.Navy;
+            textBox16.BorderStyle = BorderStyle.None;
+            textBox16.Location = new Point(235, 37);
+            textBox16.Multiline = true;
+            textBox16.Name = "textBox16";
+            textBox16.Size = new Size(150, 5);
+            textBox16.TabIndex = 66;
+            textBox16.Text = "                    ";
+            // 
+            // pictureBox32
+            // 
+            pictureBox32.Image = (Image)resources.GetObject("pictureBox32.Image");
+            pictureBox32.Location = new Point(848, 7);
+            pictureBox32.Name = "pictureBox32";
+            pictureBox32.Size = new Size(125, 62);
+            pictureBox32.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox32.TabIndex = 70;
+            pictureBox32.TabStop = false;
+            // 
+            // pictureBox33
+            // 
+            pictureBox33.Image = (Image)resources.GetObject("pictureBox33.Image");
+            pictureBox33.Location = new Point(607, 7);
+            pictureBox33.Name = "pictureBox33";
+            pictureBox33.Size = new Size(125, 62);
+            pictureBox33.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox33.TabIndex = 67;
+            pictureBox33.TabStop = false;
+            // 
+            // pictureBox34
+            // 
+            pictureBox34.Image = (Image)resources.GetObject("pictureBox34.Image");
+            pictureBox34.Location = new Point(372, 7);
+            pictureBox34.Name = "pictureBox34";
+            pictureBox34.Size = new Size(125, 62);
+            pictureBox34.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox34.TabIndex = 68;
+            pictureBox34.TabStop = false;
+            // 
+            // pictureBox35
+            // 
+            pictureBox35.Image = (Image)resources.GetObject("pictureBox35.Image");
+            pictureBox35.Location = new Point(131, 7);
+            pictureBox35.Name = "pictureBox35";
+            pictureBox35.Size = new Size(125, 62);
+            pictureBox35.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox35.TabIndex = 65;
+            pictureBox35.TabStop = false;
+            // 
+            // pictureBox36
+            // 
+            pictureBox36.Image = (Image)resources.GetObject("pictureBox36.Image");
+            pictureBox36.Location = new Point(-3, -14);
+            pictureBox36.Name = "pictureBox36";
+            pictureBox36.Size = new Size(125, 66);
+            pictureBox36.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox36.TabIndex = 38;
+            pictureBox36.TabStop = false;
+            // 
+            // ModularPanel1
+            // 
+            ModularPanel1.BackColor = Color.FromArgb(48, 56, 79);
+            ModularPanel1.Controls.Add(label_VehicleType);
+            ModularPanel1.Controls.Add(checkedListBox_VehicleType);
+            ModularPanel1.Controls.Add(buttonNextM1);
+            ModularPanel1.Controls.Add(textBox_Origin);
+            ModularPanel1.Controls.Add(textBox_GovtReg);
+            ModularPanel1.Controls.Add(textBox_CompanyName);
+            ModularPanel1.Controls.Add(label_Contry);
+            ModularPanel1.Controls.Add(label_GovtReg);
+            ModularPanel1.Controls.Add(label_CompanyName);
+            ModularPanel1.Controls.Add(ModularTopPanel1);
+            ModularPanel1.Location = new Point(0, 0);
+            ModularPanel1.Name = "ModularPanel1";
+            ModularPanel1.Size = new Size(1105, 604);
+            ModularPanel1.TabIndex = 55;
+            // 
+            // label_VehicleType
+            // 
+            label_VehicleType.AutoSize = true;
+            label_VehicleType.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_VehicleType.ForeColor = Color.White;
+            label_VehicleType.Location = new Point(234, 415);
+            label_VehicleType.Name = "label_VehicleType";
+            label_VehicleType.Size = new Size(153, 31);
+            label_VehicleType.TabIndex = 57;
+            label_VehicleType.Text = "Vehicle Type:";
+            // 
+            // checkedListBox_VehicleType
+            // 
+            checkedListBox_VehicleType.BackColor = Color.FromArgb(48, 56, 79);
+            checkedListBox_VehicleType.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            checkedListBox_VehicleType.ForeColor = Color.White;
+            checkedListBox_VehicleType.FormattingEnabled = true;
+            checkedListBox_VehicleType.Items.AddRange(new object[] { "Bus", "Launch", "Train", "Airplane" });
+            checkedListBox_VehicleType.Location = new Point(533, 421);
+            checkedListBox_VehicleType.Name = "checkedListBox_VehicleType";
+            checkedListBox_VehicleType.Size = new Size(150, 136);
+            checkedListBox_VehicleType.TabIndex = 56;
+            // 
+            // buttonNextM1
+            // 
+            buttonNextM1.BackColor = Color.FromArgb(187, 233, 237);
+            buttonNextM1.Cursor = Cursors.Hand;
+            buttonNextM1.FlatStyle = FlatStyle.Popup;
+            buttonNextM1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonNextM1.ForeColor = Color.Black;
+            buttonNextM1.Location = new Point(775, 553);
+            buttonNextM1.Margin = new Padding(0);
+            buttonNextM1.Name = "buttonNextM1";
+            buttonNextM1.Size = new Size(94, 38);
+            buttonNextM1.TabIndex = 54;
+            buttonNextM1.Text = "Next";
+            buttonNextM1.UseVisualStyleBackColor = false;
+            buttonNextM1.Click += buttonNextM1_Click;
+            // 
+            // textBox_Origin
+            // 
+            textBox_Origin.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox_Origin.Location = new Point(527, 358);
+            textBox_Origin.Name = "textBox_Origin";
+            textBox_Origin.Size = new Size(370, 34);
+            textBox_Origin.TabIndex = 51;
+            // 
+            // textBox_GovtReg
+            // 
+            textBox_GovtReg.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox_GovtReg.Location = new Point(527, 291);
+            textBox_GovtReg.Name = "textBox_GovtReg";
+            textBox_GovtReg.Size = new Size(370, 34);
+            textBox_GovtReg.TabIndex = 50;
+            // 
+            // textBox_CompanyName
+            // 
+            textBox_CompanyName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox_CompanyName.Location = new Point(527, 228);
+            textBox_CompanyName.Name = "textBox_CompanyName";
+            textBox_CompanyName.Size = new Size(370, 34);
+            textBox_CompanyName.TabIndex = 49;
+            // 
+            // label_Contry
+            // 
+            label_Contry.AutoSize = true;
+            label_Contry.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_Contry.ForeColor = Color.White;
+            label_Contry.Location = new Point(234, 358);
+            label_Contry.Name = "label_Contry";
+            label_Contry.Size = new Size(210, 31);
+            label_Contry.TabIndex = 46;
+            label_Contry.Text = "Country of Origin:";
+            // 
+            // label_GovtReg
+            // 
+            label_GovtReg.AutoSize = true;
+            label_GovtReg.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_GovtReg.ForeColor = Color.White;
+            label_GovtReg.Location = new Point(234, 293);
+            label_GovtReg.Name = "label_GovtReg";
+            label_GovtReg.Size = new Size(276, 31);
+            label_GovtReg.TabIndex = 45;
+            label_GovtReg.Text = "BD Govt Registration ID:";
+            // 
+            // label_CompanyName
+            // 
+            label_CompanyName.AutoSize = true;
+            label_CompanyName.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_CompanyName.ForeColor = Color.White;
+            label_CompanyName.Location = new Point(225, 228);
+            label_CompanyName.Name = "label_CompanyName";
+            label_CompanyName.Size = new Size(190, 31);
+            label_CompanyName.TabIndex = 44;
+            label_CompanyName.Text = "Company Name:";
+            // 
+            // ModularTopPanel1
+            // 
+            ModularTopPanel1.BackColor = Color.White;
+            ModularTopPanel1.Controls.Add(buttonExitM1);
+            ModularTopPanel1.Controls.Add(buttonBackM1);
+            ModularTopPanel1.Controls.Add(label29);
+            ModularTopPanel1.Controls.Add(label34);
+            ModularTopPanel1.Controls.Add(label35);
+            ModularTopPanel1.Controls.Add(label36);
+            ModularTopPanel1.Controls.Add(textBox19);
+            ModularTopPanel1.Controls.Add(textBox20);
+            ModularTopPanel1.Controls.Add(pictureBox29);
+            ModularTopPanel1.Controls.Add(textBox21);
+            ModularTopPanel1.Controls.Add(pictureBox30);
+            ModularTopPanel1.Controls.Add(pictureBox31);
+            ModularTopPanel1.Controls.Add(pictureBox37);
+            ModularTopPanel1.Controls.Add(pictureBox38);
+            ModularTopPanel1.Location = new Point(3, 3);
+            ModularTopPanel1.Name = "ModularTopPanel1";
+            ModularTopPanel1.Size = new Size(1105, 125);
+            ModularTopPanel1.TabIndex = 0;
+            // 
+            // buttonExitM1
+            // 
+            buttonExitM1.Cursor = Cursors.Hand;
+            buttonExitM1.Image = (Image)resources.GetObject("buttonExitM1.Image");
+            buttonExitM1.Location = new Point(1054, 3);
+            buttonExitM1.Name = "buttonExitM1";
+            buttonExitM1.Size = new Size(46, 30);
+            buttonExitM1.SizeMode = PictureBoxSizeMode.Zoom;
+            buttonExitM1.TabIndex = 51;
+            buttonExitM1.TabStop = false;
+            buttonExitM1.Click += buttonExitM1_Click;
+            // 
+            // buttonBackM1
+            // 
+            buttonBackM1.Cursor = Cursors.Hand;
+            buttonBackM1.Image = (Image)resources.GetObject("buttonBackM1.Image");
+            buttonBackM1.Location = new Point(1006, 3);
+            buttonBackM1.Name = "buttonBackM1";
+            buttonBackM1.Size = new Size(46, 30);
+            buttonBackM1.SizeMode = PictureBoxSizeMode.Zoom;
+            buttonBackM1.TabIndex = 50;
+            buttonBackM1.TabStop = false;
+            buttonBackM1.Click += buttonBackM1_Click;
+            // 
+            // label29
+            // 
+            label29.AutoSize = true;
+            label29.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label29.Location = new Point(893, 87);
+            label29.Name = "label29";
+            label29.Size = new Size(64, 23);
+            label29.TabIndex = 48;
+            label29.Text = "Submit";
+            // 
+            // label34
+            // 
+            label34.AutoSize = true;
+            label34.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label34.Location = new Point(638, 76);
+            label34.Name = "label34";
+            label34.Size = new Size(95, 46);
+            label34.TabIndex = 47;
+            label34.Text = "  Account \r\nCredentials";
+            // 
+            // label35
+            // 
+            label35.AutoSize = true;
+            label35.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label35.Location = new Point(406, 76);
+            label35.Name = "label35";
+            label35.Size = new Size(101, 46);
+            label35.TabIndex = 46;
+            label35.Text = "  Contract\r\nInformation";
+            // 
+            // label36
+            // 
+            label36.AutoSize = true;
+            label36.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label36.Location = new Point(169, 76);
+            label36.Name = "label36";
+            label36.Size = new Size(89, 46);
+            label36.TabIndex = 45;
+            label36.Text = "Company \r\n   Details\r\n";
+            // 
+            // textBox19
+            // 
+            textBox19.BackColor = Color.Silver;
+            textBox19.Location = new Point(726, 41);
+            textBox19.Multiline = true;
+            textBox19.Name = "textBox19";
+            textBox19.Size = new Size(150, 5);
+            textBox19.TabIndex = 42;
+            textBox19.Text = "                    ";
+            // 
+            // textBox20
+            // 
+            textBox20.BackColor = Color.Silver;
+            textBox20.Location = new Point(488, 41);
+            textBox20.Multiline = true;
+            textBox20.Name = "textBox20";
+            textBox20.Size = new Size(150, 5);
+            textBox20.TabIndex = 44;
+            textBox20.Text = "                    ";
+            // 
+            // pictureBox29
+            // 
+            pictureBox29.Image = (Image)resources.GetObject("pictureBox29.Image");
+            pictureBox29.Location = new Point(-3, -14);
+            pictureBox29.Name = "pictureBox29";
+            pictureBox29.Size = new Size(125, 66);
+            pictureBox29.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox29.TabIndex = 38;
+            pictureBox29.TabStop = false;
+            // 
+            // textBox21
+            // 
+            textBox21.BackColor = Color.Silver;
+            textBox21.Location = new Point(246, 41);
+            textBox21.Multiline = true;
+            textBox21.Name = "textBox21";
+            textBox21.Size = new Size(150, 5);
+            textBox21.TabIndex = 39;
+            textBox21.Text = "                    ";
+            // 
+            // pictureBox30
+            // 
+            pictureBox30.Image = (Image)resources.GetObject("pictureBox30.Image");
+            pictureBox30.Location = new Point(859, 11);
+            pictureBox30.Name = "pictureBox30";
+            pictureBox30.Size = new Size(125, 62);
+            pictureBox30.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox30.TabIndex = 43;
+            pictureBox30.TabStop = false;
+            // 
+            // pictureBox31
+            // 
+            pictureBox31.Image = (Image)resources.GetObject("pictureBox31.Image");
+            pictureBox31.Location = new Point(618, 11);
+            pictureBox31.Name = "pictureBox31";
+            pictureBox31.Size = new Size(125, 62);
+            pictureBox31.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox31.TabIndex = 40;
+            pictureBox31.TabStop = false;
+            // 
+            // pictureBox37
+            // 
+            pictureBox37.Image = (Image)resources.GetObject("pictureBox37.Image");
+            pictureBox37.Location = new Point(383, 11);
+            pictureBox37.Name = "pictureBox37";
+            pictureBox37.Size = new Size(125, 62);
+            pictureBox37.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox37.TabIndex = 41;
+            pictureBox37.TabStop = false;
+            // 
+            // pictureBox38
+            // 
+            pictureBox38.Image = (Image)resources.GetObject("pictureBox38.Image");
+            pictureBox38.Location = new Point(142, 11);
+            pictureBox38.Name = "pictureBox38";
+            pictureBox38.Size = new Size(125, 62);
+            pictureBox38.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox38.TabIndex = 37;
+            pictureBox38.TabStop = false;
+            // 
+            // ModularPanel2
+            // 
+            ModularPanel2.BackColor = Color.FromArgb(48, 56, 79);
+            ModularPanel2.Controls.Add(buttonPreviousM2);
+            ModularPanel2.Controls.Add(buttonNextM2);
+            ModularPanel2.Controls.Add(comboBox1);
+            ModularPanel2.Controls.Add(dateTimePicker1);
+            ModularPanel2.Controls.Add(textBox4);
+            ModularPanel2.Controls.Add(textBox17);
+            ModularPanel2.Controls.Add(textBox18);
+            ModularPanel2.Controls.Add(label24);
+            ModularPanel2.Controls.Add(label25);
+            ModularPanel2.Controls.Add(label26);
+            ModularPanel2.Controls.Add(label27);
+            ModularPanel2.Controls.Add(label28);
+            ModularPanel2.Controls.Add(ModularTopPanel);
+            ModularPanel2.Location = new Point(0, 0);
+            ModularPanel2.Name = "ModularPanel2";
+            ModularPanel2.Size = new Size(1105, 649);
+            ModularPanel2.TabIndex = 55;
+            // 
+            // buttonNextM2
+            // 
+            buttonNextM2.BackColor = Color.FromArgb(187, 233, 237);
+            buttonNextM2.Cursor = Cursors.Hand;
+            buttonNextM2.FlatStyle = FlatStyle.Popup;
+            buttonNextM2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonNextM2.ForeColor = Color.Black;
+            buttonNextM2.Location = new Point(762, 553);
+            buttonNextM2.Margin = new Padding(0);
+            buttonNextM2.Name = "buttonNextM2";
+            buttonNextM2.Size = new Size(107, 38);
+            buttonNextM2.TabIndex = 54;
+            buttonNextM2.Text = "Next";
+            buttonNextM2.UseVisualStyleBackColor = false;
+            // 
+            // comboBox1
+            // 
+            comboBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
+            comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
+            comboBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Male", "Female" });
+            comboBox1.Location = new Point(499, 476);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(370, 36);
+            comboBox1.TabIndex = 53;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dateTimePicker1.Location = new Point(499, 405);
+            dateTimePicker1.Margin = new Padding(0);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(370, 34);
+            dateTimePicker1.TabIndex = 52;
+            // 
+            // textBox4
+            // 
+            textBox4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox4.Location = new Point(499, 334);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(370, 34);
+            textBox4.TabIndex = 51;
+            // 
+            // textBox17
+            // 
+            textBox17.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox17.Location = new Point(499, 267);
+            textBox17.Name = "textBox17";
+            textBox17.Size = new Size(370, 34);
+            textBox17.TabIndex = 50;
+            // 
+            // textBox18
+            // 
+            textBox18.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox18.Location = new Point(499, 204);
+            textBox18.Name = "textBox18";
+            textBox18.Size = new Size(370, 34);
+            textBox18.TabIndex = 49;
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label24.ForeColor = Color.White;
+            label24.Location = new Point(250, 477);
+            label24.Name = "label24";
+            label24.Size = new Size(98, 31);
+            label24.TabIndex = 48;
+            label24.Text = "Gender:";
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label25.ForeColor = Color.White;
+            label25.Location = new Point(250, 405);
+            label25.Name = "label25";
+            label25.Size = new Size(160, 31);
+            label25.TabIndex = 47;
+            label25.Text = "Date of Birth:";
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label26.ForeColor = Color.White;
+            label26.Location = new Point(250, 337);
+            label26.Name = "label26";
+            label26.Size = new Size(132, 31);
+            label26.TabIndex = 46;
+            label26.Text = "Last Name:";
+            // 
+            // label27
+            // 
+            label27.AutoSize = true;
+            label27.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label27.ForeColor = Color.White;
+            label27.Location = new Point(250, 270);
+            label27.Name = "label27";
+            label27.Size = new Size(136, 31);
+            label27.TabIndex = 45;
+            label27.Text = "First Name:";
+            // 
+            // label28
+            // 
+            label28.AutoSize = true;
+            label28.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label28.ForeColor = Color.White;
+            label28.Location = new Point(250, 198);
+            label28.Name = "label28";
+            label28.Size = new Size(157, 31);
+            label28.TabIndex = 44;
+            label28.Text = "NID Number:";
+            // 
+            // ModularTopPanel
+            // 
+            ModularTopPanel.BackColor = Color.White;
+            ModularTopPanel.Controls.Add(buttonExitM2);
+            ModularTopPanel.Controls.Add(buttonBackM2);
+            ModularTopPanel.Controls.Add(label37);
+            ModularTopPanel.Controls.Add(label38);
+            ModularTopPanel.Controls.Add(label39);
+            ModularTopPanel.Controls.Add(label40);
+            ModularTopPanel.Controls.Add(textBox22);
+            ModularTopPanel.Controls.Add(textBox26);
+            ModularTopPanel.Controls.Add(pictureBox39);
+            ModularTopPanel.Controls.Add(textBox27);
+            ModularTopPanel.Controls.Add(pictureBox40);
+            ModularTopPanel.Controls.Add(pictureBox41);
+            ModularTopPanel.Controls.Add(pictureBox42);
+            ModularTopPanel.Controls.Add(pictureBox43);
+            ModularTopPanel.Location = new Point(3, 3);
+            ModularTopPanel.Name = "ModularTopPanel";
+            ModularTopPanel.Size = new Size(1105, 125);
+            ModularTopPanel.TabIndex = 0;
+            // 
+            // buttonExitM2
+            // 
+            buttonExitM2.Cursor = Cursors.Hand;
+            buttonExitM2.Image = (Image)resources.GetObject("buttonExitM2.Image");
+            buttonExitM2.Location = new Point(1054, 3);
+            buttonExitM2.Name = "buttonExitM2";
+            buttonExitM2.Size = new Size(46, 30);
+            buttonExitM2.SizeMode = PictureBoxSizeMode.Zoom;
+            buttonExitM2.TabIndex = 51;
+            buttonExitM2.TabStop = false;
+            // 
+            // buttonBackM2
+            // 
+            buttonBackM2.Cursor = Cursors.Hand;
+            buttonBackM2.Image = (Image)resources.GetObject("buttonBackM2.Image");
+            buttonBackM2.Location = new Point(1006, 3);
+            buttonBackM2.Name = "buttonBackM2";
+            buttonBackM2.Size = new Size(46, 30);
+            buttonBackM2.SizeMode = PictureBoxSizeMode.Zoom;
+            buttonBackM2.TabIndex = 50;
+            buttonBackM2.TabStop = false;
+            // 
+            // label37
+            // 
+            label37.AutoSize = true;
+            label37.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label37.Location = new Point(893, 87);
+            label37.Name = "label37";
+            label37.Size = new Size(64, 23);
+            label37.TabIndex = 48;
+            label37.Text = "Submit";
+            // 
+            // label38
+            // 
+            label38.AutoSize = true;
+            label38.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label38.Location = new Point(638, 76);
+            label38.Name = "label38";
+            label38.Size = new Size(95, 46);
+            label38.TabIndex = 47;
+            label38.Text = "  Account \r\nCredentials";
+            // 
+            // label39
+            // 
+            label39.AutoSize = true;
+            label39.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label39.Location = new Point(406, 76);
+            label39.Name = "label39";
+            label39.Size = new Size(101, 46);
+            label39.TabIndex = 46;
+            label39.Text = "  Contract\r\nInformation";
+            // 
+            // label40
+            // 
+            label40.AutoSize = true;
+            label40.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label40.Location = new Point(157, 76);
+            label40.Name = "label40";
+            label40.Size = new Size(101, 46);
+            label40.TabIndex = 45;
+            label40.Text = "   Personal\r\nInformation";
+            // 
+            // textBox22
+            // 
+            textBox22.BackColor = Color.Silver;
+            textBox22.Location = new Point(726, 41);
+            textBox22.Multiline = true;
+            textBox22.Name = "textBox22";
+            textBox22.Size = new Size(150, 5);
+            textBox22.TabIndex = 42;
+            textBox22.Text = "                    ";
+            // 
+            // textBox26
+            // 
+            textBox26.BackColor = Color.Silver;
+            textBox26.Location = new Point(488, 41);
+            textBox26.Multiline = true;
+            textBox26.Name = "textBox26";
+            textBox26.Size = new Size(150, 5);
+            textBox26.TabIndex = 44;
+            textBox26.Text = "                    ";
+            // 
+            // pictureBox39
+            // 
+            pictureBox39.Image = (Image)resources.GetObject("pictureBox39.Image");
+            pictureBox39.Location = new Point(-3, -14);
+            pictureBox39.Name = "pictureBox39";
+            pictureBox39.Size = new Size(125, 66);
+            pictureBox39.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox39.TabIndex = 38;
+            pictureBox39.TabStop = false;
+            // 
+            // textBox27
+            // 
+            textBox27.BackColor = Color.Navy;
+            textBox27.BorderStyle = BorderStyle.None;
+            textBox27.Location = new Point(246, 41);
+            textBox27.Multiline = true;
+            textBox27.Name = "textBox27";
+            textBox27.Size = new Size(150, 5);
+            textBox27.TabIndex = 39;
+            textBox27.Text = "                    ";
+            // 
+            // pictureBox40
+            // 
+            pictureBox40.Image = (Image)resources.GetObject("pictureBox40.Image");
+            pictureBox40.Location = new Point(859, 11);
+            pictureBox40.Name = "pictureBox40";
+            pictureBox40.Size = new Size(125, 62);
+            pictureBox40.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox40.TabIndex = 43;
+            pictureBox40.TabStop = false;
+            // 
+            // pictureBox41
+            // 
+            pictureBox41.Image = (Image)resources.GetObject("pictureBox41.Image");
+            pictureBox41.Location = new Point(618, 11);
+            pictureBox41.Name = "pictureBox41";
+            pictureBox41.Size = new Size(125, 62);
+            pictureBox41.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox41.TabIndex = 40;
+            pictureBox41.TabStop = false;
+            // 
+            // pictureBox42
+            // 
+            pictureBox42.Image = (Image)resources.GetObject("pictureBox42.Image");
+            pictureBox42.Location = new Point(383, 11);
+            pictureBox42.Name = "pictureBox42";
+            pictureBox42.Size = new Size(125, 62);
+            pictureBox42.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox42.TabIndex = 41;
+            pictureBox42.TabStop = false;
+            // 
+            // pictureBox43
+            // 
+            pictureBox43.Image = (Image)resources.GetObject("pictureBox43.Image");
+            pictureBox43.Location = new Point(142, 11);
+            pictureBox43.Name = "pictureBox43";
+            pictureBox43.Size = new Size(125, 62);
+            pictureBox43.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox43.TabIndex = 37;
+            pictureBox43.TabStop = false;
+            // 
+            // buttonPreviousM2
+            // 
+            buttonPreviousM2.BackColor = Color.FromArgb(187, 233, 237);
+            buttonPreviousM2.Cursor = Cursors.Hand;
+            buttonPreviousM2.FlatStyle = FlatStyle.Popup;
+            buttonPreviousM2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonPreviousM2.ForeColor = Color.Black;
+            buttonPreviousM2.Location = new Point(590, 553);
+            buttonPreviousM2.Margin = new Padding(0);
+            buttonPreviousM2.Name = "buttonPreviousM2";
+            buttonPreviousM2.Size = new Size(114, 38);
+            buttonPreviousM2.TabIndex = 55;
+            buttonPreviousM2.Text = "Previous";
+            buttonPreviousM2.UseVisualStyleBackColor = false;
             // 
             // FormRegistration
             // 
@@ -1976,12 +2881,15 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 56, 79);
             ClientSize = new Size(1107, 725);
+            Controls.Add(ModularPanel2);
+            Controls.Add(MainPanel1);
+            Controls.Add(ModularPanel5);
             Controls.Add(MainPanel0);
             Controls.Add(MainPanel5);
             Controls.Add(MainPanel4);
             Controls.Add(MainPanel3);
             Controls.Add(MainPanel2);
-            Controls.Add(MainPanel1);
+            Controls.Add(ModularPanel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormRegistration";
             StartPosition = FormStartPosition.CenterScreen;
@@ -2048,6 +2956,39 @@
             ((System.ComponentModel.ISupportInitialize)buttonExit0).EndInit();
             ((System.ComponentModel.ISupportInitialize)buttonBack0).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox20).EndInit();
+            ModularPanel5.ResumeLayout(false);
+            ModularPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)buttonCopy_M).EndInit();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)buttonExitM5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox32).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox33).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox34).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox35).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox36).EndInit();
+            ModularPanel1.ResumeLayout(false);
+            ModularPanel1.PerformLayout();
+            ModularTopPanel1.ResumeLayout(false);
+            ModularTopPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)buttonExitM1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)buttonBackM1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox29).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox30).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox31).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox37).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox38).EndInit();
+            ModularPanel2.ResumeLayout(false);
+            ModularPanel2.PerformLayout();
+            ModularTopPanel.ResumeLayout(false);
+            ModularTopPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)buttonExitM2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)buttonBackM2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox39).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox40).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox41).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox42).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox43).EndInit();
             ResumeLayout(false);
         }
 
@@ -2132,7 +3073,7 @@
         private Panel MainPanel4;
         private CheckBox checkBox1;
         private TextBox tb_lname;
-        private Button button1;
+        private Button buttonNextM1;
         private Button button2;
         private Panel TopPanel4;
         private PictureBox buttonExit4;
@@ -2200,9 +3141,80 @@
         private PictureBox buttonExit0;
         private PictureBox buttonBack0;
         private PictureBox pictureBox20;
-        private RadioButton radioButton_ModulerAdmin;
+        private RadioButton radioButton_ModularAdmin;
         private RadioButton radioButton_Consumer;
         private GroupBox groupBox_Registration;
         private Button buttonNext0;
+        private Panel ModularPanel5;
+        private PictureBox buttonCopy_M;
+        private Label label6;
+        private TextBox textBox_UIDM;
+        private Label label7;
+        private Panel panel3;
+        private PictureBox buttonExitM5;
+        private Label label20;
+        private Label label21;
+        private Label label22;
+        private Label label23;
+        private TextBox textBox5;
+        private TextBox textBox6;
+        private TextBox textBox16;
+        private PictureBox pictureBox32;
+        private PictureBox pictureBox33;
+        private PictureBox pictureBox34;
+        private PictureBox pictureBox35;
+        private PictureBox pictureBox36;
+        private Panel ModularPanel1;
+        private Panel ModularTopPanel1;
+        private PictureBox buttonExitM1;
+        private PictureBox buttonBackM1;
+        private Label label29;
+        private Label label34;
+        private Label label35;
+        private Label label36;
+        private TextBox textBox19;
+        private TextBox textBox20;
+        private PictureBox pictureBox29;
+        private TextBox textBox21;
+        private PictureBox pictureBox30;
+        private PictureBox pictureBox31;
+        private PictureBox pictureBox37;
+        private PictureBox pictureBox38;
+        private Label label_VehicleType;
+        private CheckedListBox checkedListBox_VehicleType;
+        private TextBox textBox_Origin;
+        private TextBox textBox_GovtReg;
+        private TextBox textBox_CompanyName;
+        private Label label_Contry;
+        private Label label_GovtReg;
+        private Label label_CompanyName;
+        private Panel ModularPanel2;
+        private Button buttonNextM2;
+        private ComboBox comboBox1;
+        private DateTimePicker dateTimePicker1;
+        private TextBox textBox4;
+        private TextBox textBox17;
+        private TextBox textBox18;
+        private Label label24;
+        private Label label25;
+        private Label label26;
+        private Label label27;
+        private Label label28;
+        private Panel ModularTopPanel;
+        private PictureBox buttonExitM2;
+        private PictureBox buttonBackM2;
+        private Label label37;
+        private Label label38;
+        private Label label39;
+        private Label label40;
+        private TextBox textBox22;
+        private TextBox textBox26;
+        private PictureBox pictureBox39;
+        private TextBox textBox27;
+        private PictureBox pictureBox40;
+        private PictureBox pictureBox41;
+        private PictureBox pictureBox42;
+        private PictureBox pictureBox43;
+        private Button buttonPreviousM2;
     }
 }

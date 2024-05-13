@@ -235,12 +235,51 @@ namespace TravelEase.WelcomeModel
                 MainPanel1.Show();
                 MainPanel1.BringToFront();
             }
+            else if (radioButton_ModularAdmin.Checked)
+            {
+                MainPanel0.Hide();
+                ModularPanel1.Show();
+                ModularPanel1.BringToFront();
+            }
+        }
+
+        private void buttonExitM5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void buttonCopy_M_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(textBox_UIDM.Text))
+            {
+                Clipboard.SetText(textBox_UIDM.Text);
+                MessageBox.Show("Text copied to clipboard!");
+            }
             else
             {
-                //
-                //
-                //
+                MessageBox.Show("There is no text to copy!", "Empty TextBox", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
+            FormHomePage formHomePage = new FormHomePage();
+            formHomePage.Show();
+            this.Hide();
+        }
+
+        private void buttonBackM1_Click(object sender, EventArgs e)
+        {
+            FormHomePage formHomePage = new FormHomePage();
+            formHomePage.Show();
+            this.Hide();
+        }
+
+        private void buttonExitM1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void buttonNextM1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
