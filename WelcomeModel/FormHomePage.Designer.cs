@@ -148,15 +148,12 @@
             buttonSignUp.UseVisualStyleBackColor = false;
             buttonSignUp.Click += buttonSignUp_Click;
             // 
-            SuspendLayout();
-            // 
             // FormHomePage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-
             BackColor = Color.FromArgb(48, 56, 79);
-            ClientSize = new Size(925, 557);
+            ClientSize = new Size(929, 586);
             Controls.Add(buttonSignUp);
             Controls.Add(pictureBox4);
             Controls.Add(buttonLogin);
@@ -177,12 +174,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
             PerformLayout();
-          
-            ClientSize = new Size(800, 450);
-            Name = "FormHomePage";
-            Text = "HomePage";
-            ResumeLayout(false);
-
         }
 
         #endregion

@@ -25,6 +25,12 @@ namespace TravelEase.WelcomeModel
             MainPanel4.Hide();
             MainPanel5.Hide();
 
+            ModularPanel1.Hide();
+            ModularPanel2.Hide();
+            ModularPanel3.Hide();
+            ModularPanel4.Hide();
+            ModularPanel5.Hide();
+
             MainPanel0.Show();
             MainPanel0.BringToFront();
         }
@@ -248,23 +254,6 @@ namespace TravelEase.WelcomeModel
             Application.Exit();
         }
 
-        private void buttonCopy_M_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(textBox_UIDM.Text))
-            {
-                Clipboard.SetText(textBox_UIDM.Text);
-                MessageBox.Show("Text copied to clipboard!");
-            }
-            else
-            {
-                MessageBox.Show("There is no text to copy!", "Empty TextBox", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
-            FormHomePage formHomePage = new FormHomePage();
-            formHomePage.Show();
-            this.Hide();
-        }
-
         private void buttonBackM1_Click(object sender, EventArgs e)
         {
             FormHomePage formHomePage = new FormHomePage();
@@ -279,7 +268,179 @@ namespace TravelEase.WelcomeModel
 
         private void buttonNextM1_Click(object sender, EventArgs e)
         {
+            textBox_cname.Text = textBox_CompanyName.Text;
+            textBox_grid.Text = textBox_GovtReg.Text;
+            textBox_vtype.Text = "";
+            foreach (var item in checkedListBox_VehicleType.CheckedItems)
+            {
+                textBox_vtype.Text += item.ToString() + Environment.NewLine;
+            }
 
+            ModularPanel1.Hide();
+            ModularPanel2.Show();
+            ModularPanel2.BringToFront();
+        }
+
+        private void buttonNextM2_Click(object sender, EventArgs e)
+        {
+            textBox_nidmm.Text = textBox_NIDM.Text;
+            textBox_fnamemm.Text = textBox_FnameM.Text;
+            textBox_lnamemm.Text = textBox_LnameM.Text;
+            textBox_dobmm.Text = dateTimePicker_DOBM.Text;
+            textBox_gendermm.Text = comboBox_GenderM.Text;
+            textBox_phonemm.Text = textBox_PhoneM.Text;
+            textBox_emailmm.Text = textBox_EmailM.Text;
+            textBox_addressmm.Text = textBox_AddressM.Text;
+
+
+            ModularPanel3.Show();
+            ModularPanel3.BringToFront();
+            ModularPanel2.Hide();
+        }
+
+        private void buttonPreviousM2_Click(object sender, EventArgs e)
+        {
+            ModularPanel1.Show();
+            ModularPanel1.BringToFront();
+            ModularPanel2.Hide();
+        }
+
+        private void buttonBackM2_Click(object sender, EventArgs e)
+        {
+            FormHomePage formHomePage = new FormHomePage();
+            formHomePage.Show();
+            this.Hide();
+        }
+
+        private void buttonExitM2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void buttonExit3_M_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void buttonBack3_M_Click(object sender, EventArgs e)
+        {
+            FormHomePage formHomePage = new FormHomePage();
+            formHomePage.Show();
+            this.Hide();
+        }
+
+        private void buttonNext3_M_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textBox_UsernameM.Text) && !string.IsNullOrEmpty(textBox_Password1M.Text) && !string.IsNullOrEmpty(textBox_Password2M.Text))
+            {
+                if (textBox_Password1M.Text.Equals(textBox_Password2M.Text))
+                {
+                    textBox_usernamemm.Text = textBox_UsernameM.Text;
+                    textBox_passwordmm.Text = textBox_Password1M.Text;
+
+                    ModularPanel4.Show();
+                    ModularPanel4.BringToFront();
+                    ModularPanel3.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Passwords don't match!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Must provide a username and a password!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void buttonPrevious3_M_Click(object sender, EventArgs e)
+        {
+            ModularPanel2.Show();
+            ModularPanel2.BringToFront();
+            ModularPanel3.Hide();
+        }
+
+        private void checkBox_ShowPasswordM_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox_ShowPasswordM.Checked)
+            {
+                textBox_Password1M.UseSystemPasswordChar = false;
+                textBox_Password2M.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                textBox_Password1M.UseSystemPasswordChar = true;
+                textBox_Password2M.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void buttonExitM4_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void buttonBackM4_Click(object sender, EventArgs e)
+        {
+            FormHomePage formHomePage = new FormHomePage();
+            formHomePage.Show();
+            this.Hide();
+        }
+
+        private void buttonPreviousM4_Click(object sender, EventArgs e)
+        {
+            ModularPanel3.Show();
+            ModularPanel3.BringToFront();
+            ModularPanel4.Hide();
+        }
+
+        private void buttonRegisterM_Click(object sender, EventArgs e)
+        {
+            string date = DateTime.Now.ToString("ddMMyyyy");
+            Random random = new Random();
+            int randomNumber = random.Next(10000, 99999);
+            textBox_UIDM.Text = $"MAD-{date}-{randomNumber}";
+
+            ModularPanel5.Show();
+            ModularPanel5.BringToFront();
+            ModularPanel4.Hide();
+        }
+
+        private void button_EditCD_Click(object sender, EventArgs e)
+        {
+            ModularPanel1.Show();
+            ModularPanel1.BringToFront();
+            ModularPanel4.Hide();
+        }
+
+        private void buttonEditMAI_Click(object sender, EventArgs e)
+        {
+            ModularPanel2.Show();
+            ModularPanel2.BringToFront();
+            ModularPanel4.Hide();
+        }
+
+        private void button_ACMM_Click(object sender, EventArgs e)
+        {
+            ModularPanel3.Show();
+            ModularPanel3.BringToFront();
+            ModularPanel4.Hide();
+        }
+
+        private void buttonCopyM_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(textBox_UIDM.Text))
+            {
+                Clipboard.SetText(textBox_UIDM.Text);
+                MessageBox.Show("Text copied to clipboard!");
+            }
+            else
+            {
+                MessageBox.Show("There is no text to copy!", "Empty TextBox", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            FormHomePage formHomePage = new FormHomePage();
+            formHomePage.Show();
+            this.Hide();
         }
     }
 }
