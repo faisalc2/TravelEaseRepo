@@ -1704,6 +1704,7 @@
             buttonExit4.SizeMode = PictureBoxSizeMode.Zoom;
             buttonExit4.TabIndex = 77;
             buttonExit4.TabStop = false;
+            buttonExit4.Click += buttonExit4_Click_1;
             // 
             // label16
             // 
@@ -3945,8 +3946,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 56, 79);
             ClientSize = new Size(1107, 725);
-            Controls.Add(MainPanel5);
-            Controls.Add(ModularPanel4);
             Controls.Add(MainPanel4);
             Controls.Add(MainPanel3);
             Controls.Add(MainPanel2);
@@ -3956,6 +3955,8 @@
             Controls.Add(MainPanel1);
             Controls.Add(ModularPanel5);
             Controls.Add(MainPanel0);
+            Controls.Add(MainPanel5);
+            Controls.Add(ModularPanel4);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormRegistration";
             StartPosition = FormStartPosition.CenterScreen;

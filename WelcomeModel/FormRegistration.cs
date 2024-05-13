@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -33,6 +34,19 @@ namespace TravelEase.WelcomeModel
 
             MainPanel0.Show();
             MainPanel0.BringToFront();
+        }
+
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var address = new MailAddress(email);
+                return address.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         private void buttonExit1_Click(object sender, EventArgs e)
@@ -81,6 +95,12 @@ namespace TravelEase.WelcomeModel
 
         private void buttonNext2_Click(object sender, EventArgs e)
         {
+            if (!IsValidEmail(textBox_Email.Text))
+            {
+                MessageBox.Show("Please enter a valid email address.", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             tb_phone.Text = "+88" + textBox_Phone.Text;
             tb_email.Text = textBox_Email.Text;
             tb_address.Text = textBox_Address.Text;
@@ -129,27 +149,39 @@ namespace TravelEase.WelcomeModel
             {
                 if (textBox_Password1.Text.Equals(textBox_Password2.Text))
                 {
-                    tb_username.Text = textBox_Username.Text;
-                    tb_password.Text = textBox_Password1.Text;
+                    if (textBox_Password1.Text.Length >= 8)
+                    {
+                        tb_username.Text = textBox_Username.Text;
+                        tb_password.Text = textBox_Password1.Text;
 
-                    MainPanel4.Show();
-                    MainPanel4.BringToFront();
-                    MainPanel3.Hide();
+                        MainPanel4.Show();
+                        MainPanel4.BringToFront();
+                        MainPanel3.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Password must be minimum 8 characters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        textBox_Password1.Clear();
+                        textBox_Password2.Clear();
+                        textBox_Password1.Focus();
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Passwords don't match!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    textBox_Password1.Clear();
+                    textBox_Password2.Clear();
+                    textBox_Password1.Focus();
                 }
             }
             else
             {
                 MessageBox.Show("Must provide a username and a password!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox_Username.Clear();
+                textBox_Password1.Clear();
+                textBox_Password2.Clear();
+                textBox_Username.Focus();
             }
-        }
-
-        private void buttonExit4_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         private void buttonBack4_Click(object sender, EventArgs e)
@@ -276,19 +308,25 @@ namespace TravelEase.WelcomeModel
                 textBox_vtype.Text += item.ToString() + Environment.NewLine;
             }
 
-            ModularPanel1.Hide();
             ModularPanel2.Show();
             ModularPanel2.BringToFront();
+            ModularPanel1.Hide();
         }
 
         private void buttonNextM2_Click(object sender, EventArgs e)
         {
+            if (!IsValidEmail(textBox_EmailM.Text))
+            {
+                MessageBox.Show("Please enter a valid email address.", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             textBox_nidmm.Text = textBox_NIDM.Text;
             textBox_fnamemm.Text = textBox_FnameM.Text;
             textBox_lnamemm.Text = textBox_LnameM.Text;
             textBox_dobmm.Text = dateTimePicker_DOBM.Text;
             textBox_gendermm.Text = comboBox_GenderM.Text;
-            textBox_phonemm.Text = textBox_PhoneM.Text;
+            textBox_phonemm.Text = "+88" + textBox_PhoneM.Text;
             textBox_emailmm.Text = textBox_EmailM.Text;
             textBox_addressmm.Text = textBox_AddressM.Text;
 
@@ -335,21 +373,38 @@ namespace TravelEase.WelcomeModel
             {
                 if (textBox_Password1M.Text.Equals(textBox_Password2M.Text))
                 {
-                    textBox_usernamemm.Text = textBox_UsernameM.Text;
-                    textBox_passwordmm.Text = textBox_Password1M.Text;
+                    if (textBox_Password1M.Text.Length >= 8)
+                    {
+                        textBox_usernamemm.Text = textBox_UsernameM.Text;
+                        textBox_passwordmm.Text = textBox_Password1M.Text;
 
-                    ModularPanel4.Show();
-                    ModularPanel4.BringToFront();
-                    ModularPanel3.Hide();
+                        ModularPanel4.Show();
+                        ModularPanel4.BringToFront();
+                        ModularPanel3.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Password must be minimum 8 characters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        textBox_Password1M.Clear();
+                        textBox_Password2M.Clear();
+                        textBox_Password1M.Focus();
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Passwords don't match!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    textBox_Password1M.Clear();
+                    textBox_Password2M.Clear();
+                    textBox_Password1M.Focus();
                 }
             }
             else
             {
                 MessageBox.Show("Must provide a username and a password!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox_UsernameM.Clear();
+                textBox_Password1M.Clear();
+                textBox_Password2M.Clear();
+                textBox_UsernameM.Focus();
             }
         }
 
@@ -441,6 +496,11 @@ namespace TravelEase.WelcomeModel
             FormHomePage formHomePage = new FormHomePage();
             formHomePage.Show();
             this.Hide();
+        }
+
+        private void buttonExit4_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
