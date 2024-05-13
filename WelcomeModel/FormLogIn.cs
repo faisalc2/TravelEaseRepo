@@ -9,9 +9,9 @@
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
-            textBoxPassword.Text = string.Empty;
             textBoxUsername.Text = string.Empty;
-            textBoxPassword.Focus();
+            textBoxPassword.Text = string.Empty;
+            textBoxUsername.Focus();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -27,11 +27,18 @@
             Application.Exit();
         }
 
+        private void button_back_Click_1(object sender, EventArgs e)
+        {
+            FormHomePage formHomePage = new FormHomePage();
+            formHomePage.Show();
+            this.Hide();
+
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             //database theke check korbe kun user
             //jodi passenger hoy tahole passenger er dashboard e dukbe
             //jodi....
+
         }
     }
 }
