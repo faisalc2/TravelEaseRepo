@@ -39,7 +39,9 @@
             buttonClose = new Button();
             textBoxUsername = new TextBox();
             textBoxPassword = new TextBox();
+            button_back = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)button_back).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -85,8 +87,9 @@
             // 
             // buttonClear
             // 
+            buttonClear.Cursor = Cursors.Hand;
             buttonClear.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonClear.Location = new Point(488, 372);
+            buttonClear.Location = new Point(517, 372);
             buttonClear.Name = "buttonClear";
             buttonClear.Size = new Size(99, 44);
             buttonClear.TabIndex = 6;
@@ -96,8 +99,9 @@
             // 
             // buttonLogin
             // 
+            buttonLogin.Cursor = Cursors.Hand;
             buttonLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonLogin.Location = new Point(640, 372);
+            buttonLogin.Location = new Point(655, 372);
             buttonLogin.Name = "buttonLogin";
             buttonLogin.Size = new Size(103, 44);
             buttonLogin.TabIndex = 7;
@@ -107,6 +111,7 @@
             // checkBoxShowPassword
             // 
             checkBoxShowPassword.AutoSize = true;
+            checkBoxShowPassword.Cursor = Cursors.Hand;
             checkBoxShowPassword.Location = new Point(685, 307);
             checkBoxShowPassword.Name = "checkBoxShowPassword";
             checkBoxShowPassword.Size = new Size(132, 24);
@@ -118,11 +123,12 @@
             // buttonClose
             // 
             buttonClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            buttonClose.Cursor = Cursors.Hand;
             buttonClose.FlatAppearance.BorderSize = 0;
             buttonClose.Image = (Image)resources.GetObject("buttonClose.Image");
-            buttonClose.Location = new Point(802, -2);
+            buttonClose.Location = new Point(816, -2);
             buttonClose.Name = "buttonClose";
-            buttonClose.Size = new Size(47, 41);
+            buttonClose.Size = new Size(33, 32);
             buttonClose.TabIndex = 9;
             buttonClose.UseVisualStyleBackColor = true;
             buttonClose.Click += buttonClose_Click;
@@ -144,11 +150,24 @@
             textBoxPassword.TabIndex = 11;
             textBoxPassword.UseSystemPasswordChar = true;
             // 
+            // button_back
+            // 
+            button_back.Cursor = Cursors.Hand;
+            button_back.Image = (Image)resources.GetObject("button_back.Image");
+            button_back.Location = new Point(768, 0);
+            button_back.Name = "button_back";
+            button_back.Size = new Size(46, 30);
+            button_back.SizeMode = PictureBoxSizeMode.Zoom;
+            button_back.TabIndex = 13;
+            button_back.TabStop = false;
+            button_back.Click += button_back_Click_1;
+            // 
             // FormLogIn
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(849, 485);
+            Controls.Add(button_back);
             Controls.Add(textBoxPassword);
             Controls.Add(textBoxUsername);
             Controls.Add(buttonClose);
@@ -164,6 +183,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LogIn";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)button_back).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -180,5 +200,6 @@
         private Button buttonClose;
         private TextBox textBoxUsername;
         private TextBox textBoxPassword;
+        private PictureBox button_back;
     }
 }
