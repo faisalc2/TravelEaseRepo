@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegistration));
             MainPanel1 = new Panel();
             buttonNext1 = new Button();
@@ -2879,6 +2880,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+
             BackColor = Color.FromArgb(48, 56, 79);
             ClientSize = new Size(1107, 725);
             Controls.Add(ModularPanel2);
