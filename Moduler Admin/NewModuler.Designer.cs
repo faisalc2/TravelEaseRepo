@@ -29,47 +29,156 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewModuler));
-            panelSlidebar = new Panel();
-            buttonLogOut = new Button();
-            pictureBox4 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox1 = new PictureBox();
-            buttonCancelation = new Button();
-            buttonRefundModAdmin = new Button();
-            buttonTrip = new Button();
-            buttonVehicle = new Button();
-            panel1 = new Panel();
-            buttonProfile = new Button();
-            pictureBoxProfile = new PictureBox();
-            buttonExit = new Button();
             panelMain = new Panel();
-            panelSlidebar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel1.SuspendLayout();
+            buttonExit = new Button();
+            pictureBoxProfile = new PictureBox();
+            buttonProfile = new Button();
+            panel1 = new Panel();
+            buttonVehicle = new Button();
+            buttonTrip = new Button();
+            buttonRefundModAdmin = new Button();
+            buttonCancelation = new Button();
+            buttonLogOut = new Button();
+            panelSlidebar = new Panel();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBoxProfile).BeginInit();
+            panel1.SuspendLayout();
+            panelSlidebar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // panelSlidebar
+            // panelMain
             // 
-            panelSlidebar.BackColor = SystemColors.GrayText;
-            panelSlidebar.Controls.Add(buttonLogOut);
-            panelSlidebar.Controls.Add(pictureBox4);
-            panelSlidebar.Controls.Add(pictureBox3);
-            panelSlidebar.Controls.Add(pictureBox2);
-            panelSlidebar.Controls.Add(pictureBox1);
-            panelSlidebar.Controls.Add(buttonCancelation);
-            panelSlidebar.Controls.Add(buttonRefundModAdmin);
-            panelSlidebar.Controls.Add(buttonTrip);
-            panelSlidebar.Controls.Add(buttonVehicle);
-            panelSlidebar.Dock = DockStyle.Left;
-            panelSlidebar.Location = new Point(0, 0);
-            panelSlidebar.Name = "panelSlidebar";
-            panelSlidebar.Size = new Size(226, 574);
-            panelSlidebar.TabIndex = 0;
+            panelMain.Dock = DockStyle.Fill;
+            panelMain.Location = new Point(226, 36);
+            panelMain.Name = "panelMain";
+            panelMain.Size = new Size(752, 538);
+            panelMain.TabIndex = 2;
+            // 
+            // buttonExit
+            // 
+            buttonExit.BackColor = Color.FromArgb(48, 56, 79);
+            buttonExit.Dock = DockStyle.Right;
+            buttonExit.FlatAppearance.BorderSize = 0;
+            buttonExit.FlatStyle = FlatStyle.Flat;
+            buttonExit.Image = (Image)resources.GetObject("buttonExit.Image");
+            buttonExit.Location = new Point(707, 0);
+            buttonExit.Name = "buttonExit";
+            buttonExit.Size = new Size(45, 36);
+            buttonExit.TabIndex = 0;
+            buttonExit.UseVisualStyleBackColor = false;
+            buttonExit.Click += buttonExit_Click;
+            // 
+            // pictureBoxProfile
+            // 
+            pictureBoxProfile.Dock = DockStyle.Left;
+            pictureBoxProfile.Image = (Image)resources.GetObject("pictureBoxProfile.Image");
+            pictureBoxProfile.Location = new Point(0, 0);
+            pictureBoxProfile.Name = "pictureBoxProfile";
+            pictureBoxProfile.Size = new Size(55, 36);
+            pictureBoxProfile.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxProfile.TabIndex = 1;
+            pictureBoxProfile.TabStop = false;
+            pictureBoxProfile.Click += pictureBoxProfile_Click;
+            // 
+            // buttonProfile
+            // 
+            buttonProfile.BackColor = Color.FromArgb(48, 56, 79);
+            buttonProfile.Dock = DockStyle.Left;
+            buttonProfile.FlatAppearance.BorderSize = 0;
+            buttonProfile.FlatStyle = FlatStyle.Flat;
+            buttonProfile.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            buttonProfile.ForeColor = SystemColors.ButtonHighlight;
+            buttonProfile.Location = new Point(55, 0);
+            buttonProfile.Name = "buttonProfile";
+            buttonProfile.Size = new Size(82, 36);
+            buttonProfile.TabIndex = 2;
+            buttonProfile.Text = "Profile";
+            buttonProfile.UseVisualStyleBackColor = false;
+            buttonProfile.Click += buttonProfile_Click;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(48, 56, 79);
+            panel1.Controls.Add(buttonProfile);
+            panel1.Controls.Add(pictureBoxProfile);
+            panel1.Controls.Add(buttonExit);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(226, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(752, 36);
+            panel1.TabIndex = 1;
+            // 
+            // buttonVehicle
+            // 
+            buttonVehicle.BackColor = Color.FromArgb(48, 56, 79);
+            buttonVehicle.FlatAppearance.BorderSize = 0;
+            buttonVehicle.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            buttonVehicle.ForeColor = SystemColors.ButtonHighlight;
+            buttonVehicle.Location = new Point(9, 188);
+            buttonVehicle.Margin = new Padding(0);
+            buttonVehicle.Name = "buttonVehicle";
+            buttonVehicle.Size = new Size(214, 74);
+            buttonVehicle.TabIndex = 9;
+            buttonVehicle.Text = "Vehicle";
+            buttonVehicle.UseVisualStyleBackColor = false;
+            buttonVehicle.Click += buttonVehicle_Click;
+            // 
+            // buttonTrip
+            // 
+            buttonTrip.BackColor = Color.FromArgb(48, 56, 79);
+            buttonTrip.FlatAppearance.BorderSize = 0;
+            buttonTrip.FlatStyle = FlatStyle.Flat;
+            buttonTrip.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            buttonTrip.ForeColor = SystemColors.ButtonHighlight;
+            buttonTrip.Image = (Image)resources.GetObject("buttonTrip.Image");
+            buttonTrip.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonTrip.Location = new Point(9, 263);
+            buttonTrip.Margin = new Padding(0);
+            buttonTrip.Name = "buttonTrip";
+            buttonTrip.Size = new Size(214, 74);
+            buttonTrip.TabIndex = 10;
+            buttonTrip.Text = "Trip";
+            buttonTrip.UseVisualStyleBackColor = false;
+            buttonTrip.Click += buttonTrip_Click;
+            // 
+            // buttonRefundModAdmin
+            // 
+            buttonRefundModAdmin.BackColor = Color.FromArgb(48, 56, 79);
+            buttonRefundModAdmin.FlatAppearance.BorderSize = 0;
+            buttonRefundModAdmin.FlatStyle = FlatStyle.Flat;
+            buttonRefundModAdmin.Font = new Font("Segoe UI", 13.8F);
+            buttonRefundModAdmin.ForeColor = SystemColors.ButtonHighlight;
+            buttonRefundModAdmin.Image = (Image)resources.GetObject("buttonRefundModAdmin.Image");
+            buttonRefundModAdmin.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonRefundModAdmin.Location = new Point(9, 337);
+            buttonRefundModAdmin.Margin = new Padding(0);
+            buttonRefundModAdmin.Name = "buttonRefundModAdmin";
+            buttonRefundModAdmin.Size = new Size(214, 74);
+            buttonRefundModAdmin.TabIndex = 11;
+            buttonRefundModAdmin.Text = "Refund Rule";
+            buttonRefundModAdmin.TextAlign = ContentAlignment.MiddleRight;
+            buttonRefundModAdmin.UseVisualStyleBackColor = false;
+            buttonRefundModAdmin.Click += buttonRefundAdmin_Click;
+            // 
+            // buttonCancelation
+            // 
+            buttonCancelation.BackColor = Color.FromArgb(48, 56, 79);
+            buttonCancelation.FlatAppearance.BorderSize = 0;
+            buttonCancelation.FlatStyle = FlatStyle.Flat;
+            buttonCancelation.Font = new Font("Segoe UI", 13.8F);
+            buttonCancelation.ForeColor = SystemColors.ButtonHighlight;
+            buttonCancelation.Image = (Image)resources.GetObject("buttonCancelation.Image");
+            buttonCancelation.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonCancelation.Location = new Point(9, 411);
+            buttonCancelation.Margin = new Padding(0);
+            buttonCancelation.Name = "buttonCancelation";
+            buttonCancelation.Size = new Size(214, 74);
+            buttonCancelation.TabIndex = 12;
+            buttonCancelation.Text = "Cancelation";
+            buttonCancelation.TextAlign = ContentAlignment.MiddleRight;
+            buttonCancelation.UseVisualStyleBackColor = false;
+            buttonCancelation.Click += buttonCancelation_Click;
             // 
             // buttonLogOut
             // 
@@ -89,182 +198,31 @@
             buttonLogOut.UseVisualStyleBackColor = false;
             buttonLogOut.Click += buttonLogOut_Click;
             // 
-            // pictureBox4
+            // panelSlidebar
             // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(107, 13);
-            pictureBox4.Margin = new Padding(0);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(86, 77);
-            pictureBox4.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox4.TabIndex = 16;
-            pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(21, 90);
-            pictureBox3.Margin = new Padding(0);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(86, 77);
-            pictureBox3.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox3.TabIndex = 15;
-            pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(107, 90);
-            pictureBox2.Margin = new Padding(0);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(86, 77);
-            pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox2.TabIndex = 14;
-            pictureBox2.TabStop = false;
+            panelSlidebar.BackColor = Color.FromArgb(48, 56, 79);
+            panelSlidebar.Controls.Add(pictureBox1);
+            panelSlidebar.Controls.Add(buttonLogOut);
+            panelSlidebar.Controls.Add(buttonCancelation);
+            panelSlidebar.Controls.Add(buttonRefundModAdmin);
+            panelSlidebar.Controls.Add(buttonTrip);
+            panelSlidebar.Controls.Add(buttonVehicle);
+            panelSlidebar.Dock = DockStyle.Left;
+            panelSlidebar.Location = new Point(0, 0);
+            panelSlidebar.Name = "panelSlidebar";
+            panelSlidebar.Size = new Size(226, 574);
+            panelSlidebar.TabIndex = 0;
             // 
             // pictureBox1
             // 
+            pictureBox1.Dock = DockStyle.Top;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(21, 16);
-            pictureBox1.Margin = new Padding(0);
+            pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(86, 77);
-            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox1.TabIndex = 13;
+            pictureBox1.Size = new Size(226, 152);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 19;
             pictureBox1.TabStop = false;
-            // 
-            // buttonCancelation
-            // 
-            buttonCancelation.BackColor = Color.DimGray;
-            buttonCancelation.FlatAppearance.BorderSize = 0;
-            buttonCancelation.FlatStyle = FlatStyle.Flat;
-            buttonCancelation.Font = new Font("Segoe UI", 13.8F);
-            buttonCancelation.ForeColor = SystemColors.ButtonHighlight;
-            buttonCancelation.Image = (Image)resources.GetObject("buttonCancelation.Image");
-            buttonCancelation.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonCancelation.Location = new Point(9, 411);
-            buttonCancelation.Margin = new Padding(0);
-            buttonCancelation.Name = "buttonCancelation";
-            buttonCancelation.Size = new Size(214, 74);
-            buttonCancelation.TabIndex = 12;
-            buttonCancelation.Text = "Cancelation";
-            buttonCancelation.TextAlign = ContentAlignment.MiddleRight;
-            buttonCancelation.UseVisualStyleBackColor = false;
-            buttonCancelation.Click += buttonCancelation_Click;
-            // 
-            // buttonRefundModAdmin
-            // 
-            buttonRefundModAdmin.BackColor = Color.DimGray;
-            buttonRefundModAdmin.FlatAppearance.BorderSize = 0;
-            buttonRefundModAdmin.FlatStyle = FlatStyle.Flat;
-            buttonRefundModAdmin.Font = new Font("Segoe UI", 13.8F);
-            buttonRefundModAdmin.ForeColor = SystemColors.ButtonHighlight;
-            buttonRefundModAdmin.Image = (Image)resources.GetObject("buttonRefundModAdmin.Image");
-            buttonRefundModAdmin.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonRefundModAdmin.Location = new Point(9, 337);
-            buttonRefundModAdmin.Margin = new Padding(0);
-            buttonRefundModAdmin.Name = "buttonRefundModAdmin";
-            buttonRefundModAdmin.Size = new Size(214, 74);
-            buttonRefundModAdmin.TabIndex = 11;
-            buttonRefundModAdmin.Text = "Refund Rule";
-            buttonRefundModAdmin.TextAlign = ContentAlignment.MiddleRight;
-            buttonRefundModAdmin.UseVisualStyleBackColor = false;
-            buttonRefundModAdmin.Click += buttonRefundAdmin_Click;
-            // 
-            // buttonTrip
-            // 
-            buttonTrip.BackColor = Color.DimGray;
-            buttonTrip.FlatAppearance.BorderSize = 0;
-            buttonTrip.FlatStyle = FlatStyle.Flat;
-            buttonTrip.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonTrip.ForeColor = SystemColors.ButtonHighlight;
-            buttonTrip.Image = (Image)resources.GetObject("buttonTrip.Image");
-            buttonTrip.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonTrip.Location = new Point(9, 263);
-            buttonTrip.Margin = new Padding(0);
-            buttonTrip.Name = "buttonTrip";
-            buttonTrip.Size = new Size(214, 74);
-            buttonTrip.TabIndex = 10;
-            buttonTrip.Text = "Trip";
-            buttonTrip.UseVisualStyleBackColor = false;
-            buttonTrip.Click += buttonTrip_Click;
-            // 
-            // buttonVehicle
-            // 
-            buttonVehicle.BackColor = Color.DimGray;
-            buttonVehicle.FlatAppearance.BorderSize = 0;
-            buttonVehicle.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonVehicle.ForeColor = SystemColors.ButtonHighlight;
-            buttonVehicle.Location = new Point(9, 188);
-            buttonVehicle.Margin = new Padding(0);
-            buttonVehicle.Name = "buttonVehicle";
-            buttonVehicle.Size = new Size(214, 74);
-            buttonVehicle.TabIndex = 9;
-            buttonVehicle.Text = "Vehicle";
-            buttonVehicle.UseVisualStyleBackColor = false;
-            buttonVehicle.Click += buttonVehicle_Click;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.DimGray;
-            panel1.Controls.Add(buttonProfile);
-            panel1.Controls.Add(pictureBoxProfile);
-            panel1.Controls.Add(buttonExit);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(226, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(752, 36);
-            panel1.TabIndex = 1;
-            // 
-            // buttonProfile
-            // 
-            buttonProfile.BackColor = Color.DimGray;
-            buttonProfile.Dock = DockStyle.Left;
-            buttonProfile.FlatAppearance.BorderSize = 0;
-            buttonProfile.FlatStyle = FlatStyle.Flat;
-            buttonProfile.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonProfile.ForeColor = SystemColors.ButtonHighlight;
-            buttonProfile.Location = new Point(55, 0);
-            buttonProfile.Name = "buttonProfile";
-            buttonProfile.Size = new Size(82, 36);
-            buttonProfile.TabIndex = 2;
-            buttonProfile.Text = "Profile";
-            buttonProfile.UseVisualStyleBackColor = false;
-            buttonProfile.Click += buttonProfile_Click;
-            // 
-            // pictureBoxProfile
-            // 
-            pictureBoxProfile.Dock = DockStyle.Left;
-            pictureBoxProfile.Image = (Image)resources.GetObject("pictureBoxProfile.Image");
-            pictureBoxProfile.Location = new Point(0, 0);
-            pictureBoxProfile.Name = "pictureBoxProfile";
-            pictureBoxProfile.Size = new Size(55, 36);
-            pictureBoxProfile.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxProfile.TabIndex = 1;
-            pictureBoxProfile.TabStop = false;
-            pictureBoxProfile.Click += pictureBoxProfile_Click;
-            // 
-            // buttonExit
-            // 
-            buttonExit.BackColor = Color.DimGray;
-            buttonExit.Dock = DockStyle.Right;
-            buttonExit.FlatAppearance.BorderSize = 0;
-            buttonExit.FlatStyle = FlatStyle.Flat;
-            buttonExit.Image = (Image)resources.GetObject("buttonExit.Image");
-            buttonExit.Location = new Point(707, 0);
-            buttonExit.Name = "buttonExit";
-            buttonExit.Size = new Size(45, 36);
-            buttonExit.TabIndex = 0;
-            buttonExit.UseVisualStyleBackColor = false;
-            buttonExit.Click += buttonExit_Click;
-            // 
-            // panelMain
-            // 
-            panelMain.Dock = DockStyle.Fill;
-            panelMain.Location = new Point(226, 36);
-            panelMain.Name = "panelMain";
-            panelMain.Size = new Size(752, 538);
-            panelMain.TabIndex = 2;
             // 
             // NewModuler
             // 
@@ -278,32 +236,25 @@
             Name = "NewModuler";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "NewModuler";
-            panelSlidebar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBoxProfile).EndInit();
+            panel1.ResumeLayout(false);
+            panelSlidebar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel panelSlidebar;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox1;
-        private Button buttonCancelation;
-        private Button buttonRefundModAdmin;
-        private Button buttonTrip;
-        private Button buttonVehicle;
-        private Panel panel1;
         private Panel panelMain;
         private Button buttonExit;
-        private Button buttonProfile;
         private PictureBox pictureBoxProfile;
+        private Button buttonProfile;
+        private Panel panel1;
+        private Button buttonVehicle;
+        private Button buttonTrip;
+        private Button buttonRefundModAdmin;
+        private Button buttonCancelation;
         private Button buttonLogOut;
+        private Panel panelSlidebar;
+        private PictureBox pictureBox1;
     }
 }
