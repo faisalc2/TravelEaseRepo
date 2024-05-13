@@ -1,4 +1,4 @@
-﻿using TravelEase.Resources;
+﻿//using TravelEase.Resources;
 using TravelEase.WelcomeModel;
 
 namespace TravelEase
