@@ -1,3 +1,5 @@
+using TravelEase.Moduler_Admin;
+using TravelEase.PassengerDashboards;
 using TravelEase.WelcomeModel;
 
 namespace TravelEase
@@ -14,6 +16,7 @@ namespace TravelEase
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new FormLoadingPage());
+
         }
     }
 }

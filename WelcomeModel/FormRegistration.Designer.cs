@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegistration));
             MainPanel1 = new Panel();
             buttonNext1 = new Button();
@@ -1970,10 +1971,15 @@
             pictureBox20.TabIndex = 73;
             pictureBox20.TabStop = false;
             // 
+
+            SuspendLayout();
+            // 
+
             // FormRegistration
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+
             BackColor = Color.FromArgb(48, 56, 79);
             ClientSize = new Size(1107, 725);
             Controls.Add(MainPanel0);
@@ -2048,6 +2054,11 @@
             ((System.ComponentModel.ISupportInitialize)buttonExit0).EndInit();
             ((System.ComponentModel.ISupportInitialize)buttonBack0).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox20).EndInit();
+
+            ClientSize = new Size(845, 595);
+            Name = "FormRegistration";
+            Text = "FormRegistration";
+
             ResumeLayout(false);
         }
 
