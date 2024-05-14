@@ -81,6 +81,7 @@ namespace TravelEase
             {
                 MessageBox.Show("error tbs are null!", "info");
             }
+            conn.Close();
         }
     }
 }
