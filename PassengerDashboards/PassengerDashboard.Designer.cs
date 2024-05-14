@@ -69,7 +69,7 @@
             panelMain.Dock = DockStyle.Fill;
             panelMain.Location = new Point(253, 36);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(725, 538);
+            panelMain.Size = new Size(827, 538);
             panelMain.TabIndex = 5;
             // 
             // buttonProfile
@@ -105,7 +105,7 @@
             buttonExit.FlatAppearance.BorderSize = 0;
             buttonExit.FlatStyle = FlatStyle.Flat;
             buttonExit.Image = (Image)resources.GetObject("buttonExit.Image");
-            buttonExit.Location = new Point(680, 0);
+            buttonExit.Location = new Point(782, 0);
             buttonExit.Name = "buttonExit";
             buttonExit.Size = new Size(45, 36);
             buttonExit.TabIndex = 0;
@@ -121,7 +121,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(253, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(725, 36);
+            panel1.Size = new Size(827, 36);
             panel1.TabIndex = 4;
             // 
             // buttonLogOut
@@ -226,7 +226,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(978, 574);
+            ClientSize = new Size(1080, 574);
             Controls.Add(panelMain);
             Controls.Add(panel1);
             Controls.Add(panelSlidebar);
