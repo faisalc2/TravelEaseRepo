@@ -13,7 +13,5 @@ namespace TravelEase
         private int _seatNumber;
         private int _fair;
         private int _seatAmount;
-
-
     }
 }
