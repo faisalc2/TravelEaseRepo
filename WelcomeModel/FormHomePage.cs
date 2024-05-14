@@ -52,9 +52,11 @@ namespace TravelEase
 
         private void buttonSignUp_Click(object sender, EventArgs e)
         {
-            FormRegistration formRegistration = new FormRegistration(); 
+            FormRegistration formRegistration = new FormRegistration();
             formRegistration.Show();
             this.Hide();
         }
+
+        
     }
 }

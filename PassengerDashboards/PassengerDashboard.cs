@@ -18,6 +18,7 @@ namespace TravelEase.PassengerDashboards
         public PassengerDashboard()
         {
             InitializeComponent();
+            LoadForm(new SearchTicket());
         }
 
         private void buttonSearchTicket_Click(object sender, EventArgs e)
@@ -85,7 +86,7 @@ namespace TravelEase.PassengerDashboards
 
         private void buttonCancelation_Click(object sender, EventArgs e)
         {
-            LoadForm(new CancelationHistory());
+            LoadForm(new CancelationTicket());
             buttonCancelation.FlatStyle = FlatStyle.Standard;
             buttonAccountDetails.FlatStyle = FlatStyle.Flat;
             buttonHistory.FlatStyle = FlatStyle.Flat;

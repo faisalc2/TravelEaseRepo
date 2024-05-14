@@ -18,9 +18,37 @@ namespace TravelEase
         private string _phone;
         private string _email;
 
-        public void CalculateAge()
+        private static DateTime currentDate = DateTime.Now.Date;
+        private static int currentSequence = 1;
+        public User(string fname, string lname,  string nID, DateTime dOB, string gender, int age, string phone, string email)
         {
-            _age = 0;
+            _fname = fname;
+            _lname = lname;
+            _userID = GenerateModularAdminId();
+            _NID = nID;
+            _DOB = dOB;
+            _gender = gender;
+            _age = age;
+            _phone = phone;
+            _email = email;
         }
+
+        private static string GenerateModularAdminId()
+        {
+            if (currentDate != DateTime.Now.Date)
+            {
+                currentDate = DateTime.Now.Date;
+                currentSequence = 1;
+            }
+
+            string datePart = currentDate.ToString("ddMMyyyy");
+            string sequencePart = currentSequence.ToString("D5");
+            string vehicleId = $"user-{datePart}-{sequencePart}";
+
+            currentSequence++;
+
+            return vehicleId;
+        }
+
     }
 }

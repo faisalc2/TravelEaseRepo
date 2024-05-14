@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace TravelEase.PassengerDashboards
 {
-    public partial class CancelationHistory : Form
+    public partial class CancelationTicket : Form
     {
-        public CancelationHistory()
+        public CancelationTicket()
         {
             InitializeComponent();
         }
+
+       
     }
 }
