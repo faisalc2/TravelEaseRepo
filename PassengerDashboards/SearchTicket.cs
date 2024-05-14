@@ -20,38 +20,49 @@ namespace TravelEase.Dashboards
             STinstance = this;
         }
 
-        private void buttonSearch_Click(object sender, EventArgs e)
+        private void SearchTicket_Load(object sender, EventArgs e)
         {
+            panel1.Show();
+            panel1.BringToFront();
+            panel2.Hide();
+        }
+
+        private void buttonNext1_Click(object sender, EventArgs e)
+        {
+            panel2.Show();
+            panel2.BringToFront();
+            panel1.Hide();
+        }
+
+        private void buttonPrevious2_Click(object sender, EventArgs e)
+        {
+            panel1.Show();
+            panel1.BringToFront();
+            panel2.Hide();
+        }
+
+        private void buttonNext2_Click(object sender, EventArgs e)
+        {
+            if (radioButtonBus.Checked)
+            {
+                AvailableVehicle.SetSelectedVehicle("Bus");
+            }
+            else if (radioButtonLaunch.Checked)
+            {
+                AvailableVehicle.SetSelectedVehicle("Launch");
+            }
+            else if (radioButtonTrain.Checked) 
+            {
+                AvailableVehicle.SetSelectedVehicle("Train");
+            }
+            else if (radioButtonPlane.Checked)
+            {
+                AvailableVehicle.SetSelectedVehicle("Airplane");
+            }
+            this.Close();
             AvailableVehicle availableVehicle = new AvailableVehicle();
             availableVehicle.Show();
-            this.Hide();
-        }
-
-        private void buttonBack_Click(object sender, EventArgs e)
-        {
-            PassengerDashboard pd = new PassengerDashboard();
-            this.Hide();
-            pd.Show();
-        }
-
-        private void buttonBus_Click(object sender, EventArgs e)
-        {
-            AvailableVehicle.SetSelectedVehicle("Bus");
-        }
-
-        private void buttonTrain_Click(object sender, EventArgs e)
-        {
-            AvailableVehicle.SetSelectedVehicle("Train");
-        }
-
-        private void buttonAir_Click(object sender, EventArgs e)
-        {
-            AvailableVehicle.SetSelectedVehicle("Air");
-        }
-
-        private void buttonLaunch_Click(object sender, EventArgs e)
-        {
-            AvailableVehicle.SetSelectedVehicle("Launch");
+            //database
         }
     }
 }

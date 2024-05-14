@@ -28,209 +28,291 @@
         /// </summary>
         private void InitializeComponent()
         {
-            buttonBus = new Button();
-            buttonTrain = new Button();
-            buttonAir = new Button();
-            buttonLaunch = new Button();
-            label1 = new Label();
-            label2 = new Label();
-            comboBoxFrom = new ComboBox();
+            panel1 = new Panel();
+            buttonNext1 = new Button();
+            groupBox1 = new GroupBox();
+            radioButtonPlane = new RadioButton();
+            radioButtonLaunch = new RadioButton();
+            radioButtonTrain = new RadioButton();
+            radioButtonBus = new RadioButton();
+            panel2 = new Panel();
+            dateTimePickerDate = new DateTimePicker();
+            comboBoxClass = new ComboBox();
             comboBoxTo = new ComboBox();
-            buttonOk = new Button();
-            buttonSearch = new Button();
-            dateTimePicker1 = new DateTimePicker();
-            label3 = new Label();
-            label4 = new Label();
-            comboBox1 = new ComboBox();
-            buttonBack = new Button();
+            comboBoxFrom = new ComboBox();
+            labelClass = new Label();
+            labelDate = new Label();
+            labelTo = new Label();
+            buttonPrevious2 = new Button();
+            buttonNext2 = new Button();
+            labelFrom = new Label();
+            panel1.SuspendLayout();
+            groupBox1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
-            // buttonBus
+            // panel1
             // 
-            buttonBus.Location = new Point(179, 74);
-            buttonBus.Name = "buttonBus";
-            buttonBus.Size = new Size(94, 29);
-            buttonBus.TabIndex = 0;
-            buttonBus.Text = "Bus";
-            buttonBus.UseVisualStyleBackColor = true;
-            buttonBus.Click += buttonBus_Click;
+            panel1.Controls.Add(buttonNext1);
+            panel1.Controls.Add(groupBox1);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(725, 538);
+            panel1.TabIndex = 0;
             // 
-            // buttonTrain
+            // buttonNext1
             // 
-            buttonTrain.Location = new Point(332, 74);
-            buttonTrain.Name = "buttonTrain";
-            buttonTrain.Size = new Size(94, 29);
-            buttonTrain.TabIndex = 1;
-            buttonTrain.Text = "Train";
-            buttonTrain.UseVisualStyleBackColor = true;
-            buttonTrain.Click += buttonTrain_Click;
+            buttonNext1.BackColor = Color.FromArgb(187, 233, 237);
+            buttonNext1.Cursor = Cursors.Hand;
+            buttonNext1.FlatStyle = FlatStyle.Popup;
+            buttonNext1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonNext1.ForeColor = Color.Black;
+            buttonNext1.Location = new Point(440, 447);
+            buttonNext1.Margin = new Padding(0);
+            buttonNext1.Name = "buttonNext1";
+            buttonNext1.Size = new Size(103, 39);
+            buttonNext1.TabIndex = 27;
+            buttonNext1.Text = "Next";
+            buttonNext1.UseVisualStyleBackColor = false;
+            buttonNext1.Click += buttonNext1_Click;
             // 
-            // buttonAir
+            // groupBox1
             // 
-            buttonAir.Location = new Point(482, 74);
-            buttonAir.Name = "buttonAir";
-            buttonAir.Size = new Size(94, 29);
-            buttonAir.TabIndex = 2;
-            buttonAir.Text = "Air Flight";
-            buttonAir.UseVisualStyleBackColor = true;
-            buttonAir.Click += buttonAir_Click;
+            groupBox1.Controls.Add(radioButtonPlane);
+            groupBox1.Controls.Add(radioButtonLaunch);
+            groupBox1.Controls.Add(radioButtonTrain);
+            groupBox1.Controls.Add(radioButtonBus);
+            groupBox1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox1.ForeColor = Color.White;
+            groupBox1.Location = new Point(159, 137);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(384, 250);
+            groupBox1.TabIndex = 16;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Choose desired vehicle:";
             // 
-            // buttonLaunch
+            // radioButtonPlane
             // 
-            buttonLaunch.Location = new Point(630, 74);
-            buttonLaunch.Name = "buttonLaunch";
-            buttonLaunch.Size = new Size(94, 29);
-            buttonLaunch.TabIndex = 3;
-            buttonLaunch.Text = "Launch";
-            buttonLaunch.UseVisualStyleBackColor = true;
-            buttonLaunch.Click += buttonLaunch_Click;
+            radioButtonPlane.AutoSize = true;
+            radioButtonPlane.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            radioButtonPlane.Location = new Point(76, 201);
+            radioButtonPlane.Name = "radioButtonPlane";
+            radioButtonPlane.Size = new Size(85, 32);
+            radioButtonPlane.TabIndex = 3;
+            radioButtonPlane.TabStop = true;
+            radioButtonPlane.Text = "Plane";
+            radioButtonPlane.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // radioButtonLaunch
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(87, 194);
-            label1.Name = "label1";
-            label1.Size = new Size(87, 38);
-            label1.TabIndex = 4;
-            label1.Text = "From:";
+            radioButtonLaunch.AutoSize = true;
+            radioButtonLaunch.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            radioButtonLaunch.Location = new Point(76, 157);
+            radioButtonLaunch.Name = "radioButtonLaunch";
+            radioButtonLaunch.Size = new Size(100, 32);
+            radioButtonLaunch.TabIndex = 2;
+            radioButtonLaunch.TabStop = true;
+            radioButtonLaunch.Text = "Launch";
+            radioButtonLaunch.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // radioButtonTrain
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(97, 268);
-            label2.Name = "label2";
-            label2.Size = new Size(51, 38);
-            label2.TabIndex = 5;
-            label2.Text = "To:";
+            radioButtonTrain.AutoSize = true;
+            radioButtonTrain.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            radioButtonTrain.Location = new Point(76, 107);
+            radioButtonTrain.Name = "radioButtonTrain";
+            radioButtonTrain.Size = new Size(80, 32);
+            radioButtonTrain.TabIndex = 1;
+            radioButtonTrain.TabStop = true;
+            radioButtonTrain.Text = "Train";
+            radioButtonTrain.UseVisualStyleBackColor = true;
             // 
-            // comboBoxFrom
+            // radioButtonBus
             // 
-            comboBoxFrom.FormattingEnabled = true;
-            comboBoxFrom.Items.AddRange(new object[] { "Dhaka", "Sylhet" });
-            comboBoxFrom.Location = new Point(186, 204);
-            comboBoxFrom.Name = "comboBoxFrom";
-            comboBoxFrom.Size = new Size(151, 28);
-            comboBoxFrom.TabIndex = 6;
+            radioButtonBus.AutoSize = true;
+            radioButtonBus.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            radioButtonBus.Location = new Point(76, 64);
+            radioButtonBus.Name = "radioButtonBus";
+            radioButtonBus.Size = new Size(67, 32);
+            radioButtonBus.TabIndex = 0;
+            radioButtonBus.TabStop = true;
+            radioButtonBus.Text = "Bus";
+            radioButtonBus.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(dateTimePickerDate);
+            panel2.Controls.Add(comboBoxClass);
+            panel2.Controls.Add(comboBoxTo);
+            panel2.Controls.Add(comboBoxFrom);
+            panel2.Controls.Add(labelClass);
+            panel2.Controls.Add(labelDate);
+            panel2.Controls.Add(labelTo);
+            panel2.Controls.Add(buttonPrevious2);
+            panel2.Controls.Add(buttonNext2);
+            panel2.Controls.Add(labelFrom);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(725, 538);
+            panel2.TabIndex = 17;
+            // 
+            // dateTimePickerDate
+            // 
+            dateTimePickerDate.CalendarFont = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dateTimePickerDate.Location = new Point(283, 242);
+            dateTimePickerDate.Name = "dateTimePickerDate";
+            dateTimePickerDate.Size = new Size(277, 27);
+            dateTimePickerDate.TabIndex = 33;
+            // 
+            // comboBoxClass
+            // 
+            comboBoxClass.AutoCompleteSource = AutoCompleteSource.ListItems;
+            comboBoxClass.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            comboBoxClass.FormattingEnabled = true;
+            comboBoxClass.Items.AddRange(new object[] { "AC", "Non-AC" });
+            comboBoxClass.Location = new Point(283, 303);
+            comboBoxClass.Name = "comboBoxClass";
+            comboBoxClass.Size = new Size(277, 36);
+            comboBoxClass.TabIndex = 32;
             // 
             // comboBoxTo
             // 
+            comboBoxTo.AutoCompleteSource = AutoCompleteSource.ListItems;
+            comboBoxTo.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             comboBoxTo.FormattingEnabled = true;
-            comboBoxTo.Items.AddRange(new object[] { "Dhaka", "Sylhet" });
-            comboBoxTo.Location = new Point(186, 278);
+            comboBoxTo.Location = new Point(283, 174);
             comboBoxTo.Name = "comboBoxTo";
-            comboBoxTo.Size = new Size(151, 28);
-            comboBoxTo.TabIndex = 7;
+            comboBoxTo.Size = new Size(277, 36);
+            comboBoxTo.TabIndex = 31;
             // 
-            // buttonOk
+            // comboBoxFrom
             // 
-            buttonOk.Location = new Point(179, 146);
-            buttonOk.Name = "buttonOk";
-            buttonOk.Size = new Size(94, 29);
-            buttonOk.TabIndex = 8;
-            buttonOk.Text = "OK";
-            buttonOk.UseVisualStyleBackColor = true;
+            comboBoxFrom.AutoCompleteSource = AutoCompleteSource.ListItems;
+            comboBoxFrom.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            comboBoxFrom.FormattingEnabled = true;
+            comboBoxFrom.Location = new Point(283, 113);
+            comboBoxFrom.Name = "comboBoxFrom";
+            comboBoxFrom.Size = new Size(277, 36);
+            comboBoxFrom.TabIndex = 30;
             // 
-            // buttonSearch
+            // labelClass
             // 
-            buttonSearch.Location = new Point(186, 465);
-            buttonSearch.Name = "buttonSearch";
-            buttonSearch.Size = new Size(182, 79);
-            buttonSearch.TabIndex = 9;
-            buttonSearch.Text = "Search for";
-            buttonSearch.UseVisualStyleBackColor = true;
-            buttonSearch.Click += buttonSearch_Click;
+            labelClass.AutoSize = true;
+            labelClass.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelClass.ForeColor = Color.White;
+            labelClass.Location = new Point(167, 303);
+            labelClass.Name = "labelClass";
+            labelClass.Size = new Size(73, 31);
+            labelClass.TabIndex = 29;
+            labelClass.Text = "Class:";
             // 
-            // dateTimePicker1
+            // labelDate
             // 
-            dateTimePicker1.Location = new Point(252, 344);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(250, 27);
-            dateTimePicker1.TabIndex = 10;
+            labelDate.AutoSize = true;
+            labelDate.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelDate.ForeColor = Color.White;
+            labelDate.Location = new Point(167, 238);
+            labelDate.Name = "labelDate";
+            labelDate.Size = new Size(70, 31);
+            labelDate.TabIndex = 28;
+            labelDate.Text = "Date:";
             // 
-            // label3
+            // labelTo
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(27, 335);
-            label3.Name = "label3";
-            label3.Size = new Size(219, 38);
-            label3.TabIndex = 11;
-            label3.Text = "Date of Journey:";
+            labelTo.AutoSize = true;
+            labelTo.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelTo.ForeColor = Color.White;
+            labelTo.Location = new Point(167, 174);
+            labelTo.Name = "labelTo";
+            labelTo.Size = new Size(45, 31);
+            labelTo.TabIndex = 27;
+            labelTo.Text = "To:";
             // 
-            // label4
+            // buttonPrevious2
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(38, 408);
-            label4.Name = "label4";
-            label4.Size = new Size(303, 38);
-            label4.TabIndex = 12;
-            label4.Text = "Choose Available Class:";
+            buttonPrevious2.BackColor = Color.FromArgb(187, 233, 237);
+            buttonPrevious2.Cursor = Cursors.Hand;
+            buttonPrevious2.FlatStyle = FlatStyle.Popup;
+            buttonPrevious2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonPrevious2.ForeColor = Color.Black;
+            buttonPrevious2.Location = new Point(336, 408);
+            buttonPrevious2.Margin = new Padding(0);
+            buttonPrevious2.Name = "buttonPrevious2";
+            buttonPrevious2.Size = new Size(104, 39);
+            buttonPrevious2.TabIndex = 25;
+            buttonPrevious2.Text = "Previous";
+            buttonPrevious2.UseVisualStyleBackColor = false;
+            buttonPrevious2.Click += buttonPrevious2_Click;
             // 
-            // comboBox1
+            // buttonNext2
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Dhaka", "Sylhet" });
-            comboBox1.Location = new Point(351, 418);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 13;
+            buttonNext2.BackColor = Color.FromArgb(187, 233, 237);
+            buttonNext2.Cursor = Cursors.Hand;
+            buttonNext2.FlatStyle = FlatStyle.Popup;
+            buttonNext2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonNext2.ForeColor = Color.Black;
+            buttonNext2.Location = new Point(457, 408);
+            buttonNext2.Margin = new Padding(0);
+            buttonNext2.Name = "buttonNext2";
+            buttonNext2.Size = new Size(103, 39);
+            buttonNext2.TabIndex = 24;
+            buttonNext2.Text = "Search";
+            buttonNext2.UseVisualStyleBackColor = false;
+            buttonNext2.Click += buttonNext2_Click;
             // 
-            // buttonBack
+            // labelFrom
             // 
-            buttonBack.Location = new Point(436, 477);
-            buttonBack.Name = "buttonBack";
-            buttonBack.Size = new Size(123, 54);
-            buttonBack.TabIndex = 14;
-            buttonBack.Text = "Back";
-            buttonBack.UseVisualStyleBackColor = true;
-            buttonBack.Click += buttonBack_Click;
+            labelFrom.AutoSize = true;
+            labelFrom.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelFrom.ForeColor = Color.White;
+            labelFrom.Location = new Point(167, 114);
+            labelFrom.Name = "labelFrom";
+            labelFrom.Size = new Size(76, 31);
+            labelFrom.TabIndex = 18;
+            labelFrom.Text = "From:";
             // 
             // SearchTicket
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(978, 574);
-            Controls.Add(buttonBack);
-            Controls.Add(comboBox1);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(buttonSearch);
-            Controls.Add(buttonOk);
-            Controls.Add(comboBoxTo);
-            Controls.Add(comboBoxFrom);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(buttonLaunch);
-            Controls.Add(buttonAir);
-            Controls.Add(buttonTrain);
-            Controls.Add(buttonBus);
+            BackColor = Color.FromArgb(48, 56, 79);
+            ClientSize = new Size(725, 538);
+            Controls.Add(panel1);
+            Controls.Add(panel2);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "SearchTicket";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Search Ticket";
+            Load += SearchTicket_Load;
+            panel1.ResumeLayout(false);
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Button buttonBus;
-        private Button buttonTrain;
-        private Button buttonAir;
-        private Button buttonLaunch;
-        private Label label1;
-        private Label label2;
-        private ComboBox comboBoxFrom;
+        private Panel panel1;
+        private Panel panel2;
+        private GroupBox groupBox1;
+        private RadioButton radioButtonPlane;
+        private RadioButton radioButtonLaunch;
+        private RadioButton radioButtonTrain;
+        private RadioButton radioButtonBus;
+        private Label labelFrom;
+        private Button buttonPrevious2;
+        private Button buttonNext2;
+        private DateTimePicker dateTimePickerDate;
+        private ComboBox comboBoxClass;
         private ComboBox comboBoxTo;
-        private Button buttonOk;
-        private Button buttonSearch;
-        private DateTimePicker dateTimePicker1;
-        private Label label3;
-        private Label label4;
-        private ComboBox comboBox1;
-        private Button buttonBack;
+        private ComboBox comboBoxFrom;
+        private Label labelClass;
+        private Label labelDate;
+        private Label labelTo;
+        private Button buttonNext1;
     }
 }
