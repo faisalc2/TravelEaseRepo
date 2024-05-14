@@ -1,6 +1,6 @@
 ﻿namespace TravelEase.PassengerDashboards
 {
-    partial class CancelationHistory
+    partial class CancelationTicket
     {
         /// <summary>
         /// Required designer variable.

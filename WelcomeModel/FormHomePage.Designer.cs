@@ -80,11 +80,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Unispace", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
             label1.Location = new Point(243, 40);
             label1.Name = "label1";
-            label1.Size = new Size(459, 41);
+            label1.Size = new Size(399, 39);
             label1.TabIndex = 3;
             label1.Text = "Welcome to TravelEase";
             // 
