@@ -31,17 +31,17 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
-            textBox8 = new TextBox();
+            comboBoxGender = new ComboBox();
+            textBoxRepass = new TextBox();
             label10 = new Label();
-            textBox7 = new TextBox();
-            textBox6 = new TextBox();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
+            textBoxpass = new TextBox();
+            textBoxEmail = new TextBox();
+            textBoxPhone = new TextBox();
             dateTimePicker1 = new DateTimePicker();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            button1 = new Button();
+            textBoxLastName = new TextBox();
+            textBoxFirstName = new TextBox();
+            textBoxNid = new TextBox();
+            buttonupdate = new Button();
             label12 = new Label();
             label9 = new Label();
             label8 = new Label();
@@ -59,17 +59,17 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(textBox8);
+            panel1.Controls.Add(comboBoxGender);
+            panel1.Controls.Add(textBoxRepass);
             panel1.Controls.Add(label10);
-            panel1.Controls.Add(textBox7);
-            panel1.Controls.Add(textBox6);
-            panel1.Controls.Add(textBox5);
-            panel1.Controls.Add(textBox4);
+            panel1.Controls.Add(textBoxpass);
+            panel1.Controls.Add(textBoxEmail);
+            panel1.Controls.Add(textBoxPhone);
             panel1.Controls.Add(dateTimePicker1);
-            panel1.Controls.Add(textBox3);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(textBoxLastName);
+            panel1.Controls.Add(textBoxFirstName);
+            panel1.Controls.Add(textBoxNid);
+            panel1.Controls.Add(buttonupdate);
             panel1.Controls.Add(label12);
             panel1.Controls.Add(label9);
             panel1.Controls.Add(label8);
@@ -85,12 +85,21 @@
             panel1.Size = new Size(827, 314);
             panel1.TabIndex = 0;
             // 
-            // textBox8
+            // comboBoxGender
             // 
-            textBox8.Location = new Point(595, 235);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(125, 27);
-            textBox8.TabIndex = 32;
+            comboBoxGender.FormattingEnabled = true;
+            comboBoxGender.Items.AddRange(new object[] { "Male", "Female" });
+            comboBoxGender.Location = new Point(596, 79);
+            comboBoxGender.Name = "comboBoxGender";
+            comboBoxGender.Size = new Size(159, 28);
+            comboBoxGender.TabIndex = 33;
+            // 
+            // textBoxRepass
+            // 
+            textBoxRepass.Location = new Point(595, 235);
+            textBoxRepass.Name = "textBoxRepass";
+            textBoxRepass.Size = new Size(163, 27);
+            textBoxRepass.TabIndex = 32;
             // 
             // label10
             // 
@@ -103,33 +112,26 @@
             label10.TabIndex = 31;
             label10.Text = "ReType Password:";
             // 
-            // textBox7
+            // textBoxpass
             // 
-            textBox7.Location = new Point(596, 192);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(125, 27);
-            textBox7.TabIndex = 30;
+            textBoxpass.Location = new Point(596, 192);
+            textBoxpass.Name = "textBoxpass";
+            textBoxpass.Size = new Size(162, 27);
+            textBoxpass.TabIndex = 30;
             // 
-            // textBox6
+            // textBoxEmail
             // 
-            textBox6.Location = new Point(595, 154);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(125, 27);
-            textBox6.TabIndex = 29;
+            textBoxEmail.Location = new Point(595, 154);
+            textBoxEmail.Name = "textBoxEmail";
+            textBoxEmail.Size = new Size(160, 27);
+            textBoxEmail.TabIndex = 29;
             // 
-            // textBox5
+            // textBoxPhone
             // 
-            textBox5.Location = new Point(595, 117);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(125, 27);
-            textBox5.TabIndex = 28;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(595, 79);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(125, 27);
-            textBox4.TabIndex = 27;
+            textBoxPhone.Location = new Point(595, 117);
+            textBoxPhone.Name = "textBoxPhone";
+            textBoxPhone.Size = new Size(160, 27);
+            textBoxPhone.TabIndex = 28;
             // 
             // dateTimePicker1
             // 
@@ -138,42 +140,42 @@
             dateTimePicker1.Size = new Size(250, 27);
             dateTimePicker1.TabIndex = 26;
             // 
-            // textBox3
+            // textBoxLastName
             // 
-            textBox3.Location = new Point(148, 164);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 27);
-            textBox3.TabIndex = 25;
+            textBoxLastName.Location = new Point(148, 164);
+            textBoxLastName.Name = "textBoxLastName";
+            textBoxLastName.Size = new Size(193, 27);
+            textBoxLastName.TabIndex = 25;
             // 
-            // textBox2
+            // textBoxFirstName
             // 
-            textBox2.Location = new Point(148, 125);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 27);
-            textBox2.TabIndex = 24;
+            textBoxFirstName.Location = new Point(148, 125);
+            textBoxFirstName.Name = "textBoxFirstName";
+            textBoxFirstName.Size = new Size(193, 27);
+            textBoxFirstName.TabIndex = 24;
             // 
-            // textBox1
+            // textBoxNid
             // 
-            textBox1.Location = new Point(148, 85);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 23;
+            textBoxNid.Location = new Point(148, 85);
+            textBoxNid.Name = "textBoxNid";
+            textBoxNid.Size = new Size(193, 27);
+            textBoxNid.TabIndex = 23;
             // 
-            // button1
+            // buttonupdate
             // 
-            button1.BackColor = Color.FromArgb(187, 233, 237);
-            button1.Cursor = Cursors.Hand;
-            button1.FlatStyle = FlatStyle.Popup;
-            button1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.Black;
-            button1.Location = new Point(312, 262);
-            button1.Margin = new Padding(0);
-            button1.Name = "button1";
-            button1.Size = new Size(92, 32);
-            button1.TabIndex = 22;
-            button1.Text = "Update";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            buttonupdate.BackColor = Color.FromArgb(187, 233, 237);
+            buttonupdate.Cursor = Cursors.Hand;
+            buttonupdate.FlatStyle = FlatStyle.Popup;
+            buttonupdate.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonupdate.ForeColor = Color.Black;
+            buttonupdate.Location = new Point(312, 262);
+            buttonupdate.Margin = new Padding(0);
+            buttonupdate.Name = "buttonupdate";
+            buttonupdate.Size = new Size(92, 32);
+            buttonupdate.TabIndex = 22;
+            buttonupdate.Text = "Update";
+            buttonupdate.UseVisualStyleBackColor = false;
+            buttonupdate.Click += buttonupdate_Click_1;
             // 
             // label12
             // 
@@ -342,18 +344,18 @@
         private Label label5;
         private Label label4;
         private Label label3;
-        private Button button1;
+        private Button buttonupdate;
         private DataGridView DGVPassengerInfo;
         private Label label2;
-        private TextBox textBox8;
+        private TextBox textBoxRepass;
         private Label label10;
-        private TextBox textBox7;
-        private TextBox textBox6;
-        private TextBox textBox5;
-        private TextBox textBox4;
+        private TextBox textBoxpass;
+        private TextBox textBoxEmail;
+        private TextBox textBoxPhone;
         private DateTimePicker dateTimePicker1;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox textBoxLastName;
+        private TextBox textBoxFirstName;
+        private TextBox textBoxNid;
+        private ComboBox comboBoxGender;
     }
 }
