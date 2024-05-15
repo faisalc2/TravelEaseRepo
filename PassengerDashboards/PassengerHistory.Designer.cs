@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             label1 = new Label();
             DGVRecentTicketInfo = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)DGVRecentTicketInfo).BeginInit();
@@ -50,18 +50,18 @@
             // 
             DGVRecentTicketInfo.AllowUserToAddRows = false;
             DGVRecentTicketInfo.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(48, 56, 79);
-            DGVRecentTicketInfo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(48, 56, 79);
+            DGVRecentTicketInfo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             DGVRecentTicketInfo.BorderStyle = BorderStyle.None;
             DGVRecentTicketInfo.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(48, 56, 79);
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            DGVRecentTicketInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(48, 56, 79);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            DGVRecentTicketInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             DGVRecentTicketInfo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DGVRecentTicketInfo.EnableHeadersVisualStyles = false;
             DGVRecentTicketInfo.Location = new Point(77, 115);
@@ -70,6 +70,7 @@
             DGVRecentTicketInfo.RowHeadersWidth = 51;
             DGVRecentTicketInfo.Size = new Size(602, 342);
             DGVRecentTicketInfo.TabIndex = 2;
+            DGVRecentTicketInfo.CellContentClick += DGVRecentTicketInfo_CellContentClick;
             // 
             // PassengerHistory
             // 
