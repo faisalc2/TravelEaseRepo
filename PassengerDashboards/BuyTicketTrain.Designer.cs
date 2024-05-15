@@ -154,6 +154,7 @@
             buttonBuyTicket.TabIndex = 39;
             buttonBuyTicket.Text = "Buy Ticket";
             buttonBuyTicket.UseVisualStyleBackColor = false;
+            buttonBuyTicket.Click += buttonBuyTicket_Click;
             // 
             // label5
             // 
