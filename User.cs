@@ -18,6 +18,7 @@ namespace TravelEase
         private string _phone;
         private string _email;
         private string _residence;
+        public string connection = @"Data Source=.\SQLEXPRESS;Initial Catalog = TravelEaseDB; Integrated Security = True";
 
         public string FirstName
         {
@@ -75,11 +76,12 @@ namespace TravelEase
 
         private static DateTime currentDate = DateTime.Now.Date;
         private static int currentSequence = 1;
-        public User(string fname, string lname, string nID, DateTime dOB, string gender, string phone, string email, string residence)
+        public User(string fname, string lname, string nID, DateTime dOB, string gender, string phone, string email, string residence, string userID)
         {
             _fname = fname;
             _lname = lname;
-            _userID = GenerateModularAdminId();
+            _userID = userID;
+            UserID = _userID;
             _NID = nID;
             _DOB = dOB;
             _gender = gender;
