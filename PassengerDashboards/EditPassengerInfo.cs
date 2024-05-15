@@ -16,6 +16,7 @@ namespace TravelEase.PassengerDashboards
         public EditPassengerInfo()
         {
             InitializeComponent();
+            this.DGVPassengerInfo.DataSource = PassengerInfoSingleton.Instance.CurrentPassenger.GetAllInfo();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)

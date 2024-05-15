@@ -84,7 +84,6 @@ namespace TravelEase
                         userCount = (int)cmd.ExecuteScalar();
                         if (userCount > 0)
                         {
-                            MessageBox.Show("User is Passenger!");
                             PassengerInfoSingleton.Instance.CurrentPassenger = (Passenger)populateUserInfo(uid, "passenger");
                             PassengerDashboard passengBoard = new PassengerDashboard();
                             passengBoard.Show();
@@ -132,12 +131,12 @@ namespace TravelEase
                     int UserStatus = Convert.ToInt32(userInfoReader["userStatus"]);
                     if (type == "passenger")
                     {
-                        Passenger passenger = new Passenger(FirstName, LastName, NID, DateOfBirth, Gender, Phone, Email, Residence);
+                        Passenger passenger = new Passenger(FirstName, LastName, NID, DateOfBirth, Gender, Phone, Email, Residence, uid);
                         return passenger;
                     }
                     else if (type == "ModularAdmin")
                     {
-                        ModularAdmin mod = new ModularAdmin(FirstName, LastName, NID, DateOfBirth, Gender, Phone, Email, Residence);
+                        ModularAdmin mod = new ModularAdmin(FirstName, LastName, NID, DateOfBirth, Gender, Phone, Email, Residence, uid);
                         return mod;
                     }
                 }
