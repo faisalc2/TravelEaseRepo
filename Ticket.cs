@@ -8,11 +8,6 @@ namespace TravelEase
 {
     public class Ticket
     {
-        //private int _serialNumber;
-        //private string _passengerInfo;
-        //private int _seatNumber;
-        //private int _fair;
-        //private int _seatAmount;
         public int ticketID { get; set; }
         public string seatNumber { get; set; }
         public string userID { get; set; }
@@ -22,5 +17,7 @@ namespace TravelEase
         public int seatAmount { get; set; }
 
         public Ticket() { }
+
+
     }
 }

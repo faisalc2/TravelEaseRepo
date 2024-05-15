@@ -70,7 +70,6 @@
             DGVRecentTicketInfo.RowHeadersWidth = 51;
             DGVRecentTicketInfo.Size = new Size(602, 342);
             DGVRecentTicketInfo.TabIndex = 2;
-            DGVRecentTicketInfo.CellContentClick += DGVRecentTicketInfo_CellContentClick;
             // 
             // PassengerHistory
             // 

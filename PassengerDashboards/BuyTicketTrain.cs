@@ -62,5 +62,12 @@ namespace TravelEase.PassengerDashboards
         {
             this.Hide();
         }
+
+        private void buttonBuyTicket_Click(object sender, EventArgs e)
+        {
+            Payment payment = new Payment();
+            payment.Show();
+            this.Hide();
+        }
     }
 }
