@@ -90,7 +90,7 @@ namespace TravelEase
             _residence = residence;
         }
 
-        private static string GenerateModularAdminId()
+        public static string GenerateModularAdminId()
         {
             if (currentDate != DateTime.Now.Date)
             {

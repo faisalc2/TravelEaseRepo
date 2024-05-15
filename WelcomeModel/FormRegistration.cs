@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Net.Mail;
@@ -13,9 +14,71 @@ namespace TravelEase.WelcomeModel
 {
     public partial class FormRegistration : Form
     {
+        public string connection = @"Data Source=.\SQLEXPRESS;Initial Catalog = TravelEaseDB; Integrated Security = True";
+
         public FormRegistration()
         {
             InitializeComponent();
+        }
+
+        private void insertPassenger()
+        {
+            string QInsertPassenger = "INSERT INTO UserTB " +
+                "(userID, fName, lName, nid, gender, dob, phone, email, residence, userStatus)" +
+                "VALUES (@userID, @fName, @lName, @nid, @gender, @dob, @phone, @email, @residence, @userStatus)";
+
+            string QInsertLoginCred = "INSERT INTO LoginCredentialsTB (userID, userName, userPassword) " +
+                "VALUES (@userID, @userName, @userPassword)";
+            string QInsertPassengerTB = "INSERT INTO PassengerTB (userID) VALUES (@userID)";
+            SqlConnection conn = new SqlConnection(connection);
+            if (!(conn.State == ConnectionState.Open)) { conn.Open(); }
+            string uid = User.GenerateModularAdminId();
+            using (conn)
+            {
+                // inserting personal and contact details
+                SqlCommand cmd = new SqlCommand(QInsertPassenger, conn);
+                cmd.Parameters.AddWithValue("@userID", uid);
+                cmd.Parameters.AddWithValue("@fName", textBox_Fname.Text);
+                cmd.Parameters.AddWithValue("@lName", textBox_Lname.Text);
+                cmd.Parameters.AddWithValue("@nid", textBox_NID.Text);
+                cmd.Parameters.AddWithValue("@gender", comboBox_Gender.Text);
+                cmd.Parameters.AddWithValue("@dob", dateTimePicker_DOB.Value);
+                cmd.Parameters.AddWithValue("@phone", textBox_Phone.Text);
+                cmd.Parameters.AddWithValue("@email", textBox_Email.Text);
+                cmd.Parameters.AddWithValue("@residence", textBox_Address.Text);
+                cmd.Parameters.AddWithValue("@userStatus", 1);
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"{ex.Message}");
+                }
+                cmd = new SqlCommand(QInsertLoginCred, conn);
+                cmd.Parameters.AddWithValue("@userID", uid);
+                cmd.Parameters.AddWithValue("@userName", textBox_Username.Text);
+                cmd.Parameters.AddWithValue("@userPassword", textBox_Password1.Text);
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"{ex.Message}");
+                }
+                cmd = new SqlCommand(QInsertPassengerTB, conn);
+                cmd.Parameters.AddWithValue("@userID", uid);
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"{ex.Message}");
+                }
+            }
+            conn.Close();
         }
 
         private void FormRegistration_Load(object sender, EventArgs e)
@@ -221,14 +284,16 @@ namespace TravelEase.WelcomeModel
 
         private void button_Register_Click(object sender, EventArgs e)
         {
+            insertPassenger();
+
             MainPanel5.Show();
             MainPanel5.BringToFront();
             MainPanel4.Hide();
 
-            string date = DateTime.Now.ToString("ddMMyyyy");
-            Random random = new Random();
-            int randomNumber = random.Next(10000, 99999);
-            textBox_UID.Text = $"CUS-{date}-{randomNumber}";
+            //string date = DateTime.Now.ToString("ddMMyyyy");
+            //Random random = new Random();
+            //int randomNumber = random.Next(10000, 99999);
+            //textBox_UID.Text = $"CUS-{date}-{randomNumber}";
         }
 
         private void buttonExit5_Click(object sender, EventArgs e)

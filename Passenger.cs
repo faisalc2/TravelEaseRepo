@@ -10,6 +10,7 @@ namespace TravelEase
         string QGetInfo = "select * from UserTB where @userID = UserID";
         string QGetTicketInfo = "select * from TicketTB where @userID = UserID";
         public Ticket ticket;
+        public Payment payment;
 
         public Passenger(string fname, string lname, string nID, DateTime dOB, string gender, string phone, string email, string residence, string userID)
             : base(fname, lname, nID, dOB, gender, phone, email, residence, userID)
