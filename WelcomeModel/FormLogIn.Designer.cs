@@ -128,7 +128,7 @@
             buttonClose.FlatAppearance.BorderSize = 0;
             buttonClose.ForeColor = SystemColors.ControlText;
             buttonClose.Image = (Image)resources.GetObject("buttonClose.Image");
-            buttonClose.Location = new Point(816, -2);
+            buttonClose.Location = new Point(816, 0);
             buttonClose.Name = "buttonClose";
             buttonClose.Size = new Size(33, 32);
             buttonClose.TabIndex = 9;

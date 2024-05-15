@@ -139,6 +139,7 @@ namespace TravelEase
                         ModularAdmin mod = new ModularAdmin(FirstName, LastName, NID, DateOfBirth, Gender, Phone, Email, Residence, uid);
                         return mod;
                     }
+                    //else
                 }
             }
             return null;

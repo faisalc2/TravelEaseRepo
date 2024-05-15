@@ -1,6 +1,6 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace TravelEase
 {
@@ -8,30 +8,59 @@ namespace TravelEase
     {
         public int passengerID { get; set; }
         string QGetInfo = "select * from UserTB where @userID = UserID";
+        string QGetTicketInfo = "select * from TicketTB where @userID = UserID";
+        public Ticket ticket;
 
         public Passenger(string fname, string lname, string nID, DateTime dOB, string gender, string phone, string email, string residence, string userID)
             : base(fname, lname, nID, dOB, gender, phone, email, residence, userID)
         {
+            ticket = new Ticket();
         }
 
         public DataTable GetAllInfo()
         {
             SqlDataAdapter sdt;
             DataTable dt;
-            SqlConnection conn = new SqlConnection(connection);
-            conn.Open();
-            using (conn)
+            using (SqlConnection conn = new SqlConnection(connection))
             {
+                conn.Open();
                 SqlCommand cmd = new SqlCommand(QGetInfo, conn);
-                using (cmd)
+                cmd.Parameters.AddWithValue("@userID", UserID);
+                sdt = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                sdt.Fill(dt);
+            }
+            return dt;
+        }
+
+
+
+        public DataTable GetTicketInfo()
+        {
+            SqlDataAdapter sdt;
+            DataTable dt;
+            using (SqlConnection conn = new SqlConnection(connection))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(QGetTicketInfo, conn);
+                cmd.Parameters.AddWithValue("@userID", UserID);
+                sdt = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                sdt.Fill(dt);
+                using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    cmd.Parameters.AddWithValue("@userID", UserID);
-                    sdt = new SqlDataAdapter(cmd);
-                    dt = new DataTable();
-                    sdt.Fill(dt);
+                    if (reader.Read())
+                    {
+                        ticket.ticketID = (int)reader["ticketID"];
+                        ticket.seatNumber = reader["SeatNumber"].ToString();
+                        ticket.userID = reader["userID"].ToString();
+                        ticket.vehicleID = (int)reader["vehicleID"];
+                        ticket.buyDate = (DateTime)reader["buyDate"];
+                        ticket.fare = (double)reader["fare"];
+                        ticket.seatAmount = (int)reader["seatAmount"];
+                    }
                 }
             }
-            conn.Close();
             return dt;
         }
     }

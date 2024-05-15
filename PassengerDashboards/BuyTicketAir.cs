@@ -61,8 +61,15 @@ namespace TravelEase.PassengerDashboards
         private void buttonBuyTicket_Click(object sender, EventArgs e)
         {
             // purchase logic 
-            
+
             MessageBox.Show("Tickets purchased.", "Ticket Purchase Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void buttonBuyTicket_Click_1(object sender, EventArgs e)
+        {
+            Payment payment = new Payment();
+            payment.Show();
+            this.Hide();
         }
     }
 }
