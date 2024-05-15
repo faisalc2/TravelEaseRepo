@@ -32,7 +32,7 @@ namespace TravelEase.WelcomeModel
             string QInsertPassengerTB = "INSERT INTO PassengerTB (userID) VALUES (@userID)";
             SqlConnection conn = new SqlConnection(connection);
             if (!(conn.State == ConnectionState.Open)) { conn.Open(); }
-            string uid = User.GenerateModularAdminId();
+            string uid = User.GenerateUniqueId();
             using (conn)
             {
                 // inserting personal and contact details
@@ -78,6 +78,7 @@ namespace TravelEase.WelcomeModel
                     MessageBox.Show($"{ex.Message}");
                 }
             }
+            textBox_UID.Text = uid;
             conn.Close();
         }
 
@@ -285,7 +286,6 @@ namespace TravelEase.WelcomeModel
         private void button_Register_Click(object sender, EventArgs e)
         {
             insertPassenger();
-
             MainPanel5.Show();
             MainPanel5.BringToFront();
             MainPanel4.Hide();
