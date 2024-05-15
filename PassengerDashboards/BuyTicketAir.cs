@@ -14,6 +14,7 @@ namespace TravelEase.PassengerDashboards
     {
         private List<Button> choosenButton = new List<Button>();
         int number_of_seat = 0;
+
         public BuyTicketAir()
         {
             InitializeComponent();
@@ -55,6 +56,13 @@ namespace TravelEase.PassengerDashboards
         {
             int result = number_of_seat * 100;
             textBox2.Text = $"{number_of_seat} * 100 = {result}";
+        }
+
+        private void buttonBuyTicket_Click(object sender, EventArgs e)
+        {
+            // purchase logic 
+            
+            MessageBox.Show("Tickets purchased.", "Ticket Purchase Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
