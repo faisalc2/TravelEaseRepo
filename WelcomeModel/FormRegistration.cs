@@ -289,11 +289,6 @@ namespace TravelEase.WelcomeModel
             MainPanel5.Show();
             MainPanel5.BringToFront();
             MainPanel4.Hide();
-
-            //string date = DateTime.Now.ToString("ddMMyyyy");
-            //Random random = new Random();
-            //int randomNumber = random.Next(10000, 99999);
-            //textBox_UID.Text = $"CUS-{date}-{randomNumber}";
         }
 
         private void buttonExit5_Click(object sender, EventArgs e)
