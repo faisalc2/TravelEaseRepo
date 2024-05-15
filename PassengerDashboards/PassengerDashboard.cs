@@ -19,6 +19,8 @@ namespace TravelEase.PassengerDashboards
         {
             InitializeComponent();
             LoadForm(new SearchTicket());
+            
+
         }
 
         private void buttonSearchTicket_Click(object sender, EventArgs e)
