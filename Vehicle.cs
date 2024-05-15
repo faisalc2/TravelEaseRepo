@@ -2,23 +2,24 @@
 {
     internal abstract class Vehicle
     {
-        public string VehicleId { get; set; }
-        public string BdRegId { get; set; }
-        public string VehicleType { get; set; }
-        public string VehicleClass { get; set; }
-        public double FarePerSeat { get; set; }
-        public int TotalSeats { get; set; }
-        public int BookedSeats { get; set; }
+        private string VehicleId { get; set; }
+        private string BdRegId { get; set; }
+        private string VehicleType { get; set; }   //
+        private string VehicleClass { get; set; }
+        //private double FarePerSeat { get; set; }
+        private int TotalSeats { get; set; }
 
-        public Vehicle(string vehicleId, string bdRegId, string vehicleType, string vehicleClass, double farePerSeat, int totalSeats)
+
+        public Vehicle(string vehicleId, string bdRegId, string vehicleType, string vehicleClass, /*double farePerSeat,*/ int totalSeats)
         {
             VehicleId = vehicleId;
             BdRegId = bdRegId;
             VehicleType = vehicleType;
             VehicleClass = vehicleClass;
-            FarePerSeat = farePerSeat;
+            //FarePerSeat = farePerSeat;
             TotalSeats = totalSeats;
-            BookedSeats = 0; 
+            //BookedSeats = 0; 
         }
     }
 }
+//display route
