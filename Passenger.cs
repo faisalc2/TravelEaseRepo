@@ -9,6 +9,7 @@ namespace TravelEase
         public int passengerID { get; set; }
         string QGetInfo = "select * from UserTB where @userID = UserID";
         string QGetTicketInfo = "select * from TicketTB where @userID = UserID";
+        string QDeleteTicket = "DELETE FROM TicketTB WHERE @ticketID = TicketID";
         public Ticket ticket;
 
         public Passenger(string fname, string lname, string nID, DateTime dOB, string gender, string phone, string email, string residence, string userID)
@@ -32,8 +33,6 @@ namespace TravelEase
             }
             return dt;
         }
-
-
 
         public DataTable GetTicketInfo()
         {
@@ -62,6 +61,26 @@ namespace TravelEase
                 }
             }
             return dt;
+        }
+
+        public bool CancelTicket(int ticketID)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connection))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(QDeleteTicket, conn);
+                    cmd.Parameters.AddWithValue("@ticketID", ticketID);
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured!");
+                return false;
+            }
         }
     }
 }
