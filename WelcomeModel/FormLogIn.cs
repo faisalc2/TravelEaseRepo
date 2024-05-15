@@ -2,7 +2,11 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Security.Cryptography;
+using System.Security.Policy;
+using TravelEase.PassengerDashboards;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 namespace TravelEase
 {
@@ -10,10 +14,9 @@ namespace TravelEase
     {
         SqlConnection conn;
         SqlCommand cmd;
-        string Qinsert = "insert into Leaders values(@ID,@Name,@Email)";
-        string Qupdate = "update Leaders set Name=@Name,Email=@Email where ID=@ID";
-        string Qdelete = "delete Leaders where ID=@ID";
-        string QQsearch = "select * from Leaders";
+        string QGetPassngCount = "SELECT COUNT(*) FROM PassengerTB WHERE userID = @userID";
+        string QGetMAdminCount = "SELECT COUNT(*) FROM ModularAdminTB WHERE userID = @userID";
+        string userInfoQuery = "SELECT u.* FROM UserTB u JOIN PassengerTB p ON u.userID = p.userID WHERE u.userID = @userID";
         string Quid = "SELECT userID FROM LoginCredentialsTB WHERE userName = @userName AND userPassword = @userPassword";
 
         string connection = @"Data Source=.\SQLEXPRESS;Initial Catalog = TravelEaseDB; Integrated Security = True";
@@ -53,12 +56,13 @@ namespace TravelEase
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
+            if (!(conn.State == ConnectionState.Open)) { conn.Open(); }
             if (!string.IsNullOrEmpty(textBoxUsername.Text) && !string.IsNullOrEmpty(textBoxUsername.Text))
             {
-                if (!(conn.State == System.Data.ConnectionState.Open)) { conn.Open(); }
                 string uname = textBoxUsername.Text;
                 string upass = textBoxPassword.Text;
                 string uid = null;
+                int userCount;
                 using (conn)
                 {
                     using (cmd = new SqlCommand(Quid, conn))
@@ -74,17 +78,68 @@ namespace TravelEase
                             }
                         }
                     }
+                    using (cmd = new SqlCommand(QGetPassngCount, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@userID", uid);
+                        userCount = (int)cmd.ExecuteScalar();
+                        if (userCount > 0)
+                        {
+                            MessageBox.Show("User is Passenger!");
+                            populateUserInfo(uid, "passenger");
+                            //PassengerDashboard passengBoard = new PassengerDashboard();
+                            //passengBoard.Show();
+                            this.Hide();
+                        }
+                    }
+                    using (cmd = new SqlCommand(QGetMAdminCount, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@userID", uid);
+                        userCount = (int)cmd.ExecuteScalar();
+                        if (userCount > 0)
+                        {
+                            MessageBox.Show("User is ModularAdmin!");
+                        }
+                    }
                 }
-                MessageBox.Show(uid, "info");
             }
             else
             {
-                MessageBox.Show("error tbs are null!", "info");
+                MessageBox.Show("Error tbs are null!", "info");
             }
             conn.Close();
             textBoxPassword.Clear();
             textBoxUsername.Clear();
-            textBoxUsername.Focus();    
+            textBoxUsername.Focus();
+        }
+        private void populateUserInfo(string uid, string type)
+        {
+            SqlCommand userInfoCmd = new SqlCommand(userInfoQuery, conn);
+            userInfoCmd.Parameters.AddWithValue("@userID", uid);
+
+            using (SqlDataReader userInfoReader = userInfoCmd.ExecuteReader())
+            {
+                if (userInfoReader.Read())
+                {
+                    string UserID = userInfoReader["userID"].ToString();
+                    string FirstName = userInfoReader["fName"].ToString();
+                    string LastName = userInfoReader["lName"].ToString();
+                    string NID = userInfoReader["nid"].ToString();
+                    string Gender = userInfoReader["gender"].ToString();
+                    Date DateOfBirth = (Date)userInfoReader["dob"];
+                    string Phone = userInfoReader["phone"].ToString();
+                    string Email = userInfoReader["email"].ToString();
+                    string Residence = userInfoReader["residence"].ToString();
+                    int UserStatus = Convert.ToInt32(userInfoReader["userStatus"]);
+                    if (type == "passenger")
+                    {
+                        Passenger passenger = new Passenger(FirstName, LastName, NID, DateOfBirth, Gender, Phone, Email, Residence);
+                    }
+                    else if (type == "ModularAdmin")
+                    {
+                        ModularAdmin mod = new ModularAdmin(FirstName, LastName, NID, DateOfBirth, Gender, Phone, Email, Residence);
+                    }
+                }
+            }
         }
     }
 }

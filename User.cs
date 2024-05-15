@@ -3,24 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace TravelEase
 {
-    internal class User
+    public class User
     {
         private string _fname;
         private string _lname;
         private string _userID;
         private string _NID;
-        private DateTime _DOB;
+        private Date _DOB;
         private string _gender;
-        private int _age;
         private string _phone;
         private string _email;
+        private string _residence;
 
         private static DateTime currentDate = DateTime.Now.Date;
         private static int currentSequence = 1;
-        public User(string fname, string lname,  string nID, DateTime dOB, string gender, int age, string phone, string email)
+        public User(string fname, string lname, string nID, Date dOB, string gender, string phone, string email, string residence)
         {
             _fname = fname;
             _lname = lname;
@@ -28,9 +29,9 @@ namespace TravelEase
             _NID = nID;
             _DOB = dOB;
             _gender = gender;
-            _age = age;
             _phone = phone;
             _email = email;
+            _residence = residence;
         }
 
         private static string GenerateModularAdminId()

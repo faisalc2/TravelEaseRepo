@@ -1,17 +1,14 @@
-﻿namespace TravelEase
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace TravelEase
 {
     internal class ModularAdmin : User
     {
         private string _modularAdminID;
-
-        //public string ModularAdminID
-        //{
-        //    get { return _modularAdminID; }
-        //    set { _modularAdminID = value; }
-        //}
-
         private static DateTime currentDate = DateTime.Now.Date;
         private static int currentSequence = 1;
+
+
         private static string GenerateModularAdminId()
         {
             if (currentDate != DateTime.Now.Date)
@@ -29,8 +26,8 @@
             return vehicleId;
         }
 
-        public ModularAdmin(string fname, string lname, string nID, DateTime dOB, string gender, int age, string phone, string email)
-            :base( fname, lname, nID, dOB, gender, age, phone, email)
+        public ModularAdmin(string fname, string lname, string nID, Date dOB, string gender, string phone, string email, string residence)
+            : base(fname, lname, nID, dOB, gender, phone, email, residence)
         {
             _modularAdminID = GenerateModularAdminId();
         }
