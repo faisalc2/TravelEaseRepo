@@ -28,9 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchTicket));
             panel1 = new Panel();
             buttonNext1 = new Button();
             groupBox1 = new GroupBox();
+            pictureBox4 = new PictureBox();
+            pictureBox3 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            pictureBox1 = new PictureBox();
             radioButtonPlane = new RadioButton();
             radioButtonLaunch = new RadioButton();
             radioButtonTrain = new RadioButton();
@@ -48,6 +53,10 @@
             labelFrom = new Label();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -68,7 +77,7 @@
             buttonNext1.FlatStyle = FlatStyle.Popup;
             buttonNext1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonNext1.ForeColor = Color.Black;
-            buttonNext1.Location = new Point(440, 447);
+            buttonNext1.Location = new Point(597, 465);
             buttonNext1.Margin = new Padding(0);
             buttonNext1.Name = "buttonNext1";
             buttonNext1.Size = new Size(103, 39);
@@ -79,24 +88,68 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(pictureBox4);
+            groupBox1.Controls.Add(pictureBox3);
+            groupBox1.Controls.Add(pictureBox2);
+            groupBox1.Controls.Add(pictureBox1);
             groupBox1.Controls.Add(radioButtonPlane);
             groupBox1.Controls.Add(radioButtonLaunch);
             groupBox1.Controls.Add(radioButtonTrain);
             groupBox1.Controls.Add(radioButtonBus);
             groupBox1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox1.ForeColor = Color.White;
-            groupBox1.Location = new Point(159, 137);
+            groupBox1.Location = new Point(158, 58);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(384, 250);
+            groupBox1.Size = new Size(542, 374);
             groupBox1.TabIndex = 16;
             groupBox1.TabStop = false;
             groupBox1.Text = "Choose desired vehicle:";
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(319, 219);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(82, 65);
+            pictureBox4.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox4.TabIndex = 7;
+            pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(319, 68);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(82, 65);
+            pictureBox3.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox3.TabIndex = 6;
+            pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(69, 208);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(87, 71);
+            pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox2.TabIndex = 5;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(69, 68);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(82, 65);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
             // 
             // radioButtonPlane
             // 
             radioButtonPlane.AutoSize = true;
             radioButtonPlane.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            radioButtonPlane.Location = new Point(76, 201);
+            radioButtonPlane.Location = new Point(418, 234);
             radioButtonPlane.Name = "radioButtonPlane";
             radioButtonPlane.Size = new Size(85, 32);
             radioButtonPlane.TabIndex = 3;
@@ -108,7 +161,7 @@
             // 
             radioButtonLaunch.AutoSize = true;
             radioButtonLaunch.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            radioButtonLaunch.Location = new Point(76, 157);
+            radioButtonLaunch.Location = new Point(418, 81);
             radioButtonLaunch.Name = "radioButtonLaunch";
             radioButtonLaunch.Size = new Size(100, 32);
             radioButtonLaunch.TabIndex = 2;
@@ -120,7 +173,7 @@
             // 
             radioButtonTrain.AutoSize = true;
             radioButtonTrain.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            radioButtonTrain.Location = new Point(76, 107);
+            radioButtonTrain.Location = new Point(171, 234);
             radioButtonTrain.Name = "radioButtonTrain";
             radioButtonTrain.Size = new Size(80, 32);
             radioButtonTrain.TabIndex = 1;
@@ -132,7 +185,7 @@
             // 
             radioButtonBus.AutoSize = true;
             radioButtonBus.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            radioButtonBus.Location = new Point(76, 64);
+            radioButtonBus.Location = new Point(171, 84);
             radioButtonBus.Name = "radioButtonBus";
             radioButtonBus.Size = new Size(67, 32);
             radioButtonBus.TabIndex = 0;
@@ -289,6 +342,10 @@
             panel1.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
@@ -314,5 +371,9 @@
         private Label labelDate;
         private Label labelTo;
         private Button buttonNext1;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox4;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox2;
     }
 }

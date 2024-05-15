@@ -28,22 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AvailableVehicle));
             label1 = new Label();
             panel1 = new Panel();
             comboBox2 = new ComboBox();
             comboBox1 = new ComboBox();
             buttonBookNow = new Button();
             button2 = new Button();
+            buttonExit = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             label1.Location = new Point(31, 25);
             label1.Name = "label1";
-            label1.Size = new Size(187, 31);
+            label1.Size = new Size(195, 31);
             label1.TabIndex = 0;
             label1.Text = "Available Vehicle";
             // 
@@ -53,7 +55,7 @@
             panel1.Controls.Add(comboBox1);
             panel1.Location = new Point(31, 92);
             panel1.Name = "panel1";
-            panel1.Size = new Size(935, 409);
+            panel1.Size = new Size(1022, 409);
             panel1.TabIndex = 1;
             // 
             // comboBox2
@@ -62,7 +64,7 @@
             comboBox2.FormattingEnabled = true;
             comboBox2.Location = new Point(15, 100);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(906, 45);
+            comboBox2.Size = new Size(982, 45);
             comboBox2.TabIndex = 1;
             // 
             // comboBox1
@@ -71,37 +73,56 @@
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(15, 22);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(906, 45);
+            comboBox1.Size = new Size(982, 45);
             comboBox1.TabIndex = 0;
             // 
             // buttonBookNow
             // 
-            buttonBookNow.Location = new Point(397, 519);
+            buttonBookNow.BackColor = Color.FromArgb(187, 233, 237);
+            buttonBookNow.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            buttonBookNow.Location = new Point(380, 519);
             buttonBookNow.Name = "buttonBookNow";
-            buttonBookNow.Size = new Size(94, 29);
+            buttonBookNow.Size = new Size(103, 43);
             buttonBookNow.TabIndex = 2;
             buttonBookNow.Text = "Book Now";
-            buttonBookNow.UseVisualStyleBackColor = true;
+            buttonBookNow.UseVisualStyleBackColor = false;
             buttonBookNow.Click += buttonBookNow_Click;
             // 
             // button2
             // 
+            button2.BackColor = Color.FromArgb(187, 233, 237);
+            button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button2.Location = new Point(512, 519);
             button2.Name = "button2";
-            button2.Size = new Size(94, 29);
+            button2.Size = new Size(106, 43);
             button2.TabIndex = 3;
             button2.Text = "Cancel";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // buttonExit
+            // 
+            buttonExit.FlatAppearance.BorderSize = 0;
+            buttonExit.FlatStyle = FlatStyle.Flat;
+            buttonExit.Image = (Image)resources.GetObject("buttonExit.Image");
+            buttonExit.Location = new Point(1036, -1);
+            buttonExit.Name = "buttonExit";
+            buttonExit.Size = new Size(45, 36);
+            buttonExit.TabIndex = 4;
+            buttonExit.UseVisualStyleBackColor = false;
+            buttonExit.Click += buttonExit_Click;
             // 
             // AvailableVehicle
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(978, 574);
+            ClientSize = new Size(1080, 574);
+            Controls.Add(buttonExit);
             Controls.Add(button2);
             Controls.Add(buttonBookNow);
             Controls.Add(panel1);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "AvailableVehicle";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AvailableVehicle";
@@ -118,5 +139,6 @@
         private ComboBox comboBox1;
         private Button buttonBookNow;
         private Button button2;
+        private Button buttonExit;
     }
 }

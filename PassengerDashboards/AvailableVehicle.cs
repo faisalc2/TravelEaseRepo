@@ -13,7 +13,7 @@ namespace TravelEase.PassengerDashboards
 {
     public partial class AvailableVehicle : Form
     {
-        private static string ? selectedVehicle;
+        private static string? selectedVehicle;
         public AvailableVehicle()
         {
             InitializeComponent();
@@ -44,6 +44,16 @@ namespace TravelEase.PassengerDashboards
                     buyTicketLaunch.Show();
                     break;
             }
+            this.Hide();
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
             this.Hide();
         }
     }

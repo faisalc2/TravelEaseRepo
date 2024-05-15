@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +15,13 @@ namespace TravelEase.PassengerDashboards
         public BuyTicketLaunch()
         {
             InitializeComponent();
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            AvailableVehicle availableVehicle = new AvailableVehicle();
+            availableVehicle.Show();
+            this.Hide();
         }
     }
 }
