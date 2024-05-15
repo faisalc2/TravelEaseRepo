@@ -15,21 +15,10 @@ namespace TravelEase.PassengerDashboards
 {
     public partial class PassengerDashboard : Form
     {
-        Passenger passenger;
-        SearchTicket sticket;
-        EditPassengerInfo editPassengerInfo;
-        PassengerHistory history;
-        CancelationTicket cancelationTicket;
-        List<Form> forms;
-        public PassengerDashboard(Passenger passenger)
+        public PassengerDashboard()
         {
             InitializeComponent();
-            LoadForm(new SearchTicket());
-            this.passenger = passenger;
-            forms.Add(sticket);
-            forms.Add(editPassengerInfo);
-            forms.Add(history);
-            forms.Add(cancelationTicket);
+            LoadForm(new EditPassengerInfo());
         }
 
         private void buttonSearchTicket_Click(object sender, EventArgs e)

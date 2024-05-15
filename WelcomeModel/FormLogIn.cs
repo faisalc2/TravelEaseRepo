@@ -16,7 +16,7 @@ namespace TravelEase
         SqlCommand cmd;
         string QGetPassngCount = "SELECT COUNT(*) FROM PassengerTB WHERE userID = @userID";
         string QGetMAdminCount = "SELECT COUNT(*) FROM ModularAdminTB WHERE userID = @userID";
-        string userInfoQuery = "SELECT u.* FROM UserTB u JOIN PassengerTB p ON u.userID = p.userID WHERE u.userID = @userID";
+        string userInfoQuery = "SELECT * FROM UserTB WHERE userID = @userID";
         string Quid = "SELECT userID FROM LoginCredentialsTB WHERE userName = @userName AND userPassword = @userPassword";
 
         string connection = @"Data Source=.\SQLEXPRESS;Initial Catalog = TravelEaseDB; Integrated Security = True";
@@ -85,9 +85,9 @@ namespace TravelEase
                         if (userCount > 0)
                         {
                             MessageBox.Show("User is Passenger!");
-                            populateUserInfo(uid, "passenger");
-                            //PassengerDashboard passengBoard = new PassengerDashboard();
-                            //passengBoard.Show();
+                            PassengerInfoSingleton.Instance.CurrentPassenger = (Passenger)populateUserInfo(uid, "passenger");
+                            PassengerDashboard passengBoard = new PassengerDashboard();
+                            passengBoard.Show();
                             this.Hide();
                         }
                     }
@@ -111,7 +111,7 @@ namespace TravelEase
             textBoxUsername.Clear();
             textBoxUsername.Focus();
         }
-        private void populateUserInfo(string uid, string type)
+        private object populateUserInfo(string uid, string type)
         {
             SqlCommand userInfoCmd = new SqlCommand(userInfoQuery, conn);
             userInfoCmd.Parameters.AddWithValue("@userID", uid);
@@ -125,7 +125,7 @@ namespace TravelEase
                     string LastName = userInfoReader["lName"].ToString();
                     string NID = userInfoReader["nid"].ToString();
                     string Gender = userInfoReader["gender"].ToString();
-                    Date DateOfBirth = (Date)userInfoReader["dob"];
+                    DateTime DateOfBirth = (DateTime)userInfoReader["dob"];
                     string Phone = userInfoReader["phone"].ToString();
                     string Email = userInfoReader["email"].ToString();
                     string Residence = userInfoReader["residence"].ToString();
@@ -133,13 +133,16 @@ namespace TravelEase
                     if (type == "passenger")
                     {
                         Passenger passenger = new Passenger(FirstName, LastName, NID, DateOfBirth, Gender, Phone, Email, Residence);
+                        return passenger;
                     }
                     else if (type == "ModularAdmin")
                     {
                         ModularAdmin mod = new ModularAdmin(FirstName, LastName, NID, DateOfBirth, Gender, Phone, Email, Residence);
+                        return mod;
                     }
                 }
             }
+            return null;
         }
     }
 }

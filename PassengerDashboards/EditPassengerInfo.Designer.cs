@@ -41,9 +41,9 @@
             label4 = new Label();
             label3 = new Label();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
+            DGVPassengerInfo = new DataGridView();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DGVPassengerInfo).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -203,18 +203,18 @@
             label1.TabIndex = 0;
             label1.Text = "Update Information";
             // 
-            // dataGridView1
+            // DGVPassengerInfo
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Right;
-            dataGridView1.Location = new Point(372, 0);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(467, 538);
-            dataGridView1.TabIndex = 1;
+            DGVPassengerInfo.AllowUserToAddRows = false;
+            DGVPassengerInfo.AllowUserToDeleteRows = false;
+            DGVPassengerInfo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DGVPassengerInfo.Dock = DockStyle.Right;
+            DGVPassengerInfo.Location = new Point(372, 0);
+            DGVPassengerInfo.Name = "DGVPassengerInfo";
+            DGVPassengerInfo.ReadOnly = true;
+            DGVPassengerInfo.RowHeadersWidth = 51;
+            DGVPassengerInfo.Size = new Size(467, 538);
+            DGVPassengerInfo.TabIndex = 1;
             // 
             // EditPassengerInfo
             // 
@@ -222,7 +222,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 56, 79);
             ClientSize = new Size(839, 538);
-            Controls.Add(dataGridView1);
+            Controls.Add(DGVPassengerInfo);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "EditPassengerInfo";
@@ -230,7 +230,7 @@
             Text = "EditPassengerInfo";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DGVPassengerInfo).EndInit();
             ResumeLayout(false);
         }
 
@@ -249,6 +249,6 @@
         private Label label4;
         private Label label3;
         private Button button1;
-        private DataGridView dataGridView1;
+        private DataGridView DGVPassengerInfo;
     }
 }

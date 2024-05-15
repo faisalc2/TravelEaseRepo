@@ -13,15 +13,69 @@ namespace TravelEase
         private string _lname;
         private string _userID;
         private string _NID;
-        private Date _DOB;
+        private DateTime _DOB;
         private string _gender;
         private string _phone;
         private string _email;
         private string _residence;
 
+        public string FirstName
+        {
+            get { return _fname; }
+            set { _fname = value; }
+        }
+
+        public string LastName
+        {
+            get { return _lname; }
+            set { _lname = value; }
+        }
+
+        public string UserID
+        {
+            get { return _userID; }
+            set { _userID = value; }
+        }
+
+        public string NID
+        {
+            get { return _NID; }
+            set { _NID = value; }
+        }
+
+        public DateTime DateOfBirth
+        {
+            get { return _DOB; }
+            set { _DOB = value; }
+        }
+
+        public string Gender
+        {
+            get { return _gender; }
+            set { _gender = value; }
+        }
+
+        public string Phone
+        {
+            get { return _phone; }
+            set { _phone = value; }
+        }
+
+        public string Email
+        {
+            get { return _email; }
+            set { _email = value; }
+        }
+
+        public string Residence
+        {
+            get { return _residence; }
+            set { _residence = value; }
+        }
+
         private static DateTime currentDate = DateTime.Now.Date;
         private static int currentSequence = 1;
-        public User(string fname, string lname, string nID, Date dOB, string gender, string phone, string email, string residence)
+        public User(string fname, string lname, string nID, DateTime dOB, string gender, string phone, string email, string residence)
         {
             _fname = fname;
             _lname = lname;

@@ -26,7 +26,7 @@ namespace TravelEase
             return vehicleId;
         }
 
-        public ModularAdmin(string fname, string lname, string nID, Date dOB, string gender, string phone, string email, string residence)
+        public ModularAdmin(string fname, string lname, string nID, DateTime dOB, string gender, string phone, string email, string residence)
             : base(fname, lname, nID, dOB, gender, phone, email, residence)
         {
             _modularAdminID = GenerateModularAdminId();
