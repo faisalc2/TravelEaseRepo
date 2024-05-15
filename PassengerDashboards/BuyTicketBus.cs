@@ -61,5 +61,12 @@ namespace TravelEase.PassengerDashboards
             int result = number_of_seat * 100;
             textBox2.Text = $"{number_of_seat} * 100 = {result}";
         }
+
+        private void buttonBuyTicket_Click(object sender, EventArgs e)
+        {
+            Payment payment = new Payment();
+            payment.Show();
+            this.Hide();
+        }
     }
 }
