@@ -17,10 +17,5 @@ namespace TravelEase.PassengerDashboards
             InitializeComponent();
             this.DGVRecentTicketInfo.DataSource = PassengerInfoSingleton.Instance.CurrentPassenger.GetTicketInfo();
         }
-
-        private void DGVRecentTicketInfo_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }
