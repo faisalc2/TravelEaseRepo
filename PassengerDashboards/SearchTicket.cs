@@ -51,15 +51,14 @@ namespace TravelEase.Dashboards
             {
                 AvailableVehicle.SetSelectedVehicle("Launch");
             }
-            else if (radioButtonTrain.Checked) 
+            else if (radioButtonTrain.Checked)
             {
                 AvailableVehicle.SetSelectedVehicle("Train");
             }
             else if (radioButtonPlane.Checked)
             {
-                AvailableVehicle.SetSelectedVehicle("Airplane");
+                AvailableVehicle.SetSelectedVehicle("Air");
             }
-            this.Close();
             AvailableVehicle availableVehicle = new AvailableVehicle();
             availableVehicle.Show();
             //database

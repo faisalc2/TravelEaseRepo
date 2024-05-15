@@ -12,9 +12,12 @@ namespace TravelEase.PassengerDashboards
 {
     public partial class BuyTicketAir : Form
     {
+        private List<Button> choosenButton = new List<Button>();
+        int number_of_seat = 0;
         public BuyTicketAir()
         {
             InitializeComponent();
+            choosenButton.Clear();
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
@@ -22,6 +25,36 @@ namespace TravelEase.PassengerDashboards
             AvailableVehicle availableVehicle = new AvailableVehicle();
             availableVehicle.Show();
             this.Hide();
+        }
+
+        private void SeatChoose(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            Color targetColor = Color.White;
+            Color target2 = Color.Lime;
+            if (button.BackColor == targetColor)
+            {
+                button.BackColor = target2;
+                choosenButton.Add(button);
+                number_of_seat++;
+            }
+            else if (button.BackColor == target2)
+            {
+                button.BackColor = Color.White;
+                choosenButton.Remove(button);
+                number_of_seat--;
+            }
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void buttonSelectComplete_Click(object sender, EventArgs e)
+        {
+            int result = number_of_seat * 100;
+            textBox2.Text = $"{number_of_seat} * 100 = {result}";
         }
     }
 }
