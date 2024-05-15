@@ -11,6 +11,7 @@ namespace TravelEase
         string QGetTicketInfo = "select * from TicketTB where @userID = UserID";
         string QDeleteTicket = "DELETE FROM TicketTB WHERE @ticketID = TicketID";
         public Ticket ticket;
+        public Payment payment;
 
         public Passenger(string fname, string lname, string nID, DateTime dOB, string gender, string phone, string email, string residence, string userID)
             : base(fname, lname, nID, dOB, gender, phone, email, residence, userID)
