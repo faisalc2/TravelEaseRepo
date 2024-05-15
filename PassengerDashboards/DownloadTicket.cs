@@ -106,5 +106,10 @@ namespace TravelEase.PassengerDashboards
                 throw new Exception("An unknown error occurred: " + ex.Message, ex);
             }
         }
+
+        private void DownloadTicket_Load(object sender, EventArgs e)
+        {
+            textBoxUserID.Text = PassengerInfoSingleton.Instance.CurrentPassenger.UserID;
+        }
     }
 }

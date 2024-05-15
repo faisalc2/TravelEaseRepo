@@ -10,12 +10,18 @@ using System.Windows.Forms;
 
 namespace TravelEase.PassengerDashboards
 {
-    public partial class PassengerHistory : Form
+    public partial class Payment : Form
     {
-        public PassengerHistory()
+        public Payment()
         {
             InitializeComponent();
-            this.DGVRecentTicketInfo.DataSource = PassengerInfoSingleton.Instance.CurrentPassenger.GetTicketInfo();
+        }
+
+        private void buttonpurchase_Click(object sender, EventArgs e)
+        {
+            DownloadTicket downloadTicket = new DownloadTicket();
+            downloadTicket.Show();
+            this.Hide();
         }
     }
 }

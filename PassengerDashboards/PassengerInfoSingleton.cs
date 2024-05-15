@@ -29,5 +29,6 @@ namespace TravelEase.PassengerDashboards
         }
 
         public Passenger CurrentPassenger { get; set; }
+
     }
 }
