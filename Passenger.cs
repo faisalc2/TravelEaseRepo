@@ -1,9 +1,15 @@
-﻿namespace TravelEase
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace TravelEase
 {
-    internal class Passenger : User
+    public class Passenger : User
     {
-        public string passengerID {  get; set; }
-        public string passengerName { get; set;}
-        public string passengerGender { get; set;}
+        public int passengerID { get; set; }
+
+        public Passenger(string fname, string lname, string nID, DateTime dOB, string gender, string phone, string email, string residence)
+            : base(fname, lname, nID, dOB, gender, phone, email, residence)
+        {
+            this.passengerID += 1;
+        }
     }
 }

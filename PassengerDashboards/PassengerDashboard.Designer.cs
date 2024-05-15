@@ -69,7 +69,7 @@
             panelMain.Dock = DockStyle.Fill;
             panelMain.Location = new Point(253, 36);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(725, 538);
+            panelMain.Size = new Size(827, 538);
             panelMain.TabIndex = 5;
             // 
             // buttonProfile
@@ -105,7 +105,7 @@
             buttonExit.FlatAppearance.BorderSize = 0;
             buttonExit.FlatStyle = FlatStyle.Flat;
             buttonExit.Image = (Image)resources.GetObject("buttonExit.Image");
-            buttonExit.Location = new Point(680, 0);
+            buttonExit.Location = new Point(782, 0);
             buttonExit.Name = "buttonExit";
             buttonExit.Size = new Size(45, 36);
             buttonExit.TabIndex = 0;
@@ -121,7 +121,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(253, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(725, 36);
+            panel1.Size = new Size(827, 36);
             panel1.TabIndex = 4;
             // 
             // buttonLogOut
@@ -151,13 +151,12 @@
             buttonCancelation.ForeColor = SystemColors.ButtonHighlight;
             buttonCancelation.Image = (Image)resources.GetObject("buttonCancelation.Image");
             buttonCancelation.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonCancelation.Location = new Point(18, 411);
+            buttonCancelation.Location = new Point(12, 411);
             buttonCancelation.Margin = new Padding(0);
             buttonCancelation.Name = "buttonCancelation";
-            buttonCancelation.Size = new Size(217, 74);
+            buttonCancelation.Size = new Size(238, 74);
             buttonCancelation.TabIndex = 12;
             buttonCancelation.Text = "      Cancelation";
-            buttonCancelation.TextAlign = ContentAlignment.MiddleRight;
             buttonCancelation.UseVisualStyleBackColor = false;
             buttonCancelation.Click += buttonCancelation_Click;
             // 
@@ -170,13 +169,12 @@
             buttonHistory.ForeColor = SystemColors.ButtonHighlight;
             buttonHistory.Image = (Image)resources.GetObject("buttonHistory.Image");
             buttonHistory.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonHistory.Location = new Point(25, 337);
+            buttonHistory.Location = new Point(12, 337);
             buttonHistory.Margin = new Padding(0);
             buttonHistory.Name = "buttonHistory";
-            buttonHistory.Size = new Size(210, 74);
+            buttonHistory.Size = new Size(238, 74);
             buttonHistory.TabIndex = 11;
             buttonHistory.Text = "History";
-            buttonHistory.TextAlign = ContentAlignment.MiddleRight;
             buttonHistory.UseVisualStyleBackColor = false;
             buttonHistory.Click += buttonHistory_Click;
             // 
@@ -228,7 +226,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(978, 574);
+            ClientSize = new Size(1080, 574);
             Controls.Add(panelMain);
             Controls.Add(panel1);
             Controls.Add(panelSlidebar);

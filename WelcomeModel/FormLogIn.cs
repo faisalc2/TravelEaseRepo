@@ -1,10 +1,30 @@
-﻿namespace TravelEase
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Security.Cryptography;
+using System.Security.Policy;
+using TravelEase.PassengerDashboards;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+namespace TravelEase
 {
     public partial class FormLogIn : Form
     {
+        SqlConnection conn;
+        SqlCommand cmd;
+        string QGetPassngCount = "SELECT COUNT(*) FROM PassengerTB WHERE userID = @userID";
+        string QGetMAdminCount = "SELECT COUNT(*) FROM ModularAdminTB WHERE userID = @userID";
+        string userInfoQuery = "SELECT * FROM UserTB WHERE userID = @userID";
+        string Quid = "SELECT userID FROM LoginCredentialsTB WHERE userName = @userName AND userPassword = @userPassword";
+
+        string connection = @"Data Source=.\SQLEXPRESS;Initial Catalog = TravelEaseDB; Integrated Security = True";
         public FormLogIn()
         {
             InitializeComponent();
+            this.conn = new SqlConnection(connection);
+            conn.Open();
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
@@ -36,10 +56,93 @@
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            //database theke check korbe kun user
-            //jodi passenger hoy tahole passenger er dashboard e dukbe
-            //jodi....
+            if (!(conn.State == ConnectionState.Open)) { conn.Open(); }
+            if (!string.IsNullOrEmpty(textBoxUsername.Text) && !string.IsNullOrEmpty(textBoxUsername.Text))
+            {
+                string uname = textBoxUsername.Text;
+                string upass = textBoxPassword.Text;
+                string uid = null;
+                int userCount;
+                using (conn)
+                {
+                    using (cmd = new SqlCommand(Quid, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@userName", uname);
+                        cmd.Parameters.AddWithValue("@userPassword", upass);
 
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                uid = reader["userID"].ToString();
+                            }
+                        }
+                    }
+                    using (cmd = new SqlCommand(QGetPassngCount, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@userID", uid);
+                        userCount = (int)cmd.ExecuteScalar();
+                        if (userCount > 0)
+                        {
+                            MessageBox.Show("User is Passenger!");
+                            PassengerInfoSingleton.Instance.CurrentPassenger = (Passenger)populateUserInfo(uid, "passenger");
+                            PassengerDashboard passengBoard = new PassengerDashboard();
+                            passengBoard.Show();
+                            this.Hide();
+                        }
+                    }
+                    using (cmd = new SqlCommand(QGetMAdminCount, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@userID", uid);
+                        userCount = (int)cmd.ExecuteScalar();
+                        if (userCount > 0)
+                        {
+                            MessageBox.Show("User is ModularAdmin!");
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error tbs are null!", "info");
+            }
+            conn.Close();
+            textBoxPassword.Clear();
+            textBoxUsername.Clear();
+            textBoxUsername.Focus();
+        }
+        private object populateUserInfo(string uid, string type)
+        {
+            SqlCommand userInfoCmd = new SqlCommand(userInfoQuery, conn);
+            userInfoCmd.Parameters.AddWithValue("@userID", uid);
+
+            using (SqlDataReader userInfoReader = userInfoCmd.ExecuteReader())
+            {
+                if (userInfoReader.Read())
+                {
+                    string UserID = userInfoReader["userID"].ToString();
+                    string FirstName = userInfoReader["fName"].ToString();
+                    string LastName = userInfoReader["lName"].ToString();
+                    string NID = userInfoReader["nid"].ToString();
+                    string Gender = userInfoReader["gender"].ToString();
+                    DateTime DateOfBirth = (DateTime)userInfoReader["dob"];
+                    string Phone = userInfoReader["phone"].ToString();
+                    string Email = userInfoReader["email"].ToString();
+                    string Residence = userInfoReader["residence"].ToString();
+                    int UserStatus = Convert.ToInt32(userInfoReader["userStatus"]);
+                    if (type == "passenger")
+                    {
+                        Passenger passenger = new Passenger(FirstName, LastName, NID, DateOfBirth, Gender, Phone, Email, Residence);
+                        return passenger;
+                    }
+                    else if (type == "ModularAdmin")
+                    {
+                        ModularAdmin mod = new ModularAdmin(FirstName, LastName, NID, DateOfBirth, Gender, Phone, Email, Residence);
+                        return mod;
+                    }
+                }
+            }
+            return null;
         }
     }
 }
