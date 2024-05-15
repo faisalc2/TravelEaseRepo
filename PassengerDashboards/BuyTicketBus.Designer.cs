@@ -146,6 +146,7 @@
             buttonBuyTicket.TabIndex = 28;
             buttonBuyTicket.Text = "Buy Ticket";
             buttonBuyTicket.UseVisualStyleBackColor = false;
+            buttonBuyTicket.Click += buttonBuyTicket_Click;
             // 
             // buttonExit
             // 

@@ -35,7 +35,12 @@ namespace TravelEase.PassengerDashboards
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonupdate_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        public void getEditedInfo()
         {
 
         }
