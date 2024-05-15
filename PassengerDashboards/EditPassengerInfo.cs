@@ -39,5 +39,10 @@ namespace TravelEase.PassengerDashboards
         {
 
         }
+
+        public void getEditedInfo()
+        {
+
+        }
     }
 }

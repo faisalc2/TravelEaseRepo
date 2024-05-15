@@ -14,15 +14,18 @@ namespace TravelEase
         public Payment payment;
         string QUpdatePassenger = @"
         UPDATE UserTB
-        SET 
-            FirstName = @FirstName,
-            LastName = @LastName,
-            NID = @NID,
-            DOB = @DOB,
-            Gender = @Gender,
-            Phone = @Phone,
-            Email = @Email,
-        WHERE UserID = @userID";
+        SET
+            fName = @fName,
+            lName = @lName,
+            nid = @nid,
+            gender = @gender,
+            dob = @dob,
+            phone = @phone,
+            email = @email,
+            residence = @residence,
+            userStatus = @userStatus
+        WHERE
+            userID = @userID";
 
         public Passenger(string fname, string lname, string nID, DateTime dOB, string gender, string phone, string email, string residence, string userID)
             : base(fname, lname, nID, dOB, gender, phone, email, residence, userID)
@@ -119,7 +122,7 @@ namespace TravelEase
                 }
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("An error occured!");
                 return false;
