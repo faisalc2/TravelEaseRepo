@@ -44,15 +44,16 @@ namespace TravelEase.PassengerDashboards
         private void ProcessingPayment_Load(object sender, EventArgs e)
         {
             timer1.Start();
-            timer2.Start();
+            //timer2.Start();
         }
 
-        private int counter = 0;
-        private void timer2_Tick_1(object sender, EventArgs e)
+        private void timer2_Tick(object sender, EventArgs e)
         {
-            counter += timer2.Interval;
-            if (counter >= 3000)
+            panel2.Width += 3;
+            if (panel2.Width >= 589)
             {
+                timer1.Stop();
+                timer2.Stop();
                 DownloadTicket downloadTicket = new DownloadTicket();
                 downloadTicket.Show();
                 this.Hide();

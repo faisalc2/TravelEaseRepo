@@ -19,8 +19,8 @@ namespace TravelEase.PassengerDashboards
 
         private void buttonpurchase_Click(object sender, EventArgs e)
         {
-            DownloadTicket downloadTicket = new DownloadTicket();
-            downloadTicket.Show();
+            ProcessingPayment processingPayment = new ProcessingPayment();
+            processingPayment.Show();
             this.Hide();
         }
 
