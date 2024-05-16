@@ -16,8 +16,9 @@ namespace TravelEase
         SqlCommand cmd;
         string QGetPassngCount = "SELECT COUNT(*) FROM PassengerTB WHERE userID = @userID";
         string QGetMAdminCount = "SELECT COUNT(*) FROM ModularAdminTB WHERE userID = @userID";
-        string userInfoQuery = "SELECT * FROM UserTB WHERE userID = @userID";
-        string Quid = "SELECT userID FROM LoginCredentialsTB WHERE userName = @userName AND userPassword = @userPassword";
+        string userInfoQuery = "SELECT u.*, l.userName, l.userPassword FROM UserTB u JOIN LoginCredentialsTB l ON u.userID = l.userID WHERE u.userID = @userID;";
+        string Quid = "SELECT * FROM LoginCredentialsTB WHERE userName = @userName AND userPassword = @userPassword";
+        //string QLogInfo = "select userName,userPassword from LoginCredentialsTB where"
 
         string connection = @"Data Source=.\SQLEXPRESS;Initial Catalog = TravelEaseDB; Integrated Security = True";
         public FormLogIn()
@@ -130,9 +131,11 @@ namespace TravelEase
                     string Email = userInfoReader["email"].ToString();
                     string Residence = userInfoReader["residence"].ToString();
                     int UserStatus = Convert.ToInt32(userInfoReader["userStatus"]);
+                    string userName = userInfoReader["userName"].ToString();
+                    string userPassword = userInfoReader["userPassword"].ToString();
                     if (type == "passenger")
                     {
-                        Passenger passenger = new Passenger(FirstName, LastName, NID, DateOfBirth, Gender, Phone, Email, Residence, uid);
+                        Passenger passenger = new Passenger(userName, userPassword, FirstName, LastName, NID, DateOfBirth, Gender, Phone, Email, Residence, uid);
                         return passenger;
                     }
                     else if (type == "ModularAdmin")

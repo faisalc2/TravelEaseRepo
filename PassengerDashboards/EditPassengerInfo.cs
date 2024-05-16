@@ -17,6 +17,7 @@ namespace TravelEase.PassengerDashboards
         {
             InitializeComponent();
             this.DGVPassengerInfo.DataSource = PassengerInfoSingleton.Instance.CurrentPassenger.GetAllInfo();
+            populateInfo();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -37,12 +38,38 @@ namespace TravelEase.PassengerDashboards
 
         private void buttonupdate_Click_1(object sender, EventArgs e)
         {
-
+            if (PassengerInfoSingleton.Instance.CurrentPassenger.UpdateUserDetails(getEditedInfo()))
+            {
+                MessageBox.Show("Information Updated!");
+            };
         }
 
-        public void getEditedInfo()
+        public Passenger getEditedInfo()
         {
+            var passenger = PassengerInfoSingleton.Instance.CurrentPassenger;
+            passenger.FirstName = textBoxFirstName.Text;
+            passenger.LastName = textBoxLastName.Text;
+            passenger.DateOfBirth = dateTimePicker1.Value;
+            passenger.Gender = comboBoxGender.Text;
+            passenger.Phone = textBoxPhone.Text;
+            passenger.Email = textBoxEmail.Text;
+            passenger.userName = textBoxUserName.Text;
+            passenger.userPassword = textBoxRepass.Text;
+            return passenger;
+        }
 
+        public void populateInfo()
+        {
+            var passenger = PassengerInfoSingleton.Instance.CurrentPassenger;
+            textBoxFirstName.Text = passenger.FirstName;
+            textBoxLastName.Text = passenger.LastName;
+            dateTimePicker1.Value = passenger.DateOfBirth;
+            comboBoxGender.Text = passenger.Gender;
+            textBoxPhone.Text = passenger.Phone;
+            textBoxEmail.Text = passenger.Email;
+            textBoxUserName.Text = passenger.userName;
+            textBoxpass.Text = passenger.userPassword;
+            textBoxRepass.Text = passenger.userPassword;
         }
     }
 }
