@@ -151,6 +151,8 @@
             pictureBox22 = new PictureBox();
             l_gender = new Label();
             MainPanel5 = new Panel();
+            textBoxUser = new TextBox();
+            label25 = new Label();
             buttonCopy = new PictureBox();
             label5 = new Label();
             textBox_UID = new TextBox();
@@ -178,6 +180,8 @@
             buttonBack0 = new PictureBox();
             pictureBox20 = new PictureBox();
             ModularPanel5 = new Panel();
+            textBoxUserName = new TextBox();
+            label24 = new Label();
             buttonCopyM = new PictureBox();
             label6 = new Label();
             textBox_UIDM = new TextBox();
@@ -1855,6 +1859,8 @@
             // MainPanel5
             // 
             MainPanel5.BackColor = Color.FromArgb(48, 56, 79);
+            MainPanel5.Controls.Add(textBoxUser);
+            MainPanel5.Controls.Add(label25);
             MainPanel5.Controls.Add(buttonCopy);
             MainPanel5.Controls.Add(label5);
             MainPanel5.Controls.Add(textBox_UID);
@@ -1865,11 +1871,30 @@
             MainPanel5.Size = new Size(1105, 646);
             MainPanel5.TabIndex = 72;
             // 
+            // textBoxUser
+            // 
+            textBoxUser.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBoxUser.Location = new Point(545, 469);
+            textBoxUser.Name = "textBoxUser";
+            textBoxUser.Size = new Size(258, 34);
+            textBoxUser.TabIndex = 9;
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label25.ForeColor = Color.White;
+            label25.Location = new Point(269, 474);
+            label25.Name = "label25";
+            label25.Size = new Size(252, 31);
+            label25.TabIndex = 8;
+            label25.Text = "TravelEase UserName: ";
+            // 
             // buttonCopy
             // 
             buttonCopy.Cursor = Cursors.Hand;
             buttonCopy.Image = (Image)resources.GetObject("buttonCopy.Image");
-            buttonCopy.Location = new Point(830, 406);
+            buttonCopy.Location = new Point(831, 469);
             buttonCopy.Name = "buttonCopy";
             buttonCopy.Size = new Size(66, 40);
             buttonCopy.SizeMode = PictureBoxSizeMode.Zoom;
@@ -2171,6 +2196,8 @@
             // ModularPanel5
             // 
             ModularPanel5.BackColor = Color.FromArgb(48, 56, 79);
+            ModularPanel5.Controls.Add(textBoxUserName);
+            ModularPanel5.Controls.Add(label24);
             ModularPanel5.Controls.Add(buttonCopyM);
             ModularPanel5.Controls.Add(label6);
             ModularPanel5.Controls.Add(textBox_UIDM);
@@ -2181,11 +2208,30 @@
             ModularPanel5.Size = new Size(1105, 646);
             ModularPanel5.TabIndex = 83;
             // 
+            // textBoxUserName
+            // 
+            textBoxUserName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBoxUserName.Location = new Point(545, 473);
+            textBoxUserName.Name = "textBoxUserName";
+            textBoxUserName.Size = new Size(255, 34);
+            textBoxUserName.TabIndex = 7;
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label24.ForeColor = Color.White;
+            label24.Location = new Point(266, 478);
+            label24.Name = "label24";
+            label24.Size = new Size(252, 31);
+            label24.TabIndex = 6;
+            label24.Text = "TravelEase UserName: ";
+            // 
             // buttonCopyM
             // 
             buttonCopyM.Cursor = Cursors.Hand;
             buttonCopyM.Image = (Image)resources.GetObject("buttonCopyM.Image");
-            buttonCopyM.Location = new Point(830, 406);
+            buttonCopyM.Location = new Point(830, 469);
             buttonCopyM.Name = "buttonCopyM";
             buttonCopyM.Size = new Size(66, 40);
             buttonCopyM.SizeMode = PictureBoxSizeMode.Zoom;
@@ -3948,6 +3994,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 56, 79);
             ClientSize = new Size(1107, 725);
+            Controls.Add(ModularPanel3);
+            Controls.Add(ModularPanel2);
+            Controls.Add(MainPanel1);
             Controls.Add(ModularPanel5);
             Controls.Add(MainPanel0);
             Controls.Add(MainPanel5);
@@ -3956,9 +4005,6 @@
             Controls.Add(MainPanel3);
             Controls.Add(MainPanel2);
             Controls.Add(ModularPanel1);
-            Controls.Add(ModularPanel3);
-            Controls.Add(ModularPanel2);
-            Controls.Add(MainPanel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormRegistration";
             StartPosition = FormStartPosition.CenterScreen;
@@ -4385,5 +4431,9 @@
         private TextBox textBox_cname;
         private TextBox textBox_vtype;
         private TextBox textBox_grid;
+        private TextBox textBoxUserName;
+        private Label label24;
+        private TextBox textBoxUser;
+        private Label label25;
     }
 }
