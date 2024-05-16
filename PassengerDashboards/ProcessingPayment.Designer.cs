@@ -33,8 +33,11 @@
             label1 = new Label();
             pictureBox1 = new PictureBox();
             timer1 = new System.Windows.Forms.Timer(components);
+            panel1 = new Panel();
+            panel2 = new Panel();
             timer2 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -63,11 +66,27 @@
             timer1.Enabled = true;
             timer1.Tick += timer1_Tick;
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(panel2);
+            panel1.Location = new Point(1, 327);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(587, 19);
+            panel1.TabIndex = 5;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(100, 210, 145);
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(86, 16);
+            panel2.TabIndex = 6;
+            // 
             // timer2
             // 
             timer2.Enabled = true;
-            timer2.Interval = 1000;
-            timer2.Tick += timer2_Tick_1;
+            timer2.Interval = 15;
+            timer2.Tick += timer2_Tick;
             // 
             // ProcessingPayment
             // 
@@ -75,6 +94,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(96, 184, 196);
             ClientSize = new Size(589, 344);
+            Controls.Add(panel1);
             Controls.Add(pictureBox1);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
@@ -82,6 +102,7 @@
             Text = "ProcessingPayment";
             Load += ProcessingPayment_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -91,6 +112,8 @@
         private Label label1;
         private PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer1;
+        private Panel panel1;
+        private Panel panel2;
         private System.Windows.Forms.Timer timer2;
     }
 }
