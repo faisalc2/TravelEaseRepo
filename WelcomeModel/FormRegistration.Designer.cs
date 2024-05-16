@@ -2282,9 +2282,10 @@
             label22.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label22.Location = new Point(395, 72);
             label22.Name = "label22";
-            label22.Size = new Size(101, 46);
+            label22.Size = new Size(130, 46);
             label22.TabIndex = 73;
-            label22.Text = "  Contract\r\nInformation";
+            label22.Text = "Modular Admin\r\nInformation";
+            label22.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label23
             // 
@@ -2292,9 +2293,10 @@
             label23.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label23.Location = new Point(146, 72);
             label23.Name = "label23";
-            label23.Size = new Size(101, 46);
+            label23.Size = new Size(84, 46);
             label23.TabIndex = 72;
-            label23.Text = "   Personal\r\nInformation";
+            label23.Text = "Company\r\nDetails";
+            label23.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // textBox5
             // 
@@ -3946,6 +3948,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 56, 79);
             ClientSize = new Size(1107, 725);
+            Controls.Add(ModularPanel5);
+            Controls.Add(MainPanel0);
+            Controls.Add(MainPanel5);
+            Controls.Add(ModularPanel4);
             Controls.Add(MainPanel4);
             Controls.Add(MainPanel3);
             Controls.Add(MainPanel2);
@@ -3953,10 +3959,6 @@
             Controls.Add(ModularPanel3);
             Controls.Add(ModularPanel2);
             Controls.Add(MainPanel1);
-            Controls.Add(ModularPanel5);
-            Controls.Add(MainPanel0);
-            Controls.Add(MainPanel5);
-            Controls.Add(ModularPanel4);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormRegistration";
             StartPosition = FormStartPosition.CenterScreen;

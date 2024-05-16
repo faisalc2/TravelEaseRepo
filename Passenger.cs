@@ -1,6 +1,6 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace TravelEase
 {
@@ -8,31 +8,126 @@ namespace TravelEase
     {
         public int passengerID { get; set; }
         string QGetInfo = "select * from UserTB where @userID = UserID";
+        string QGetTicketInfo = "select * from TicketTB where @userID = UserID";
+        string QDeleteTicket = "DELETE FROM TicketTB WHERE @ticketID = TicketID";
+        public Ticket ticket;
+        public Payment payment;
+        string QUpdatePassenger = @"
+        UPDATE UserTB
+        SET
+            fName = @fName,
+            lName = @lName,
+            nid = @nid,
+            gender = @gender,
+            dob = @dob,
+            phone = @phone,
+            email = @email,
+            residence = @residence,
+            userStatus = @userStatus
+        WHERE
+            userID = @userID";
 
         public Passenger(string fname, string lname, string nID, DateTime dOB, string gender, string phone, string email, string residence, string userID)
             : base(fname, lname, nID, dOB, gender, phone, email, residence, userID)
         {
+            ticket = new Ticket();
         }
 
         public DataTable GetAllInfo()
         {
             SqlDataAdapter sdt;
             DataTable dt;
-            SqlConnection conn = new SqlConnection(connection);
-            conn.Open();
-            using (conn)
+            using (SqlConnection conn = new SqlConnection(connection))
             {
+                conn.Open();
                 SqlCommand cmd = new SqlCommand(QGetInfo, conn);
-                using (cmd)
+                cmd.Parameters.AddWithValue("@userID", UserID);
+                sdt = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                sdt.Fill(dt);
+            }
+            return dt;
+        }
+
+        public DataTable GetTicketInfo()
+        {
+            SqlDataAdapter sdt;
+            DataTable dt;
+            using (SqlConnection conn = new SqlConnection(connection))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(QGetTicketInfo, conn);
+                cmd.Parameters.AddWithValue("@userID", UserID);
+                sdt = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                sdt.Fill(dt);
+                using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    cmd.Parameters.AddWithValue("@userID", UserID);
-                    sdt = new SqlDataAdapter(cmd);
-                    dt = new DataTable();
-                    sdt.Fill(dt);
+                    if (reader.Read())
+                    {
+                        ticket.ticketID = (int)reader["ticketID"];
+                        ticket.seatNumber = reader["SeatNumber"].ToString();
+                        ticket.userID = reader["userID"].ToString();
+                        ticket.vehicleID = (int)reader["vehicleID"];
+                        ticket.buyDate = (DateTime)reader["buyDate"];
+                        ticket.fare = (double)reader["fare"];
+                        ticket.seatAmount = (int)reader["seatAmount"];
+                    }
                 }
             }
-            conn.Close();
             return dt;
+        }
+
+        public bool CancelTicket(int ticketID)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connection))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(QDeleteTicket, conn);
+                    cmd.Parameters.AddWithValue("@ticketID", ticketID);
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured!");
+                return false;
+            }
+        }
+
+        public bool UpdateInfo(string userID)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(connection);
+                if (!(conn.State == ConnectionState.Open)) { conn.Open(); }
+                using (conn)
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(QUpdatePassenger, conn);
+                    cmd.Parameters.AddWithValue("@FirstName", FirstName);
+                    cmd.Parameters.AddWithValue("@LastName", LastName);
+                    cmd.Parameters.AddWithValue("@NID", NID);
+                    cmd.Parameters.AddWithValue("@DOB", DateOfBirth);
+                    cmd.Parameters.AddWithValue("@Gender", Gender);
+                    cmd.Parameters.AddWithValue("@Phone", Phone);
+                    cmd.Parameters.AddWithValue("@Email", Email);
+                    cmd.Parameters.AddWithValue("@userID", userID);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured!");
+                return false;
+            }
+
         }
     }
 }

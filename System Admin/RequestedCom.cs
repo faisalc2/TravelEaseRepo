@@ -35,12 +35,12 @@ namespace TravelEase.System_Admin
             else if(radioBtnAir.Checked)
             {
                 labelName.Text = "Name of Airlines company: ";
-                labelID.Text = "plane ID:";
+                labelID.Text = "Plane ID:";
             }
             else if (radioButtonShip.Checked)
             {
                 labelName.Text = "Name of Ship company: ";
-                labelID.Text = "plane ID:";
+                labelID.Text = "Ship ID:";
             }
         }
     }

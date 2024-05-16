@@ -290,6 +290,7 @@
             Name = "DownloadTicket";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "DownloadTicket";
+            Load += DownloadTicket_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)buttonExit).EndInit();
             ResumeLayout(false);

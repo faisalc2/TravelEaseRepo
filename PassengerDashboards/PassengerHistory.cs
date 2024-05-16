@@ -15,6 +15,7 @@ namespace TravelEase.PassengerDashboards
         public PassengerHistory()
         {
             InitializeComponent();
+            this.DGVRecentTicketInfo.DataSource = PassengerInfoSingleton.Instance.CurrentPassenger.GetTicketInfo();
         }
     }
 }
