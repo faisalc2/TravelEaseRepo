@@ -7,30 +7,38 @@ namespace TravelEase
     public class Passenger : User
     {
         public int passengerID { get; set; }
-        string QGetInfo = "select * from UserTB where @userID = UserID";
+        public string userName { get; set; }
+        public string userPassword { get; set; }
+        string QGetInfo = "SELECT u.*, l.userName, l.userPassword FROM UserTB u JOIN LoginCredentialsTB l ON u.userID = l.userID WHERE u.userID = @userID;";
         string QGetTicketInfo = "select * from TicketTB where @userID = UserID";
         string QDeleteTicket = "DELETE FROM TicketTB WHERE @ticketID = TicketID";
+        string QUpdatePassenger = @"
+                        UPDATE UserTB
+                        SET 
+                            fName = @fName,
+                            lName = @lName,
+                            gender = @gender,
+                            dob = @dob,
+                            phone = @phone,
+                            email = @email
+                        WHERE 
+                            userID = @userID";
+        string QupdateLoginCred = @"
+                        UPDATE LoginCredentialsTB
+                        SET 
+                            userName = @userName,
+                            userPassword = @userPassword
+                        WHERE 
+                            userID = @userID";
         public Ticket ticket;
         public Payment payment;
-        string QUpdatePassenger = @"
-        UPDATE UserTB
-        SET
-            fName = @fName,
-            lName = @lName,
-            nid = @nid,
-            gender = @gender,
-            dob = @dob,
-            phone = @phone,
-            email = @email,
-            residence = @residence,
-            userStatus = @userStatus
-        WHERE
-            userID = @userID";
 
-        public Passenger(string fname, string lname, string nID, DateTime dOB, string gender, string phone, string email, string residence, string userID)
+        public Passenger(string uname, string upass, string fname, string lname, string nID, DateTime dOB, string gender, string phone, string email, string residence, string userID)
             : base(fname, lname, nID, dOB, gender, phone, email, residence, userID)
         {
             ticket = new Ticket();
+            this.userName = uname;
+            this.userPassword = upass;
         }
 
         public DataTable GetAllInfo()
@@ -98,36 +106,45 @@ namespace TravelEase
             }
         }
 
-        public bool UpdateInfo(string userID)
+        public bool UpdateUserDetails(Passenger p)
         {
-            try
+            using (SqlConnection conn = new SqlConnection(connection))
             {
-                SqlConnection conn = new SqlConnection(connection);
-                if (!(conn.State == ConnectionState.Open)) { conn.Open(); }
-                using (conn)
+                conn.Open();
+                using (SqlTransaction transaction = conn.BeginTransaction())
                 {
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand(QUpdatePassenger, conn);
-                    cmd.Parameters.AddWithValue("@FirstName", FirstName);
-                    cmd.Parameters.AddWithValue("@LastName", LastName);
-                    cmd.Parameters.AddWithValue("@NID", NID);
-                    cmd.Parameters.AddWithValue("@DOB", DateOfBirth);
-                    cmd.Parameters.AddWithValue("@Gender", Gender);
-                    cmd.Parameters.AddWithValue("@Phone", Phone);
-                    cmd.Parameters.AddWithValue("@Email", Email);
-                    cmd.Parameters.AddWithValue("@userID", userID);
+                    try
+                    {
+                        // Update UserTB
+                        SqlCommand cmdUser = new SqlCommand(QUpdatePassenger, conn, transaction);
+                        cmdUser.Parameters.AddWithValue("@userID", UserID);
+                        cmdUser.Parameters.AddWithValue("@fName", p.FirstName);
+                        cmdUser.Parameters.AddWithValue("@lName", p.LastName);
+                        cmdUser.Parameters.AddWithValue("@gender", p.Gender);
+                        cmdUser.Parameters.AddWithValue("@dob", p.DateOfBirth);
+                        cmdUser.Parameters.AddWithValue("@phone", p.Phone);
+                        cmdUser.Parameters.AddWithValue("@email", p.Email);
+                        cmdUser.ExecuteNonQuery();
 
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    return rowsAffected > 0;
+                        // Update LoginCredentialsTB
+                        SqlCommand cmdLogin = new SqlCommand(QupdateLoginCred, conn, transaction);
+                        cmdLogin.Parameters.AddWithValue("@userID", UserID);
+                        cmdLogin.Parameters.AddWithValue("@userName", p.userName);
+                        cmdLogin.Parameters.AddWithValue("@userPassword", p.userPassword);
+                        cmdLogin.ExecuteNonQuery();
+
+                        // Commit transaction
+                        transaction.Commit();
+                        return true;
+                    }
+                    catch (Exception ex)
+                    {
+                        // Rollback transaction if any error occurs
+                        transaction.Rollback();
+                        return false;
+                    }
                 }
-
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occured!");
-                return false;
-            }
-
         }
     }
 }

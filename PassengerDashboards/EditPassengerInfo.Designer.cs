@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
             comboBoxGender = new ComboBox();
             textBoxRepass = new TextBox();
@@ -40,7 +40,7 @@
             dateTimePicker1 = new DateTimePicker();
             textBoxLastName = new TextBox();
             textBoxFirstName = new TextBox();
-            textBoxNid = new TextBox();
+            textBoxUserName = new TextBox();
             buttonupdate = new Button();
             label12 = new Label();
             label9 = new Label();
@@ -68,7 +68,7 @@
             panel1.Controls.Add(dateTimePicker1);
             panel1.Controls.Add(textBoxLastName);
             panel1.Controls.Add(textBoxFirstName);
-            panel1.Controls.Add(textBoxNid);
+            panel1.Controls.Add(textBoxUserName);
             panel1.Controls.Add(buttonupdate);
             panel1.Controls.Add(label12);
             panel1.Controls.Add(label9);
@@ -154,12 +154,12 @@
             textBoxFirstName.Size = new Size(193, 27);
             textBoxFirstName.TabIndex = 24;
             // 
-            // textBoxNid
+            // textBoxUserName
             // 
-            textBoxNid.Location = new Point(148, 85);
-            textBoxNid.Name = "textBoxNid";
-            textBoxNid.Size = new Size(193, 27);
-            textBoxNid.TabIndex = 23;
+            textBoxUserName.Location = new Point(148, 85);
+            textBoxUserName.Name = "textBoxUserName";
+            textBoxUserName.Size = new Size(193, 27);
+            textBoxUserName.TabIndex = 23;
             // 
             // buttonupdate
             // 
@@ -261,9 +261,9 @@
             label3.ForeColor = Color.White;
             label3.Location = new Point(42, 84);
             label3.Name = "label3";
-            label3.Size = new Size(46, 23);
+            label3.Size = new Size(102, 23);
             label3.TabIndex = 1;
-            label3.Text = "NID:";
+            label3.Text = "User Name:";
             // 
             // label1
             // 
@@ -280,18 +280,18 @@
             // 
             DGVPassengerInfo.AllowUserToAddRows = false;
             DGVPassengerInfo.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(48, 56, 79);
-            DGVPassengerInfo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(48, 56, 79);
+            DGVPassengerInfo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             DGVPassengerInfo.BorderStyle = BorderStyle.None;
             DGVPassengerInfo.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(48, 56, 79);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            DGVPassengerInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(48, 56, 79);
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            DGVPassengerInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             DGVPassengerInfo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DGVPassengerInfo.EnableHeadersVisualStyles = false;
             DGVPassengerInfo.Location = new Point(24, 49);
@@ -355,7 +355,7 @@
         private DateTimePicker dateTimePicker1;
         private TextBox textBoxLastName;
         private TextBox textBoxFirstName;
-        private TextBox textBoxNid;
+        private TextBox textBoxUserName;
         private ComboBox comboBoxGender;
     }
 }
