@@ -41,6 +41,7 @@ namespace TravelEase.PassengerDashboards
             if (PassengerInfoSingleton.Instance.CurrentPassenger.UpdateUserDetails(getEditedInfo()))
             {
                 MessageBox.Show("Information Updated!");
+                this.DGVPassengerInfo.DataSource = PassengerInfoSingleton.Instance.CurrentPassenger.GetAllInfo();
             };
         }
 
