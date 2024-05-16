@@ -69,7 +69,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(725, 538);
             panel1.TabIndex = 0;
-            //panel1.Paint += panel1_Paint;
             // 
             // buttonNext1
             // 
@@ -216,6 +215,7 @@
             // 
             dateTimePickerDate.CalendarFont = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dateTimePickerDate.Location = new Point(283, 242);
+            dateTimePickerDate.MinDate = new DateTime(2024, 5, 17, 0, 0, 0, 0);
             dateTimePickerDate.Name = "dateTimePickerDate";
             dateTimePickerDate.Size = new Size(277, 27);
             dateTimePickerDate.TabIndex = 33;
@@ -250,6 +250,7 @@
             comboBoxFrom.Name = "comboBoxFrom";
             comboBoxFrom.Size = new Size(277, 36);
             comboBoxFrom.TabIndex = 30;
+            comboBoxFrom.TextChanged += comboBoxFrom_TextChanged;
             // 
             // labelClass
             // 
@@ -333,8 +334,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 56, 79);
             ClientSize = new Size(725, 538);
-            Controls.Add(panel1);
             Controls.Add(panel2);
+            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "SearchTicket";
             StartPosition = FormStartPosition.CenterScreen;

@@ -19,7 +19,7 @@ namespace TravelEase.PassengerDashboards
             InitializeComponent();
         }
 
-        public static void SetSelectedVehicle(string vehicle)
+        public void SetSelectedVehicle(string vehicle)
         {
             selectedVehicle = vehicle;
         }
