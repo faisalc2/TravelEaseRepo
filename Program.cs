@@ -18,7 +18,7 @@ namespace TravelEase
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            Application.Run(new NewModuler());
+            Application.Run(new FormLoadingPage());
         }
     }
 }
