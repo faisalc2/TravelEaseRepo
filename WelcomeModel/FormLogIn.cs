@@ -5,6 +5,8 @@ using System.Drawing;
 using System.Security.Cryptography;
 using System.Security.Policy;
 using TravelEase.PassengerDashboards;
+using TravelEase.System_Admin;
+using TravelEase;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
@@ -57,60 +59,69 @@ namespace TravelEase
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            if (!(conn.State == ConnectionState.Open)) { conn.Open(); }
-            if (!string.IsNullOrEmpty(textBoxUsername.Text) && !string.IsNullOrEmpty(textBoxUsername.Text))
+            if (textBoxUsername.Text == new TravelEase.Admin().AdminName && textBoxPassword.Text == new TravelEase.Admin().AdminPassword)
             {
-                string uname = textBoxUsername.Text;
-                string upass = textBoxPassword.Text;
-                string uid = null;
-                int userCount;
-                using (conn)
-                {
-                    using (cmd = new SqlCommand(Quid, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@userName", uname);
-                        cmd.Parameters.AddWithValue("@userPassword", upass);
-
-                        using (SqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                uid = reader["userID"].ToString();
-                            }
-                        }
-                    }
-                    using (cmd = new SqlCommand(QGetPassngCount, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@userID", uid);
-                        userCount = (int)cmd.ExecuteScalar();
-                        if (userCount > 0)
-                        {
-                            MessageBox.Show($"Welcome {uname} to TravelEase");
-                            PassengerInfoSingleton.Instance.CurrentPassenger = (Passenger)populateUserInfo(uid, "passenger");
-                            PassengerDashboard passengBoard = new PassengerDashboard();
-                            passengBoard.Show();
-                            this.Hide();
-                        }
-                    }
-                    using (cmd = new SqlCommand(QGetMAdminCount, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@userID", uid);
-                        userCount = (int)cmd.ExecuteScalar();
-                        if (userCount > 0)
-                        {
-                            MessageBox.Show("User is ModularAdmin!");
-                        }
-                    }
-                }
+                SystemAdminDashboard systemAdminDashboard = new SystemAdminDashboard();
+                systemAdminDashboard.Show();
+                this.Hide();
             }
             else
             {
-                MessageBox.Show("Error tbs are null!", "info");
+                if (!(conn.State == ConnectionState.Open)) { conn.Open(); }
+                if (!string.IsNullOrEmpty(textBoxUsername.Text) && !string.IsNullOrEmpty(textBoxUsername.Text))
+                {
+                    string uname = textBoxUsername.Text;
+                    string upass = textBoxPassword.Text;
+                    string uid = null;
+                    int userCount;
+                    using (conn)
+                    {
+                        using (cmd = new SqlCommand(Quid, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@userName", uname);
+                            cmd.Parameters.AddWithValue("@userPassword", upass);
+
+                            using (SqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                if (reader.Read())
+                                {
+                                    uid = reader["userID"].ToString();
+                                }
+                            }
+                        }
+                        using (cmd = new SqlCommand(QGetPassngCount, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@userID", uid);
+                            userCount = (int)cmd.ExecuteScalar();
+                            if (userCount > 0)
+                            {
+                                MessageBox.Show($"Welcome {uname} to TravelEase");
+                                PassengerInfoSingleton.Instance.CurrentPassenger = (Passenger)populateUserInfo(uid, "passenger");
+                                PassengerDashboard passengBoard = new PassengerDashboard();
+                                passengBoard.Show();
+                                this.Hide();
+                            }
+                        }
+                        using (cmd = new SqlCommand(QGetMAdminCount, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@userID", uid);
+                            userCount = (int)cmd.ExecuteScalar();
+                            if (userCount > 0)
+                            {
+                                MessageBox.Show("User is ModularAdmin!");
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Error tbs are null!", "info");
+                }
+                conn.Close();
+                textBoxPassword.Clear();
+                textBoxUsername.Clear();
+                textBoxUsername.Focus();
             }
-            conn.Close();
-            textBoxPassword.Clear();
-            textBoxUsername.Clear();
-            textBoxUsername.Focus();
         }
         private object populateUserInfo(string uid, string type)
         {
