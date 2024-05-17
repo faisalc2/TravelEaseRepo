@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TravelEase.PassengerDashboards;
 
 namespace TravelEase.System_Admin
 {
@@ -15,6 +16,13 @@ namespace TravelEase.System_Admin
         public RemoveUser()
         {
             InitializeComponent();
+            load_Table();
+            //this.DGVUserInfo.DataSource = AdminInfoSingleton.Instance.CurrentAdmin.GetSomeUserInfo();
+        }
+        public void load_Table()
+        {
+            DataTable dt = new TravelEase.Admin().GetSomeUserInfo();
+            DGVUserInfo.DataSource = dt;
         }
     }
 }

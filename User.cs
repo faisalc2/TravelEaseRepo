@@ -75,6 +75,8 @@ namespace TravelEase
         }
 
         private static DateTime currentDate = DateTime.Now.Date;
+
+        public User() { }
         public User(string fname, string lname, string nID, DateTime dOB, string gender, string phone, string email, string residence, string userID)
         {
             _fname = fname;

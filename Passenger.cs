@@ -30,6 +30,7 @@ namespace TravelEase
                             userPassword = @userPassword
                         WHERE 
                             userID = @userID";
+        
         public Ticket ticket;
         public Payment payment;
 
@@ -40,7 +41,7 @@ namespace TravelEase
             this.userName = uname;
             this.userPassword = upass;
         }
-
+        
         public DataTable GetAllInfo()
         {
             SqlDataAdapter sdt;
@@ -56,6 +57,8 @@ namespace TravelEase
             }
             return dt;
         }
+
+       
 
         public DataTable GetTicketInfo()
         {
