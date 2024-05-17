@@ -10,6 +10,7 @@ using TravelEase;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Linq.Expressions;
 namespace TravelEase
 {
     public partial class FormLogIn : Form
@@ -68,27 +69,29 @@ namespace TravelEase
             else
             {
                 if (!(conn.State == ConnectionState.Open)) { conn.Open(); }
-                if (!string.IsNullOrEmpty(textBoxUsername.Text) && !string.IsNullOrEmpty(textBoxUsername.Text))
+                if (!string.IsNullOrEmpty(textBoxUsername.Text) && !string.IsNullOrEmpty(textBoxPassword.Text))
                 {
                     string uname = textBoxUsername.Text;
                     string upass = textBoxPassword.Text;
                     string uid = null;
-                    int userCount;
-                    using (conn)
-                    {
-                        using (cmd = new SqlCommand(Quid, conn))
-                        {
-                            cmd.Parameters.AddWithValue("@userName", uname);
-                            cmd.Parameters.AddWithValue("@userPassword", upass);
 
-                            using (SqlDataReader reader = cmd.ExecuteReader())
+                    using (cmd = new SqlCommand(Quid, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@userName", uname);
+                        cmd.Parameters.AddWithValue("@userPassword", upass);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
                             {
-                                if (reader.Read())
-                                {
-                                    uid = reader["userID"].ToString();
-                                }
+                                uid = reader["userID"].ToString();
                             }
                         }
+                    }
+
+                    if (uid != null)
+                    {
+                        int userCount;
                         using (cmd = new SqlCommand(QGetPassngCount, conn))
                         {
                             cmd.Parameters.AddWithValue("@userID", uid);
@@ -112,17 +115,23 @@ namespace TravelEase
                             }
                         }
                     }
+                    else
+                    {
+                        MessageBox.Show("Invalid username or password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Error tbs are null!", "info");
+                    MessageBox.Show("Username or password cannot be empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+
                 conn.Close();
                 textBoxPassword.Clear();
                 textBoxUsername.Clear();
                 textBoxUsername.Focus();
             }
         }
+
         private object populateUserInfo(string uid, string type)
         {
             SqlCommand userInfoCmd = new SqlCommand(userInfoQuery, conn);
@@ -130,31 +139,40 @@ namespace TravelEase
 
             using (SqlDataReader userInfoReader = userInfoCmd.ExecuteReader())
             {
-                if (userInfoReader.Read())
+                try
                 {
-                    string UserID = userInfoReader["userID"].ToString();
-                    string FirstName = userInfoReader["fName"].ToString();
-                    string LastName = userInfoReader["lName"].ToString();
-                    string NID = userInfoReader["nid"].ToString();
-                    string Gender = userInfoReader["gender"].ToString();
-                    DateTime DateOfBirth = (DateTime)userInfoReader["dob"];
-                    string Phone = userInfoReader["phone"].ToString();
-                    string Email = userInfoReader["email"].ToString();
-                    string Residence = userInfoReader["residence"].ToString();
-                    int UserStatus = Convert.ToInt32(userInfoReader["userStatus"]);
-                    string userName = userInfoReader["userName"].ToString();
-                    string userPassword = userInfoReader["userPassword"].ToString();
-                    if (type == "passenger")
+                    if (userInfoReader.Read())
                     {
-                        Passenger passenger = new Passenger(userName, userPassword, FirstName, LastName, NID, DateOfBirth, Gender, Phone, Email, Residence, uid);
-                        return passenger;
+                        string UserID = userInfoReader["userID"].ToString();
+                        string FirstName = userInfoReader["fName"].ToString();
+                        string LastName = userInfoReader["lName"].ToString();
+                        string NID = userInfoReader["nid"].ToString();
+                        string Gender = userInfoReader["gender"].ToString();
+                        DateTime DateOfBirth = (DateTime)userInfoReader["dob"];
+                        string Phone = userInfoReader["phone"].ToString();
+                        string Email = userInfoReader["email"].ToString();
+                        string Residence = userInfoReader["residence"].ToString();
+                        int UserStatus = Convert.ToInt32(userInfoReader["userStatus"]);
+                        string userName = userInfoReader["userName"].ToString();
+                        string userPassword = userInfoReader["userPassword"].ToString();
+                        if (type == "passenger")
+                        {
+                            Passenger passenger = new Passenger(userName, userPassword, FirstName, LastName, NID, DateOfBirth, Gender, Phone, Email, Residence, uid);
+                            return passenger;
+                        }
+                        /*else if (type == "ModularAdmin")
+                        {
+                            ModularAdmin mod = new ModularAdmin(FirstName, LastName, NID, DateOfBirth, Gender, Phone, Email, Residence, uid);
+                            return mod;
+                        }*/
                     }
-                    /*else if (type == "ModularAdmin")
-                    {
-                        ModularAdmin mod = new ModularAdmin(FirstName, LastName, NID, DateOfBirth, Gender, Phone, Email, Residence, uid);
-                        return mod;
-                    }*/
-                    //else
+                }
+                catch
+                {
+                    MessageBox.Show("Error retrieving user information!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    textBoxUsername.Clear();
+                    textBoxPassword.Clear();
+                    textBoxUsername.Focus();
                 }
             }
             return null;
