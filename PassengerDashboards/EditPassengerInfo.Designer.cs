@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
             comboBoxGender = new ComboBox();
             textBoxRepass = new TextBox();
@@ -89,14 +89,14 @@
             // 
             comboBoxGender.FormattingEnabled = true;
             comboBoxGender.Items.AddRange(new object[] { "Male", "Female" });
-            comboBoxGender.Location = new Point(596, 79);
+            comboBoxGender.Location = new Point(596, 77);
             comboBoxGender.Name = "comboBoxGender";
             comboBoxGender.Size = new Size(159, 28);
             comboBoxGender.TabIndex = 33;
             // 
             // textBoxRepass
             // 
-            textBoxRepass.Location = new Point(595, 235);
+            textBoxRepass.Location = new Point(596, 235);
             textBoxRepass.Name = "textBoxRepass";
             textBoxRepass.Size = new Size(163, 27);
             textBoxRepass.TabIndex = 32;
@@ -121,14 +121,14 @@
             // 
             // textBoxEmail
             // 
-            textBoxEmail.Location = new Point(595, 154);
+            textBoxEmail.Location = new Point(596, 155);
             textBoxEmail.Name = "textBoxEmail";
             textBoxEmail.Size = new Size(160, 27);
             textBoxEmail.TabIndex = 29;
             // 
             // textBoxPhone
             // 
-            textBoxPhone.Location = new Point(595, 117);
+            textBoxPhone.Location = new Point(596, 117);
             textBoxPhone.Name = "textBoxPhone";
             textBoxPhone.Size = new Size(160, 27);
             textBoxPhone.TabIndex = 28;
@@ -204,7 +204,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(503, 116);
+            label8.Location = new Point(503, 115);
             label8.Name = "label8";
             label8.Size = new Size(64, 23);
             label8.TabIndex = 6;
@@ -215,7 +215,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(503, 79);
+            label7.Location = new Point(503, 78);
             label7.Name = "label7";
             label7.Size = new Size(74, 23);
             label7.TabIndex = 5;
@@ -280,18 +280,18 @@
             // 
             DGVPassengerInfo.AllowUserToAddRows = false;
             DGVPassengerInfo.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(48, 56, 79);
-            DGVPassengerInfo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(48, 56, 79);
+            DGVPassengerInfo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             DGVPassengerInfo.BorderStyle = BorderStyle.None;
             DGVPassengerInfo.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(48, 56, 79);
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            DGVPassengerInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(48, 56, 79);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            DGVPassengerInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             DGVPassengerInfo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DGVPassengerInfo.EnableHeadersVisualStyles = false;
             DGVPassengerInfo.Location = new Point(24, 49);
