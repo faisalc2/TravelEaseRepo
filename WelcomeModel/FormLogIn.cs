@@ -11,6 +11,7 @@ using TravelEase.System_Admin;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Linq.Expressions;
 namespace TravelEase
 {
     public partial class FormLogIn : Form
@@ -69,18 +70,16 @@ namespace TravelEase
             else
             {
                 if (!(conn.State == ConnectionState.Open)) { conn.Open(); }
-                if (!string.IsNullOrEmpty(textBoxUsername.Text) && !string.IsNullOrEmpty(textBoxUsername.Text))
+                if (!string.IsNullOrEmpty(textBoxUsername.Text) && !string.IsNullOrEmpty(textBoxPassword.Text))
                 {
                     string uname = textBoxUsername.Text;
                     string upass = textBoxPassword.Text;
                     string uid = null;
-                    int userCount;
-                    using (conn)
+
+                    using (cmd = new SqlCommand(Quid, conn))
                     {
-                        using (cmd = new SqlCommand(Quid, conn))
-                        {
-                            cmd.Parameters.AddWithValue("@userName", uname);
-                            cmd.Parameters.AddWithValue("@userPassword", upass);
+                        cmd.Parameters.AddWithValue("@userName", uname);
+                        cmd.Parameters.AddWithValue("@userPassword", upass);
 
                             using (SqlDataReader reader = cmd.ExecuteReader())
                             {
@@ -137,17 +136,23 @@ namespace TravelEase
 
                         }
                     }
+                    else
+                    {
+                        MessageBox.Show("Invalid username or password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Error tbs are null!", "info");
+                    MessageBox.Show("Username or password cannot be empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+
                 conn.Close();
                 textBoxPassword.Clear();
                 textBoxUsername.Clear();
                 textBoxUsername.Focus();
             }
         }
+
         private object populateUserInfo(string uid, string type)
         {
             SqlCommand userInfoCmd = new SqlCommand(userInfoQuery, conn);
