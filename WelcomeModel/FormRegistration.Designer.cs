@@ -2098,7 +2098,7 @@
             MainPanel0.Controls.Add(pictureBox20);
             MainPanel0.Location = new Point(0, 0);
             MainPanel0.Name = "MainPanel0";
-            MainPanel0.Size = new Size(1108, 649);
+            MainPanel0.Size = new Size(1108, 713);
             MainPanel0.TabIndex = 73;
             // 
             // buttonNext0
@@ -2186,9 +2186,9 @@
             // pictureBox20
             // 
             pictureBox20.Image = (Image)resources.GetObject("pictureBox20.Image");
-            pictureBox20.Location = new Point(-29, 4);
+            pictureBox20.Location = new Point(-26, 7);
             pictureBox20.Name = "pictureBox20";
-            pictureBox20.Size = new Size(650, 639);
+            pictureBox20.Size = new Size(703, 703);
             pictureBox20.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox20.TabIndex = 73;
             pictureBox20.TabStop = false;
@@ -3994,17 +3994,17 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 56, 79);
             ClientSize = new Size(1107, 725);
-            Controls.Add(ModularPanel3);
-            Controls.Add(ModularPanel2);
-            Controls.Add(MainPanel1);
-            Controls.Add(ModularPanel5);
-            Controls.Add(MainPanel0);
             Controls.Add(MainPanel5);
             Controls.Add(ModularPanel4);
             Controls.Add(MainPanel4);
             Controls.Add(MainPanel3);
             Controls.Add(MainPanel2);
             Controls.Add(ModularPanel1);
+            Controls.Add(ModularPanel3);
+            Controls.Add(ModularPanel2);
+            Controls.Add(MainPanel1);
+            Controls.Add(ModularPanel5);
+            Controls.Add(MainPanel0);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormRegistration";
             StartPosition = FormStartPosition.CenterScreen;

@@ -38,11 +38,19 @@ namespace TravelEase.PassengerDashboards
 
         private void buttonupdate_Click_1(object sender, EventArgs e)
         {
-            if (PassengerInfoSingleton.Instance.CurrentPassenger.UpdateUserDetails(getEditedInfo()))
+            if(textBoxpass.Text == textBoxpass.Text)
             {
-                MessageBox.Show("Information Updated!");
-                this.DGVPassengerInfo.DataSource = PassengerInfoSingleton.Instance.CurrentPassenger.GetAllInfo();
-            };
+                if (PassengerInfoSingleton.Instance.CurrentPassenger.UpdateUserDetails(getEditedInfo()))
+                {
+                    MessageBox.Show("Information Updated!");
+                    this.DGVPassengerInfo.DataSource = PassengerInfoSingleton.Instance.CurrentPassenger.GetAllInfo();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Password and re-password is not identical", "Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            
         }
 
         public Passenger getEditedInfo()
