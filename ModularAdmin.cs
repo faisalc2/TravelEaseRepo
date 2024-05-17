@@ -1,5 +1,5 @@
-﻿using System.Data.SqlClient;
-using System.Data;
+﻿using System.Data;
+using System.Data.SqlClient;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace TravelEase
@@ -39,6 +39,7 @@ namespace TravelEase
                             companyName = @companyName;
                         WHERE 
                             companyID = @companyID";
+
         public DataTable GetAllModularInfo()
         {
             SqlDataAdapter sdt;

@@ -21,13 +21,13 @@ namespace TravelEase.Moduler_Admin
         }
         public void populateModularInfo()
         {
-            var modularAdmin = PassengerInfoSingleton.Instance.CurrentPassenger;
+            var modularAdmin = ModularAdminSingletone.Instance.currentMAdmin;
             textBoxMAdminFirstName.Text = modularAdmin.FirstName;
             textBoxMAdminLastName.Text = modularAdmin.LastName;
             textBoxMAdminPhone.Text = modularAdmin.Phone;
             textBoxMAdminEmail.Text = modularAdmin.Email;
-            textBoxMAdminUsername.Text = modularAdmin.userName;
-            textBoxMAdminPassword.Text = modularAdmin.userPassword;
+            textBoxMAdminUsername.Text = modularAdmin.userNameModular;
+            textBoxMAdminPassword.Text = modularAdmin.userPasswordModular;
         }
     }
 }

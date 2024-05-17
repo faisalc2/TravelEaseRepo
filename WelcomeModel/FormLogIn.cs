@@ -4,9 +4,10 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Security.Cryptography;
 using System.Security.Policy;
+using TravelEase;
+using TravelEase.Moduler_Admin;
 using TravelEase.PassengerDashboards;
 using TravelEase.System_Admin;
-using TravelEase;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
@@ -89,27 +90,51 @@ namespace TravelEase
                                 }
                             }
                         }
+                        // if the passenger logged in
                         using (cmd = new SqlCommand(QGetPassngCount, conn))
                         {
                             cmd.Parameters.AddWithValue("@userID", uid);
-                            userCount = (int)cmd.ExecuteScalar();
-                            if (userCount > 0)
+                            try
                             {
-                                MessageBox.Show($"Welcome {uname} to TravelEase");
-                                PassengerInfoSingleton.Instance.CurrentPassenger = (Passenger)populateUserInfo(uid, "passenger");
-                                PassengerDashboard passengBoard = new PassengerDashboard();
-                                passengBoard.Show();
-                                this.Hide();
+                                userCount = (int)cmd.ExecuteScalar();
+                                if (userCount > 0)
+                                {
+                                    MessageBox.Show($"Welcome {uname} to TravelEase");
+                                    PassengerInfoSingleton.Instance.CurrentPassenger = (Passenger)populateUserInfo(uid, "passenger");
+                                    PassengerDashboard passengBoard = new PassengerDashboard();
+                                    passengBoard.Show();
+                                    this.Hide();
+                                    conn.Close();
+                                }
                             }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show($"Error: {ex.Message}");
+                            }
+
                         }
+                        // if the MAdmin logged in
                         using (cmd = new SqlCommand(QGetMAdminCount, conn))
                         {
                             cmd.Parameters.AddWithValue("@userID", uid);
-                            userCount = (int)cmd.ExecuteScalar();
-                            if (userCount > 0)
+                            try
                             {
-                                MessageBox.Show("User is ModularAdmin!");
+                                userCount = (int)cmd.ExecuteScalar();
+                                if (userCount > 0)
+                                {
+                                    MessageBox.Show($"Welcome {uname} to TravelEase");
+                                    ModularAdminSingletone.Instance.currentMAdmin = (ModularAdmin)populateUserInfo(uid, "ModularAdmin");
+                                    NewModuler ModDashBoard = new NewModuler();
+                                    ModDashBoard.Show();
+                                    this.Hide();
+                                    conn.Close();
+                                }
                             }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show($"Error: {ex.Message}");
+                            }
+
                         }
                     }
                 }
@@ -149,11 +174,11 @@ namespace TravelEase
                         Passenger passenger = new Passenger(userName, userPassword, FirstName, LastName, NID, DateOfBirth, Gender, Phone, Email, Residence, uid);
                         return passenger;
                     }
-                    /*else if (type == "ModularAdmin")
+                    else if (type == "ModularAdmin")
                     {
-                        ModularAdmin mod = new ModularAdmin(FirstName, LastName, NID, DateOfBirth, Gender, Phone, Email, Residence, uid);
+                        ModularAdmin mod = new ModularAdmin(userName, userPassword, FirstName, LastName, NID, DateOfBirth, Gender, Phone, Email, Residence, uid);
                         return mod;
-                    }*/
+                    }
                     //else
                 }
             }
