@@ -8,8 +8,18 @@ namespace TravelEase
 {
     internal class Company
     {
-        private string _companyID;
-        private string _companyName;
-        private string _companyType;
+        public string CompanyID { get; set; }
+        public string BDRegID { get; set; } 
+        public string CompanyName { get; set;}
+        public string CompanyType { get; set;}
+
+        public Company() { }
+        public Company (string cID, string bdRegID, string cName, string cType)
+        {
+            CompanyID = cID;
+            BDRegID = bdRegID;
+            CompanyName = cName;
+            CompanyType = cType;
+        }
     }
 }
