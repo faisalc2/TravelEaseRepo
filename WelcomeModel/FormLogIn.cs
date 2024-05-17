@@ -85,7 +85,7 @@ namespace TravelEase
                         userCount = (int)cmd.ExecuteScalar();
                         if (userCount > 0)
                         {
-                            MessageBox.Show($"hi {uid}");
+                            MessageBox.Show($"Welcome {uname} to TravelEase");
                             PassengerInfoSingleton.Instance.CurrentPassenger = (Passenger)populateUserInfo(uid, "passenger");
                             PassengerDashboard passengBoard = new PassengerDashboard();
                             passengBoard.Show();

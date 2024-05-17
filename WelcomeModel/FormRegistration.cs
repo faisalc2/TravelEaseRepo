@@ -79,6 +79,7 @@ namespace TravelEase.WelcomeModel
                 }
             }
             textBox_UID.Text = uid;
+            textBoxUser.Text = tb_username.Text;
             conn.Close();
         }
 
@@ -127,6 +128,18 @@ namespace TravelEase.WelcomeModel
 
         private void buttonNext1_Click(object sender, EventArgs e)
         {
+        
+            if (string.IsNullOrEmpty(textBox_NID.Text) ||
+            string.IsNullOrEmpty(textBox_Fname.Text) ||
+            string.IsNullOrEmpty(textBox_Lname.Text) ||
+            string.IsNullOrEmpty(dateTimePicker_DOB.Text) ||
+            string.IsNullOrEmpty(comboBox_Gender.Text))
+            {
+                MessageBox.Show("Please fill in all required fields.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox_NID.Focus();
+                return;
+            }
+
             tb_nid.Text = textBox_NID.Text;
             tb_fname.Text = textBox_Fname.Text;
             tb_lname.Text = textBox_Lname.Text;
@@ -159,12 +172,26 @@ namespace TravelEase.WelcomeModel
 
         private void buttonNext2_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(textBox_Phone.Text) ||
+               string.IsNullOrEmpty(textBox_Email.Text) ||
+               string.IsNullOrEmpty(textBox_Address.Text))
+            {
+                MessageBox.Show("Please fill in all required fields.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox_NID.Focus();
+                return;
+            }
+
             if (!IsValidEmail(textBox_Email.Text))
             {
                 MessageBox.Show("Please enter a valid email address.", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
+            if(textBox_Phone.Text.Length != 11)
+            {
+                MessageBox.Show("Phone number must be 11 digits.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox_Phone.Focus();
+                return;
+            }
             tb_phone.Text = "+88" + textBox_Phone.Text;
             tb_email.Text = textBox_Email.Text;
             tb_address.Text = textBox_Address.Text;
@@ -298,10 +325,10 @@ namespace TravelEase.WelcomeModel
 
         private void buttonCopy_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(textBox_UID.Text))
+            if (!string.IsNullOrWhiteSpace(textBoxUser.Text))
             {
-                Clipboard.SetText(textBox_UID.Text);
-                MessageBox.Show("Text copied to clipboard!");
+                Clipboard.SetText(textBoxUser.Text);
+                MessageBox.Show("Username copied to clipboard!");
             }
             else
             {
@@ -514,6 +541,7 @@ namespace TravelEase.WelcomeModel
             Random random = new Random();
             int randomNumber = random.Next(10000, 99999);
             textBox_UIDM.Text = $"MAD-{date}-{randomNumber}";
+            textBoxUserName.Text = textBox_usernamemm.Text;
 
             ModularPanel5.Show();
             ModularPanel5.BringToFront();
@@ -543,10 +571,10 @@ namespace TravelEase.WelcomeModel
 
         private void buttonCopyM_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(textBox_UIDM.Text))
+            if (!string.IsNullOrWhiteSpace(textBoxUserName.Text))
             {
-                Clipboard.SetText(textBox_UIDM.Text);
-                MessageBox.Show("Text copied to clipboard!");
+                Clipboard.SetText(textBoxUserName.Text);
+                MessageBox.Show("User Name copied to clipboard!");
             }
             else
             {
