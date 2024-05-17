@@ -3,31 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TravelEase.PassengerDashboards;
 
-namespace TravelEase.PassengerDashboards
+namespace TravelEase.Moduler_Admin
 {
-    internal class PassengerInfoSingleton
+    internal class ModularAdminSingletone
     {
-        private static PassengerInfoSingleton _instance;
+        private static ModularAdminSingletone _instance;
         private static readonly object _lock = new object();
 
-        private PassengerInfoSingleton() { }
+        private ModularAdminSingletone() { }
 
-        public static PassengerInfoSingleton Instance
+        public static ModularAdminSingletone Instance
         {
             get
             {
                 lock (_lock)
                 {
                     if (_instance == null)
-                    {
-                        _instance = new PassengerInfoSingleton();
-                    }
+                        _instance = new ModularAdminSingletone();
                     return _instance;
                 }
             }
         }
 
-        public Passenger CurrentPassenger { get; set; }
+        public ModularAdmin currentMAdmin { get; set; }
     }
 }

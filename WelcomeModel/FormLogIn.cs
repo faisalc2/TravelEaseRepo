@@ -149,11 +149,11 @@ namespace TravelEase
                         Passenger passenger = new Passenger(userName, userPassword, FirstName, LastName, NID, DateOfBirth, Gender, Phone, Email, Residence, uid);
                         return passenger;
                     }
-                    else if (type == "ModularAdmin")
+                    /*else if (type == "ModularAdmin")
                     {
                         ModularAdmin mod = new ModularAdmin(FirstName, LastName, NID, DateOfBirth, Gender, Phone, Email, Residence, uid);
                         return mod;
-                    }
+                    }*/
                     //else
                 }
             }
