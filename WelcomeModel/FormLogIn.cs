@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Linq.Expressions;
 using System.Security.Cryptography;
 using System.Security.Policy;
 using TravelEase;
@@ -11,7 +12,6 @@ using TravelEase.System_Admin;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-using System.Linq.Expressions;
 namespace TravelEase
 {
     public partial class FormLogIn : Form
@@ -81,75 +81,71 @@ namespace TravelEase
                         cmd.Parameters.AddWithValue("@userName", uname);
                         cmd.Parameters.AddWithValue("@userPassword", upass);
 
-                            using (SqlDataReader reader = cmd.ExecuteReader())
-                            {
-                                if (reader.Read())
-                                {
-                                    uid = reader["userID"].ToString();
-                                }
-                            }
-                        }
-                        // if the passenger logged in
-                        using (cmd = new SqlCommand(QGetPassngCount, conn))
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            cmd.Parameters.AddWithValue("@userID", uid);
-                            try
+                            if (reader.Read())
                             {
-                                userCount = (int)cmd.ExecuteScalar();
-                                if (userCount > 0)
-                                {
-                                    MessageBox.Show($"Welcome {uname} to TravelEase");
-                                    PassengerInfoSingleton.Instance.CurrentPassenger = (Passenger)populateUserInfo(uid, "passenger");
-                                    PassengerDashboard passengBoard = new PassengerDashboard();
-                                    passengBoard.Show();
-                                    this.Hide();
-                                    conn.Close();
-                                }
+                                uid = reader["userID"].ToString();
                             }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show($"Error: {ex.Message}");
-                            }
-
-                        }
-                        // if the MAdmin logged in
-                        using (cmd = new SqlCommand(QGetMAdminCount, conn))
-                        {
-                            cmd.Parameters.AddWithValue("@userID", uid);
-                            try
-                            {
-                                userCount = (int)cmd.ExecuteScalar();
-                                if (userCount > 0)
-                                {
-                                    MessageBox.Show($"Welcome {uname} to TravelEase");
-                                    ModularAdminSingletone.Instance.currentMAdmin = (ModularAdmin)populateUserInfo(uid, "ModularAdmin");
-                                    NewModuler ModDashBoard = new NewModuler();
-                                    ModDashBoard.Show();
-                                    this.Hide();
-                                    conn.Close();
-                                }
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show($"Error: {ex.Message}");
-                            }
-
                         }
                     }
-                    else
+                    // if the passenger logged in
+                    using (cmd = new SqlCommand(QGetPassngCount, conn))
                     {
-                        MessageBox.Show("Invalid username or password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        cmd.Parameters.AddWithValue("@userID", uid);
+                        try
+                        {
+                            int userCount = (int)cmd.ExecuteScalar();
+                            if (userCount > 0)
+                            {
+                                MessageBox.Show($"Welcome {uname} to TravelEase");
+                                PassengerInfoSingleton.Instance.CurrentPassenger = (Passenger)populateUserInfo(uid, "passenger");
+                                PassengerDashboard passengBoard = new PassengerDashboard();
+                                passengBoard.Show();
+                                this.Hide();
+                                conn.Close();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error: {ex.Message}");
+                        }
+
+                    }
+                    // if the MAdmin logged in
+                    using (cmd = new SqlCommand(QGetMAdminCount, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@userID", uid);
+                        try
+                        {
+                            int userCount = (int)cmd.ExecuteScalar();
+                            if (userCount > 0)
+                            {
+                                MessageBox.Show($"Welcome {uname} to TravelEase");
+                                ModularAdminSingletone.Instance.currentMAdmin = (ModularAdmin)populateUserInfo(uid, "ModularAdmin");
+                                NewModuler ModDashBoard = new NewModuler();
+                                ModDashBoard.Show();
+                                this.Hide();
+                                conn.Close();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error: {ex.Message}");
+                        }
+
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Username or password cannot be empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Invalid username or password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 conn.Close();
                 textBoxPassword.Clear();
                 textBoxUsername.Clear();
                 textBoxUsername.Focus();
+
             }
         }
 
