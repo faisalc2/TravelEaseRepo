@@ -21,7 +21,7 @@ namespace TravelEase.System_Admin
         }
         public void load_Table()
         {
-            DataTable dt = new TravelEase.Admin().GetVehicleInfo();
+            DataTable dt = new Admin().GetVehicleInfo();
             DGVVehicleInfo.DataSource = dt;
         }
 
