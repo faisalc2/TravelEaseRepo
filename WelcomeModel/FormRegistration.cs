@@ -37,10 +37,12 @@ namespace TravelEase.WelcomeModel
 
             string QInsertMAdminCompanyTB = "INSERT INTO MAdminCompanyTB (companyID, MAdminNumber) " +
                 "VALUES (@companyID, @MAdminNumber)";
+            string QGetMAdminNum = "SELECT MAdminNumber FROM ModularAdminTB WHERE userID = @userID";
 
             SqlConnection conn = new SqlConnection(connection);
             if (conn.State != ConnectionState.Open) { conn.Open(); }
             string uid = User.GenerateUniqueId();
+            int MAdminN;
             using (conn)
             {
                 SqlTransaction transaction = conn.BeginTransaction();
@@ -77,6 +79,7 @@ namespace TravelEase.WelcomeModel
                     cmd.Parameters.AddWithValue("@companyID", newCompanyID);
                     cmd.Parameters.AddWithValue("@compName", textBox_cname.Text);
                     cmd.Parameters.AddWithValue("@bdRegID", textBox_grid.Text);
+                    cmd.Parameters.AddWithValue("@companyStatus", 0);
                     cmd.ExecuteNonQuery();
 
                     // Inserting into ModularAdminTB
@@ -84,10 +87,15 @@ namespace TravelEase.WelcomeModel
                     cmd.Parameters.AddWithValue("@userID", uid);
                     cmd.ExecuteNonQuery();
 
+                    //getting MAdminNumber
+                    cmd = new SqlCommand(QGetMAdminNum, conn, transaction);
+                    cmd.Parameters.AddWithValue("@userID", uid);
+                    MAdminN = (int)cmd.ExecuteScalar();
+
                     // Inserting into MAdminCompanyTB
                     cmd = new SqlCommand(QInsertMAdminCompanyTB, conn, transaction);
                     cmd.Parameters.AddWithValue("@companyID", newCompanyID);
-                    cmd.Parameters.AddWithValue("@MAdminNumber", uid);
+                    cmd.Parameters.AddWithValue("@MAdminNumber", MAdminN);
                     cmd.ExecuteNonQuery();
 
                     // Commit transaction
@@ -213,7 +221,7 @@ namespace TravelEase.WelcomeModel
 
         private void buttonNext1_Click(object sender, EventArgs e)
         {
-        
+
             if (string.IsNullOrEmpty(textBox_NID.Text) ||
             string.IsNullOrEmpty(textBox_Fname.Text) ||
             string.IsNullOrEmpty(textBox_Lname.Text) ||
@@ -271,7 +279,7 @@ namespace TravelEase.WelcomeModel
                 MessageBox.Show("Please enter a valid email address.", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if(textBox_Phone.Text.Length != 11)
+            if (textBox_Phone.Text.Length != 11)
             {
                 MessageBox.Show("Phone number must be 11 digits.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 textBox_Phone.Focus();
