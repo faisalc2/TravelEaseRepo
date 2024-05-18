@@ -70,5 +70,15 @@ namespace TravelEase.System_Admin
             formLogIn.Show();
             this.Hide();
         }
+
+        private void buttonProfile_Click(object sender, EventArgs e)
+        {
+            LoadForm(new AdminProfile());
+        }
+
+        private void pictureBoxProfile_Click(object sender, EventArgs e)
+        {
+            LoadForm(new AdminProfile());
+        }
     }
 }
