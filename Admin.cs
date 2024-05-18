@@ -31,7 +31,7 @@ namespace TravelEase
         public DataTable GetSomeUserInfo()
         {
             DataTable dt = new DataTable();
-            string QGetSomeUserInfo = "select userID, fname, lName,phone from UserTB";
+            string QGetSomeUserInfo = "select userID, fname, lName,phone from UserTB WHERE userStatus = 1";
             using (SqlConnection conn = new SqlConnection(connection))
             {
                 conn.Open();
@@ -42,5 +42,32 @@ namespace TravelEase
             return dt;
         }
 
+        public DataTable GetCompanyDetails()
+        {
+            DataTable dt = new DataTable();
+            string QGetSomeUserInfo = "select companyID, compName, bdRegID from CompanyTB WHERE companyStatus = 0";
+            using (SqlConnection conn = new SqlConnection(connection))
+            {
+                conn.Open();
+                SqlDataAdapter sda = new SqlDataAdapter(QGetSomeUserInfo, connection);
+                sda.Fill(dt);
+                conn.Close();
+            }
+            return dt;
+        }
+
+       public DataTable GetVehicleInfo()
+        {
+            DataTable dt = new DataTable();
+            string QGetSomeUserInfo = "select vehicleID, vehicleName, BDRegistrationNumber from VehicleTB WHERE vehicleStatus = 1";
+            using (SqlConnection conn = new SqlConnection(connection))
+            {
+                conn.Open();
+                SqlDataAdapter sda = new SqlDataAdapter(QGetSomeUserInfo, connection);
+                sda.Fill(dt);
+                conn.Close();
+            }
+            return dt;
+        }
     }
 }

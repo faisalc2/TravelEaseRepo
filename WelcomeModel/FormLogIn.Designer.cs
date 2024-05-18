@@ -151,6 +151,7 @@
             textBoxPassword.Size = new Size(255, 38);
             textBoxPassword.TabIndex = 11;
             textBoxPassword.UseSystemPasswordChar = true;
+            textBoxPassword.KeyDown += textBoxPassword_KeyDown;
             // 
             // button_back
             // 

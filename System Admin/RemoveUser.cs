@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,7 +31,7 @@ namespace TravelEase.System_Admin
 
         private void DGVUserInfo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex > 0)
+            if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.DGVUserInfo.Rows[e.RowIndex];
 
@@ -93,6 +94,38 @@ namespace TravelEase.System_Admin
                     sdt.Fill(dt);
                     DGVUserInfo.DataSource = dt;
                 }
+                conn.Close();
+            }
+        }
+
+        private void buttonRemove_Click(object sender, EventArgs e)
+        {
+            string userId = textBoxUID.Text;
+            if(userId == string.Empty)
+            {
+                MessageBox.Show("Choose a Row first");
+            }
+            else if (MessageBox.Show("Are you sure you want to delete this user?", "Confirm Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                DeleteUserById(userId);
+                load_Table();  // Refresh the DataGridView to reflect the changes
+            }
+            
+        }
+        private void DeleteUserById(string userId)
+        {
+            string updateUserStatusQuery = "UPDATE UserTB SET userStatus = 0 WHERE userID = @userID";
+
+            using (SqlConnection conn = new SqlConnection(connection))
+            {
+                conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand(updateUserStatusQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("@userID", userId);
+                    cmd.ExecuteNonQuery();
+                }
+
                 conn.Close();
             }
         }
