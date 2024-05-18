@@ -63,6 +63,7 @@
             textBoxUID.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBoxUID.Location = new Point(50, 383);
             textBoxUID.Name = "textBoxUID";
+            textBoxUID.ReadOnly = true;
             textBoxUID.Size = new Size(212, 38);
             textBoxUID.TabIndex = 11;
             // 
@@ -82,6 +83,7 @@
             textBoxFname.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBoxFname.Location = new Point(50, 165);
             textBoxFname.Name = "textBoxFname";
+            textBoxFname.ReadOnly = true;
             textBoxFname.Size = new Size(212, 38);
             textBoxFname.TabIndex = 9;
             // 
@@ -138,6 +140,7 @@
             textBoxLname.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBoxLname.Location = new Point(50, 271);
             textBoxLname.Name = "textBoxLname";
+            textBoxLname.ReadOnly = true;
             textBoxLname.Size = new Size(212, 38);
             textBoxLname.TabIndex = 15;
             // 

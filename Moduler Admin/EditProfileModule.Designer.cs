@@ -28,29 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel2 = new Panel();
+            textBoxMAdminUsername = new TextBox();
+            label3 = new Label();
+            textBoxMAdminFirstName = new TextBox();
+            label1 = new Label();
             textBoxCompanyName = new TextBox();
             textBoxMAdminPassword = new TextBox();
             textBoxMAdminPhone = new TextBox();
             textBoxMAdminEmail = new TextBox();
-            textBoxBDRegID = new TextBox();
             textBoxMAdminLastName = new TextBox();
             label7 = new Label();
             label8 = new Label();
             label14 = new Label();
             label9 = new Label();
-            label10 = new Label();
             label11 = new Label();
             label12 = new Label();
             DGVMAdminInfo = new DataGridView();
             label2 = new Label();
             buttonUpdate = new Button();
-            textBoxMAdminFirstName = new TextBox();
-            label1 = new Label();
-            textBoxMAdminUsername = new TextBox();
-            label3 = new Label();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DGVMAdminInfo).BeginInit();
             SuspendLayout();
@@ -65,13 +63,11 @@
             panel2.Controls.Add(textBoxMAdminPassword);
             panel2.Controls.Add(textBoxMAdminPhone);
             panel2.Controls.Add(textBoxMAdminEmail);
-            panel2.Controls.Add(textBoxBDRegID);
             panel2.Controls.Add(textBoxMAdminLastName);
             panel2.Controls.Add(label7);
             panel2.Controls.Add(label8);
             panel2.Controls.Add(label14);
             panel2.Controls.Add(label9);
-            panel2.Controls.Add(label10);
             panel2.Controls.Add(label11);
             panel2.Controls.Add(label12);
             panel2.Location = new Point(34, 210);
@@ -79,16 +75,52 @@
             panel2.Size = new Size(770, 250);
             panel2.TabIndex = 1;
             // 
+            // textBoxMAdminUsername
+            // 
+            textBoxMAdminUsername.Location = new Point(579, 133);
+            textBoxMAdminUsername.Name = "textBoxMAdminUsername";
+            textBoxMAdminUsername.Size = new Size(160, 27);
+            textBoxMAdminUsername.TabIndex = 33;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            label3.ForeColor = SystemColors.ButtonHighlight;
+            label3.Location = new Point(441, 127);
+            label3.Name = "label3";
+            label3.Size = new Size(127, 31);
+            label3.TabIndex = 32;
+            label3.Text = "Username:";
+            // 
+            // textBoxMAdminFirstName
+            // 
+            textBoxMAdminFirstName.Location = new Point(165, 52);
+            textBoxMAdminFirstName.Name = "textBoxMAdminFirstName";
+            textBoxMAdminFirstName.Size = new Size(160, 27);
+            textBoxMAdminFirstName.TabIndex = 31;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Location = new Point(3, 52);
+            label1.Name = "label1";
+            label1.Size = new Size(136, 31);
+            label1.TabIndex = 30;
+            label1.Text = "First Name:";
+            // 
             // textBoxCompanyName
             // 
-            textBoxCompanyName.Location = new Point(580, 52);
+            textBoxCompanyName.Location = new Point(579, 79);
             textBoxCompanyName.Name = "textBoxCompanyName";
             textBoxCompanyName.Size = new Size(160, 27);
             textBoxCompanyName.TabIndex = 29;
             // 
             // textBoxMAdminPassword
             // 
-            textBoxMAdminPassword.Location = new Point(580, 211);
+            textBoxMAdminPassword.Location = new Point(579, 184);
             textBoxMAdminPassword.Name = "textBoxMAdminPassword";
             textBoxMAdminPassword.Size = new Size(160, 27);
             textBoxMAdminPassword.TabIndex = 28;
@@ -107,13 +139,6 @@
             textBoxMAdminEmail.Size = new Size(160, 27);
             textBoxMAdminEmail.TabIndex = 26;
             // 
-            // textBoxBDRegID
-            // 
-            textBoxBDRegID.Location = new Point(580, 106);
-            textBoxBDRegID.Name = "textBoxBDRegID";
-            textBoxBDRegID.Size = new Size(160, 27);
-            textBoxBDRegID.TabIndex = 25;
-            // 
             // textBoxMAdminLastName
             // 
             textBoxMAdminLastName.Location = new Point(165, 100);
@@ -126,7 +151,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             label7.ForeColor = SystemColors.ButtonHighlight;
-            label7.Location = new Point(442, 205);
+            label7.Location = new Point(441, 178);
             label7.Name = "label7";
             label7.Size = new Size(120, 31);
             label7.TabIndex = 18;
@@ -137,7 +162,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             label8.ForeColor = SystemColors.ButtonHighlight;
-            label8.Location = new Point(430, 45);
+            label8.Location = new Point(429, 72);
             label8.Name = "label8";
             label8.Size = new Size(144, 31);
             label8.TabIndex = 17;
@@ -165,17 +190,6 @@
             label9.TabIndex = 12;
             label9.Text = "Email:";
             // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            label10.ForeColor = SystemColors.ButtonHighlight;
-            label10.Location = new Point(431, 106);
-            label10.Name = "label10";
-            label10.Size = new Size(143, 31);
-            label10.TabIndex = 11;
-            label10.Text = "Com. BD ID:";
-            // 
             // label11
             // 
             label11.AutoSize = true;
@@ -202,18 +216,18 @@
             // 
             DGVMAdminInfo.AllowUserToAddRows = false;
             DGVMAdminInfo.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(48, 56, 79);
-            DGVMAdminInfo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(48, 56, 79);
+            DGVMAdminInfo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             DGVMAdminInfo.BorderStyle = BorderStyle.None;
             DGVMAdminInfo.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(48, 56, 79);
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            DGVMAdminInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(48, 56, 79);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            DGVMAdminInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             DGVMAdminInfo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DGVMAdminInfo.EnableHeadersVisualStyles = false;
             DGVMAdminInfo.Location = new Point(34, 35);
@@ -248,42 +262,7 @@
             buttonUpdate.TabIndex = 23;
             buttonUpdate.Text = "Update";
             buttonUpdate.UseVisualStyleBackColor = false;
-            // 
-            // textBoxMAdminFirstName
-            // 
-            textBoxMAdminFirstName.Location = new Point(165, 52);
-            textBoxMAdminFirstName.Name = "textBoxMAdminFirstName";
-            textBoxMAdminFirstName.Size = new Size(160, 27);
-            textBoxMAdminFirstName.TabIndex = 31;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(3, 52);
-            label1.Name = "label1";
-            label1.Size = new Size(136, 31);
-            label1.TabIndex = 30;
-            label1.Text = "First Name:";
-            // 
-            // textBoxMAdminUsername
-            // 
-            textBoxMAdminUsername.Location = new Point(580, 160);
-            textBoxMAdminUsername.Name = "textBoxMAdminUsername";
-            textBoxMAdminUsername.Size = new Size(160, 27);
-            textBoxMAdminUsername.TabIndex = 33;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            label3.ForeColor = SystemColors.ButtonHighlight;
-            label3.Location = new Point(442, 154);
-            label3.Name = "label3";
-            label3.Size = new Size(127, 31);
-            label3.TabIndex = 32;
-            label3.Text = "Username:";
+            buttonUpdate.Click += buttonUpdate_Click;
             // 
             // EditProfileModule
             // 
@@ -311,13 +290,11 @@
         private Label label8;
         private Label label14;
         private Label label9;
-        private Label label10;
         private Label label11;
         private Label label12;
         private DataGridView DGVMAdminInfo;
         private Label label2;
         private TextBox textBoxMAdminEmail;
-        private TextBox textBoxBDRegID;
         private TextBox textBoxMAdminLastName;
         private TextBox textBoxCompanyName;
         private TextBox textBoxMAdminPassword;

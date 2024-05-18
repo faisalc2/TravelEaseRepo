@@ -1,6 +1,7 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Windows.Forms;
 
 namespace TravelEase
 {
@@ -14,45 +15,97 @@ namespace TravelEase
         public Vehicle vehicle;
 
         string QGetInfo = "SELECT u.*, l.userName, l.userPassword FROM UserTB u JOIN LoginCredentialsTB l ON u.userID = l.userID WHERE u.userID = @userID;";
-        //string QGetTicketInfo = "select * from TicketTB where @userID = UserID";
         string QDeleteTicket = "DELETE FROM TicketTB WHERE @ticketID = TicketID";
         string QUpdateModularAdmin = @"
-                        UPDATE UserTB
-                        SET 
-                            fName = @fName,
-                            lName = @lName,
-                            phone = @phone,
-                            email = @email
-                        WHERE 
-                            userID = @userID";
+            UPDATE UserTB
+            SET 
+                fName = @fName,
+                lName = @lName,
+                phone = @phone,
+                email = @email
+            WHERE 
+                userID = @userID";
         string QupdateLoginCred = @"
-                        UPDATE LoginCredentialsTB
-                        SET 
-                            userName = @userName,
-                            userPassword = @userPassword
-                        WHERE 
-                            userID = @userID";
+            UPDATE LoginCredentialsTB
+            SET 
+                userName = @userName,
+                userPassword = @userPassword
+            WHERE 
+                userID = @userID";
         string QupdateCompany = @"
-                        UPDATE CompanyTB
-                        SET 
-                            bdRegID = @bdRegID;
-                            companyName = @companyName;
-                        WHERE 
-                            companyID = @companyID";
+            UPDATE CompanyTB
+            SET 
+                compName = @companyName
+            WHERE 
+                companyID = (SELECT companyID FROM MAdminCompanyTB WHERE MAdminNumber = @MAdminNumber)";
 
-        public DataTable GetAllModularInfo()
+        public int GetModularAdminNumber()
         {
-            SqlDataAdapter sdt;
-            DataTable dt;
+            string QGetModularAdminNumber = "SELECT MAdminNumber FROM ModularAdminTB WHERE userID = @userID";
+            int modularAdminNumber = -1; // Default value in case no result is found
+
             using (SqlConnection conn = new SqlConnection(connection))
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand(QGetInfo, conn);
+                SqlCommand cmd = new SqlCommand(QGetModularAdminNumber, conn);
                 cmd.Parameters.AddWithValue("@userID", UserID);
-                sdt = new SqlDataAdapter(cmd);
-                dt = new DataTable();
-                sdt.Fill(dt);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    modularAdminNumber = reader.GetInt32(0);
+                }
+
+                reader.Close();
             }
+
+            return modularAdminNumber;
+        }
+
+        public DataTable GetAllModularInfo()
+        {
+            int modularAdminNumber = GetModularAdminNumber();
+            if (modularAdminNumber == -1)
+            {
+                throw new Exception("Modular Admin Number not found for the given user ID.");
+            }
+
+            string QGetAllModularInfo = @"
+                SELECT u.*, l.userName, l.userPassword, c.compName
+                FROM UserTB u
+                JOIN LoginCredentialsTB l ON u.userID = l.userID
+                LEFT JOIN ModularAdminTB ma ON u.userID = ma.userID
+                LEFT JOIN MAdminCompanyTB mac ON ma.MAdminNumber = mac.MAdminNumber
+                LEFT JOIN CompanyTB c ON mac.companyID = c.companyID
+                WHERE u.userID = @userID AND ma.MAdminNumber = @MAdminNumber";
+
+            DataTable dt = new DataTable();
+            using (SqlConnection conn = new SqlConnection(connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(QGetAllModularInfo, conn))
+                {
+                    cmd.Parameters.AddWithValue("@userID", UserID);
+                    cmd.Parameters.AddWithValue("@MAdminNumber", modularAdminNumber);
+                    using (SqlDataAdapter sdt = new SqlDataAdapter(cmd))
+                    {
+                        sdt.Fill(dt);
+                    }
+                }
+            }
+
+            if (dt.Rows.Count > 0)
+            {
+                DataRow row = dt.Rows[0];
+                this.FirstName = row["fName"].ToString();
+                this.LastName = row["lName"].ToString();
+                this.Phone = row["phone"].ToString();
+                this.Email = row["email"].ToString();
+                this.userNameModular = row["userName"].ToString();
+                this.userPasswordModular = row["userPassword"].ToString();
+                this.company = new Company() { CompanyName = row["compName"].ToString() };
+            }
+
             return dt;
         }
 
@@ -81,49 +134,27 @@ namespace TravelEase
                         cmdLogin.Parameters.AddWithValue("@userPassword", m.userPasswordModular);
                         cmdLogin.ExecuteNonQuery();
 
-                        //Update CompanyTB
+                        // Update CompanyTB
                         SqlCommand cmdCompany = new SqlCommand(QupdateCompany, conn, transaction);
-                        cmdCompany.Parameters.AddWithValue("@companyID", company.CompanyID);
-                        cmdCompany.Parameters.AddWithValue("@bdRegID", company.BDRegID);
-                        cmdCompany.Parameters.AddWithValue("@companyName", company.CompanyName);
+                        cmdCompany.Parameters.AddWithValue("@companyName", m.company.CompanyName);
+                        cmdCompany.Parameters.AddWithValue("@MAdminNumber", GetModularAdminNumber());
+                        cmdCompany.ExecuteNonQuery();
 
                         // Commit transaction
                         transaction.Commit();
+
                         return true;
                     }
                     catch (Exception ex)
                     {
                         // Rollback transaction if any error occurs
                         transaction.Rollback();
-
                         return false;
                     }
                 }
             }
         }
 
-        /*private string _modularAdminID;
-        private static DateTime currentDate = DateTime.Now.Date;
-        private static int currentSequence = 1;
-
-
-        private static string GenerateModularAdminId()
-        {
-            if (currentDate != DateTime.Now.Date)
-            {
-                currentDate = DateTime.Now.Date;
-                currentSequence = 1;
-            }
-
-            string datePart = currentDate.ToString("ddMMyyyy");
-            string sequencePart = currentSequence.ToString("D5");
-            string vehicleId = $"ADM-{datePart}-{sequencePart}";
-
-            currentSequence++;
-
-            return vehicleId;
-        }
-*/
         public ModularAdmin(string uname, string upass, string fname, string lname, string nID, DateTime dOB, string gender, string phone, string email, string residence, string userID)
             : base(fname, lname, nID, dOB, gender, phone, email, residence, userID)
         {
@@ -133,22 +164,6 @@ namespace TravelEase
 
             this.userNameModular = uname;
             this.userPasswordModular = upass;
-        }
-
-        public DataTable GetAllInfo()
-        {
-            SqlDataAdapter sdt;
-            DataTable dt;
-            using (SqlConnection conn = new SqlConnection(connection))
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(QGetInfo, conn);
-                cmd.Parameters.AddWithValue("@userID", UserID);
-                sdt = new SqlDataAdapter(cmd);
-                dt = new DataTable();
-                sdt.Fill(dt);
-            }
-            return dt;
         }
 
         public bool CancelTicket(int ticketID)
@@ -166,7 +181,7 @@ namespace TravelEase
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occured!");
+                Console.WriteLine("An error occurred: " + ex.Message);
                 return false;
             }
         }

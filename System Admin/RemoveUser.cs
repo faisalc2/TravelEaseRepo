@@ -110,7 +110,10 @@ namespace TravelEase.System_Admin
                 DeleteUserById(userId);
                 load_Table();  // Refresh the DataGridView to reflect the changes
             }
-            
+            textBox1.Clear();
+            textBoxFname.Clear();
+            textBoxLname.Clear();
+            textBoxUID.Clear();
         }
         private void DeleteUserById(string userId)
         {
