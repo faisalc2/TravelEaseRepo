@@ -2,11 +2,13 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Linq.Expressions;
 using System.Security.Cryptography;
 using System.Security.Policy;
+using TravelEase;
+using TravelEase.Moduler_Admin;
 using TravelEase.PassengerDashboards;
 using TravelEase.System_Admin;
-using TravelEase;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
@@ -72,31 +74,32 @@ namespace TravelEase
             else
             {
                 if (!(conn.State == ConnectionState.Open)) { conn.Open(); }
-                if (!string.IsNullOrEmpty(textBoxUsername.Text) && !string.IsNullOrEmpty(textBoxUsername.Text))
+                if (!string.IsNullOrEmpty(textBoxUsername.Text) && !string.IsNullOrEmpty(textBoxPassword.Text))
                 {
                     string uname = textBoxUsername.Text;
                     string upass = textBoxPassword.Text;
                     string uid = null;
-                    int userCount;
-                    using (conn)
-                    {
-                        using (cmd = new SqlCommand(Quid, conn))
-                        {
-                            cmd.Parameters.AddWithValue("@userName", uname);
-                            cmd.Parameters.AddWithValue("@userPassword", upass);
 
-                            using (SqlDataReader reader = cmd.ExecuteReader())
+                    using (cmd = new SqlCommand(Quid, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@userName", uname);
+                        cmd.Parameters.AddWithValue("@userPassword", upass);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
                             {
-                                if (reader.Read())
-                                {
-                                    uid = reader["userID"].ToString();
-                                }
+                                uid = reader["userID"].ToString();
                             }
                         }
-                        using (cmd = new SqlCommand(QGetPassngCount, conn))
+                    }
+                    // if the passenger logged in
+                    using (cmd = new SqlCommand(QGetPassngCount, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@userID", uid);
+                        try
                         {
-                            cmd.Parameters.AddWithValue("@userID", uid);
-                            userCount = (int)cmd.ExecuteScalar();
+                            int userCount = (int)cmd.ExecuteScalar();
                             if (userCount > 0)
                             {
                                 MessageBox.Show($"Welcome {uname} to TravelEase");
@@ -104,29 +107,52 @@ namespace TravelEase
                                 PassengerDashboard passengBoard = new PassengerDashboard();
                                 passengBoard.Show();
                                 this.Hide();
+                                conn.Close();
                             }
                         }
-                        using (cmd = new SqlCommand(QGetMAdminCount, conn))
+                        catch (Exception ex)
                         {
-                            cmd.Parameters.AddWithValue("@userID", uid);
-                            userCount = (int)cmd.ExecuteScalar();
+                            MessageBox.Show($"Error: {ex.Message}");
+                        }
+
+                    }
+                    // if the MAdmin logged in
+                    using (cmd = new SqlCommand(QGetMAdminCount, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@userID", uid);
+                        try
+                        {
+                            int userCount = (int)cmd.ExecuteScalar();
                             if (userCount > 0)
                             {
-                                MessageBox.Show("User is ModularAdmin!");
+                                MessageBox.Show($"Welcome {uname} to TravelEase");
+                                ModularAdminSingletone.Instance.currentMAdmin = (ModularAdmin)populateUserInfo(uid, "ModularAdmin");
+                                NewModuler ModDashBoard = new NewModuler();
+                                ModDashBoard.Show();
+                                this.Hide();
+                                conn.Close();
                             }
                         }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error: {ex.Message}");
+                        }
+
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Error tbs are null!", "info");
+                    MessageBox.Show("Invalid username or password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
                 conn.Close();
                 textBoxPassword.Clear();
                 textBoxUsername.Clear();
                 textBoxUsername.Focus();
+
             }
         }
+
         private object populateUserInfo(string uid, string type)
         {
             SqlCommand userInfoCmd = new SqlCommand(userInfoQuery, conn);
@@ -155,7 +181,7 @@ namespace TravelEase
                     }
                     else if (type == "ModularAdmin")
                     {
-                        ModularAdmin mod = new ModularAdmin(FirstName, LastName, NID, DateOfBirth, Gender, Phone, Email, Residence, uid);
+                        ModularAdmin mod = new ModularAdmin(userName, userPassword, FirstName, LastName, NID, DateOfBirth, Gender, Phone, Email, Residence, uid);
                         return mod;
                     }
                     //else

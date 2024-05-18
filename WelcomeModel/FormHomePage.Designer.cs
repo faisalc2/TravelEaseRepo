@@ -39,8 +39,6 @@
             buttonLogin = new Button();
             pictureBox4 = new PictureBox();
             buttonSignUp = new Button();
-            label3 = new Label();
-            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -72,9 +70,9 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(-124, 84);
+            pictureBox3.Location = new Point(-135, 66);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(675, 446);
+            pictureBox3.Size = new Size(809, 490);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
@@ -113,7 +111,7 @@
             buttonLogin.FlatStyle = FlatStyle.Popup;
             buttonLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonLogin.ForeColor = Color.Black;
-            buttonLogin.Location = new Point(674, 245);
+            buttonLogin.Location = new Point(591, 395);
             buttonLogin.Margin = new Padding(0);
             buttonLogin.Name = "buttonLogin";
             buttonLogin.Size = new Size(94, 44);
@@ -141,7 +139,7 @@
             buttonSignUp.FlatStyle = FlatStyle.Popup;
             buttonSignUp.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonSignUp.ForeColor = Color.Black;
-            buttonSignUp.Location = new Point(674, 391);
+            buttonSignUp.Location = new Point(754, 395);
             buttonSignUp.Margin = new Padding(0);
             buttonSignUp.Name = "buttonSignUp";
             buttonSignUp.Size = new Size(94, 44);
@@ -150,36 +148,12 @@
             buttonSignUp.UseVisualStyleBackColor = false;
             buttonSignUp.Click += buttonSignUp_Click;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(573, 188);
-            label3.Name = "label3";
-            label3.Size = new Size(307, 31);
-            label3.TabIndex = 8;
-            label3.Text = "If you already have account";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(573, 331);
-            label4.Name = "label4";
-            label4.Size = new Size(247, 31);
-            label4.TabIndex = 9;
-            label4.Text = "Or, Create an account ";
-            // 
             // FormHomePage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 56, 79);
             ClientSize = new Size(929, 586);
-            Controls.Add(label4);
-            Controls.Add(label3);
             Controls.Add(buttonSignUp);
             Controls.Add(pictureBox4);
             Controls.Add(buttonLogin);
@@ -213,7 +187,5 @@
         private Button buttonLogin;
         private PictureBox pictureBox4;
         private Button buttonSignUp;
-        private Label label3;
-        private Label label4;
     }
 }

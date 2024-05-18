@@ -1,6 +1,6 @@
 ﻿namespace TravelEase
 {
-    internal abstract class Vehicle
+    internal class Vehicle
     {
         private string VehicleId { get; set; }
         private string BdRegId { get; set; }
@@ -9,7 +9,7 @@
         //private double FarePerSeat { get; set; }
         private int TotalSeats { get; set; }
 
-
+        public Vehicle() { }
         public Vehicle(string vehicleId, string bdRegId, string vehicleType, string vehicleClass, /*double farePerSeat,*/ int totalSeats)
         {
             VehicleId = vehicleId;
