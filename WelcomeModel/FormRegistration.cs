@@ -21,6 +21,90 @@ namespace TravelEase.WelcomeModel
             InitializeComponent();
         }
 
+        private void insertModularAdmin()
+        {
+            string QInsertUser = "INSERT INTO UserTB " +
+                "(userID, fName, lName, nid, gender, dob, phone, email, residence, userStatus)" +
+                "VALUES (@userID, @fName, @lName, @nid, @gender, @dob, @phone, @email, @residence, @userStatus)";
+
+            string QInsertLoginCred = "INSERT INTO LoginCredentialsTB (userID, userName, userPassword) " +
+                "VALUES (@userID, @userName, @userPassword)";
+
+            string QInsertCompany = "INSERT INTO CompanyTB (companyID, compName, bdRegID) " +
+                "VALUES (@companyID, @compName, @bdRegID)";
+
+            string QInsertModularAdminTB = "INSERT INTO ModularAdminTB (userID) VALUES (@userID)";
+
+            string QInsertMAdminCompanyTB = "INSERT INTO MAdminCompanyTB (companyID, MAdminNumber) " +
+                "VALUES (@companyID, @MAdminNumber)";
+
+            SqlConnection conn = new SqlConnection(connection);
+            if (conn.State != ConnectionState.Open) { conn.Open(); }
+            string uid = User.GenerateUniqueId();
+            using (conn)
+            {
+                SqlTransaction transaction = conn.BeginTransaction();
+
+                try
+                {
+                    // Inserting into UserTB
+                    SqlCommand cmd = new SqlCommand(QInsertUser, conn, transaction);
+                    cmd.Parameters.AddWithValue("@userID", uid);
+                    cmd.Parameters.AddWithValue("@fName", textBox_FnameM.Text);
+                    cmd.Parameters.AddWithValue("@lName", textBox_LnameM.Text);
+                    cmd.Parameters.AddWithValue("@nid", textBox_NIDM.Text);
+                    cmd.Parameters.AddWithValue("@gender", comboBox_GenderM.Text);
+                    cmd.Parameters.AddWithValue("@dob", dateTimePicker_DOBM.Value.ToString("yyyy-MM-dd")); // Ensure date format
+                    cmd.Parameters.AddWithValue("@phone", textBox_PhoneM.Text);
+                    cmd.Parameters.AddWithValue("@email", textBox_EmailM.Text);
+                    cmd.Parameters.AddWithValue("@residence", textBox_AddressM.Text);
+                    cmd.Parameters.AddWithValue("@userStatus", 1);
+                    cmd.ExecuteNonQuery();
+
+                    // Inserting into LoginCredentialsTB
+                    cmd = new SqlCommand(QInsertLoginCred, conn, transaction);
+                    cmd.Parameters.AddWithValue("@userID", uid);
+                    cmd.Parameters.AddWithValue("@userName", textBox_usernamemm.Text);
+                    cmd.Parameters.AddWithValue("@userPassword", textBox_passwordmm.Text);
+                    cmd.ExecuteNonQuery();
+
+                    int newCompanyID;
+                    cmd = new SqlCommand("SELECT ISNULL(MAX(companyID), 0) + 1 FROM CompanyTB", conn, transaction);
+                    newCompanyID = (int)cmd.ExecuteScalar();
+
+                    // Inserting into CompanyTB with the new companyID
+                    cmd = new SqlCommand(QInsertCompany, conn, transaction);
+                    cmd.Parameters.AddWithValue("@companyID", newCompanyID);
+                    cmd.Parameters.AddWithValue("@compName", textBox_cname.Text);
+                    cmd.Parameters.AddWithValue("@bdRegID", textBox_grid.Text);
+                    cmd.ExecuteNonQuery();
+
+                    // Inserting into ModularAdminTB
+                    cmd = new SqlCommand(QInsertModularAdminTB, conn, transaction);
+                    cmd.Parameters.AddWithValue("@userID", uid);
+                    cmd.ExecuteNonQuery();
+
+                    // Inserting into MAdminCompanyTB
+                    cmd = new SqlCommand(QInsertMAdminCompanyTB, conn, transaction);
+                    cmd.Parameters.AddWithValue("@companyID", newCompanyID);
+                    cmd.Parameters.AddWithValue("@MAdminNumber", uid);
+                    cmd.ExecuteNonQuery();
+
+                    // Commit transaction
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    MessageBox.Show($"{ex.Message}");
+                }
+            }
+            textBox_UIDM.Text = uid;
+            textBoxUserName.Text = textBox_usernamemm.Text;
+            conn.Close();
+        }
+
+
         private void insertPassenger()
         {
             string QInsertPassenger = "INSERT INTO UserTB " +
@@ -30,6 +114,7 @@ namespace TravelEase.WelcomeModel
             string QInsertLoginCred = "INSERT INTO LoginCredentialsTB (userID, userName, userPassword) " +
                 "VALUES (@userID, @userName, @userPassword)";
             string QInsertPassengerTB = "INSERT INTO PassengerTB (userID) VALUES (@userID)";
+
             SqlConnection conn = new SqlConnection(connection);
             if (!(conn.State == ConnectionState.Open)) { conn.Open(); }
             string uid = User.GenerateUniqueId();
@@ -537,11 +622,7 @@ namespace TravelEase.WelcomeModel
 
         private void buttonRegisterM_Click(object sender, EventArgs e)
         {
-            string date = DateTime.Now.ToString("ddMMyyyy");
-            Random random = new Random();
-            int randomNumber = random.Next(10000, 99999);
-            textBox_UIDM.Text = $"MAD-{date}-{randomNumber}";
-            textBoxUserName.Text = textBox_usernamemm.Text;
+            insertModularAdmin();
 
             ModularPanel5.Show();
             ModularPanel5.BringToFront();
