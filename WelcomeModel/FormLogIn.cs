@@ -12,6 +12,7 @@ using TravelEase.System_Admin;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+
 namespace TravelEase
 {
     public partial class FormLogIn : Form
@@ -22,14 +23,36 @@ namespace TravelEase
         string QGetMAdminCount = "SELECT COUNT(*) FROM ModularAdminTB WHERE userID = @userID";
         string userInfoQuery = "SELECT u.*, l.userName, l.userPassword FROM UserTB u JOIN LoginCredentialsTB l ON u.userID = l.userID WHERE u.userID = @userID;";
         string Quid = "SELECT * FROM LoginCredentialsTB WHERE userName = @userName AND userPassword = @userPassword";
-        //string QLogInfo = "select userName,userPassword from LoginCredentialsTB where"
 
-        string connection = @"Data Source=.\SQLEXPRESS;Initial Catalog = TravelEaseDB; Integrated Security = True";
+        string connection = @"Data Source=.\SQLEXPRESS;Initial Catalog=TravelEaseDB;Integrated Security=True";
+
         public FormLogIn()
         {
             InitializeComponent();
             this.conn = new SqlConnection(connection);
             conn.Open();
+
+            // Event handlers for Enter key
+            textBoxUsername.KeyDown += new KeyEventHandler(textBoxUsername_KeyDown);
+            textBoxPassword.KeyDown += new KeyEventHandler(textBoxPassword_KeyDown);
+        }
+
+        private void textBoxUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                textBoxPassword.Focus();
+                e.SuppressKeyPress = true; // to prevent the ding sound
+            }
+        }
+
+        private void textBoxPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonLogin.PerformClick();
+                e.SuppressKeyPress = true; // to prevent the ding sound
+            }
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
@@ -41,10 +64,7 @@ namespace TravelEase
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBoxShowPassword.Checked)
-                textBoxPassword.UseSystemPasswordChar = false;
-            else
-                textBoxPassword.UseSystemPasswordChar = true;
+            textBoxPassword.UseSystemPasswordChar = !checkBoxShowPassword.Checked;
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
@@ -93,26 +113,48 @@ namespace TravelEase
                             }
                         }
                     }
-                    // if the passenger logged in
-                    using (cmd = new SqlCommand(QGetPassngCount, conn))
+
+                    if (uid != null)
                     {
-                        cmd.Parameters.AddWithValue("@userID", uid);
                         try
                         {
-                            int userCount = (int)cmd.ExecuteScalar();
-                            if (userCount > 0)
+                            // if the passenger logged in
+                            using (cmd = new SqlCommand(QGetPassngCount, conn))
                             {
+
+                                cmd.Parameters.AddWithValue("@userID", uid);
+                                int userCount = (int)cmd.ExecuteScalar();
+                                if (userCount > 0)
+                                {
+                                    MessageBox.Show($"Welcome {uname} to TravelEase");
+                                    PassengerInfoSingleton.Instance.CurrentPassenger = (Passenger)populateUserInfo(uid, "passenger");
+                                    PassengerDashboard passengBoard = new PassengerDashboard();
+                                    passengBoard.Show();
+                                    this.Hide();
+                                }
+
                                 MessageBox.Show($"Welcome {uname} to TravelEase");
                                 PassengerInfoSingleton.Instance.CurrentPassenger = (Passenger)populateUserInfo(uid, "passenger");
                                 PassengerDashboard passengBoard = new PassengerDashboard();
                                 passengBoard.Show();
                                 this.Hide();
+
                             }
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show($"Error: {ex.Message}");
-                        }
+
+
+                            // if the MAdmin logged in
+                            using (cmd = new SqlCommand(QGetMAdminCount, conn))
+                            {
+                                cmd.Parameters.AddWithValue("@userID", uid);
+                                int userCount = (int)cmd.ExecuteScalar();
+                                if (userCount > 0)
+                                {
+                                    MessageBox.Show($"Welcome {uname} to TravelEase");
+                                    ModularAdminSingletone.Instance.currentMAdmin = (ModularAdmin)populateUserInfo(uid, "ModularAdmin");
+                                    NewModuler ModDashBoard = new NewModuler();
+                                    ModDashBoard.Show();
+                                    this.Hide();
+                                }
 
 
                     }
@@ -130,6 +172,7 @@ namespace TravelEase
                                 NewModuler ModDashBoard = new NewModuler();
                                 ModDashBoard.Show();
                                 this.Hide();
+
                             }
                         }
                         catch (Exception ex)
@@ -137,19 +180,25 @@ namespace TravelEase
                             MessageBox.Show($"Error: {ex.Message}");
                         }
 
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid username or password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+
 
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Invalid username or password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Username or password cannot be empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
                 conn.Close();
                 textBoxPassword.Clear();
                 textBoxUsername.Clear();
                 textBoxUsername.Focus();
-
             }
         }
 
@@ -184,7 +233,6 @@ namespace TravelEase
                         ModularAdmin mod = new ModularAdmin(userName, userPassword, FirstName, LastName, NID, DateOfBirth, Gender, Phone, Email, Residence, uid);
                         return mod;
                     }
-                    //else
                 }
             }
             return null;
