@@ -61,6 +61,10 @@ namespace TravelEase
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
+            LoginPerform();
+        }
+        private void LoginPerform()
+        {
             if (textBoxUsername.Text == new TravelEase.Admin().AdminName && textBoxPassword.Text == new TravelEase.Admin().AdminPassword)
             {
                 SystemAdminDashboard systemAdminDashboard = new SystemAdminDashboard();
@@ -184,6 +188,14 @@ namespace TravelEase
                 }
             }
             return null;
+        }
+
+        private void textBoxPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                LoginPerform();
+            }
         }
     }
 }
