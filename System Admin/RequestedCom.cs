@@ -122,6 +122,8 @@ namespace TravelEase.System_Admin
             }
 
             load_Table();
+            textBoxComName.Clear();
+            textBoxComID.Clear();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

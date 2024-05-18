@@ -52,6 +52,8 @@ namespace TravelEase.System_Admin
             }
 
             load_Table();
+            textBoxVehicleID.Clear();
+            textBoxVName.Clear();
         }
 
         private void textBoxSearch_TextChanged(object sender, EventArgs e)

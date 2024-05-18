@@ -85,7 +85,7 @@
             // textBox2
             // 
             textBox2.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(104, 395);
+            textBox2.Location = new Point(104, 376);
             textBox2.Name = "textBox2";
             textBox2.ReadOnly = true;
             textBox2.Size = new Size(275, 38);
@@ -97,7 +97,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(73, 336);
+            label2.Location = new Point(73, 326);
             label2.Name = "label2";
             label2.Size = new Size(189, 31);
             label2.TabIndex = 7;
