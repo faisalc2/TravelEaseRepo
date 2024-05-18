@@ -196,7 +196,6 @@
             buttonLogOut.TabIndex = 17;
             buttonLogOut.Text = "Log Out";
             buttonLogOut.UseVisualStyleBackColor = false;
-            buttonLogOut.Click += buttonLogOut_Click;
             // 
             // panelSlidebar
             // 
