@@ -138,7 +138,7 @@
             buttonVehicleCom.Name = "buttonVehicleCom";
             buttonVehicleCom.Size = new Size(223, 74);
             buttonVehicleCom.TabIndex = 9;
-            buttonVehicleCom.Text = "Vehicle Company";
+            buttonVehicleCom.Text = "Requested Vehicle Company";
             buttonVehicleCom.UseVisualStyleBackColor = false;
             buttonVehicleCom.Click += buttonVehicleCom_Click;
             // 
@@ -168,6 +168,7 @@
             buttonProfile.TabIndex = 2;
             buttonProfile.Text = "Profile";
             buttonProfile.UseVisualStyleBackColor = false;
+            buttonProfile.Click += buttonProfile_Click;
             // 
             // pictureBoxProfile
             // 
@@ -179,6 +180,7 @@
             pictureBoxProfile.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxProfile.TabIndex = 1;
             pictureBoxProfile.TabStop = false;
+            pictureBoxProfile.Click += pictureBoxProfile_Click;
             // 
             // buttonExit
             // 

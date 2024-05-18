@@ -13,13 +13,19 @@ namespace TravelEase.PassengerDashboards
 {
     public partial class AvailableVehicle : Form
     {
-        private static string? selectedVehicle;
+        private static int? selectedVehicle;
+        public DataTable dt;
         public AvailableVehicle()
         {
             InitializeComponent();
         }
 
-        public void SetSelectedVehicle(string vehicle)
+        public void setDataSource(DataTable dt)
+        {
+            DGVAvailableVehicle.DataSource = dt;
+        }
+
+        public void SetSelectedVehicle(int vehicle)
         {
             selectedVehicle = vehicle;
         }
@@ -27,19 +33,19 @@ namespace TravelEase.PassengerDashboards
         {
             switch (selectedVehicle)
             {
-                case "Bus":
+                case 1:
                     BuyTicketBus buyTicketBus = new BuyTicketBus();
                     buyTicketBus.Show();
                     break;
-                case "Train":
+                case 2:
                     BuyTicketTrain buyTicketTrain = new BuyTicketTrain();
                     buyTicketTrain.Show();
                     break;
-                case "Air":
+                case 4:
                     BuyTicketAir buyTicketAir = new BuyTicketAir();
                     buyTicketAir.Show();
                     break;
-                case "Launch":
+                case 3:
                     BuyTicketLaunch buyTicketLaunch = new BuyTicketLaunch();
                     buyTicketLaunch.Show();
                     break;
@@ -55,6 +61,18 @@ namespace TravelEase.PassengerDashboards
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void DGVAvailableVehicle_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = DGVAvailableVehicle.Rows[e.RowIndex];
+
+                string cellValue1 = selectedRow.Cells[0].Value.ToString();
+                string cellValue2 = selectedRow.Cells[1].Value.ToString();
+
+            }
         }
     }
 }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             buttonRemove = new Button();
             textBoxUID = new TextBox();
             label3 = new Label();
@@ -56,6 +56,7 @@
             buttonRemove.TabIndex = 12;
             buttonRemove.Text = "Remove";
             buttonRemove.UseVisualStyleBackColor = false;
+            buttonRemove.Click += buttonRemove_Click;
             // 
             // textBoxUID
             // 
@@ -99,18 +100,18 @@
             // 
             DGVUserInfo.AllowUserToAddRows = false;
             DGVUserInfo.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(187, 233, 237);
-            DGVUserInfo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(187, 233, 237);
+            DGVUserInfo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             DGVUserInfo.BorderStyle = BorderStyle.None;
             DGVUserInfo.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(48, 56, 79);
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            DGVUserInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(48, 56, 79);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            DGVUserInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             DGVUserInfo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DGVUserInfo.EnableHeadersVisualStyles = false;
             DGVUserInfo.Location = new Point(299, 117);
@@ -156,9 +157,9 @@
             label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Location = new Point(414, 9);
             label1.Name = "label1";
-            label1.Size = new Size(255, 31);
+            label1.Size = new Size(289, 31);
             label1.TabIndex = 17;
-            label1.Text = "User First Name Search:";
+            label1.Text = "User First Name for Search:";
             // 
             // label2
             // 
