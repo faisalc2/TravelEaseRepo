@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AvailableVehicle));
             label1 = new Label();
             panel1 = new Panel();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
+            DGVAvailableVehicle = new DataGridView();
             buttonBookNow = new Button();
             button2 = new Button();
             buttonExit = new Button();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)DGVAvailableVehicle).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -51,30 +51,21 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(comboBox2);
-            panel1.Controls.Add(comboBox1);
+            panel1.Controls.Add(DGVAvailableVehicle);
             panel1.Location = new Point(31, 92);
             panel1.Name = "panel1";
             panel1.Size = new Size(1022, 409);
             panel1.TabIndex = 1;
             // 
-            // comboBox2
+            // DGVAvailableVehicle
             // 
-            comboBox2.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(15, 100);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(982, 45);
-            comboBox2.TabIndex = 1;
-            // 
-            // comboBox1
-            // 
-            comboBox1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(15, 22);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(982, 45);
-            comboBox1.TabIndex = 0;
+            DGVAvailableVehicle.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DGVAvailableVehicle.Location = new Point(3, 3);
+            DGVAvailableVehicle.Name = "DGVAvailableVehicle";
+            DGVAvailableVehicle.RowHeadersWidth = 51;
+            DGVAvailableVehicle.Size = new Size(1016, 230);
+            DGVAvailableVehicle.TabIndex = 5;
+            DGVAvailableVehicle.CellClick += DGVAvailableVehicle_CellClick;
             // 
             // buttonBookNow
             // 
@@ -127,6 +118,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AvailableVehicle";
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)DGVAvailableVehicle).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -135,10 +127,9 @@
 
         private Label label1;
         private Panel panel1;
-        private ComboBox comboBox2;
-        private ComboBox comboBox1;
         private Button buttonBookNow;
         private Button button2;
         private Button buttonExit;
+        private DataGridView DGVAvailableVehicle;
     }
 }

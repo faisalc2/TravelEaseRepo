@@ -103,13 +103,13 @@ namespace TravelEase
                                 PassengerDashboard passengBoard = new PassengerDashboard();
                                 passengBoard.Show();
                                 this.Hide();
-                                conn.Close();
                             }
                         }
                         catch (Exception ex)
                         {
                             MessageBox.Show($"Error: {ex.Message}");
                         }
+
 
                     }
                     // if the MAdmin logged in
@@ -126,13 +126,13 @@ namespace TravelEase
                                 NewModuler ModDashBoard = new NewModuler();
                                 ModDashBoard.Show();
                                 this.Hide();
-                                conn.Close();
                             }
                         }
                         catch (Exception ex)
                         {
                             MessageBox.Show($"Error: {ex.Message}");
                         }
+
 
                     }
                 }

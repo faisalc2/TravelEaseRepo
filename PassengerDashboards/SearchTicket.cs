@@ -16,9 +16,12 @@ namespace TravelEase.Dashboards
     {
         public string connection = @"Data Source=.\SQLEXPRESS;Initial Catalog = TravelEaseDB; Integrated Security = True";
         public static SearchTicket STinstance;
-        public string QGetFrom = "SELECT DISTINCT desFrom FROM DestinationTB";
+        public string QGetFrom = "SELECT DISTINCT desFrom FROM DestinationTB where vehicleTypeID = @vehicleTypeID";
         public string QGetTo = "SELECT desTo FROM DestinationTB where desFrom = @desFrom";
-        public string selectedVehicle;
+        public string QAvailableVehicle = "SELECT vehicleID,vehicleName FROM VehicleTB where destinationID = @destinationID";
+        public string QDesID = "SELECT destinationID FROM DestinationTB WHERE desFrom = @desFrom AND desTo = @desTo";
+        public int selectedVehicle;
+        AvailableVehicle availableVehicle;
 
         public SearchTicket()
         {
@@ -26,6 +29,7 @@ namespace TravelEase.Dashboards
             STinstance = this;
             dateTimePickerDate.MinDate = DateTime.Today;
             dateTimePickerDate.MaxDate = DateTime.Today.AddDays(7);
+            availableVehicle = new AvailableVehicle();
         }
 
         private void SearchTicket_Load(object sender, EventArgs e)
@@ -37,11 +41,13 @@ namespace TravelEase.Dashboards
 
         private void buttonNext1_Click(object sender, EventArgs e)
         {
+            availableVehicle.SetSelectedVehicle(getSelectedVehicle());
             SqlConnection conn = new SqlConnection(connection);
             using (conn)
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(QGetFrom, conn);
+                cmd.Parameters.AddWithValue("@vehicleTypeID", getSelectedVehicle());
                 SqlDataAdapter sdt = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 sdt.Fill(dt);
@@ -50,6 +56,7 @@ namespace TravelEase.Dashboards
                     comboBoxFrom.Items.Add(row["desFrom"].ToString());
                 }
             }
+
             conn.Close();
             panel2.Show();
             panel2.BringToFront();
@@ -65,33 +72,32 @@ namespace TravelEase.Dashboards
 
         private void buttonNext2_Click(object sender, EventArgs e)
         {
-            AvailableVehicle availableVehicle = new AvailableVehicle();
-            availableVehicle.SetSelectedVehicle(getSelectedVehicle());
+            availableVehicle.setDataSource(getAvailableVehicles());
             availableVehicle.Show();
             //database
         }
 
-        private string getSelectedVehicle()
+        private int getSelectedVehicle()
         {
             if (radioButtonBus.Checked)
             {
-                return "Bus";
+                return 1;
             }
             else if (radioButtonLaunch.Checked)
             {
-                return "Launch";
+                return 3;
             }
             else if (radioButtonTrain.Checked)
             {
-                return "Train";
+                return 2;
             }
             else if (radioButtonPlane.Checked)
             {
-                return "Plane";
+                return 4;
             }
             else
             {
-                return null;
+                return 0;
             }
         }
 
@@ -113,6 +119,46 @@ namespace TravelEase.Dashboards
                 }
             }
             conn.Close();
+        }
+
+        private DataTable getAvailableVehicles()
+        {
+            string currFrom = comboBoxFrom.Text;
+            string currTo = comboBoxTo.Text;
+            int desID;
+            SqlDataAdapter sdt;
+            DataTable dt = new DataTable();
+            using (SqlConnection conn = new SqlConnection(connection))
+            {
+                conn.Open();
+
+                try
+                {
+                    // Get destination ID
+                    using (SqlCommand cmd = new SqlCommand(QDesID, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@desFrom", currFrom);
+                        cmd.Parameters.AddWithValue("@desTo", currTo);
+                        desID = (int)cmd.ExecuteScalar();
+
+                        // Get available vehicles for the destination
+                        using (SqlCommand cmdAvailableVehicle = new SqlCommand(QAvailableVehicle, conn))
+                        {
+                            cmdAvailableVehicle.Parameters.AddWithValue("@destinationID", desID);
+                            using (sdt = new SqlDataAdapter(cmdAvailableVehicle))
+                            {
+                                sdt.Fill(dt);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+
+            return dt;
         }
     }
 }
