@@ -81,10 +81,6 @@ namespace TravelEase
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            LoginPerform();
-        }
-        private void LoginPerform()
-        {
             if (textBoxUsername.Text == new TravelEase.Admin().AdminName && textBoxPassword.Text == new TravelEase.Admin().AdminPassword)
             {
                 SystemAdminDashboard systemAdminDashboard = new SystemAdminDashboard();
@@ -121,7 +117,6 @@ namespace TravelEase
                             // if the passenger logged in
                             using (cmd = new SqlCommand(QGetPassngCount, conn))
                             {
-
                                 cmd.Parameters.AddWithValue("@userID", uid);
                                 int userCount = (int)cmd.ExecuteScalar();
                                 if (userCount > 0)
@@ -132,15 +127,7 @@ namespace TravelEase
                                     passengBoard.Show();
                                     this.Hide();
                                 }
-
-                                MessageBox.Show($"Welcome {uname} to TravelEase");
-                                PassengerInfoSingleton.Instance.CurrentPassenger = (Passenger)populateUserInfo(uid, "passenger");
-                                PassengerDashboard passengBoard = new PassengerDashboard();
-                                passengBoard.Show();
-                                this.Hide();
-
                             }
-
 
                             // if the MAdmin logged in
                             using (cmd = new SqlCommand(QGetMAdminCount, conn))
@@ -155,39 +142,16 @@ namespace TravelEase
                                     ModDashBoard.Show();
                                     this.Hide();
                                 }
-
-
-                    }
-                    // if the MAdmin logged in
-                    using (cmd = new SqlCommand(QGetMAdminCount, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@userID", uid);
-                        try
-                        {
-                            int userCount = (int)cmd.ExecuteScalar();
-                            if (userCount > 0)
-                            {
-                                MessageBox.Show($"Welcome {uname} to TravelEase");
-                                ModularAdminSingletone.Instance.currentMAdmin = (ModularAdmin)populateUserInfo(uid, "ModularAdmin");
-                                NewModuler ModDashBoard = new NewModuler();
-                                ModDashBoard.Show();
-                                this.Hide();
-
                             }
                         }
                         catch (Exception ex)
                         {
                             MessageBox.Show($"Error: {ex.Message}");
                         }
-
                     }
                     else
                     {
                         MessageBox.Show("Invalid username or password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-
-
-
                     }
                 }
                 else
@@ -236,14 +200,6 @@ namespace TravelEase
                 }
             }
             return null;
-        }
-
-        private void textBoxPassword_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode == Keys.Enter)
-            {
-                LoginPerform();
-            }
         }
     }
 }
