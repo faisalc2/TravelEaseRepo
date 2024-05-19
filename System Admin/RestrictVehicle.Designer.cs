@@ -92,11 +92,11 @@
             DGVVehicleInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             DGVVehicleInfo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DGVVehicleInfo.EnableHeadersVisualStyles = false;
-            DGVVehicleInfo.Location = new Point(294, 129);
+            DGVVehicleInfo.Location = new Point(281, 129);
             DGVVehicleInfo.Name = "DGVVehicleInfo";
             DGVVehicleInfo.ReadOnly = true;
             DGVVehicleInfo.RowHeadersWidth = 51;
-            DGVVehicleInfo.Size = new Size(428, 350);
+            DGVVehicleInfo.Size = new Size(441, 357);
             DGVVehicleInfo.TabIndex = 7;
             DGVVehicleInfo.CellContentClick += DGVVehicleInfo_CellContentClick;
             // 

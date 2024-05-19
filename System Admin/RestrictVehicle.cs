@@ -23,6 +23,7 @@ namespace TravelEase.System_Admin
         {
             DataTable dt = new Admin().GetVehicleInfo();
             DGVVehicleInfo.DataSource = dt;
+            DGVVehicleInfo.Refresh(); 
         }
 
         private void DGVVehicleInfo_CellContentClick(object sender, DataGridViewCellEventArgs e)

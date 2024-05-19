@@ -13,6 +13,11 @@ namespace TravelEase
         public Payment payment;
         public Company company;
         public Vehicle vehicle;
+        private int persent_80, persent_60, persent_40, no_refund;
+        public int Persent_80 { set { persent_80 = value; } }
+        public int Persent_60 { set { persent_60 = value; } }
+        public int Persent_40 { set { persent_40 = value; } }
+        public int No_refund { set { no_refund = value; } }
 
         string QGetInfo = "SELECT u.*, l.userName, l.userPassword FROM UserTB u JOIN LoginCredentialsTB l ON u.userID = l.userID WHERE u.userID = @userID;";
         string QDeleteTicket = "DELETE FROM TicketTB WHERE @ticketID = TicketID";
@@ -183,6 +188,89 @@ namespace TravelEase
             {
                 Console.WriteLine("An error occurred: " + ex.Message);
                 return false;
+            }
+        }
+
+        public DataTable RefundRuleShow()
+        {
+            int modularAdminNumber = GetModularAdminNumber();
+            string queryRefund = "SELECT * FROM RefundRuleTB WHERE MAdminNumber = @MAdminNumber";
+            DataTable dt = new DataTable();
+
+            string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=TravelEaseDB;Integrated Security=True";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(queryRefund, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MAdminNumber", modularAdminNumber);
+                        SqlDataAdapter sdt = new SqlDataAdapter(cmd);
+                        sdt.Fill(dt);
+                    }
+                    conn.Close();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("SQL Error: " + ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+            return dt;
+        }
+
+        public bool RefundRuleUpdate(ModularAdmin MA)
+        {
+            string query = @"
+        UPDATE RefundRuleTB
+        SET refund_80_percent = @Refund80Percent,
+            refund_60_percent = @Refund60Percent,
+            refund_40_percent = @Refund40Percent,
+            no_refund = @NoRefund
+        WHERE MAdminNumber = @MAdminNumber";
+            string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=TravelEaseDB;Integrated Security=True";
+
+            int modularAdminNumber = GetModularAdminNumber();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Refund80Percent", persent_80);
+                cmd.Parameters.AddWithValue("@Refund60Percent", persent_60);
+                cmd.Parameters.AddWithValue("@Refund40Percent", persent_40);
+                cmd.Parameters.AddWithValue("@NoRefund", no_refund);
+                cmd.Parameters.AddWithValue("@MAdminNumber", modularAdminNumber);
+
+                try
+                {
+                    conn.Open();
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("Update successful.");
+                        return true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("No rows affected. Please check the MAdminNumber.");
+                        return false;
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    Console.WriteLine("SQL Error: " + ex.Message);
+                    return false;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                    return false;
+                }
             }
         }
     }
