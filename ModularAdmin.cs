@@ -224,6 +224,46 @@ namespace TravelEase
             return dt;
         }
 
+        public bool IsModularAdminNumberExists()
+        {
+            int modularAdminNumber = GetModularAdminNumber();
+            string query = "SELECT COUNT(*) FROM RefundRuleTB WHERE MAdminNumber = @MAdminNumber";
+
+            using (SqlConnection conn = new SqlConnection(connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@MAdminNumber", modularAdminNumber);
+                    int count = (int)cmd.ExecuteScalar();
+                    conn.Close();
+                    return count > 0;
+                }
+            }
+        }
+        public void InsertRefundRule()
+        {
+            string query = "INSERT INTO RefundRuleTB (refund_80_percent, refund_60_percent, refund_40_percent, no_refund, MAdminNumber) " +
+                      "VALUES (@refund80Percent, @refund60Percent, @refund40Percent, @noRefund, @mAdminNumber)";
+
+            int modularAdminNumber = GetModularAdminNumber();
+
+            using (SqlConnection conn = new SqlConnection(connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@refund80Percent", persent_80);
+                    cmd.Parameters.AddWithValue("@refund60Percent", persent_60);
+                    cmd.Parameters.AddWithValue("@refund40Percent", persent_40);
+                    cmd.Parameters.AddWithValue("@noRefund", no_refund);
+                    cmd.Parameters.AddWithValue("@mAdminNumber", modularAdminNumber);
+
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+        }
         public bool RefundRuleUpdate(ModularAdmin MA)
         {
             string query = @"
