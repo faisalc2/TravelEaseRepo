@@ -111,7 +111,7 @@
             buttonLogin.FlatStyle = FlatStyle.Popup;
             buttonLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonLogin.ForeColor = Color.Black;
-            buttonLogin.Location = new Point(591, 395);
+            buttonLogin.Location = new Point(531, 393);
             buttonLogin.Margin = new Padding(0);
             buttonLogin.Name = "buttonLogin";
             buttonLogin.Size = new Size(94, 44);
@@ -139,7 +139,7 @@
             buttonSignUp.FlatStyle = FlatStyle.Popup;
             buttonSignUp.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonSignUp.ForeColor = Color.Black;
-            buttonSignUp.Location = new Point(754, 395);
+            buttonSignUp.Location = new Point(694, 393);
             buttonSignUp.Margin = new Padding(0);
             buttonSignUp.Name = "buttonSignUp";
             buttonSignUp.Size = new Size(94, 44);
