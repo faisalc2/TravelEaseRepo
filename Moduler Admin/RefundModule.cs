@@ -16,7 +16,7 @@ namespace TravelEase.Moduler_Admin
         public RefundModule()
         {
             InitializeComponent();
-            this.DGVRefundInfo.DataSource = ModularAdminSingletone.Instance.currentMAdmin.RefundRuleShow();
+            DGVRefundInfo.DataSource = ModularAdminSingletone.Instance.currentMAdmin.RefundRuleShow();
         }
 
         private void buttonUpdateRule_Click(object sender, EventArgs e)

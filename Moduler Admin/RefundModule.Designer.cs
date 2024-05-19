@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DGVRefundInfo = new DataGridView();
             label2 = new Label();
             panel2 = new Panel();
@@ -55,18 +55,18 @@
             // 
             DGVRefundInfo.AllowUserToAddRows = false;
             DGVRefundInfo.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(48, 56, 79);
-            DGVRefundInfo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(48, 56, 79);
+            DGVRefundInfo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             DGVRefundInfo.BorderStyle = BorderStyle.None;
             DGVRefundInfo.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(48, 56, 79);
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            DGVRefundInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(48, 56, 79);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            DGVRefundInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             DGVRefundInfo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DGVRefundInfo.EnableHeadersVisualStyles = false;
             DGVRefundInfo.Location = new Point(44, 54);
@@ -170,30 +170,34 @@
             // 
             // textBoxNoR
             // 
+            textBoxNoR.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
             textBoxNoR.Location = new Point(567, 81);
             textBoxNoR.Name = "textBoxNoR";
-            textBoxNoR.Size = new Size(121, 27);
+            textBoxNoR.Size = new Size(121, 31);
             textBoxNoR.TabIndex = 27;
             // 
             // textBox40
             // 
+            textBox40.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
             textBox40.Location = new Point(165, 188);
             textBox40.Name = "textBox40";
-            textBox40.Size = new Size(108, 27);
+            textBox40.Size = new Size(108, 31);
             textBox40.TabIndex = 26;
             // 
             // textBox60
             // 
+            textBox60.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
             textBox60.Location = new Point(165, 134);
             textBox60.Name = "textBox60";
-            textBox60.Size = new Size(108, 27);
+            textBox60.Size = new Size(108, 31);
             textBox60.TabIndex = 25;
             // 
             // textBox80
             // 
+            textBox80.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
             textBox80.Location = new Point(165, 77);
             textBox80.Name = "textBox80";
-            textBox80.Size = new Size(108, 27);
+            textBox80.Size = new Size(108, 31);
             textBox80.TabIndex = 24;
             // 
             // label14
