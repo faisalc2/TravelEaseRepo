@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuyTicketBus));
             panelAmount = new Panel();
+            label3 = new Label();
             buttonSelectComplete = new Button();
             buttonBack = new Button();
             buttonBuyTicket = new Button();
@@ -91,6 +92,7 @@
             // 
             // panelAmount
             // 
+            panelAmount.Controls.Add(label3);
             panelAmount.Controls.Add(buttonSelectComplete);
             panelAmount.Controls.Add(buttonBack);
             panelAmount.Controls.Add(buttonBuyTicket);
@@ -106,15 +108,24 @@
             panelAmount.Dock = DockStyle.Top;
             panelAmount.Location = new Point(0, 0);
             panelAmount.Name = "panelAmount";
-            panelAmount.Size = new Size(1080, 247);
+            panelAmount.Size = new Size(1080, 231);
             panelAmount.TabIndex = 1;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(62, 101);
+            label3.Name = "label3";
+            label3.Size = new Size(251, 20);
+            label3.TabIndex = 31;
+            label3.Text = "Once selected, cannot be deselected";
             // 
             // buttonSelectComplete
             // 
             buttonSelectComplete.BackColor = Color.FromArgb(48, 56, 79);
             buttonSelectComplete.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             buttonSelectComplete.ForeColor = SystemColors.ButtonHighlight;
-            buttonSelectComplete.Location = new Point(98, 42);
+            buttonSelectComplete.Location = new Point(98, 28);
             buttonSelectComplete.Name = "buttonSelectComplete";
             buttonSelectComplete.Size = new Size(182, 76);
             buttonSelectComplete.TabIndex = 30;
@@ -838,5 +849,6 @@
         private Button button39;
         private Button button40;
         private Button button41;
+        private Label label3;
     }
 }
