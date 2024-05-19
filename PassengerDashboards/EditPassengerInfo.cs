@@ -38,7 +38,7 @@ namespace TravelEase.PassengerDashboards
 
         private void buttonupdate_Click_1(object sender, EventArgs e)
         {
-            if(textBoxpass.Text == textBoxpass.Text)
+            if(textBoxpass.Text == textBoxRepass.Text)
             {
                 if (PassengerInfoSingleton.Instance.CurrentPassenger.UpdateUserDetails(getEditedInfo()))
                 {
@@ -53,7 +53,7 @@ namespace TravelEase.PassengerDashboards
             
         }
 
-        public Passenger getEditedInfo()
+        public Passenger getEditedInfo() 
         {
             var passenger = PassengerInfoSingleton.Instance.CurrentPassenger;
             passenger.FirstName = textBoxFirstName.Text;

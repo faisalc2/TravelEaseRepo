@@ -28,49 +28,53 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
-            DGVPassengerInfo = new DataGridView();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DGVRefundInfo = new DataGridView();
             label2 = new Label();
             panel2 = new Panel();
-            textBoxPhone = new TextBox();
-            textBoxCompanyName = new TextBox();
-            textBoxmodulerAdmin = new TextBox();
-            textBoxName = new TextBox();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            label1 = new Label();
+            buttonUpdateRule = new Button();
+            textBoxNoR = new TextBox();
+            textBox40 = new TextBox();
+            textBox60 = new TextBox();
+            textBox80 = new TextBox();
             label14 = new Label();
             label9 = new Label();
             label10 = new Label();
             label11 = new Label();
             label12 = new Label();
-            buttonUpdate = new Button();
-            ((System.ComponentModel.ISupportInitialize)DGVPassengerInfo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DGVRefundInfo).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
-            // DGVPassengerInfo
+            // DGVRefundInfo
             // 
-            DGVPassengerInfo.AllowUserToAddRows = false;
-            DGVPassengerInfo.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle11.BackColor = Color.FromArgb(48, 56, 79);
-            DGVPassengerInfo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
-            DGVPassengerInfo.BorderStyle = BorderStyle.None;
-            DGVPassengerInfo.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = Color.FromArgb(48, 56, 79);
-            dataGridViewCellStyle12.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle12.ForeColor = Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
-            DGVPassengerInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            DGVPassengerInfo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGVPassengerInfo.EnableHeadersVisualStyles = false;
-            DGVPassengerInfo.Location = new Point(44, 54);
-            DGVPassengerInfo.Name = "DGVPassengerInfo";
-            DGVPassengerInfo.ReadOnly = true;
-            DGVPassengerInfo.RowHeadersWidth = 51;
-            DGVPassengerInfo.Size = new Size(770, 169);
-            DGVPassengerInfo.TabIndex = 3;
+            DGVRefundInfo.AllowUserToAddRows = false;
+            DGVRefundInfo.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(48, 56, 79);
+            DGVRefundInfo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            DGVRefundInfo.BorderStyle = BorderStyle.None;
+            DGVRefundInfo.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(48, 56, 79);
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            DGVRefundInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            DGVRefundInfo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DGVRefundInfo.EnableHeadersVisualStyles = false;
+            DGVRefundInfo.Location = new Point(44, 54);
+            DGVRefundInfo.Name = "DGVRefundInfo";
+            DGVRefundInfo.ReadOnly = true;
+            DGVRefundInfo.RowHeadersWidth = 51;
+            DGVRefundInfo.Size = new Size(770, 169);
+            DGVRefundInfo.TabIndex = 3;
             // 
             // label2
             // 
@@ -85,11 +89,15 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(buttonUpdate);
-            panel2.Controls.Add(textBoxPhone);
-            panel2.Controls.Add(textBoxCompanyName);
-            panel2.Controls.Add(textBoxmodulerAdmin);
-            panel2.Controls.Add(textBoxName);
+            panel2.Controls.Add(label5);
+            panel2.Controls.Add(label4);
+            panel2.Controls.Add(label3);
+            panel2.Controls.Add(label1);
+            panel2.Controls.Add(buttonUpdateRule);
+            panel2.Controls.Add(textBoxNoR);
+            panel2.Controls.Add(textBox40);
+            panel2.Controls.Add(textBox60);
+            panel2.Controls.Add(textBox80);
             panel2.Controls.Add(label14);
             panel2.Controls.Add(label9);
             panel2.Controls.Add(label10);
@@ -100,33 +108,93 @@
             panel2.Size = new Size(770, 250);
             panel2.TabIndex = 5;
             // 
-            // textBoxPhone
+            // label5
             // 
-            textBoxPhone.Location = new Point(567, 81);
-            textBoxPhone.Name = "textBoxPhone";
-            textBoxPhone.Size = new Size(121, 27);
-            textBoxPhone.TabIndex = 27;
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            label5.ForeColor = SystemColors.ButtonHighlight;
+            label5.Location = new Point(707, 81);
+            label5.Name = "label5";
+            label5.Size = new Size(37, 31);
+            label5.TabIndex = 31;
+            label5.Text = "hr";
             // 
-            // textBoxCompanyName
+            // label4
             // 
-            textBoxCompanyName.Location = new Point(165, 188);
-            textBoxCompanyName.Name = "textBoxCompanyName";
-            textBoxCompanyName.Size = new Size(108, 27);
-            textBoxCompanyName.TabIndex = 26;
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            label4.ForeColor = SystemColors.ButtonHighlight;
+            label4.Location = new Point(279, 188);
+            label4.Name = "label4";
+            label4.Size = new Size(37, 31);
+            label4.TabIndex = 30;
+            label4.Text = "hr";
             // 
-            // textBoxmodulerAdmin
+            // label3
             // 
-            textBoxmodulerAdmin.Location = new Point(165, 134);
-            textBoxmodulerAdmin.Name = "textBoxmodulerAdmin";
-            textBoxmodulerAdmin.Size = new Size(108, 27);
-            textBoxmodulerAdmin.TabIndex = 25;
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            label3.ForeColor = SystemColors.ButtonHighlight;
+            label3.Location = new Point(279, 134);
+            label3.Name = "label3";
+            label3.Size = new Size(37, 31);
+            label3.TabIndex = 30;
+            label3.Text = "hr";
             // 
-            // textBoxName
+            // label1
             // 
-            textBoxName.Location = new Point(165, 77);
-            textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(108, 27);
-            textBoxName.TabIndex = 24;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Location = new Point(279, 77);
+            label1.Name = "label1";
+            label1.Size = new Size(37, 31);
+            label1.TabIndex = 29;
+            label1.Text = "hr";
+            // 
+            // buttonUpdateRule
+            // 
+            buttonUpdateRule.BackColor = Color.FromArgb(187, 233, 237);
+            buttonUpdateRule.Cursor = Cursors.Hand;
+            buttonUpdateRule.FlatStyle = FlatStyle.Popup;
+            buttonUpdateRule.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonUpdateRule.ForeColor = Color.Black;
+            buttonUpdateRule.Location = new Point(463, 134);
+            buttonUpdateRule.Margin = new Padding(0);
+            buttonUpdateRule.Name = "buttonUpdateRule";
+            buttonUpdateRule.Size = new Size(133, 70);
+            buttonUpdateRule.TabIndex = 28;
+            buttonUpdateRule.Text = "Update Information";
+            buttonUpdateRule.UseVisualStyleBackColor = false;
+            buttonUpdateRule.Click += buttonUpdateRule_Click;
+            // 
+            // textBoxNoR
+            // 
+            textBoxNoR.Location = new Point(567, 81);
+            textBoxNoR.Name = "textBoxNoR";
+            textBoxNoR.Size = new Size(121, 27);
+            textBoxNoR.TabIndex = 27;
+            // 
+            // textBox40
+            // 
+            textBox40.Location = new Point(165, 188);
+            textBox40.Name = "textBox40";
+            textBox40.Size = new Size(108, 27);
+            textBox40.TabIndex = 26;
+            // 
+            // textBox60
+            // 
+            textBox60.Location = new Point(165, 134);
+            textBox60.Name = "textBox60";
+            textBox60.Size = new Size(108, 27);
+            textBox60.TabIndex = 25;
+            // 
+            // textBox80
+            // 
+            textBox80.Location = new Point(165, 77);
+            textBox80.Name = "textBox80";
+            textBox80.Size = new Size(108, 27);
+            textBox80.TabIndex = 24;
             // 
             // label14
             // 
@@ -183,21 +251,6 @@
             label12.TabIndex = 1;
             label12.Text = "Update Refund information";
             // 
-            // buttonUpdate
-            // 
-            buttonUpdate.BackColor = Color.FromArgb(187, 233, 237);
-            buttonUpdate.Cursor = Cursors.Hand;
-            buttonUpdate.FlatStyle = FlatStyle.Popup;
-            buttonUpdate.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonUpdate.ForeColor = Color.Black;
-            buttonUpdate.Location = new Point(463, 134);
-            buttonUpdate.Margin = new Padding(0);
-            buttonUpdate.Name = "buttonUpdate";
-            buttonUpdate.Size = new Size(133, 70);
-            buttonUpdate.TabIndex = 28;
-            buttonUpdate.Text = "Update Information";
-            buttonUpdate.UseVisualStyleBackColor = false;
-            // 
             // RefundModule
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -206,11 +259,11 @@
             ClientSize = new Size(854, 538);
             Controls.Add(panel2);
             Controls.Add(label2);
-            Controls.Add(DGVPassengerInfo);
+            Controls.Add(DGVRefundInfo);
             FormBorderStyle = FormBorderStyle.None;
             Name = "RefundModule";
             Text = "CancelationModule";
-            ((System.ComponentModel.ISupportInitialize)DGVPassengerInfo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DGVRefundInfo).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
@@ -219,18 +272,22 @@
 
         #endregion
 
-        private DataGridView DGVPassengerInfo;
+        private DataGridView DGVRefundInfo;
         private Label label2;
         private Panel panel2;
-        private TextBox textBoxPhone;
-        private TextBox textBoxCompanyName;
-        private TextBox textBoxmodulerAdmin;
-        private TextBox textBoxName;
+        private TextBox textBoxNoR;
+        private TextBox textBox40;
+        private TextBox textBox60;
+        private TextBox textBox80;
         private Label label14;
         private Label label9;
         private Label label10;
         private Label label11;
         private Label label12;
-        private Button buttonUpdate;
+        private Button buttonUpdateRule;
+        private Label label5;
+        private Label label4;
+        private Label label3;
+        private Label label1;
     }
 }

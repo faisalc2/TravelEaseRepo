@@ -48,5 +48,7 @@ namespace TravelEase.Moduler_Admin
                 MessageBox.Show("Failed to update details.");
             }
         }
+
+        
     }
 }

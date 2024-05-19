@@ -58,13 +58,17 @@ namespace TravelEase
 
        public DataTable GetVehicleInfo()
         {
+            string query = "SELECT vehicleID, vehicleName, BDRegistrationNumber FROM VehicleTB WHERE vehicleStatus = 1";
             DataTable dt = new DataTable();
-            string QGetSomeUserInfo = "select vehicleID, vehicleName, BDRegistrationNumber from VehicleTB WHERE vehicleStatus = 1";
+
             using (SqlConnection conn = new SqlConnection(connection))
             {
                 conn.Open();
-                SqlDataAdapter sda = new SqlDataAdapter(QGetSomeUserInfo, connection);
-                sda.Fill(dt);
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    SqlDataAdapter sdt = new SqlDataAdapter(cmd);
+                    sdt.Fill(dt);
+                }
                 conn.Close();
             }
             return dt;
