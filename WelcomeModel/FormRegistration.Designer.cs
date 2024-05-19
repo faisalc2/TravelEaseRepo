@@ -2727,10 +2727,14 @@
             // textBox_EmailM
             // 
             textBox_EmailM.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox_EmailM.ForeColor = Color.FromArgb(64, 64, 64);
             textBox_EmailM.Location = new Point(815, 257);
             textBox_EmailM.Name = "textBox_EmailM";
             textBox_EmailM.Size = new Size(266, 34);
             textBox_EmailM.TabIndex = 60;
+            textBox_EmailM.Text = "example@example.com";
+            textBox_EmailM.Enter += textBox_EmailM_Enter;
+            textBox_EmailM.Leave += textBox_EmailM_Leave;
             // 
             // textBox_PhoneM
             // 
@@ -2825,6 +2829,7 @@
             dateTimePicker_DOBM.Name = "dateTimePicker_DOBM";
             dateTimePicker_DOBM.Size = new Size(266, 34);
             dateTimePicker_DOBM.TabIndex = 52;
+            dateTimePicker_DOBM.Value = new DateTime(1953, 1, 1, 0, 0, 0, 0);
             // 
             // textBox_LnameM
             // 
@@ -3994,10 +3999,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 56, 79);
             ClientSize = new Size(1107, 725);
-            Controls.Add(ModularPanel4);
-            Controls.Add(MainPanel4);
-            Controls.Add(MainPanel3);
-            Controls.Add(MainPanel2);
             Controls.Add(ModularPanel1);
             Controls.Add(ModularPanel3);
             Controls.Add(ModularPanel2);
@@ -4005,6 +4006,10 @@
             Controls.Add(ModularPanel5);
             Controls.Add(MainPanel0);
             Controls.Add(MainPanel5);
+            Controls.Add(ModularPanel4);
+            Controls.Add(MainPanel4);
+            Controls.Add(MainPanel3);
+            Controls.Add(MainPanel2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormRegistration";
             StartPosition = FormStartPosition.CenterScreen;
