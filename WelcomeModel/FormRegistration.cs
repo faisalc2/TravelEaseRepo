@@ -19,6 +19,9 @@ namespace TravelEase.WelcomeModel
         public FormRegistration()
         {
             InitializeComponent();
+            dateTimePicker_DOBM.MinDate = DateTimePicker.MinimumDateTime;
+            dateTimePicker_DOBM.Value = dateTimePicker_DOBM.MinDate;
+            dateTimePicker_DOB.Value = dateTimePicker_DOB.MinDate;
         }
 
         private void insertModularAdmin()
@@ -37,6 +40,7 @@ namespace TravelEase.WelcomeModel
 
             string QInsertMAdminCompanyTB = "INSERT INTO MAdminCompanyTB (companyID, MAdminNumber) " +
                 "VALUES (@companyID, @MAdminNumber)";
+
             string QGetMAdminNum = "SELECT MAdminNumber FROM ModularAdminTB WHERE userID = @userID";
 
             SqlConnection conn = new SqlConnection(connection);
@@ -221,17 +225,23 @@ namespace TravelEase.WelcomeModel
 
         private void buttonNext1_Click(object sender, EventArgs e)
         {
-
+            
             if (string.IsNullOrEmpty(textBox_NID.Text) ||
             string.IsNullOrEmpty(textBox_Fname.Text) ||
             string.IsNullOrEmpty(textBox_Lname.Text) ||
-            string.IsNullOrEmpty(dateTimePicker_DOB.Text) ||
+            dateTimePicker_DOB.Value == dateTimePicker_DOBM.MinDate ||
             string.IsNullOrEmpty(comboBox_Gender.Text))
             {
                 MessageBox.Show("Please fill in all required fields.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 textBox_NID.Focus();
                 return;
             }
+            if (textBox_NID.Text.Length < 10)
+            {
+                MessageBox.Show("NID number must contain at least 10 digit", "Invalid NID number", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
 
             tb_nid.Text = textBox_NID.Text;
             tb_fname.Text = textBox_Fname.Text;
@@ -480,6 +490,13 @@ namespace TravelEase.WelcomeModel
 
         private void buttonNextM1_Click(object sender, EventArgs e)
         {
+            if (textBox_CompanyName.Text == string.Empty ||
+                textBox_GovtReg.Text == string.Empty ||
+                checkedListBox_VehicleType.CheckedItems.Count == 0)
+            {
+                MessageBox.Show("Please Fill All the Information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             textBox_cname.Text = textBox_CompanyName.Text;
             textBox_grid.Text = textBox_GovtReg.Text;
             textBox_vtype.Text = "";
@@ -495,12 +512,36 @@ namespace TravelEase.WelcomeModel
 
         private void buttonNextM2_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(textBox_NIDM.Text) ||
+            string.IsNullOrWhiteSpace(textBox_FnameM.Text) ||
+            string.IsNullOrWhiteSpace(textBox_LnameM.Text) ||
+            dateTimePicker_DOBM.Value == dateTimePicker_DOBM.MinDate ||
+            string.IsNullOrWhiteSpace(comboBox_GenderM.Text) ||
+            string.IsNullOrWhiteSpace(textBox_PhoneM.Text) ||
+            string.IsNullOrWhiteSpace(textBox_EmailM.Text) ||
+            textBox_EmailM.Text == "example@example.com" ||
+            string.IsNullOrWhiteSpace(textBox_AddressM.Text))
+            {
+                MessageBox.Show("Please Fill All the Information", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (!IsValidEmail(textBox_EmailM.Text))
             {
                 MessageBox.Show("Please enter a valid email address.", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
+            if (textBox_PhoneM.Text.Length < 11)
+            {
+                MessageBox.Show("Phone number must be 11 digits","Invalid Phone Number", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (textBox_NIDM.Text.Length < 10)
+            {
+                MessageBox.Show("NID number must contain at least 10 digit", "Invalid NID number", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             textBox_nidmm.Text = textBox_NIDM.Text;
             textBox_fnamemm.Text = textBox_FnameM.Text;
             textBox_lnamemm.Text = textBox_LnameM.Text;
@@ -549,43 +590,66 @@ namespace TravelEase.WelcomeModel
 
         private void buttonNext3_M_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBox_UsernameM.Text) && !string.IsNullOrEmpty(textBox_Password1M.Text) && !string.IsNullOrEmpty(textBox_Password2M.Text))
-            {
-                if (textBox_Password1M.Text.Equals(textBox_Password2M.Text))
-                {
-                    if (textBox_Password1M.Text.Length >= 8)
-                    {
-                        textBox_usernamemm.Text = textBox_UsernameM.Text;
-                        textBox_passwordmm.Text = textBox_Password1M.Text;
-
-                        ModularPanel4.Show();
-                        ModularPanel4.BringToFront();
-                        ModularPanel3.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Password must be minimum 8 characters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        textBox_Password1M.Clear();
-                        textBox_Password2M.Clear();
-                        textBox_Password1M.Focus();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Passwords don't match!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    textBox_Password1M.Clear();
-                    textBox_Password2M.Clear();
-                    textBox_Password1M.Focus();
-                }
-            }
-            else
+            if (string.IsNullOrEmpty(textBox_UsernameM.Text) || string.IsNullOrEmpty(textBox_Password1M.Text) || string.IsNullOrEmpty(textBox_Password2M.Text))
             {
                 MessageBox.Show("Must provide a username and a password!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 textBox_UsernameM.Clear();
                 textBox_Password1M.Clear();
                 textBox_Password2M.Clear();
                 textBox_UsernameM.Focus();
+                return;
             }
+
+            if (IsUsernameExists(textBox_UsernameM.Text))
+            {
+                MessageBox.Show("Username already exists. Please enter a different username.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!textBox_Password1M.Text.Equals(textBox_Password2M.Text))
+            {
+                MessageBox.Show("Passwords don't match!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox_Password1M.Clear();
+                textBox_Password2M.Clear();
+                textBox_Password1M.Focus();
+                return;
+            }
+
+            if (textBox_Password1M.Text.Length < 8)
+            {
+                MessageBox.Show("Password must be minimum 8 characters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox_Password1M.Clear();
+                textBox_Password2M.Clear();
+                textBox_Password1M.Focus();
+                return;
+            }
+
+            // sob thik thakle aita cholbe
+            textBox_usernamemm.Text = textBox_UsernameM.Text;
+            textBox_passwordmm.Text = textBox_Password1M.Text;
+
+            ModularPanel4.Show();
+            ModularPanel4.BringToFront();
+            ModularPanel3.Hide();
+        }
+
+        private bool IsUsernameExists(string username)
+        {
+            bool exists = false;
+            string query = "SELECT COUNT(*) FROM LoginCredentialsTB WHERE username = @username";
+
+            using (SqlConnection conn = new SqlConnection(connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@username", username);
+                    int count = (int)cmd.ExecuteScalar();
+                    exists = count > 0;
+                }
+                conn.Close();
+            }
+            return exists;
         }
 
         private void buttonPrevious3_M_Click(object sender, EventArgs e)
@@ -663,7 +727,7 @@ namespace TravelEase.WelcomeModel
             if (!string.IsNullOrWhiteSpace(textBoxUserName.Text))
             {
                 Clipboard.SetText(textBoxUserName.Text);
-                MessageBox.Show("User Name copied to clipboard!");
+                MessageBox.Show("User Name copied to clipboard!","Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             else
             {
@@ -678,6 +742,22 @@ namespace TravelEase.WelcomeModel
         private void buttonExit4_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void textBox_EmailM_Enter(object sender, EventArgs e)
+        {
+            if (textBox_EmailM.Text == "example@example.com")
+            {
+                textBox_EmailM.Text = "";
+            }
+        }
+
+        private void textBox_EmailM_Leave(object sender, EventArgs e)
+        {
+            if(textBox_EmailM.Text == string.Empty)
+            {
+                textBox_EmailM.Text = "example@example.com";
+            }
         }
     }
 }

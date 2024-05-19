@@ -67,6 +67,81 @@ namespace TravelEase
             return modularAdminNumber;
         }
 
+        public DataTable GetTicketsByVehicleID(int vehicleID, out string message)
+        {
+            message = string.Empty;
+            DataTable dataTable = new DataTable();
+
+            string checkVehicleQuery = "SELECT COUNT(*) FROM VehicleTB WHERE vehicleID = @vehicleID AND MAdminID = @mAdminID";
+
+            string ticketQuery = "SELECT ticketID, userID, vehicleID, buyDate, fare, seatAmount, journeyDate FROM TicketTB WHERE vehicleID = @vehicleID";
+
+            using (SqlConnection conn = new SqlConnection(connection))
+            {
+                try
+                {
+                    conn.Open();
+
+                    using (SqlCommand checkVehicleCommand = new SqlCommand(checkVehicleQuery, conn))
+                    {
+                        checkVehicleCommand.Parameters.AddWithValue("@vehicleID", vehicleID);
+                        checkVehicleCommand.Parameters.AddWithValue("@mAdminID", GetModularAdminNumber());
+
+                        int count = (int)checkVehicleCommand.ExecuteScalar();
+
+                        if (count == 0)
+                        {
+                            message = "Invalid vehicle id or this vehicle does not belong to your company.";
+                            return null;
+                        }
+                    }
+
+                    using (SqlCommand ticketCommand = new SqlCommand(ticketQuery, conn))
+                    {
+                        ticketCommand.Parameters.AddWithValue("@vehicleID", vehicleID);
+
+                        SqlDataAdapter adapter = new SqlDataAdapter(ticketCommand);
+                        adapter.Fill(dataTable);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    message = "An error occurred: " + ex.Message;
+                    return null;
+                }
+            }
+
+            return dataTable;
+        }
+
+        public bool DeleteTicket(int vehicleID, int ticketID)
+        {
+            string query = "DELETE FROM TicketTB WHERE vehicleID = @vehicleID AND ticketID = @ticketID";
+
+            using (SqlConnection conn = new SqlConnection(connection))
+            {
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+                    command.Parameters.AddWithValue("@vehicleID", vehicleID);
+                    command.Parameters.AddWithValue("@ticketID", ticketID);
+
+                    try
+                    {
+                        conn.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+                        return rowsAffected > 0;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("An error occurred: " + ex.Message);
+                        return false;
+                    }
+                }
+            }
+        }
+
+
+
         public DataTable GetAllModularInfo()
         {
             int modularAdminNumber = GetModularAdminNumber();
@@ -171,26 +246,6 @@ namespace TravelEase
             this.userPasswordModular = upass;
         }
 
-        public bool CancelTicket(int ticketID)
-        {
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connection))
-                {
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand(QDeleteTicket, conn);
-                    cmd.Parameters.AddWithValue("@ticketID", ticketID);
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    return rowsAffected > 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("An error occurred: " + ex.Message);
-                return false;
-            }
-        }
-
         public DataTable RefundRuleShow()
         {
             int modularAdminNumber = GetModularAdminNumber();
@@ -224,6 +279,46 @@ namespace TravelEase
             return dt;
         }
 
+        public bool IsModularAdminNumberExists()
+        {
+            int modularAdminNumber = GetModularAdminNumber();
+            string query = "SELECT COUNT(*) FROM RefundRuleTB WHERE MAdminNumber = @MAdminNumber";
+
+            using (SqlConnection conn = new SqlConnection(connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@MAdminNumber", modularAdminNumber);
+                    int count = (int)cmd.ExecuteScalar();
+                    conn.Close();
+                    return count > 0;
+                }
+            }
+        }
+        public void InsertRefundRule()
+        {
+            string query = "INSERT INTO RefundRuleTB (refund_80_percent, refund_60_percent, refund_40_percent, no_refund, MAdminNumber) " +
+                      "VALUES (@refund80Percent, @refund60Percent, @refund40Percent, @noRefund, @mAdminNumber)";
+
+            int modularAdminNumber = GetModularAdminNumber();
+
+            using (SqlConnection conn = new SqlConnection(connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@refund80Percent", persent_80);
+                    cmd.Parameters.AddWithValue("@refund60Percent", persent_60);
+                    cmd.Parameters.AddWithValue("@refund40Percent", persent_40);
+                    cmd.Parameters.AddWithValue("@noRefund", no_refund);
+                    cmd.Parameters.AddWithValue("@mAdminNumber", modularAdminNumber);
+
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+        }
         public bool RefundRuleUpdate(ModularAdmin MA)
         {
             string query = @"
