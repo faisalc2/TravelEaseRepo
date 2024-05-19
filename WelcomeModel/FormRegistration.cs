@@ -21,6 +21,7 @@ namespace TravelEase.WelcomeModel
             InitializeComponent();
             dateTimePicker_DOBM.MinDate = DateTimePicker.MinimumDateTime;
             dateTimePicker_DOBM.Value = dateTimePicker_DOBM.MinDate;
+            dateTimePicker_DOB.Value = dateTimePicker_DOB.MinDate;
         }
 
         private void insertModularAdmin()
@@ -223,20 +224,20 @@ namespace TravelEase.WelcomeModel
 
         private void buttonNext1_Click(object sender, EventArgs e)
         {
-
+            
             if (string.IsNullOrEmpty(textBox_NID.Text) ||
             string.IsNullOrEmpty(textBox_Fname.Text) ||
             string.IsNullOrEmpty(textBox_Lname.Text) ||
-            string.IsNullOrEmpty(dateTimePicker_DOB.Text) ||
+            dateTimePicker_DOB.Value == dateTimePicker_DOBM.MinDate ||
             string.IsNullOrEmpty(comboBox_Gender.Text))
             {
                 MessageBox.Show("Please fill in all required fields.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 textBox_NID.Focus();
                 return;
             }
-            if (textBox_NIDM.Text.Length < 13)
+            if (textBox_NID.Text.Length < 10)
             {
-                MessageBox.Show("NID number must be greater then 12 digit", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("NID number must contain at least 10 digit", "Invalid NID number", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -535,9 +536,9 @@ namespace TravelEase.WelcomeModel
                 MessageBox.Show("Phone number must be 11 digits","Invalid Phone Number", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (textBox_NIDM.Text.Length < 13)
+            if (textBox_NIDM.Text.Length < 10)
             {
-                MessageBox.Show("NID number must be greater then 12 digit", "Invalid NID number", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("NID number must contain at least 10 digit", "Invalid NID number", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             textBox_nidmm.Text = textBox_NIDM.Text;

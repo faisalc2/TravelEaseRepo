@@ -27,6 +27,10 @@ namespace TravelEase.Moduler_Admin
             }
             else
             {
+                if (!ModularAdminSingletone.Instance.currentMAdmin.IsModularAdminNumberExists())
+                {
+                    ModularAdminSingletone.Instance.currentMAdmin.InsertRefundRule();
+                }
                 if (ModularAdminSingletone.Instance.currentMAdmin.RefundRuleUpdate(getEditedMAdminInfo()))
                 {
                     MessageBox.Show("Information Updated!");

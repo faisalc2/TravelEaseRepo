@@ -485,6 +485,7 @@
             dateTimePicker_DOB.Name = "dateTimePicker_DOB";
             dateTimePicker_DOB.Size = new Size(370, 34);
             dateTimePicker_DOB.TabIndex = 52;
+            dateTimePicker_DOB.Value = new DateTime(1953, 1, 1, 0, 0, 0, 0);
             // 
             // textBox_Lname
             // 
@@ -3999,9 +4000,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 56, 79);
             ClientSize = new Size(1107, 725);
-            Controls.Add(ModularPanel1);
-            Controls.Add(ModularPanel3);
-            Controls.Add(ModularPanel2);
             Controls.Add(MainPanel1);
             Controls.Add(ModularPanel5);
             Controls.Add(MainPanel0);
@@ -4010,6 +4008,9 @@
             Controls.Add(MainPanel4);
             Controls.Add(MainPanel3);
             Controls.Add(MainPanel2);
+            Controls.Add(ModularPanel1);
+            Controls.Add(ModularPanel3);
+            Controls.Add(ModularPanel2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormRegistration";
             StartPosition = FormStartPosition.CenterScreen;
