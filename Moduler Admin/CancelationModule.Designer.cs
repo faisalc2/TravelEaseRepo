@@ -29,54 +29,90 @@
         private void InitializeComponent()
         {
             label26 = new Label();
-            label11 = new Label();
-            textBox11 = new TextBox();
+            textBoxVehicleID = new TextBox();
             buttonCancelTicketModular = new Button();
+            buttonSearch = new Button();
+            dataGridViewTicketSearchedbyVehicleID = new DataGridView();
+            label1 = new Label();
+            textBoxTicketID = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewTicketSearchedbyVehicleID).BeginInit();
             SuspendLayout();
             // 
             // label26
             // 
             label26.Anchor = AnchorStyles.None;
             label26.AutoSize = true;
-            label26.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label26.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label26.ForeColor = SystemColors.ButtonHighlight;
-            label26.Location = new Point(251, 207);
+            label26.Location = new Point(126, 54);
             label26.Name = "label26";
-            label26.Size = new Size(169, 31);
+            label26.Size = new Size(189, 31);
             label26.TabIndex = 6;
-            label26.Text = "Ticket Number:";
+            label26.Text = "Enter Vehicle ID:";
             // 
-            // label11
+            // textBoxVehicleID
             // 
-            label11.Anchor = AnchorStyles.None;
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.ForeColor = SystemColors.ButtonHighlight;
-            label11.Location = new Point(281, 132);
-            label11.Name = "label11";
-            label11.Size = new Size(369, 41);
-            label11.TabIndex = 5;
-            label11.Text = "Search with ticket number:";
-            // 
-            // textBox11
-            // 
-            textBox11.Anchor = AnchorStyles.None;
-            textBox11.ForeColor = SystemColors.ActiveCaptionText;
-            textBox11.Location = new Point(447, 207);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(257, 27);
-            textBox11.TabIndex = 4;
+            textBoxVehicleID.Anchor = AnchorStyles.None;
+            textBoxVehicleID.ForeColor = SystemColors.ActiveCaptionText;
+            textBoxVehicleID.Location = new Point(322, 54);
+            textBoxVehicleID.Name = "textBoxVehicleID";
+            textBoxVehicleID.Size = new Size(257, 27);
+            textBoxVehicleID.TabIndex = 4;
             // 
             // buttonCancelTicketModular
             // 
             buttonCancelTicketModular.BackColor = Color.FromArgb(187, 233, 237);
-            buttonCancelTicketModular.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            buttonCancelTicketModular.Location = new Point(353, 300);
+            buttonCancelTicketModular.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonCancelTicketModular.Location = new Point(486, 415);
             buttonCancelTicketModular.Name = "buttonCancelTicketModular";
-            buttonCancelTicketModular.Size = new Size(163, 56);
+            buttonCancelTicketModular.Size = new Size(139, 32);
             buttonCancelTicketModular.TabIndex = 7;
             buttonCancelTicketModular.Text = "Cancel Ticket";
             buttonCancelTicketModular.UseVisualStyleBackColor = false;
+            buttonCancelTicketModular.Click += buttonCancelTicketModular_Click;
+            // 
+            // buttonSearch
+            // 
+            buttonSearch.BackColor = Color.FromArgb(187, 233, 237);
+            buttonSearch.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonSearch.Location = new Point(601, 54);
+            buttonSearch.Name = "buttonSearch";
+            buttonSearch.Size = new Size(85, 31);
+            buttonSearch.TabIndex = 8;
+            buttonSearch.Text = "Search";
+            buttonSearch.UseVisualStyleBackColor = false;
+            buttonSearch.Click += buttonSearch_Click;
+            // 
+            // dataGridViewTicketSearchedbyVehicleID
+            // 
+            dataGridViewTicketSearchedbyVehicleID.BackgroundColor = Color.White;
+            dataGridViewTicketSearchedbyVehicleID.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewTicketSearchedbyVehicleID.Location = new Point(12, 125);
+            dataGridViewTicketSearchedbyVehicleID.Name = "dataGridViewTicketSearchedbyVehicleID";
+            dataGridViewTicketSearchedbyVehicleID.RowHeadersWidth = 51;
+            dataGridViewTicketSearchedbyVehicleID.Size = new Size(814, 188);
+            dataGridViewTicketSearchedbyVehicleID.TabIndex = 9;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.None;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Location = new Point(126, 420);
+            label1.Name = "label1";
+            label1.Size = new Size(177, 31);
+            label1.TabIndex = 10;
+            label1.Text = "Enter Ticket ID:";
+            // 
+            // textBoxTicketID
+            // 
+            textBoxTicketID.Anchor = AnchorStyles.None;
+            textBoxTicketID.ForeColor = SystemColors.ActiveCaptionText;
+            textBoxTicketID.Location = new Point(331, 420);
+            textBoxTicketID.Name = "textBoxTicketID";
+            textBoxTicketID.Size = new Size(119, 27);
+            textBoxTicketID.TabIndex = 11;
             // 
             // CancelationModule
             // 
@@ -84,21 +120,29 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 56, 79);
             ClientSize = new Size(854, 538);
+            Controls.Add(textBoxTicketID);
+            Controls.Add(label1);
+            Controls.Add(dataGridViewTicketSearchedbyVehicleID);
+            Controls.Add(buttonSearch);
             Controls.Add(buttonCancelTicketModular);
             Controls.Add(label26);
-            Controls.Add(label11);
-            Controls.Add(textBox11);
+            Controls.Add(textBoxVehicleID);
             FormBorderStyle = FormBorderStyle.None;
             Name = "CancelationModule";
             Text = "CancelationModule";
+            Load += CancelationModule_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridViewTicketSearchedbyVehicleID).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
         private Label label26;
-        private Label label11;
-        private TextBox textBox11;
+        private TextBox textBoxVehicleID;
         private Button buttonCancelTicketModular;
+        private Button buttonSearch;
+        private DataGridView dataGridViewTicketSearchedbyVehicleID;
+        private Label label1;
+        private TextBox textBoxTicketID;
     }
 }
