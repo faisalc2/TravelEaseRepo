@@ -103,6 +103,7 @@
             buttonBack.TabIndex = 29;
             buttonBack.Text = "Back";
             buttonBack.UseVisualStyleBackColor = false;
+            buttonBack.Click += buttonBack_Click_1;
             // 
             // buttonBuyTicket
             // 
@@ -127,6 +128,7 @@
             buttonExit.Size = new Size(45, 36);
             buttonExit.TabIndex = 27;
             buttonExit.UseVisualStyleBackColor = false;
+            buttonExit.Click += buttonExit_Click;
             // 
             // label5
             // 

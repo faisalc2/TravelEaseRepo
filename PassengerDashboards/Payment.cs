@@ -23,7 +23,7 @@ namespace TravelEase.PassengerDashboards
 
         private void buttonpurchase_Click(object sender, EventArgs e)
         {
-            if ((string.IsNullOrEmpty(textboxCardNumber.Text) || string.IsNullOrEmpty(textboxPin.Text)))
+            if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox1.Text))
             {
                 MessageBox.Show("Please provide Payment Credentials!");
                 return;
@@ -67,7 +67,7 @@ namespace TravelEase.PassengerDashboards
 
         private void buttonPurchase3_Click(object sender, EventArgs e)
         {
-            if ((string.IsNullOrEmpty(textboxCardNumber.Text) || string.IsNullOrEmpty(textboxPin.Text)))
+            if (string.IsNullOrEmpty(textboxCardNumber.Text) || string.IsNullOrEmpty(textboxPin.Text))
             {
                 MessageBox.Show("Please provide Payment Credentials!");
                 return;

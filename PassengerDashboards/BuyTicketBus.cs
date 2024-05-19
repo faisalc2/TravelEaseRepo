@@ -41,7 +41,7 @@ namespace TravelEase.PassengerDashboards
             Button button = (Button)sender;
             Color targetColor = Color.White;
             Color target2 = Color.Lime;
-            if (choosenButton.Count > 4) { MessageBox.Show("Maximum seat limit reached!"); return; }
+            if (choosenButton.Count > 4 && button.BackColor == targetColor) { MessageBox.Show("Maximum seat limit reached!"); return; }
             if (button.BackColor == targetColor)
             {
                 button.BackColor = target2;
@@ -88,16 +88,16 @@ namespace TravelEase.PassengerDashboards
 
         private void buttonSelectComplete_Click(object sender, EventArgs e)
         {
-            setSeatNumbers();
+            setTemporarySeats();
             calculateFare();
             textBox2.Text = $"{fare}";
-            updateSeatStatus();
-            UpdateButtonTagsFromDatabase(PassengerInfoSingleton.Instance.CurrentPassenger.ticket.vehicleID);
+            //UpdateButtonTagsFromDatabase(PassengerInfoSingleton.Instance.CurrentPassenger.ticket.vehicleID);
         }
 
         private void buttonBuyTicket_Click(object sender, EventArgs e)
         {
-            setSeatNumbers();
+            updateSeatStatus();
+            seatNumbers = setSeatNumbers();
             PassengerInfoSingleton.Instance.CurrentPassenger.ticket.fare = this.fare;
             PassengerInfoSingleton.Instance.CurrentPassenger.ticket.seatAmount = choosenButton.Count;
             PassengerInfoSingleton.Instance.CurrentPassenger.ticket.seatNumber = seatNumbers;
@@ -190,13 +190,22 @@ namespace TravelEase.PassengerDashboards
             }
         }
 
-        private void setSeatNumbers()
+        private string setSeatNumbers()
+        {
+            string str = "";
+            foreach (Button button in choosenButton)
+            {
+                str += $"{button.Tag}, ";
+            }
+            str = str.Substring(0, str.Length - 2);
+            return str;
+        }
+        private void setTemporarySeats()
         {
             foreach (Button button in choosenButton)
             {
-                seatNumbers += $"{button.Tag}, ";
+                button.BackColor = Color.Brown;
             }
-            seatNumbers = seatNumbers.Substring(0, seatNumbers.Length - 2);
         }
     }
 }
