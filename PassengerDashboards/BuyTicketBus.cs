@@ -17,13 +17,16 @@ namespace TravelEase.PassengerDashboards
         private List<Button> choosenButton = new List<Button>();
         private List<Button> allButtons = new List<Button>();
         int number_of_seat = 0;
+        double fixedRate = 100;
+        double fare;
+        string seatNumbers;
         public BuyTicketBus()
         {
             InitializeComponent();
             choosenButton.Clear();
             allButtons.Clear();
             addButtonstoList();
-            UpdateButtonTagsFromDatabase(1);
+            UpdateButtonTagsFromDatabase(PassengerInfoSingleton.Instance.CurrentPassenger.ticket.vehicleID);
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
@@ -38,6 +41,7 @@ namespace TravelEase.PassengerDashboards
             Button button = (Button)sender;
             Color targetColor = Color.White;
             Color target2 = Color.Lime;
+            if (choosenButton.Count > 4) { MessageBox.Show("Maximum seat limit reached!"); return; }
             if (button.BackColor == targetColor)
             {
                 button.BackColor = target2;
@@ -84,14 +88,20 @@ namespace TravelEase.PassengerDashboards
 
         private void buttonSelectComplete_Click(object sender, EventArgs e)
         {
-            int result = number_of_seat * 100;
-            textBox2.Text = $"{number_of_seat} * 100 = {result}";
+            setSeatNumbers();
+            calculateFare();
+            textBox2.Text = $"{fare}";
             updateSeatStatus();
-            UpdateButtonTagsFromDatabase(1);
+            UpdateButtonTagsFromDatabase(PassengerInfoSingleton.Instance.CurrentPassenger.ticket.vehicleID);
         }
 
         private void buttonBuyTicket_Click(object sender, EventArgs e)
         {
+            setSeatNumbers();
+            PassengerInfoSingleton.Instance.CurrentPassenger.ticket.fare = this.fare;
+            PassengerInfoSingleton.Instance.CurrentPassenger.ticket.seatAmount = choosenButton.Count;
+            PassengerInfoSingleton.Instance.CurrentPassenger.ticket.seatNumber = seatNumbers;
+
             Payment payment = new Payment();
             payment.Show();
             this.Hide();
@@ -99,21 +109,44 @@ namespace TravelEase.PassengerDashboards
 
         private void addButtonstoList()
         {
+            allButtons.Clear();
+
             for (int i = 1; i <= 38; i++)
             {
-                // Construct the button name
-                string buttonName = "button" + i;
+                string buttonText = i.ToString();
 
-                // Find the button control by name
-                Button button = this.Controls.Find(buttonName, true)[0] as Button;
+                Button button = FindButtonByText(panel1, buttonText);
 
-                // Add the button to the list
-                allButtons.Add(button);
+                if (button != null)
+                {
+                    allButtons.Add(button);
+                }
             }
         }
+
+        private Button FindButtonByText(Control container, string text)
+        {
+            foreach (Control control in container.Controls)
+            {
+                if (control is Button button && button.Text == text)
+                {
+                    return button;
+                }
+                else if (control.HasChildren)
+                {
+                    Button foundButton = FindButtonByText(control, text);
+                    if (foundButton != null)
+                    {
+                        return foundButton;
+                    }
+                }
+            }
+            return null;
+        }
+
         private void UpdateButtonTagsFromDatabase(int vehicleID)
         {
-            string query = "SELECT seatNumber, seatStatus FROM BusSeatTB where vehicleID = @vehicleID";
+            string query = "SELECT seatNumber, seatStatus FROM BusSeatTB WHERE vehicleID = @vehicleID";
 
             using (SqlConnection conn = new SqlConnection(connection))
             {
@@ -126,20 +159,44 @@ namespace TravelEase.PassengerDashboards
                     int i = 1;
                     while (reader.Read())
                     {
-                        string buttonName = "button" + i;
-                        Button button = this.Controls.Find(buttonName, true)[0] as Button;
-                        string seatName = reader["SeatNumber"].ToString();
-                        bool status = (bool)reader["seatStatus"];
-                        button.Tag = seatName;
-                        button.BackColor = status ? Color.White : Color.Red;
+                        string seatNumber = reader["seatNumber"].ToString();
+
+                        Button button = allButtons.FirstOrDefault(b => b.Text == i.ToString());
+                        if (button != null)
+                        {
+                            bool status = (bool)reader["seatStatus"];
+                            button.Tag = seatNumber;
+                            button.BackColor = status ? Color.White : Color.Red;
+                        }
                         i++;
                     }
-                    MessageBox.Show("buttons have been tagged!");
                 }
-
             }
         }
 
+        private void calculateFare()
+        {
+            if (choosenButton.Count <= 4)
+            {
+                switch (PassengerInfoSingleton.Instance.CurrentPassenger.ticket.vehicleClass.ToLower())
+                {
+                    case "ac":
+                        fare = (fixedRate + 100) * choosenButton.Count;
+                        break;
+                    case "non-ac":
+                        fare = fixedRate * choosenButton.Count;
+                        break;
+                }
+            }
+        }
 
+        private void setSeatNumbers()
+        {
+            foreach (Button button in choosenButton)
+            {
+                seatNumbers += $"{button.Tag}, ";
+            }
+            seatNumbers = seatNumbers.Substring(0, seatNumbers.Length - 2);
+        }
     }
 }

@@ -21,6 +21,7 @@ namespace TravelEase.Dashboards
         public string QAvailableVehicle = "SELECT vehicleID,vehicleName FROM VehicleTB where destinationID = @destinationID";
         public string QDesID = "SELECT destinationID FROM DestinationTB WHERE desFrom = @desFrom AND desTo = @desTo";
         public int selectedVehicle;
+        public int desID;
         AvailableVehicle availableVehicle;
 
         public SearchTicket()
@@ -41,7 +42,7 @@ namespace TravelEase.Dashboards
 
         private void buttonNext1_Click(object sender, EventArgs e)
         {
-            availableVehicle.SetSelectedVehicle(getSelectedVehicle());
+            PassengerInfoSingleton.Instance.CurrentPassenger.ticket.vehicleType = getSelectedVehicle();
             SqlConnection conn = new SqlConnection(connection);
             using (conn)
             {
@@ -73,8 +74,11 @@ namespace TravelEase.Dashboards
         private void buttonNext2_Click(object sender, EventArgs e)
         {
             availableVehicle.setDataSource(getAvailableVehicles());
+            PassengerInfoSingleton.Instance.CurrentPassenger.ticket.journeyDate = dateTimePickerDate.Value;
+            PassengerInfoSingleton.Instance.CurrentPassenger.ticket.buyDate = DateTime.Now;
+            PassengerInfoSingleton.Instance.CurrentPassenger.ticket.desID = desID;
+            PassengerInfoSingleton.Instance.CurrentPassenger.ticket.vehicleClass = comboBoxClass.Text;
             availableVehicle.Show();
-            //database
         }
 
         private int getSelectedVehicle()
@@ -125,7 +129,6 @@ namespace TravelEase.Dashboards
         {
             string currFrom = comboBoxFrom.Text;
             string currTo = comboBoxTo.Text;
-            int desID;
             SqlDataAdapter sdt;
             DataTable dt = new DataTable();
             using (SqlConnection conn = new SqlConnection(connection))

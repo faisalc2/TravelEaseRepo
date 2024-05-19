@@ -58,10 +58,10 @@
             radioButton4 = new RadioButton();
             buttonCancel3 = new Button();
             buttonPurchase3 = new Button();
-            textBox3 = new TextBox();
+            textboxPin = new TextBox();
             label3 = new Label();
             label4 = new Label();
-            textBox4 = new TextBox();
+            textboxCardNumber = new TextBox();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -338,10 +338,10 @@
             panel3.Controls.Add(groupBox3);
             panel3.Controls.Add(buttonCancel3);
             panel3.Controls.Add(buttonPurchase3);
-            panel3.Controls.Add(textBox3);
+            panel3.Controls.Add(textboxPin);
             panel3.Controls.Add(label3);
             panel3.Controls.Add(label4);
-            panel3.Controls.Add(textBox4);
+            panel3.Controls.Add(textboxCardNumber);
             panel3.Location = new Point(127, 40);
             panel3.Name = "panel3";
             panel3.Size = new Size(828, 483);
@@ -435,12 +435,12 @@
             buttonPurchase3.UseVisualStyleBackColor = false;
             buttonPurchase3.Click += buttonPurchase3_Click;
             // 
-            // textBox3
+            // textboxPin
             // 
-            textBox3.Location = new Point(537, 185);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(236, 27);
-            textBox3.TabIndex = 3;
+            textboxPin.Location = new Point(537, 185);
+            textboxPin.Name = "textboxPin";
+            textboxPin.Size = new Size(236, 27);
+            textboxPin.TabIndex = 3;
             // 
             // label3
             // 
@@ -464,12 +464,12 @@
             label4.TabIndex = 1;
             label4.Text = "Card Number:";
             // 
-            // textBox4
+            // textboxCardNumber
             // 
-            textBox4.Location = new Point(537, 140);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(236, 27);
-            textBox4.TabIndex = 0;
+            textboxCardNumber.Location = new Point(537, 140);
+            textboxCardNumber.Name = "textboxCardNumber";
+            textboxCardNumber.Size = new Size(236, 27);
+            textboxCardNumber.TabIndex = 0;
             // 
             // Payment
             // 
@@ -478,9 +478,9 @@
             BackColor = Color.FromArgb(96, 184, 196);
             ClientSize = new Size(1080, 574);
             Controls.Add(buttonExit);
-            Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Controls.Add(panel3);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Payment";
             StartPosition = FormStartPosition.CenterScreen;
@@ -536,10 +536,10 @@
         private RadioButton radioButton4;
         private Button buttonCancel3;
         private Button buttonPurchase3;
-        private TextBox textBox3;
+        private TextBox textboxPin;
         private Label label3;
         private Label label4;
-        private TextBox textBox4;
+        private TextBox textboxCardNumber;
         private Button buttonCancel1;
     }
 }
