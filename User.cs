@@ -75,7 +75,8 @@ namespace TravelEase
         }
 
         private static DateTime currentDate = DateTime.Now.Date;
-        private static int currentSequence = 1;
+
+        public User() { }
         public User(string fname, string lname, string nID, DateTime dOB, string gender, string phone, string email, string residence, string userID)
         {
             _fname = fname;
@@ -90,22 +91,30 @@ namespace TravelEase
             _residence = residence;
         }
 
-        private static string GenerateModularAdminId()
+        private static Random random = new Random();
+
+        public static string GenerateUniqueId()
         {
-            if (currentDate != DateTime.Now.Date)
-            {
-                currentDate = DateTime.Now.Date;
-                currentSequence = 1;
-            }
+            string timestampPart = DateTime.Now.ToString("yyyyMMddHHmmss");
 
-            string datePart = currentDate.ToString("ddMMyyyy");
-            string sequencePart = currentSequence.ToString("D5");
-            string vehicleId = $"user-{datePart}-{sequencePart}";
+            string randomPart = GenerateRandomString(8);
 
-            currentSequence++;
+            string uniqueId = $"{timestampPart}{randomPart}";
 
-            return vehicleId;
+            return uniqueId;
         }
+
+        private static string GenerateRandomString(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            char[] randomChars = new char[length];
+            for (int i = 0; i < length; i++)
+            {
+                randomChars[i] = chars[random.Next(chars.Length)];
+            }
+            return new string(randomChars);
+        }
+
 
     }
 }

@@ -69,7 +69,7 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ActiveCaptionText;
+            label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Location = new Point(49, 30);
             label1.Name = "label1";
             label1.Size = new Size(168, 31);
@@ -91,7 +91,7 @@
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = SystemColors.ActiveCaptionText;
+            label3.ForeColor = SystemColors.ButtonHighlight;
             label3.Location = new Point(33, 82);
             label3.Name = "label3";
             label3.Size = new Size(80, 31);
@@ -101,35 +101,38 @@
             // button6
             // 
             button6.Anchor = AnchorStyles.None;
+            button6.BackColor = Color.FromArgb(187, 233, 237);
             button6.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button6.Location = new Point(122, 415);
             button6.Name = "button6";
             button6.Size = new Size(107, 41);
             button6.TabIndex = 17;
             button6.Text = "Cancel";
-            button6.UseVisualStyleBackColor = true;
+            button6.UseVisualStyleBackColor = false;
             // 
             // button5
             // 
             button5.Anchor = AnchorStyles.None;
+            button5.BackColor = Color.FromArgb(187, 233, 237);
             button5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button5.Location = new Point(186, 359);
             button5.Name = "button5";
             button5.Size = new Size(107, 41);
             button5.TabIndex = 16;
             button5.Text = "REMOVE";
-            button5.UseVisualStyleBackColor = true;
+            button5.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
             button4.Anchor = AnchorStyles.None;
+            button4.BackColor = Color.FromArgb(187, 233, 237);
             button4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button4.Location = new Point(52, 359);
             button4.Name = "button4";
             button4.Size = new Size(107, 41);
             button4.TabIndex = 15;
             button4.Text = "ADD";
-            button4.UseVisualStyleBackColor = true;
+            button4.UseVisualStyleBackColor = false;
             // 
             // textBox3
             // 
@@ -145,7 +148,7 @@
             label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.ForeColor = SystemColors.ActiveCaptionText;
+            label5.ForeColor = SystemColors.ButtonHighlight;
             label5.Location = new Point(35, 261);
             label5.Name = "label5";
             label5.Size = new Size(118, 31);
@@ -166,7 +169,7 @@
             label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = SystemColors.ActiveCaptionText;
+            label4.ForeColor = SystemColors.ButtonHighlight;
             label4.Location = new Point(33, 169);
             label4.Name = "label4";
             label4.Size = new Size(120, 31);
@@ -177,6 +180,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(48, 56, 79);
             ClientSize = new Size(734, 491);
             Controls.Add(button6);
             Controls.Add(button5);

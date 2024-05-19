@@ -70,9 +70,9 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(-124, 84);
+            pictureBox3.Location = new Point(-135, 66);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(675, 446);
+            pictureBox3.Size = new Size(809, 490);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
@@ -111,7 +111,7 @@
             buttonLogin.FlatStyle = FlatStyle.Popup;
             buttonLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonLogin.ForeColor = Color.Black;
-            buttonLogin.Location = new Point(457, 405);
+            buttonLogin.Location = new Point(591, 395);
             buttonLogin.Margin = new Padding(0);
             buttonLogin.Name = "buttonLogin";
             buttonLogin.Size = new Size(94, 44);
@@ -139,7 +139,7 @@
             buttonSignUp.FlatStyle = FlatStyle.Popup;
             buttonSignUp.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonSignUp.ForeColor = Color.Black;
-            buttonSignUp.Location = new Point(632, 405);
+            buttonSignUp.Location = new Point(754, 395);
             buttonSignUp.Margin = new Padding(0);
             buttonSignUp.Name = "buttonSignUp";
             buttonSignUp.Size = new Size(94, 44);

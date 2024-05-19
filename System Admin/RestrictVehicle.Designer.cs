@@ -28,85 +28,148 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            label1 = new Label();
-            textBox1 = new TextBox();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            textBoxVehicleID = new TextBox();
             labelName = new Label();
-            buttonRestrict = new Button();
-            panel1.SuspendLayout();
+            buttonRemove = new Button();
+            DGVVehicleInfo = new DataGridView();
+            textBoxSearch = new TextBox();
+            label1 = new Label();
+            textBoxVName = new TextBox();
+            label2 = new Label();
+            ((System.ComponentModel.ISupportInitialize)DGVVehicleInfo).BeginInit();
             SuspendLayout();
             // 
-            // panel1
+            // textBoxVehicleID
             // 
-            panel1.Controls.Add(label1);
-            panel1.Location = new Point(375, 30);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(347, 471);
-            panel1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(105, 21);
-            label1.Name = "label1";
-            label1.Size = new Size(169, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Bus Company requested";
-            // 
-            // textBox1
-            // 
-            textBox1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(36, 129);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(212, 38);
-            textBox1.TabIndex = 4;
+            textBoxVehicleID.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBoxVehicleID.Location = new Point(36, 129);
+            textBoxVehicleID.Name = "textBoxVehicleID";
+            textBoxVehicleID.ReadOnly = true;
+            textBoxVehicleID.Size = new Size(212, 38);
+            textBoxVehicleID.TabIndex = 4;
             // 
             // labelName
             // 
             labelName.AutoSize = true;
             labelName.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelName.ForeColor = SystemColors.ButtonHighlight;
             labelName.Location = new Point(26, 84);
             labelName.Name = "labelName";
             labelName.Size = new Size(120, 31);
             labelName.TabIndex = 3;
             labelName.Text = "Vehicle ID:";
             // 
-            // buttonRestrict
+            // buttonRemove
             // 
-            buttonRestrict.BackColor = Color.FromArgb(48, 56, 79);
-            buttonRestrict.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonRestrict.ForeColor = SystemColors.ButtonFace;
-            buttonRestrict.Location = new Point(97, 257);
-            buttonRestrict.Name = "buttonRestrict";
-            buttonRestrict.Size = new Size(117, 54);
-            buttonRestrict.TabIndex = 6;
-            buttonRestrict.Text = "Restrict";
-            buttonRestrict.UseVisualStyleBackColor = false;
+            buttonRemove.BackColor = Color.FromArgb(187, 233, 237);
+            buttonRemove.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonRemove.ForeColor = SystemColors.ActiveCaptionText;
+            buttonRemove.Location = new Point(89, 327);
+            buttonRemove.Name = "buttonRemove";
+            buttonRemove.Size = new Size(117, 54);
+            buttonRemove.TabIndex = 6;
+            buttonRemove.Text = "Remove";
+            buttonRemove.UseVisualStyleBackColor = false;
+            buttonRemove.Click += buttonRemove_Click;
+            // 
+            // DGVVehicleInfo
+            // 
+            DGVVehicleInfo.AllowUserToAddRows = false;
+            DGVVehicleInfo.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(187, 233, 237);
+            DGVVehicleInfo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            DGVVehicleInfo.BorderStyle = BorderStyle.None;
+            DGVVehicleInfo.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(48, 56, 79);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            DGVVehicleInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            DGVVehicleInfo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DGVVehicleInfo.EnableHeadersVisualStyles = false;
+            DGVVehicleInfo.Location = new Point(281, 129);
+            DGVVehicleInfo.Name = "DGVVehicleInfo";
+            DGVVehicleInfo.ReadOnly = true;
+            DGVVehicleInfo.RowHeadersWidth = 51;
+            DGVVehicleInfo.Size = new Size(441, 357);
+            DGVVehicleInfo.TabIndex = 7;
+            DGVVehicleInfo.CellContentClick += DGVVehicleInfo_CellContentClick;
+            // 
+            // textBoxSearch
+            // 
+            textBoxSearch.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBoxSearch.Location = new Point(396, 57);
+            textBoxSearch.Name = "textBoxSearch";
+            textBoxSearch.Size = new Size(212, 38);
+            textBoxSearch.TabIndex = 8;
+            textBoxSearch.TextChanged += textBoxSearch_TextChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Location = new Point(347, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(319, 31);
+            label1.TabIndex = 9;
+            label1.Text = "User Vehicle Name for Search:";
+            // 
+            // textBoxVName
+            // 
+            textBoxVName.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBoxVName.Location = new Point(36, 240);
+            textBoxVName.Name = "textBoxVName";
+            textBoxVName.ReadOnly = true;
+            textBoxVName.Size = new Size(212, 38);
+            textBoxVName.TabIndex = 10;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.ButtonHighlight;
+            label2.Location = new Point(26, 197);
+            label2.Name = "label2";
+            label2.Size = new Size(159, 31);
+            label2.TabIndex = 11;
+            label2.Text = "Vehicle Name:";
             // 
             // RestrictVehicle
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(48, 56, 79);
             ClientSize = new Size(734, 539);
-            Controls.Add(buttonRestrict);
-            Controls.Add(textBox1);
+            Controls.Add(label2);
+            Controls.Add(textBoxVName);
+            Controls.Add(label1);
+            Controls.Add(textBoxSearch);
+            Controls.Add(DGVVehicleInfo);
+            Controls.Add(buttonRemove);
+            Controls.Add(textBoxVehicleID);
             Controls.Add(labelName);
-            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "RestrictVehicle";
             Text = "RestrictVehicle";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)DGVVehicleInfo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Panel panel1;
-        private Label label1;
-        private TextBox textBox1;
+        private TextBox textBoxVehicleID;
         private Label labelName;
-        private Button buttonRestrict;
+        private Button buttonRemove;
+        private DataGridView DGVVehicleInfo;
+        private TextBox textBoxSearch;
+        private Label label1;
+        private TextBox textBoxVName;
+        private Label label2;
     }
 }

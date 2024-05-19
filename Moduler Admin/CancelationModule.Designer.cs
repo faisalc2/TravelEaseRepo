@@ -28,74 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label29 = new Label();
             label26 = new Label();
             label11 = new Label();
             textBox11 = new TextBox();
-            button1 = new Button();
+            buttonCancelTicketModular = new Button();
             SuspendLayout();
-            // 
-            // label29
-            // 
-            label29.Anchor = AnchorStyles.None;
-            label29.AutoSize = true;
-            label29.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label29.ForeColor = SystemColors.ActiveCaptionText;
-            label29.Location = new Point(29, 204);
-            label29.Name = "label29";
-            label29.Size = new Size(123, 31);
-            label29.TabIndex = 7;
-            label29.Text = "Ar ki dibo?";
             // 
             // label26
             // 
             label26.Anchor = AnchorStyles.None;
             label26.AutoSize = true;
             label26.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label26.ForeColor = SystemColors.ActiveCaptionText;
-            label26.Location = new Point(21, 137);
+            label26.ForeColor = SystemColors.ButtonHighlight;
+            label26.Location = new Point(251, 207);
             label26.Name = "label26";
-            label26.Size = new Size(231, 31);
+            label26.Size = new Size(169, 31);
             label26.TabIndex = 6;
-            label26.Text = "Ticket Serial Number:";
+            label26.Text = "Ticket Number:";
             // 
             // label11
             // 
             label11.Anchor = AnchorStyles.None;
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.ForeColor = SystemColors.ActiveCaptionText;
-            label11.Location = new Point(27, 69);
+            label11.ForeColor = SystemColors.ButtonHighlight;
+            label11.Location = new Point(281, 132);
             label11.Name = "label11";
-            label11.Size = new Size(273, 41);
+            label11.Size = new Size(369, 41);
             label11.TabIndex = 5;
-            label11.Text = "For Cancel a Ticket:";
+            label11.Text = "Search with ticket number:";
             // 
             // textBox11
             // 
             textBox11.Anchor = AnchorStyles.None;
             textBox11.ForeColor = SystemColors.ActiveCaptionText;
-            textBox11.Location = new Point(258, 141);
+            textBox11.Location = new Point(447, 207);
             textBox11.Name = "textBox11";
-            textBox11.Size = new Size(175, 27);
+            textBox11.Size = new Size(257, 27);
             textBox11.TabIndex = 4;
             // 
-            // button1
+            // buttonCancelTicketModular
             // 
-            button1.Location = new Point(207, 296);
-            button1.Name = "button1";
-            button1.Size = new Size(141, 39);
-            button1.TabIndex = 8;
-            button1.Text = "Cancel Ticket";
-            button1.UseVisualStyleBackColor = true;
+            buttonCancelTicketModular.BackColor = Color.FromArgb(187, 233, 237);
+            buttonCancelTicketModular.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            buttonCancelTicketModular.Location = new Point(353, 300);
+            buttonCancelTicketModular.Name = "buttonCancelTicketModular";
+            buttonCancelTicketModular.Size = new Size(163, 56);
+            buttonCancelTicketModular.TabIndex = 7;
+            buttonCancelTicketModular.Text = "Cancel Ticket";
+            buttonCancelTicketModular.UseVisualStyleBackColor = false;
             // 
             // CancelationModule
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(button1);
-            Controls.Add(label29);
+            BackColor = Color.FromArgb(48, 56, 79);
+            ClientSize = new Size(854, 538);
+            Controls.Add(buttonCancelTicketModular);
             Controls.Add(label26);
             Controls.Add(label11);
             Controls.Add(textBox11);
@@ -107,11 +96,9 @@
         }
 
         #endregion
-
-        private Label label29;
         private Label label26;
         private Label label11;
         private TextBox textBox11;
-        private Button button1;
+        private Button buttonCancelTicketModular;
     }
 }

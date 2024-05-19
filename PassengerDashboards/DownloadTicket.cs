@@ -1,16 +1,16 @@
-﻿using System;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
-using System.Drawing;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
 using ZXing;
 using ZXing.Common;
 
@@ -106,5 +106,19 @@ namespace TravelEase.PassengerDashboards
                 throw new Exception("An unknown error occurred: " + ex.Message, ex);
             }
         }
+
+        private void DownloadTicket_Load(object sender, EventArgs e)
+        {
+            textBoxTicketID.Text = PassengerInfoSingleton.Instance.CurrentPassenger.ticket.ticketID.ToString();
+            textBoxUserID.Text = PassengerInfoSingleton.Instance.CurrentPassenger.UserID;
+            textBoxVehicleID.Text = PassengerInfoSingleton.Instance.CurrentPassenger.ticket.vehicleID.ToString();
+            textBoxVehicleClass.Text = PassengerInfoSingleton.Instance.CurrentPassenger.ticket.vehicleClass;
+            textBoxJourneyDate.Text = PassengerInfoSingleton.Instance.CurrentPassenger.ticket.journeyDate.ToString();
+            textBoxSeatAmount.Text = PassengerInfoSingleton.Instance.CurrentPassenger.ticket.seatAmount.ToString();
+            textBoxSeatNumbers.Text = PassengerInfoSingleton.Instance.CurrentPassenger.ticket.seatNumber;
+            textBoxPaidAmount.Text = PassengerInfoSingleton.Instance.CurrentPassenger.ticket.fare.ToString();
+
+        }
+
     }
 }

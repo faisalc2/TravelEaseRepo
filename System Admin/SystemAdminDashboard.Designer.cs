@@ -87,6 +87,7 @@
             buttonLogOut.TabIndex = 17;
             buttonLogOut.Text = "Log Out";
             buttonLogOut.UseVisualStyleBackColor = false;
+            buttonLogOut.Click += buttonLogOut_Click;
             // 
             // buttonRestrict
             // 
@@ -116,10 +117,10 @@
             buttonRemoveUser.ForeColor = SystemColors.ButtonHighlight;
             buttonRemoveUser.Image = (Image)resources.GetObject("buttonRemoveUser.Image");
             buttonRemoveUser.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonRemoveUser.Location = new Point(9, 263);
+            buttonRemoveUser.Location = new Point(0, 263);
             buttonRemoveUser.Margin = new Padding(0);
             buttonRemoveUser.Name = "buttonRemoveUser";
-            buttonRemoveUser.Size = new Size(214, 74);
+            buttonRemoveUser.Size = new Size(223, 74);
             buttonRemoveUser.TabIndex = 10;
             buttonRemoveUser.Text = "Remove User";
             buttonRemoveUser.TextAlign = ContentAlignment.MiddleRight;
@@ -132,12 +133,12 @@
             buttonVehicleCom.FlatAppearance.BorderSize = 0;
             buttonVehicleCom.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             buttonVehicleCom.ForeColor = SystemColors.ButtonHighlight;
-            buttonVehicleCom.Location = new Point(9, 188);
+            buttonVehicleCom.Location = new Point(0, 188);
             buttonVehicleCom.Margin = new Padding(0);
             buttonVehicleCom.Name = "buttonVehicleCom";
-            buttonVehicleCom.Size = new Size(214, 74);
+            buttonVehicleCom.Size = new Size(223, 74);
             buttonVehicleCom.TabIndex = 9;
-            buttonVehicleCom.Text = "Vehicle Company";
+            buttonVehicleCom.Text = "Requested Vehicle Company";
             buttonVehicleCom.UseVisualStyleBackColor = false;
             buttonVehicleCom.Click += buttonVehicleCom_Click;
             // 
@@ -167,6 +168,7 @@
             buttonProfile.TabIndex = 2;
             buttonProfile.Text = "Profile";
             buttonProfile.UseVisualStyleBackColor = false;
+            buttonProfile.Click += buttonProfile_Click;
             // 
             // pictureBoxProfile
             // 
@@ -178,6 +180,7 @@
             pictureBoxProfile.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxProfile.TabIndex = 1;
             pictureBoxProfile.TabStop = false;
+            pictureBoxProfile.Click += pictureBoxProfile_Click;
             // 
             // buttonExit
             // 

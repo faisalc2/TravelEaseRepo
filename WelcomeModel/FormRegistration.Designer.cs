@@ -151,6 +151,8 @@
             pictureBox22 = new PictureBox();
             l_gender = new Label();
             MainPanel5 = new Panel();
+            textBoxUser = new TextBox();
+            label25 = new Label();
             buttonCopy = new PictureBox();
             label5 = new Label();
             textBox_UID = new TextBox();
@@ -178,6 +180,8 @@
             buttonBack0 = new PictureBox();
             pictureBox20 = new PictureBox();
             ModularPanel5 = new Panel();
+            textBoxUserName = new TextBox();
+            label24 = new Label();
             buttonCopyM = new PictureBox();
             label6 = new Label();
             textBox_UIDM = new TextBox();
@@ -1855,6 +1859,8 @@
             // MainPanel5
             // 
             MainPanel5.BackColor = Color.FromArgb(48, 56, 79);
+            MainPanel5.Controls.Add(textBoxUser);
+            MainPanel5.Controls.Add(label25);
             MainPanel5.Controls.Add(buttonCopy);
             MainPanel5.Controls.Add(label5);
             MainPanel5.Controls.Add(textBox_UID);
@@ -1865,11 +1871,30 @@
             MainPanel5.Size = new Size(1105, 646);
             MainPanel5.TabIndex = 72;
             // 
+            // textBoxUser
+            // 
+            textBoxUser.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBoxUser.Location = new Point(545, 469);
+            textBoxUser.Name = "textBoxUser";
+            textBoxUser.Size = new Size(258, 34);
+            textBoxUser.TabIndex = 9;
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label25.ForeColor = Color.White;
+            label25.Location = new Point(269, 474);
+            label25.Name = "label25";
+            label25.Size = new Size(252, 31);
+            label25.TabIndex = 8;
+            label25.Text = "TravelEase UserName: ";
+            // 
             // buttonCopy
             // 
             buttonCopy.Cursor = Cursors.Hand;
             buttonCopy.Image = (Image)resources.GetObject("buttonCopy.Image");
-            buttonCopy.Location = new Point(830, 406);
+            buttonCopy.Location = new Point(831, 469);
             buttonCopy.Name = "buttonCopy";
             buttonCopy.Size = new Size(66, 40);
             buttonCopy.SizeMode = PictureBoxSizeMode.Zoom;
@@ -2073,7 +2098,7 @@
             MainPanel0.Controls.Add(pictureBox20);
             MainPanel0.Location = new Point(0, 0);
             MainPanel0.Name = "MainPanel0";
-            MainPanel0.Size = new Size(1108, 649);
+            MainPanel0.Size = new Size(1108, 713);
             MainPanel0.TabIndex = 73;
             // 
             // buttonNext0
@@ -2161,9 +2186,9 @@
             // pictureBox20
             // 
             pictureBox20.Image = (Image)resources.GetObject("pictureBox20.Image");
-            pictureBox20.Location = new Point(-29, 4);
+            pictureBox20.Location = new Point(-26, 7);
             pictureBox20.Name = "pictureBox20";
-            pictureBox20.Size = new Size(650, 639);
+            pictureBox20.Size = new Size(703, 703);
             pictureBox20.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox20.TabIndex = 73;
             pictureBox20.TabStop = false;
@@ -2171,6 +2196,8 @@
             // ModularPanel5
             // 
             ModularPanel5.BackColor = Color.FromArgb(48, 56, 79);
+            ModularPanel5.Controls.Add(textBoxUserName);
+            ModularPanel5.Controls.Add(label24);
             ModularPanel5.Controls.Add(buttonCopyM);
             ModularPanel5.Controls.Add(label6);
             ModularPanel5.Controls.Add(textBox_UIDM);
@@ -2181,11 +2208,30 @@
             ModularPanel5.Size = new Size(1105, 646);
             ModularPanel5.TabIndex = 83;
             // 
+            // textBoxUserName
+            // 
+            textBoxUserName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBoxUserName.Location = new Point(545, 473);
+            textBoxUserName.Name = "textBoxUserName";
+            textBoxUserName.Size = new Size(255, 34);
+            textBoxUserName.TabIndex = 7;
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label24.ForeColor = Color.White;
+            label24.Location = new Point(266, 478);
+            label24.Name = "label24";
+            label24.Size = new Size(252, 31);
+            label24.TabIndex = 6;
+            label24.Text = "TravelEase UserName: ";
+            // 
             // buttonCopyM
             // 
             buttonCopyM.Cursor = Cursors.Hand;
             buttonCopyM.Image = (Image)resources.GetObject("buttonCopyM.Image");
-            buttonCopyM.Location = new Point(830, 406);
+            buttonCopyM.Location = new Point(830, 469);
             buttonCopyM.Name = "buttonCopyM";
             buttonCopyM.Size = new Size(66, 40);
             buttonCopyM.SizeMode = PictureBoxSizeMode.Zoom;
@@ -2282,9 +2328,10 @@
             label22.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label22.Location = new Point(395, 72);
             label22.Name = "label22";
-            label22.Size = new Size(101, 46);
+            label22.Size = new Size(130, 46);
             label22.TabIndex = 73;
-            label22.Text = "  Contract\r\nInformation";
+            label22.Text = "Modular Admin\r\nInformation";
+            label22.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label23
             // 
@@ -2292,9 +2339,10 @@
             label23.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label23.Location = new Point(146, 72);
             label23.Name = "label23";
-            label23.Size = new Size(101, 46);
+            label23.Size = new Size(84, 46);
             label23.TabIndex = 72;
-            label23.Text = "   Personal\r\nInformation";
+            label23.Text = "Company\r\nDetails";
+            label23.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // textBox5
             // 
@@ -2679,10 +2727,14 @@
             // textBox_EmailM
             // 
             textBox_EmailM.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox_EmailM.ForeColor = Color.FromArgb(64, 64, 64);
             textBox_EmailM.Location = new Point(815, 257);
             textBox_EmailM.Name = "textBox_EmailM";
             textBox_EmailM.Size = new Size(266, 34);
             textBox_EmailM.TabIndex = 60;
+            textBox_EmailM.Text = "example@example.com";
+            textBox_EmailM.Enter += textBox_EmailM_Enter;
+            textBox_EmailM.Leave += textBox_EmailM_Leave;
             // 
             // textBox_PhoneM
             // 
@@ -2777,6 +2829,7 @@
             dateTimePicker_DOBM.Name = "dateTimePicker_DOBM";
             dateTimePicker_DOBM.Size = new Size(266, 34);
             dateTimePicker_DOBM.TabIndex = 52;
+            dateTimePicker_DOBM.Value = new DateTime(1953, 1, 1, 0, 0, 0, 0);
             // 
             // textBox_LnameM
             // 
@@ -3946,9 +3999,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 56, 79);
             ClientSize = new Size(1107, 725);
-            Controls.Add(MainPanel4);
-            Controls.Add(MainPanel3);
-            Controls.Add(MainPanel2);
             Controls.Add(ModularPanel1);
             Controls.Add(ModularPanel3);
             Controls.Add(ModularPanel2);
@@ -3957,6 +4007,9 @@
             Controls.Add(MainPanel0);
             Controls.Add(MainPanel5);
             Controls.Add(ModularPanel4);
+            Controls.Add(MainPanel4);
+            Controls.Add(MainPanel3);
+            Controls.Add(MainPanel2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormRegistration";
             StartPosition = FormStartPosition.CenterScreen;
@@ -4383,5 +4436,9 @@
         private TextBox textBox_cname;
         private TextBox textBox_vtype;
         private TextBox textBox_grid;
+        private TextBox textBoxUserName;
+        private Label label24;
+        private TextBox textBoxUser;
+        private Label label25;
     }
 }

@@ -42,21 +42,21 @@ namespace TravelEase.WelcomeModel
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            if (dotCount < 6) // Display "Loading" with increasing dots
+            if (dotCount < 6) 
             {
                 label1.Text = text1 + new string('.', dotCount);
                 dotCount++;
             }
-            else if (dotCount == 6) // Display "Loading" without dots
+            else if (dotCount == 6) 
             {
                 label1.Text = text1;
-                dotCount = 0; // Reset dot count
+                dotCount = 0; 
             }
-            else // Display "Loading" with decreasing dots (optional)
+            else 
             {
                 label1.Text = text1 + new string('.', 6 - dotCount);
                 dotCount++;
-                if (dotCount > 6) // Reset if exceeding max dots
+                if (dotCount > 6) 
                 {
                     dotCount = 0;
                 }

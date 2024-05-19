@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TravelEase.PassengerDashboards
+namespace TravelEase.System_Admin
 {
-    public partial class PassengerHistory : Form
+    public partial class AdminProfile : Form
     {
-        public PassengerHistory()
+        public AdminProfile()
         {
             InitializeComponent();
-            this.DGVRecentTicketInfo.DataSource = PassengerInfoSingleton.Instance.CurrentPassenger.GetTicketInfo();
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TravelEase
 {
-    internal class Payment
+    public class Payment
     {
         private string _transitionID;
         private string _amount;

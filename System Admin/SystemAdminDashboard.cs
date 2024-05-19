@@ -63,5 +63,22 @@ namespace TravelEase.System_Admin
             buttonRemoveUser.FlatStyle = FlatStyle.Flat;
             buttonRestrict.FlatStyle = FlatStyle.Standard;
         }
+
+        private void buttonLogOut_Click(object sender, EventArgs e)
+        {
+            FormLogIn formLogIn = new FormLogIn();
+            formLogIn.Show();
+            this.Hide();
+        }
+
+        private void buttonProfile_Click(object sender, EventArgs e)
+        {
+            LoadForm(new AdminProfile());
+        }
+
+        private void pictureBoxProfile_Click(object sender, EventArgs e)
+        {
+            LoadForm(new AdminProfile());
+        }
     }
 }
