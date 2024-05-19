@@ -37,6 +37,7 @@ namespace TravelEase.WelcomeModel
 
             string QInsertMAdminCompanyTB = "INSERT INTO MAdminCompanyTB (companyID, MAdminNumber) " +
                 "VALUES (@companyID, @MAdminNumber)";
+
             string QGetMAdminNum = "SELECT MAdminNumber FROM ModularAdminTB WHERE userID = @userID";
 
             SqlConnection conn = new SqlConnection(connection);
