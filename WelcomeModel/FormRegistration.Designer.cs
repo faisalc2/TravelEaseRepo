@@ -3994,7 +3994,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 56, 79);
             ClientSize = new Size(1107, 725);
-            Controls.Add(MainPanel5);
             Controls.Add(ModularPanel4);
             Controls.Add(MainPanel4);
             Controls.Add(MainPanel3);
@@ -4005,6 +4004,7 @@
             Controls.Add(MainPanel1);
             Controls.Add(ModularPanel5);
             Controls.Add(MainPanel0);
+            Controls.Add(MainPanel5);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormRegistration";
             StartPosition = FormStartPosition.CenterScreen;

@@ -97,7 +97,7 @@ namespace TravelEase
         {
             string timestampPart = DateTime.Now.ToString("yyyyMMddHHmmss");
 
-            string randomPart = GenerateRandomString(10);
+            string randomPart = GenerateRandomString(8);
 
             string uniqueId = $"{timestampPart}{randomPart}";
 
