@@ -179,7 +179,7 @@ namespace TravelEase.PassengerDashboards
 
         public void updateSeatStatus()
         {
-            string QupdateStatus = $"UPDATE {db} SET seatStatus = @seatStatus WHERE seatNumber = @seatNumber";
+            string QupdateStatus = $"UPDATE {db} SET seatStatus = @seatStatus, userID = @userID WHERE seatNumber = @seatNumber";
             SqlConnection conn = new SqlConnection(connection);
             using (conn)
             {
@@ -190,6 +190,7 @@ namespace TravelEase.PassengerDashboards
                     using (cmd)
                     {
                         cmd.Parameters.AddWithValue("@seatNumber", button.Tag.ToString());
+                        cmd.Parameters.AddWithValue("@userID", PassengerInfoSingleton.Instance.CurrentPassenger.UserID);
                         cmd.Parameters.AddWithValue("@seatStatus", 0);
                         cmd.ExecuteNonQuery();
                     }
