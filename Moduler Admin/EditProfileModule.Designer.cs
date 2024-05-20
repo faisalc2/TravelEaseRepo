@@ -77,9 +77,10 @@
             // 
             // textBoxMAdminUsername
             // 
+            textBoxMAdminUsername.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
             textBoxMAdminUsername.Location = new Point(579, 133);
             textBoxMAdminUsername.Name = "textBoxMAdminUsername";
-            textBoxMAdminUsername.Size = new Size(160, 27);
+            textBoxMAdminUsername.Size = new Size(160, 31);
             textBoxMAdminUsername.TabIndex = 33;
             // 
             // label3
@@ -95,9 +96,10 @@
             // 
             // textBoxMAdminFirstName
             // 
-            textBoxMAdminFirstName.Location = new Point(165, 52);
+            textBoxMAdminFirstName.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
+            textBoxMAdminFirstName.Location = new Point(165, 53);
             textBoxMAdminFirstName.Name = "textBoxMAdminFirstName";
-            textBoxMAdminFirstName.Size = new Size(160, 27);
+            textBoxMAdminFirstName.Size = new Size(160, 31);
             textBoxMAdminFirstName.TabIndex = 31;
             // 
             // label1
@@ -113,37 +115,42 @@
             // 
             // textBoxCompanyName
             // 
+            textBoxCompanyName.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
             textBoxCompanyName.Location = new Point(579, 79);
             textBoxCompanyName.Name = "textBoxCompanyName";
-            textBoxCompanyName.Size = new Size(160, 27);
+            textBoxCompanyName.Size = new Size(160, 31);
             textBoxCompanyName.TabIndex = 29;
             // 
             // textBoxMAdminPassword
             // 
+            textBoxMAdminPassword.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
             textBoxMAdminPassword.Location = new Point(579, 184);
             textBoxMAdminPassword.Name = "textBoxMAdminPassword";
-            textBoxMAdminPassword.Size = new Size(160, 27);
+            textBoxMAdminPassword.Size = new Size(160, 31);
             textBoxMAdminPassword.TabIndex = 28;
             // 
             // textBoxMAdminPhone
             // 
-            textBoxMAdminPhone.Location = new Point(165, 149);
+            textBoxMAdminPhone.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
+            textBoxMAdminPhone.Location = new Point(165, 152);
             textBoxMAdminPhone.Name = "textBoxMAdminPhone";
-            textBoxMAdminPhone.Size = new Size(160, 27);
+            textBoxMAdminPhone.Size = new Size(160, 31);
             textBoxMAdminPhone.TabIndex = 27;
             // 
             // textBoxMAdminEmail
             // 
+            textBoxMAdminEmail.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
             textBoxMAdminEmail.Location = new Point(165, 204);
             textBoxMAdminEmail.Name = "textBoxMAdminEmail";
-            textBoxMAdminEmail.Size = new Size(160, 27);
+            textBoxMAdminEmail.Size = new Size(160, 31);
             textBoxMAdminEmail.TabIndex = 26;
             // 
             // textBoxMAdminLastName
             // 
-            textBoxMAdminLastName.Location = new Point(165, 100);
+            textBoxMAdminLastName.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
+            textBoxMAdminLastName.Location = new Point(165, 101);
             textBoxMAdminLastName.Name = "textBoxMAdminLastName";
-            textBoxMAdminLastName.Size = new Size(160, 27);
+            textBoxMAdminLastName.Size = new Size(160, 31);
             textBoxMAdminLastName.TabIndex = 24;
             // 
             // label7
@@ -222,7 +229,7 @@
             DGVMAdminInfo.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(48, 56, 79);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = Color.White;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;

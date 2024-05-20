@@ -92,8 +92,8 @@ namespace TravelEase.Moduler_Admin
 
         private void buttonLogOut_Click_1(object sender, EventArgs e)
         {
-            FormLogIn formLogIn = new FormLogIn();
-            formLogIn.ShowDialog();
+            FormHomePage formHomePage = new FormHomePage();
+            formHomePage.Show();
             this.Hide();
         }
     }

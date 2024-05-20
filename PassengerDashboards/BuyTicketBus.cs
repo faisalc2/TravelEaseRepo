@@ -20,11 +20,13 @@ namespace TravelEase.PassengerDashboards
         double fixedRate = 100;
         double fare;
         string seatNumbers;
+        string db;
         public BuyTicketBus()
         {
             InitializeComponent();
             choosenButton.Clear();
             allButtons.Clear();
+            db = getRightDatabase();
             addButtonstoList();
             UpdateButtonTagsFromDatabase(PassengerInfoSingleton.Instance.CurrentPassenger.ticket.vehicleID);
         }
@@ -34,6 +36,27 @@ namespace TravelEase.PassengerDashboards
             AvailableVehicle availableVehicle = new AvailableVehicle();
             availableVehicle.Show();
             this.Hide();
+        }
+
+        private string getRightDatabase()
+        {
+            string db = "";
+            switch (PassengerInfoSingleton.Instance.CurrentPassenger.ticket.vehicleType)
+            {
+                case 1:
+                    db = "BusSeatTB";
+                    break;
+                case 2:
+                    db = "TrainSeatTB";
+                    break;
+                case 3:
+                    db = "LaunchSeatTB";
+                    break;
+                case 4:
+                    db = "PlaneSeatTB";
+                    break;
+            }
+            return db;
         }
 
         private void ChoosenBusSeat(object sender, EventArgs e)
@@ -58,7 +81,7 @@ namespace TravelEase.PassengerDashboards
 
         public void updateSeatStatus()
         {
-            string QupdateStatus = "UPDATE BusSeatTB SET seatStatus = @seatStatus WHERE seatNumber = @seatNumber";
+            string QupdateStatus = $"UPDATE {db} SET seatStatus = @seatStatus, userID = @userID WHERE seatNumber = @seatNumber";
             SqlConnection conn = new SqlConnection(connection);
             using (conn)
             {
@@ -69,6 +92,7 @@ namespace TravelEase.PassengerDashboards
                     using (cmd)
                     {
                         cmd.Parameters.AddWithValue("@seatNumber", button.Tag.ToString());
+                        cmd.Parameters.AddWithValue("@userID", PassengerInfoSingleton.Instance.CurrentPassenger.UserID);
                         cmd.Parameters.AddWithValue("@seatStatus", 0);
                         cmd.ExecuteNonQuery();
                     }
