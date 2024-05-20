@@ -20,10 +20,10 @@ namespace TravelEase.Moduler_Admin
 
         private int GetVehicleTypeID()
         {
-            if (radioButtonBus.Checked) return 1;
-            if (radioButtonAirPlane.Checked) return 4;
-            if (radioButtonTrain.Checked) return 2;
-            if (radioButtonLaunch.Checked) return 3;
+            if (radioButtonBus.Checked) {Vehicle.vehicleTypeID = 1; return 1; }
+            if (radioButtonAirPlane.Checked) { Vehicle.vehicleTypeID = 4; return 4; }
+            if (radioButtonTrain.Checked) { Vehicle.vehicleTypeID = 2; return 2; }
+            if (radioButtonLaunch.Checked) { Vehicle.vehicleTypeID = 3; return 3; }
             throw new Exception("No vehicle type selected");
         }
 

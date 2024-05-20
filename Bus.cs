@@ -28,6 +28,7 @@ namespace TravelEase
 
             // Insert the bus record into the database
             newBus.InsertVehicleRecord();
+            newBus.InsertSeats();
         }
     }
 }

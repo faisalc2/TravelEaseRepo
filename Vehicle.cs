@@ -1,4 +1,5 @@
-﻿using System.Data.SqlClient;
+﻿using System;
+using System.Data.SqlClient;
 
 namespace TravelEase
 {
@@ -11,6 +12,11 @@ namespace TravelEase
         public int AvailableSeats { get; set; } = 10;
         public int VehicleStatus { get; set; } = 0;
         public int DestinationID { get; set; }
+        int totalSeat;
+        string shorts;
+        string db;
+        int vehicleid;
+        public static int vehicleTypeID;
 
         public Vehicle(int vehicleTypeID, string vehicleName, string bDRegistrationNumber, int mAdminID, int destinationID)
         {
@@ -63,6 +69,66 @@ namespace TravelEase
                 cmd.Parameters.AddWithValue("@destinationID", DestinationID);
 
                 cmd.ExecuteNonQuery();
+
+                cmd = new SqlCommand("SELECT MAX(vehicleID) FROM VehicleTB", conn);
+                vehicleid = (int)cmd.ExecuteScalar();
+            }
+        }
+
+        public void InsertSeats()
+        {
+            setSeatPrams();
+            string QInsertSeat =
+                "DECLARE @seatStatus bit = 1; " +
+                "DECLARE @seatNumber varchar(15); " +
+                "DECLARE @i int = 1; " +
+                "WHILE @i <= @totalSeatParam " +
+                "BEGIN " +
+                    "SET @seatNumber = @shortsParam + RIGHT('00' + CAST(@i AS varchar(2)), 2); " +
+                    $"INSERT INTO {db} (vehicleID, seatNumber, seatStatus) " +
+                    "VALUES (@vehicleID, @seatNumber, @seatStatus); " +
+                    "SET @i = @i + 1; " +
+                "END;";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(QInsertSeat, conn))
+                {
+                    cmd.Parameters.AddWithValue("@vehicleID", vehicleid);
+                    cmd.Parameters.AddWithValue("@totalSeatParam", totalSeat);
+                    cmd.Parameters.AddWithValue("@shortsParam", shorts);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void setSeatPrams()
+        {
+            switch (VehicleTypeID)
+            {
+                case 1:
+                    totalSeat = 38;
+                    shorts = "BS-";
+                    db = "BusSeatTB";
+                    break;
+                case 2:
+                    totalSeat = 38;
+                    shorts = "TR-";
+                    db = "TrainSeatTB";
+                    break;
+                case 3:
+                    totalSeat = 12;
+                    shorts = "LN-";
+                    db = "LaunchSeatTB";
+                    break;
+                case 4:
+                    totalSeat = 72;
+                    shorts = "PL-";
+                    db = "PlaneSeatTB";
+                    break;
+                default:
+                    throw new ArgumentException("Invalid Vehicle Type ID");
             }
         }
     }
