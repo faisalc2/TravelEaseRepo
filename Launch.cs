@@ -28,6 +28,7 @@ namespace TravelEase
 
             // Insert the launch record into the database
             newLaunch.InsertVehicleRecord();
+            newLaunch.InsertSeats();
         }
     }
 }

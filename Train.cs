@@ -28,6 +28,8 @@ namespace TravelEase
 
             // Insert the train record into the database
             newTrain.InsertVehicleRecord();
+            newTrain.InsertSeats();
+
         }
     }
 }

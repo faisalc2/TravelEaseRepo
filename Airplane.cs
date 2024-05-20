@@ -28,6 +28,7 @@ namespace TravelEase
 
             // Insert the airplane record into the database
             newAirplane.InsertVehicleRecord();
+            newAirplane.InsertSeats();
         }
     }
 }
