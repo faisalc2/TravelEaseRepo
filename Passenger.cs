@@ -30,7 +30,7 @@ namespace TravelEase
                             userPassword = @userPassword
                         WHERE 
                             userID = @userID";
-        
+
         public Ticket ticket;
         public Payment payment;
 
@@ -41,7 +41,7 @@ namespace TravelEase
             this.userName = uname;
             this.userPassword = upass;
         }
-        
+
         public DataTable GetAllInfo()
         {
             SqlDataAdapter sdt;
@@ -58,7 +58,7 @@ namespace TravelEase
             return dt;
         }
 
-       
+
 
         public DataTable GetTicketInfo()
         {
@@ -77,12 +77,12 @@ namespace TravelEase
                     if (reader.Read())
                     {
                         ticket.ticketID = (int)reader["ticketID"];
-                        ticket.seatNumber = reader["SeatNumber"].ToString();
                         ticket.userID = reader["userID"].ToString();
                         ticket.vehicleID = (int)reader["vehicleID"];
                         ticket.buyDate = (DateTime)reader["buyDate"];
                         ticket.fare = (double)reader["fare"];
                         ticket.seatAmount = (int)reader["seatAmount"];
+                        ticket.journeyDate = (DateTime)reader["journeyDate"];
                     }
                 }
             }
