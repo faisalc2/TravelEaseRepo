@@ -100,5 +100,10 @@ namespace TravelEase.PassengerDashboards
             this.Hide();
             //database clear
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

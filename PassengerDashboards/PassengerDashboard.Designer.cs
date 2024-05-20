@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PassengerDashboard));
             buttonSearchTicket = new Button();
             panelMain = new Panel();
-            buttonProfile = new Button();
-            pictureBoxProfile = new PictureBox();
             buttonExit = new Button();
             panel1 = new Panel();
             buttonLogOut = new Button();
@@ -41,7 +39,6 @@
             buttonAccountDetails = new Button();
             panelSlidebar = new Panel();
             pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxProfile).BeginInit();
             panel1.SuspendLayout();
             panelSlidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -72,32 +69,6 @@
             panelMain.Size = new Size(827, 538);
             panelMain.TabIndex = 5;
             // 
-            // buttonProfile
-            // 
-            buttonProfile.BackColor = Color.FromArgb(48, 56, 79);
-            buttonProfile.Dock = DockStyle.Left;
-            buttonProfile.FlatAppearance.BorderSize = 0;
-            buttonProfile.FlatStyle = FlatStyle.Flat;
-            buttonProfile.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonProfile.ForeColor = SystemColors.ButtonHighlight;
-            buttonProfile.Location = new Point(55, 0);
-            buttonProfile.Name = "buttonProfile";
-            buttonProfile.Size = new Size(82, 36);
-            buttonProfile.TabIndex = 2;
-            buttonProfile.Text = "Profile";
-            buttonProfile.UseVisualStyleBackColor = false;
-            // 
-            // pictureBoxProfile
-            // 
-            pictureBoxProfile.Dock = DockStyle.Left;
-            pictureBoxProfile.Image = (Image)resources.GetObject("pictureBoxProfile.Image");
-            pictureBoxProfile.Location = new Point(0, 0);
-            pictureBoxProfile.Name = "pictureBoxProfile";
-            pictureBoxProfile.Size = new Size(55, 36);
-            pictureBoxProfile.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxProfile.TabIndex = 1;
-            pictureBoxProfile.TabStop = false;
-            // 
             // buttonExit
             // 
             buttonExit.BackColor = Color.FromArgb(48, 56, 79);
@@ -115,14 +86,13 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(48, 56, 79);
-            panel1.Controls.Add(buttonProfile);
-            panel1.Controls.Add(pictureBoxProfile);
             panel1.Controls.Add(buttonExit);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(253, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(827, 36);
             panel1.TabIndex = 4;
+            panel1.Paint += panel1_Paint;
             // 
             // buttonLogOut
             // 
@@ -234,7 +204,6 @@
             Name = "PassengerDashboard";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Passenger Dashboard";
-            ((System.ComponentModel.ISupportInitialize)pictureBoxProfile).EndInit();
             panel1.ResumeLayout(false);
             panelSlidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -245,8 +214,6 @@
 
         private Button buttonSearchTicket;
         private Panel panelMain;
-        private Button buttonProfile;
-        private PictureBox pictureBoxProfile;
         private Button buttonExit;
         private Panel panel1;
         private Button buttonLogOut;
