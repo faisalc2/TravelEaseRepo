@@ -3,37 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TravelEase.Moduler_Admin;
 
 namespace TravelEase
 {
     internal class Launch : Vehicle
     {
-        private static DateTime currentDate = DateTime.Now.Date;
-        private static int currentSequence = 1;
-
-        public Launch(string bdRegId, string vehicleClass, int totalSeats)
-            : base(GenerateVehicleId(), bdRegId, "Launch", vehicleClass, /*GetFarePerSeat(vehicleClass),*/ totalSeats){}
-
-        public static string GenerateVehicleId()
+        public Launch(string vehicleName, string bdRegId, int mAdminID, int destinationID)
+            : base(3, vehicleName, bdRegId, mAdminID, destinationID)
         {
-            if (currentDate != DateTime.Now.Date)
-            {
-                currentDate = DateTime.Now.Date;
-                currentSequence = 1;
-            }
-
-            string datePart = currentDate.ToString("ddMMyyyy");
-            string sequencePart = currentSequence.ToString("D5"); 
-            string vehicleId = $"LAUNCH-{datePart}-{sequencePart}";
-
-            currentSequence++;
-
-            return vehicleId;
         }
 
-        /*private static double GetFarePerSeat(string vehicleClass)
+        // Static method to add a new Launch record
+        public static void AddLaunch(string vehicleName, string bdRegId, string desFrom, string desTo)
         {
-            return vehicleClass == "Deluxe" ? 300.0 : 200.0;
-        }*/
+            // Get the MAdminID from the singleton instance
+            int mAdminID = ModularAdminSingletone.Instance.currentMAdmin.GetModularAdminNumber();
+
+            // Get or create the destinationID using the desFrom and desTo parameters
+            int destinationID = GetOrCreateDestinationID(desFrom, desTo);
+
+            // Create a new Launch instance
+            Launch newLaunch = new Launch(vehicleName, bdRegId, mAdminID, destinationID);
+
+            // Insert the launch record into the database
+            newLaunch.InsertVehicleRecord();
+            newLaunch.InsertSeats();
+        }
     }
 }

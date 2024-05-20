@@ -3,37 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TravelEase.Moduler_Admin;
 
 namespace TravelEase
 {
     internal class Airplane : Vehicle
     {
-        private static DateTime currentDate = DateTime.Now.Date;
-        private static int currentSequence = 1;
-
-        public Airplane(string bdRegId, string vehicleClass, int totalSeats)
-            : base(GenerateVehicleId(), bdRegId, "Airplane", vehicleClass, /*GetFarePerSeat(vehicleClass), */totalSeats){}
-
-        private static string GenerateVehicleId()
+        public Airplane(string vehicleName, string bdRegId, int mAdminID, int destinationID)
+            : base(4, vehicleName, bdRegId, mAdminID, destinationID)
         {
-            if (currentDate != DateTime.Now.Date)
-            {
-                currentDate = DateTime.Now.Date;
-                currentSequence = 1;
-            }
-
-            string datePart = currentDate.ToString("ddMMyyyy");
-            string sequencePart = currentSequence.ToString("D5"); 
-            string vehicleId = $"AIRPLANE-{datePart}-{sequencePart}";
-
-            currentSequence++;
-
-            return vehicleId;
         }
 
-        /*private static double GetFarePerSeat(string vehicleClass)
+        // Static method to add a new Airplane record
+        public static void AddAirplane(string vehicleName, string bdRegId, string desFrom, string desTo)
         {
-            return vehicleClass == "Business" ? 500.0 : 300.0;
-        }*/
+            // Get the MAdminID from the singleton instance
+            int mAdminID = ModularAdminSingletone.Instance.currentMAdmin.GetModularAdminNumber();
+
+            // Get or create the destinationID using the desFrom and desTo parameters
+            int destinationID = GetOrCreateDestinationID(desFrom, desTo);
+
+            // Create a new Airplane instance
+            Airplane newAirplane = new Airplane(vehicleName, bdRegId, mAdminID, destinationID);
+
+            // Insert the airplane record into the database
+            newAirplane.InsertVehicleRecord();
+            newAirplane.InsertSeats();
+        }
     }
 }

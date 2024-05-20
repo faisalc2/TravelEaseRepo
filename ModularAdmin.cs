@@ -241,7 +241,7 @@ namespace TravelEase
         {
             this.ticket = new Ticket();
             this.company = new Company();
-            this.vehicle = new Vehicle();
+            //this.vehicle = new Vehicle();
 
             this.userNameModular = uname;
             this.userPasswordModular = upass;
