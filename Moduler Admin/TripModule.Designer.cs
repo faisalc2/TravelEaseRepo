@@ -32,14 +32,15 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             textBoxFrom = new TextBox();
             label9 = new Label();
-            button7 = new Button();
-            button8 = new Button();
+            buttonADD = new Button();
             textBoxTo = new TextBox();
             label8 = new Label();
             textBoxVehicleID = new TextBox();
             label7 = new Label();
             DGVTriopInfo = new DataGridView();
             label1 = new Label();
+            textBoxVtype = new TextBox();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)DGVTriopInfo).BeginInit();
             SuspendLayout();
             // 
@@ -47,9 +48,8 @@
             // 
             textBoxFrom.Anchor = AnchorStyles.None;
             textBoxFrom.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBoxFrom.Location = new Point(58, 182);
+            textBoxFrom.Location = new Point(58, 165);
             textBoxFrom.Name = "textBoxFrom";
-            textBoxFrom.ReadOnly = true;
             textBoxFrom.Size = new Size(212, 38);
             textBoxFrom.TabIndex = 24;
             // 
@@ -59,43 +59,31 @@
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             label9.ForeColor = SystemColors.ButtonFace;
-            label9.Location = new Point(58, 148);
+            label9.Location = new Point(58, 131);
             label9.Name = "label9";
             label9.Size = new Size(76, 31);
             label9.TabIndex = 23;
             label9.Text = "From:";
             // 
-            // button7
+            // buttonADD
             // 
-            button7.Anchor = AnchorStyles.None;
-            button7.BackColor = Color.FromArgb(187, 233, 237);
-            button7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button7.Location = new Point(190, 367);
-            button7.Name = "button7";
-            button7.Size = new Size(107, 41);
-            button7.TabIndex = 21;
-            button7.Text = "REMOVE";
-            button7.UseVisualStyleBackColor = false;
-            // 
-            // button8
-            // 
-            button8.Anchor = AnchorStyles.None;
-            button8.BackColor = Color.FromArgb(187, 233, 237);
-            button8.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button8.Location = new Point(56, 367);
-            button8.Name = "button8";
-            button8.Size = new Size(107, 41);
-            button8.TabIndex = 20;
-            button8.Text = "ADD";
-            button8.UseVisualStyleBackColor = false;
+            buttonADD.Anchor = AnchorStyles.None;
+            buttonADD.BackColor = Color.FromArgb(187, 233, 237);
+            buttonADD.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonADD.Location = new Point(98, 422);
+            buttonADD.Name = "buttonADD";
+            buttonADD.Size = new Size(107, 39);
+            buttonADD.TabIndex = 20;
+            buttonADD.Text = "ADD";
+            buttonADD.UseVisualStyleBackColor = false;
+            buttonADD.Click += buttonADD_Click;
             // 
             // textBoxTo
             // 
             textBoxTo.Anchor = AnchorStyles.None;
             textBoxTo.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBoxTo.Location = new Point(58, 286);
+            textBoxTo.Location = new Point(58, 261);
             textBoxTo.Name = "textBoxTo";
-            textBoxTo.ReadOnly = true;
             textBoxTo.Size = new Size(212, 38);
             textBoxTo.TabIndex = 19;
             // 
@@ -105,7 +93,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             label8.ForeColor = SystemColors.ButtonFace;
-            label8.Location = new Point(58, 252);
+            label8.Location = new Point(58, 227);
             label8.Name = "label8";
             label8.Size = new Size(45, 31);
             label8.TabIndex = 18;
@@ -117,7 +105,6 @@
             textBoxVehicleID.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBoxVehicleID.Location = new Point(58, 75);
             textBoxVehicleID.Name = "textBoxVehicleID";
-            textBoxVehicleID.ReadOnly = true;
             textBoxVehicleID.Size = new Size(212, 38);
             textBoxVehicleID.TabIndex = 17;
             // 
@@ -171,18 +158,40 @@
             label1.TabIndex = 26;
             label1.Text = "Trip Details:";
             // 
+            // textBoxVtype
+            // 
+            textBoxVtype.Anchor = AnchorStyles.None;
+            textBoxVtype.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBoxVtype.Location = new Point(58, 352);
+            textBoxVtype.Name = "textBoxVtype";
+            textBoxVtype.Size = new Size(212, 38);
+            textBoxVtype.TabIndex = 28;
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.None;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            label2.ForeColor = SystemColors.ButtonFace;
+            label2.Location = new Point(58, 318);
+            label2.Name = "label2";
+            label2.Size = new Size(147, 31);
+            label2.TabIndex = 27;
+            label2.Text = "VehicleType:";
+            // 
             // TripModule
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 56, 79);
             ClientSize = new Size(769, 491);
+            Controls.Add(textBoxVtype);
+            Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(DGVTriopInfo);
             Controls.Add(textBoxFrom);
             Controls.Add(label9);
-            Controls.Add(button7);
-            Controls.Add(button8);
+            Controls.Add(buttonADD);
             Controls.Add(textBoxTo);
             Controls.Add(label8);
             Controls.Add(textBoxVehicleID);
@@ -199,13 +208,14 @@
 
         private TextBox textBoxFrom;
         private Label label9;
-        private Button button7;
-        private Button button8;
+        private Button buttonADD;
         private TextBox textBoxTo;
         private Label label8;
         private TextBox textBoxVehicleID;
         private Label label7;
         private DataGridView DGVTriopInfo;
         private Label label1;
+        private TextBox textBoxVtype;
+        private Label label2;
     }
 }

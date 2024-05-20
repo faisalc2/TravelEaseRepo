@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Security.Policy;
 using System.Windows.Forms;
+using TravelEase.Moduler_Admin;
 
 namespace TravelEase
 {
@@ -19,6 +20,17 @@ namespace TravelEase
         public int Persent_60 { set { persent_60 = value; } }
         public int Persent_40 { set { persent_40 = value; } }
         public int No_refund { set { no_refund = value; } }
+
+        //private string from, to, type, vehicleId;
+
+        //public string From { set { from = value; } }
+        //public string To { set { to = value; } }
+        //public string Type { set { type = value; } }
+        //public string VehicleID {  set { vehicleId = value; } }
+        public string VehicleID { get; set; }
+        public string From { get; set; }
+        public string To { get; set; }
+        public string Type { get; set; }
 
         string QGetInfo = "SELECT u.*, l.userName, l.userPassword FROM UserTB u JOIN LoginCredentialsTB l ON u.userID = l.userID WHERE u.userID = @userID;";
         string QDeleteTicket = "DELETE FROM TicketTB WHERE @ticketID = TicketID";
@@ -315,6 +327,81 @@ namespace TravelEase
             return dt;
 
         }
+
+        public void TripInfoADD(ModularAdmin trip)
+        {
+            int mAdminNumber = GetModularAdminNumber();
+            
+
+            // Validate VehicleId
+            if (string.IsNullOrWhiteSpace(trip.VehicleID))
+            {
+                MessageBox.Show("Vehicle ID cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (!int.TryParse(trip.VehicleID, out int vehicleId))
+            {
+                MessageBox.Show("Invalid Vehicle ID. It must be a number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string desFrom = trip.From;
+            string desTo = trip.To;
+            string vehicleType = trip.Type;
+
+            // Validate vehicleType
+            if (string.IsNullOrWhiteSpace(vehicleType) || !int.TryParse(vehicleType, out int vehicleTypeId))
+            {
+                MessageBox.Show("Invalid Vehicle Type. It must be a number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (IsVehicleUnderCompany(mAdminNumber, vehicleId))
+            {
+                InsertDestination(vehicleId, desFrom, desTo, vehicleTypeId);
+                MessageBox.Show("Destination added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("The given vehicle is not under your company.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private bool IsVehicleUnderCompany(int mAdminNumber, int vehicleId)
+        {
+            string query = "SELECT COUNT(*) FROM VehicleTB WHERE MAdminID = @MAdminNumber AND vehicleID = @VehicleID";
+
+            using (SqlConnection conn = new SqlConnection(connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@MAdminNumber", mAdminNumber);
+                    cmd.Parameters.AddWithValue("@VehicleID", vehicleId);
+                    int count = (int)cmd.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+        }
+
+        private void InsertDestination(int vehicleId, string desFrom, string desTo, int vehicleTypeId)
+        {
+            string query = "INSERT INTO DestinationTB (desFrom, desTo, vehicleTypeID) OUTPUT INSERTED.destinationID VALUES (@DesFrom, @DesTo, @VehicleTypeID)";
+
+            using (SqlConnection conn = new SqlConnection(connection))
+            {
+                conn.Open();
+                int destinationId;
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@DesFrom", desFrom);
+                    cmd.Parameters.AddWithValue("@DesTo", desTo);
+                    cmd.Parameters.AddWithValue("@VehicleTypeID", vehicleTypeId); // Include vehicle type
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
 
         public DataTable RefundRuleShow()
         {
