@@ -99,6 +99,7 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ProcessingPayment";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ProcessingPayment";
             Load += ProcessingPayment_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
