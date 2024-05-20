@@ -15,6 +15,20 @@ namespace TravelEase.Moduler_Admin
         public TripModule()
         {
             InitializeComponent();
+            DGVTriopInfo.DataSource = ModularAdminSingletone.Instance.currentMAdmin.TripInfoShow();
+        }
+
+        private void DGVTriopInfo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.DGVTriopInfo.Rows[e.RowIndex];
+
+                textBoxVehicleID.Text = row.Cells["vehicleID"].Value.ToString();
+                textBoxFrom.Text = row.Cells["desFrom"].Value.ToString();
+                textBoxTo.Text = row.Cells["desTo"].Value.ToString();
+
+            }
         }
     }
 }
