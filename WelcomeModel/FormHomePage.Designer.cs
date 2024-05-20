@@ -39,6 +39,7 @@
             buttonLogin = new Button();
             pictureBox4 = new PictureBox();
             buttonSignUp = new Button();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -111,7 +112,7 @@
             buttonLogin.FlatStyle = FlatStyle.Popup;
             buttonLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonLogin.ForeColor = Color.Black;
-            buttonLogin.Location = new Point(531, 393);
+            buttonLogin.Location = new Point(642, 370);
             buttonLogin.Margin = new Padding(0);
             buttonLogin.Name = "buttonLogin";
             buttonLogin.Size = new Size(94, 44);
@@ -139,7 +140,7 @@
             buttonSignUp.FlatStyle = FlatStyle.Popup;
             buttonSignUp.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonSignUp.ForeColor = Color.Black;
-            buttonSignUp.Location = new Point(694, 393);
+            buttonSignUp.Location = new Point(642, 247);
             buttonSignUp.Margin = new Padding(0);
             buttonSignUp.Name = "buttonSignUp";
             buttonSignUp.Size = new Size(94, 44);
@@ -148,12 +149,24 @@
             buttonSignUp.UseVisualStyleBackColor = false;
             buttonSignUp.Click += buttonSignUp_Click;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(526, 327);
+            label3.Name = "label3";
+            label3.Size = new Size(337, 25);
+            label3.TabIndex = 8;
+            label3.Text = "If you Alreday have Account then,";
+            // 
             // FormHomePage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 56, 79);
             ClientSize = new Size(929, 586);
+            Controls.Add(label3);
             Controls.Add(buttonSignUp);
             Controls.Add(pictureBox4);
             Controls.Add(buttonLogin);
@@ -187,5 +200,6 @@
         private Button buttonLogin;
         private PictureBox pictureBox4;
         private Button buttonSignUp;
+        private Label label3;
     }
 }

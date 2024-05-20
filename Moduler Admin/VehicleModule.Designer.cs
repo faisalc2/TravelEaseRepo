@@ -52,7 +52,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.ButtonHighlight;
-            label3.Location = new Point(349, 205);
+            label3.Location = new Point(409, 229);
             label3.Name = "label3";
             label3.Size = new Size(159, 31);
             label3.TabIndex = 4;
@@ -63,7 +63,7 @@
             buttonCancel.Anchor = AnchorStyles.None;
             buttonCancel.BackColor = Color.FromArgb(187, 233, 237);
             buttonCancel.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            buttonCancel.Location = new Point(534, 412);
+            buttonCancel.Location = new Point(594, 436);
             buttonCancel.Name = "buttonCancel";
             buttonCancel.Size = new Size(107, 41);
             buttonCancel.TabIndex = 17;
@@ -76,7 +76,7 @@
             buttonAdd.Anchor = AnchorStyles.None;
             buttonAdd.BackColor = Color.FromArgb(187, 233, 237);
             buttonAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonAdd.Location = new Point(410, 412);
+            buttonAdd.Location = new Point(470, 436);
             buttonAdd.Name = "buttonAdd";
             buttonAdd.Size = new Size(107, 41);
             buttonAdd.TabIndex = 15;
@@ -90,7 +90,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.ButtonHighlight;
-            label4.Location = new Point(349, 293);
+            label4.Location = new Point(429, 316);
             label4.Name = "label4";
             label4.Size = new Size(126, 31);
             label4.TabIndex = 11;
@@ -104,7 +104,7 @@
             groupBox1.Controls.Add(radioButtonBus);
             groupBox1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox1.ForeColor = Color.White;
-            groupBox1.Location = new Point(36, 51);
+            groupBox1.Location = new Point(253, 37);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(270, 125);
             groupBox1.TabIndex = 18;
@@ -165,7 +165,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(49, 292);
+            label1.Location = new Point(109, 316);
             label1.Name = "label1";
             label1.Size = new Size(42, 31);
             label1.TabIndex = 21;
@@ -177,7 +177,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(49, 205);
+            label2.Location = new Point(103, 229);
             label2.Name = "label2";
             label2.Size = new Size(71, 31);
             label2.TabIndex = 19;
@@ -185,28 +185,28 @@
             // 
             // textBox7
             // 
-            textBox7.Location = new Point(138, 209);
+            textBox7.Location = new Point(176, 233);
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(168, 27);
             textBox7.TabIndex = 22;
             // 
             // textBox8
             // 
-            textBox8.Location = new Point(138, 292);
+            textBox8.Location = new Point(176, 320);
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(168, 27);
             textBox8.TabIndex = 23;
             // 
             // textBox9
             // 
-            textBox9.Location = new Point(523, 209);
+            textBox9.Location = new Point(574, 233);
             textBox9.Name = "textBox9";
             textBox9.Size = new Size(168, 27);
             textBox9.TabIndex = 24;
             // 
             // textBox10
             // 
-            textBox10.Location = new Point(523, 299);
+            textBox10.Location = new Point(574, 316);
             textBox10.Name = "textBox10";
             textBox10.Size = new Size(168, 27);
             textBox10.TabIndex = 25;
@@ -216,7 +216,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 56, 79);
-            ClientSize = new Size(734, 491);
+            ClientSize = new Size(854, 538);
             Controls.Add(textBox10);
             Controls.Add(textBox9);
             Controls.Add(textBox8);
