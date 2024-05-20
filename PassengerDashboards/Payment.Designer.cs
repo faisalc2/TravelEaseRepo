@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Payment));
             panel1 = new Panel();
-            buttonCancel1 = new Button();
             buttonNext = new Button();
             groupBox1 = new GroupBox();
             pictureBox2 = new PictureBox();
@@ -43,7 +42,6 @@
             pictureBox3 = new PictureBox();
             radioButton2 = new RadioButton();
             radioButton1 = new RadioButton();
-            buttonCancel2 = new Button();
             buttonPurchase2 = new Button();
             textBox2 = new TextBox();
             label2 = new Label();
@@ -56,7 +54,6 @@
             pictureBox6 = new PictureBox();
             radioButton3 = new RadioButton();
             radioButton4 = new RadioButton();
-            buttonCancel3 = new Button();
             buttonPurchase3 = new Button();
             textboxPin = new TextBox();
             label3 = new Label();
@@ -79,29 +76,12 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(96, 184, 196);
-            panel1.Controls.Add(buttonCancel1);
             panel1.Controls.Add(buttonNext);
             panel1.Controls.Add(groupBox1);
             panel1.Location = new Point(127, 40);
             panel1.Name = "panel1";
             panel1.Size = new Size(825, 480);
             panel1.TabIndex = 0;
-            // 
-            // buttonCancel1
-            // 
-            buttonCancel1.BackColor = Color.FromArgb(187, 233, 237);
-            buttonCancel1.Cursor = Cursors.Hand;
-            buttonCancel1.FlatStyle = FlatStyle.Popup;
-            buttonCancel1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonCancel1.ForeColor = Color.Black;
-            buttonCancel1.Location = new Point(453, 401);
-            buttonCancel1.Margin = new Padding(0);
-            buttonCancel1.Name = "buttonCancel1";
-            buttonCancel1.Size = new Size(102, 37);
-            buttonCancel1.TabIndex = 30;
-            buttonCancel1.Text = "Cancel";
-            buttonCancel1.UseVisualStyleBackColor = false;
-            buttonCancel1.Click += buttonCancel1_Click;
             // 
             // buttonNext
             // 
@@ -182,7 +162,6 @@
             // 
             panel2.BackColor = Color.FromArgb(96, 184, 196);
             panel2.Controls.Add(groupBox2);
-            panel2.Controls.Add(buttonCancel2);
             panel2.Controls.Add(buttonPurchase2);
             panel2.Controls.Add(textBox2);
             panel2.Controls.Add(label2);
@@ -251,21 +230,6 @@
             radioButton1.Text = "BKash";
             radioButton1.UseVisualStyleBackColor = true;
             // 
-            // buttonCancel2
-            // 
-            buttonCancel2.BackColor = Color.FromArgb(187, 233, 237);
-            buttonCancel2.Cursor = Cursors.Hand;
-            buttonCancel2.FlatStyle = FlatStyle.Popup;
-            buttonCancel2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonCancel2.ForeColor = Color.Black;
-            buttonCancel2.Location = new Point(278, 343);
-            buttonCancel2.Margin = new Padding(0);
-            buttonCancel2.Name = "buttonCancel2";
-            buttonCancel2.Size = new Size(116, 37);
-            buttonCancel2.TabIndex = 29;
-            buttonCancel2.Text = "Cancel";
-            buttonCancel2.UseVisualStyleBackColor = false;
-            // 
             // buttonPurchase2
             // 
             buttonPurchase2.BackColor = Color.FromArgb(187, 233, 237);
@@ -273,7 +237,7 @@
             buttonPurchase2.FlatStyle = FlatStyle.Popup;
             buttonPurchase2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonPurchase2.ForeColor = Color.Black;
-            buttonPurchase2.Location = new Point(485, 343);
+            buttonPurchase2.Location = new Point(318, 350);
             buttonPurchase2.Margin = new Padding(0);
             buttonPurchase2.Name = "buttonPurchase2";
             buttonPurchase2.Size = new Size(116, 37);
@@ -336,7 +300,6 @@
             // 
             panel3.BackColor = Color.FromArgb(96, 184, 196);
             panel3.Controls.Add(groupBox3);
-            panel3.Controls.Add(buttonCancel3);
             panel3.Controls.Add(buttonPurchase3);
             panel3.Controls.Add(textboxPin);
             panel3.Controls.Add(label3);
@@ -404,21 +367,6 @@
             radioButton4.Text = "VISA";
             radioButton4.UseVisualStyleBackColor = true;
             // 
-            // buttonCancel3
-            // 
-            buttonCancel3.BackColor = Color.FromArgb(187, 233, 237);
-            buttonCancel3.Cursor = Cursors.Hand;
-            buttonCancel3.FlatStyle = FlatStyle.Popup;
-            buttonCancel3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonCancel3.ForeColor = Color.Black;
-            buttonCancel3.Location = new Point(278, 343);
-            buttonCancel3.Margin = new Padding(0);
-            buttonCancel3.Name = "buttonCancel3";
-            buttonCancel3.Size = new Size(116, 37);
-            buttonCancel3.TabIndex = 29;
-            buttonCancel3.Text = "Cancel";
-            buttonCancel3.UseVisualStyleBackColor = false;
-            // 
             // buttonPurchase3
             // 
             buttonPurchase3.BackColor = Color.FromArgb(187, 233, 237);
@@ -426,7 +374,7 @@
             buttonPurchase3.FlatStyle = FlatStyle.Popup;
             buttonPurchase3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonPurchase3.ForeColor = Color.Black;
-            buttonPurchase3.Location = new Point(485, 343);
+            buttonPurchase3.Location = new Point(339, 353);
             buttonPurchase3.Margin = new Padding(0);
             buttonPurchase3.Name = "buttonPurchase3";
             buttonPurchase3.Size = new Size(116, 37);
@@ -478,9 +426,9 @@
             BackColor = Color.FromArgb(96, 184, 196);
             ClientSize = new Size(1080, 574);
             Controls.Add(buttonExit);
-            Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(panel3);
+            Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Payment";
             StartPosition = FormStartPosition.CenterScreen;
@@ -523,7 +471,6 @@
         private Button buttonPurchase2;
         private Button buttonExit;
         private GroupBox groupBox2;
-        private Button buttonCancel2;
         private RadioButton radioButton2;
         private RadioButton radioButton1;
         private PictureBox pictureBox4;
@@ -534,12 +481,10 @@
         private PictureBox pictureBox6;
         private RadioButton radioButton3;
         private RadioButton radioButton4;
-        private Button buttonCancel3;
         private Button buttonPurchase3;
         private TextBox textboxPin;
         private Label label3;
         private Label label4;
         private TextBox textboxCardNumber;
-        private Button buttonCancel1;
     }
 }
