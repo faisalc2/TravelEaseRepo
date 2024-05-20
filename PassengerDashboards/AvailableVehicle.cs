@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,13 +48,13 @@ namespace TravelEase.PassengerDashboards
                         BuyTicketTrain buyTicketTrain = new BuyTicketTrain();
                         buyTicketTrain.Show();
                         break;
-                    case 4:
-                        BuyTicketAir buyTicketAir = new BuyTicketAir();
-                        buyTicketAir.Show();
-                        break;
                     case 3:
                         BuyTicketLaunch buyTicketLaunch = new BuyTicketLaunch();
                         buyTicketLaunch.Show();
+                        break;
+                    case 4:
+                        BuyTicketAir buyTicketAir = new BuyTicketAir();
+                        buyTicketAir.Show();
                         break;
                 }
                 this.Hide();
@@ -89,7 +90,9 @@ namespace TravelEase.PassengerDashboards
 
         private bool vehicleAvailablity()
         {
-            string query = "SELECT seatNumber, seatStatus FROM BusSeatTB WHERE vehicleID = @vehicleID";
+            string db;
+            db = getRightDatabase();
+            string query = $"SELECT seatNumber, seatStatus FROM {db} WHERE vehicleID = @vehicleID";
             bool result;
             using (SqlConnection conn = new SqlConnection(PassengerInfoSingleton.Instance.CurrentPassenger.connection))
             {
@@ -104,6 +107,26 @@ namespace TravelEase.PassengerDashboards
                 }
             }
             return result;
+        }
+        private string getRightDatabase()
+        {
+            string db = "";
+            switch (PassengerInfoSingleton.Instance.CurrentPassenger.ticket.vehicleType)
+            {
+                case 1:
+                    db = "BusSeatTB";
+                    break;
+                case 2:
+                    db = "TrainSeatTB";
+                    break;
+                case 3:
+                    db = "LaunchSeatTB";
+                    break;
+                case 4:
+                    db = "PlaneSeatTB";
+                    break;
+            }
+            return db;
         }
     }
 }

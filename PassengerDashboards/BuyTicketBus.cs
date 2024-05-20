@@ -20,11 +20,13 @@ namespace TravelEase.PassengerDashboards
         double fixedRate = 100;
         double fare;
         string seatNumbers;
+        string db;
         public BuyTicketBus()
         {
             InitializeComponent();
             choosenButton.Clear();
             allButtons.Clear();
+            db = getRightDatabase();
             addButtonstoList();
             UpdateButtonTagsFromDatabase(PassengerInfoSingleton.Instance.CurrentPassenger.ticket.vehicleID);
         }
@@ -36,12 +38,33 @@ namespace TravelEase.PassengerDashboards
             this.Hide();
         }
 
+        private string getRightDatabase()
+        {
+            string db = "";
+            switch (PassengerInfoSingleton.Instance.CurrentPassenger.ticket.vehicleType)
+            {
+                case 1:
+                    db = "BusSeatTB";
+                    break;
+                case 2:
+                    db = "TrainSeatTB";
+                    break;
+                case 3:
+                    db = "LaunchSeatTB";
+                    break;
+                case 4:
+                    db = "PlaneSeatTB";
+                    break;
+            }
+            return db;
+        }
+
         private void ChoosenBusSeat(object sender, EventArgs e)
         {
             Button button = (Button)sender;
             Color targetColor = Color.White;
             Color target2 = Color.Lime;
-            if (choosenButton.Count > 4) { MessageBox.Show("Maximum seat limit reached!"); return; }
+            if (choosenButton.Count > 4 && button.BackColor == targetColor) { MessageBox.Show("Maximum seat limit reached!"); return; }
             if (button.BackColor == targetColor)
             {
                 button.BackColor = target2;
@@ -58,7 +81,7 @@ namespace TravelEase.PassengerDashboards
 
         public void updateSeatStatus()
         {
-            string QupdateStatus = "UPDATE BusSeatTB SET seatStatus = @seatStatus WHERE seatNumber = @seatNumber";
+            string QupdateStatus = $"UPDATE {db} SET seatStatus = @seatStatus, userID = @userID WHERE seatNumber = @seatNumber";
             SqlConnection conn = new SqlConnection(connection);
             using (conn)
             {
@@ -69,6 +92,7 @@ namespace TravelEase.PassengerDashboards
                     using (cmd)
                     {
                         cmd.Parameters.AddWithValue("@seatNumber", button.Tag.ToString());
+                        cmd.Parameters.AddWithValue("@userID", PassengerInfoSingleton.Instance.CurrentPassenger.UserID);
                         cmd.Parameters.AddWithValue("@seatStatus", 0);
                         cmd.ExecuteNonQuery();
                     }
@@ -88,16 +112,16 @@ namespace TravelEase.PassengerDashboards
 
         private void buttonSelectComplete_Click(object sender, EventArgs e)
         {
-            setSeatNumbers();
+            setTemporarySeats();
             calculateFare();
             textBox2.Text = $"{fare}";
-            updateSeatStatus();
-            UpdateButtonTagsFromDatabase(PassengerInfoSingleton.Instance.CurrentPassenger.ticket.vehicleID);
+            //UpdateButtonTagsFromDatabase(PassengerInfoSingleton.Instance.CurrentPassenger.ticket.vehicleID);
         }
 
         private void buttonBuyTicket_Click(object sender, EventArgs e)
         {
-            setSeatNumbers();
+            updateSeatStatus();
+            seatNumbers = setSeatNumbers();
             PassengerInfoSingleton.Instance.CurrentPassenger.ticket.fare = this.fare;
             PassengerInfoSingleton.Instance.CurrentPassenger.ticket.seatAmount = choosenButton.Count;
             PassengerInfoSingleton.Instance.CurrentPassenger.ticket.seatNumber = seatNumbers;
@@ -190,13 +214,22 @@ namespace TravelEase.PassengerDashboards
             }
         }
 
-        private void setSeatNumbers()
+        private string setSeatNumbers()
+        {
+            string str = "";
+            foreach (Button button in choosenButton)
+            {
+                str += $"{button.Tag}, ";
+            }
+            str = str.Substring(0, str.Length - 2);
+            return str;
+        }
+        private void setTemporarySeats()
         {
             foreach (Button button in choosenButton)
             {
-                seatNumbers += $"{button.Tag}, ";
+                button.BackColor = Color.Brown;
             }
-            seatNumbers = seatNumbers.Substring(0, seatNumbers.Length - 2);
         }
     }
 }
